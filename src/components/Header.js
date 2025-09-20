@@ -28,23 +28,29 @@ export function NavigationBar({page=1})
                   <a className={`nav-link ${(page===1) && 'text-blue-clr'}`} href="/"> <i className="bi bi-plus"></i> Accueil </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/produits"> <i className="bi bi-plus"></i> Produits</a>
+                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/logement"> <i className="bi bi-plus"></i> Logement </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/tarifs"> <i className="bi bi-plus"></i> Tarifs freemium</a>
+                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/terrain"> <i className="bi bi-plus"></i> Terrain </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/support"> <i className="bi bi-plus"></i> Support</a>
+                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/service"> <i className="bi bi-plus"></i> Service </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/partenariats"> <i className="bi bi-plus"></i> Partenariats</a>
+                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/contact"> <i className="bi bi-plus"></i> Contact </a>
                 </li>
+                {
+                    ( sessionStorage.getItem('token') ) && ( 
+                    <li className="nav-item mx-2">
+                      <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> <i className="bi bi-plus"></i> Mon-compte </a>
+                    </li> )
+                }
               </ul>
               {/* Actions à droite */}
               <div className="d-flex align-items-center">
                 <a className="btn btn-sm btn-outline-secondary me-2" href="/inscription"> S'inscrire </a>
                 {
-                  localStorage.getItem('token') ? 
+                  sessionStorage.getItem('token') ? 
                   ( <button className="btn btn-sm btn-secondary" type="button" > Se-déconnecter </button> ) :
                   ( <a href="/" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
                 }     

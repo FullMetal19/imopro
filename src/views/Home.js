@@ -46,12 +46,14 @@ export function Home(){
             <HouseComponent /> 
           </div>
           {/* ************************************************************************ */}
-            <div className="container-fluid slide-fixed my-5 pt-5"> 
-                <div className="row d-flex justify-content-center align-items-center pt-5"> 
-                    <div className="d-flex justify-content-center align-items-center mt-3" > 
-                        <button className='btn circle bg-white shadow mt-5' onClick={ ()=>{ setModalState(true) } } > <img src={'../img/icons8-jouer-64.png'} alt="Logo" width={50} height={50} className="" /> </button>
-                    </div>
-                </div>
+          <div className="container-fluid slide-fixed my-5"> 
+            <div className="row d-flex justify-content-center align-items-center h-100"> 
+              <div className="d-flex justify-content-center align-items-center mt-3" > 
+                <button className='btn circle bg-white shadow p-4 rounded-circle' onClick={ ()=>{ setModalState(true) } } > 
+                  <i class="bi bi-play-circle fs-3 bg-blue-clr"></i> 
+                </button>
+              </div>
+            </div>
             </div> 
             {/* ************************************************************************ */}
             <div className="row justify-content-center"> 
