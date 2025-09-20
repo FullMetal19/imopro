@@ -52,23 +52,23 @@ export function HouseContainer({ data, onVisit, onDetails })
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "240px", objectFit: "cover" }} />
         {/* Galerie */}
-        <div className="d-flex gap-3 p-2">
+        <div className="d-flex gap-3 p-3">
           <img src={ data?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
           <img src={ data?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
           <img src={ data?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
         </div>
         {/* Contenu */}
-        <div className="border-top py-2">
-          <span className="lead bg-gray-light border text-secondary mb-2 px-3 py-2">
+        <div className="border-top py-2 px-3">
+          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
            { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
         </div>
-        <div className="border-top border-bottom py-2">
+        <div className="border-top border-bottom py-2 px-3">
           <h5 className="card-title text-secondary"> { data?.subtitle + ' ' + data?.title } </h5>
           <p className="text-secondary mb-2"> { data?.address } </p>
         </div>
         {/* Boutons */}
-        <div className="d-flex justify-content-between px-3">
+        <div className="d-flex justify-content-between p-3">
           <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center" onClick={onDetails}  >
             <i className="bi bi-eye me-2"></i> Details
           </a>
