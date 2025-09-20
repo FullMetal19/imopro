@@ -359,8 +359,8 @@ export function TestimonialComponent() {
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-8">
-              <div className="d-flex flex-column align-items-center border border-secondary p-3 bg-gray-light rounded-4 mb-3">
-                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
+              <div className="d-flex flex-column align-items-center border p-3 bg-gray-light rounded-4 mb-3">
+                <span className="text-secondary lead" >Des services accessibles et flexibles </span>
               </div>
             </div>
             <div className="col-lg-12">
