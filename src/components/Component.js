@@ -307,7 +307,7 @@ export function FieldComponent() {
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-8">
-              <div className="d-flex flex-column mb-3">
+              <div className="d-flex flex-column align-items-center mb-3">
                 <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
                 <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
               </div>
@@ -356,9 +356,15 @@ export function TestimonialComponent() {
 
     return (
 
-        <div className="container py-5"> 
-            <SectionTitle text={ 'Lorem Ipsum is simply' } />
-            <div className="row mt-4 mb-5 d-flex justify-content-center"> 
+        <div className="col-lg-10 mt-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-5 col-md-8">
+              <div className="d-flex flex-column align-items-center border border-secondary p-3 bg-gray-light rounded-4 mb-3">
+                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="row mt-4 mb-5 d-flex justify-content-center"> 
                 { 
                     isLoading ? ( <div className="row">  <TestimonialSkeleton value={ 4 } /> </div> ) : (
                     <div className="slider-container">
@@ -377,7 +383,9 @@ export function TestimonialComponent() {
                 {
                     ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 } 
-            </div> 
+              </div> 
+            </div>
+          </div>  
         </div> 
     )
 }
