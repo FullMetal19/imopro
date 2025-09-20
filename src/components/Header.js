@@ -52,7 +52,7 @@ export function NavigationBar({page=1})
                 {
                   sessionStorage.getItem('token') ? 
                   ( <button className="btn btn-sm btn-secondary" type="button" > Se-déconnecter </button> ) :
-                  ( <a href="/" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
+                  ( <a href="/connexion" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
                 }     
               </div>
             </div>

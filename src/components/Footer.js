@@ -4,7 +4,7 @@ export function Footer()
 {
   return (
 
-    <footer className="col-lg-12 pb-3">
+    <footer className="col-lg-12">
       <div className="row justify-content-center bg-dark py-5">
         <div className="col-lg-11">
 
