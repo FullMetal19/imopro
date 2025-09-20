@@ -6,8 +6,8 @@ import { Home } from "./views/Home";
 // import { Field } from "./views/Field";
 // import { Service } from "./views/Service";
 // import { Contact } from "./views/Contact";
-// import { Signin } from "./views/Signin";
-// import { Signup } from "./views/Signup";
+import { Signin } from "./views/Signin";
+import { Signup } from "./views/Signup";
 // import { ValidateAccount } from "./views/ValidationAccount";
 // import { PropertyDetails } from "./views/PropertyDetails";
 // import { Password } from "./views/Password";
@@ -58,6 +58,9 @@ function App()
             <Routes>
 
                 <Route exact path="/" element={ <Home /> }> </Route>
+                <Route exact path="/connexion" element={ <Signin /> }> </Route>
+                <Route exact path="/inscription" element={ <Signup /> }> </Route>
+                {/* <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route> */}
                 {/* <Route exact path="/recherche" element={ <SearchProperties /> }> </Route> */}
                 
                 {/* <Route exact path="/logement" element={ <Housing /> }> </Route>

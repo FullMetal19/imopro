@@ -54,49 +54,73 @@ export function Signin(){
         <div>
             { modalState ? ( <PasswordModal method={ closeModal } /> ) : null }
             {/* ************************************************************************ */}   
-            <Header designClass={'row shadow'} />
-            {/* ************************************************************************ */}   
-            <div className="container-fluid bg-three-clr py-5 px-4 d-flex justify-content-center"> 
-               <span className="h3 text-center color-blue px-5 py-2 border-blue rounded-1"> Connexion </span>
-            </div>
-            {/* ************************************************************************ */}
-            <div className="container py-5" >
-                <form onSubmit={ handleForm }>
-                    <div className="row py-5 d-flex justify-content-between" > 
-                        <div className="col-md-5 mb-5" > 
-                            <div className=" d-flex flex-column border-left-main ps-2 ms-1 mb-5" > 
-                                <span className="fs-lg bold color-blue"> Formulaire d'authenfication </span>
-                                <span className="color-gray font-xs"> Veuillez saisir les informations de connexion pour chaque champs corespondant specifiés ci-dessous  </span>
-                            </div>
-                            {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={24} width={24} alt="Logo" /> </div> ) : null 
-                            }
-                            {
-                               (status === -1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Erreur d'authenfication. Veuillez vérifier vos informations de connexion et réessayer. </div> </div> ) : null
-                            }
-                            <input type="text" name="login" className="form-control mb-3" placeholder="Email ou numéro de téléphone" required onChange={ handleInputs } />
-                            <input type="password" name="password" className="form-control mb-3" placeholder="mot de passe" required onChange={ handleInputs } />
-                            <div className="col-md-12 mb-4" > 
-                                <button type="submit" className="btn btn-main"> Envoyez </button> 
-                            </div>
-                            <span className="btn link-outline cursor" onClick={ setModal } > Mot de passe oublié ? </span> 
-                        </div> 
-                        <div className="col-md-4 my-4" > 
-                            <div className=" d-flex flex-column align-items-center" >
-                                <img src={'../img/icons8-accueil-128.png'} alt="Logo" width={80} height={80} className="mb-4" /> 
-                                <span className="text-center fs-lg bold color-blue mb-3"> Création de compte utilisateur </span>
-                                <span className="text-center text-clr mb-4"> Cliquez sur le bouton ci-dessous, remplissez le formulaire d'inscription facilement et profitez de nos services. </span>
-                                <div className="col-md-12 mb-4 text-center" > 
-                                    <a href="/inscription" className="btn btn-white"> S'inscrire </a>
-                                </div>
-                            </div>
-                        </div> 
-                    </div> 
-                </form>
-            </div>
-            {/* ************************************************************************ */}
-            <div className="container-fluid"> 
+            <div className="container-fluid">
+              <div className="row">
+                {/* ************************************************************************ */}  
+                <div className="col-md-6 d-flex align-items-center bg-gray-light p-4">
+                  <div className="col-md-10 d-flex flex-column p-4" >
+                    <div className="d-flex mb-3" >
+                      <span className="d-flex align-items-center justify-content-center bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                    </div>
+                    <span className="h1 text-secondary"> ImoPro votre entreprise immobilière </span>
+                    <span className="lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
+                  </div>
+                </div>
+                {/* ************************************************************************ */}  
+                <div className="col-md-6 vh-100 d-flex justify-content-center align-items-center px-4">
+                  <div className="row d-flex justify-content-center">
+                    <div className="col-md-12 rounded-2 py-4 px-4">
+
+                  <form onSubmit={ handleForm } className="d-flex flex-column">
+                    <div className=" d-flex flex-column align-items-center gap-2 mb-4" > 
+                      <div className="d-flex mb-3" >
+                        <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-white"></i> </span>
+                      </div>
+                      <span className="lead text-muted text-start"> Imopro - connexion </span>
+                    </div>
+                    {
+                      isLoading && (
+                        <div className="d-flex justify-content-center align-items-center mb-3"> 
+                          <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
+                        </div>
+                      )
+                    }
+                    {
+                      status === -1 && (
+                        <div className="col-md-12 mb-2">
+                          <div className="alert alert-danger">
+                            Erreur d'authentification, rééssayer.
+                          </div>
+                        </div>
+                      )
+                    }
+                    <input type="text" name="login" className="border text-muted p-3 rounded-2 mb-3" placeholder="Email ou numéro de téléphone" required onChange={ handleInputs } />
+                    <input type="password" name="password" className="border text-muted p-3 rounded-2 mb-3" placeholder="Mot de passe" required onChange={ handleInputs } />
+                             
+                    <button type="submit" className="btn btn-lg btn-secondary px-4 mt-2"> Connexion </button> 
+
+                    <div className="mt-4 text-muted text-center">──────── ou ────────</div>
+
+                    <div className="d-flex gap-2 border text-secondary rounded-2 py-3 px-4 text-outline-muted mt-4">
+                      <span> Pas encore de compte : </span>
+                      <a href="/inscription" className="nav-link text-blue-clr"> S'inscrire maintenant <i className="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <div className="d-flex gap-2 border text-secondary rounded-2 py-3 px-4 text-outline-muted mt-3">
+                      <span> Mot de passe oublié : </span>
+                      <button className="btn nav-link text-blue-clr" target="outlet" onClick={ setModal } > Modifier içi <i className="bi bi-arrow-right"></i> </button>
+                    </div>
+                   
+                  </form>
+                </div>
+              </div>
+            
+          
+               </div>
+              </div>
+              <div className="row bg-blue-clr">
                 <BottomBar /> 
+              </div>
             </div>
         </div>
     )

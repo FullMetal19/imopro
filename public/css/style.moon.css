@@ -418,3 +418,11 @@
    transition: 0.5s;
    cursor: pointer;
 }
+.checkbox{
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer;
+}
+.checkbox:checked{
+    accent-color: var(--blue-clr);
+}
