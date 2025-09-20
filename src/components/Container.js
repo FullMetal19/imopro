@@ -46,11 +46,8 @@ export function HouseContainer({ data, onVisit, onDetails })
     return (
 
       <div className="card my-4 shadow-sm">
-        <div className="d-flex px-2 py-1">
-         <span className="text-secondary mb-2"> { data?.company?.name} </span>
-        </div>
         {/* Image principale */}
-        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "240px", objectFit: "cover" }} />
+        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Galerie */}
         <div className="d-flex gap-3 p-3">
           <img src={ data?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
@@ -58,8 +55,8 @@ export function HouseContainer({ data, onVisit, onDetails })
           <img src={ data?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
         </div>
         {/* Contenu */}
-        <div className="border-top py-2 px-3">
-          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
+        <div className="px-3">
+          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4 mb-3">
            { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
         </div>
