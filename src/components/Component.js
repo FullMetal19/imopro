@@ -55,7 +55,7 @@ export function ServiceComponent()
                 }))
               }
               {
-                error ? ( <div className="col-md-12 mt-3"> <div className="bg-light border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
               }
               {
                 ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
@@ -88,9 +88,9 @@ export function LocationComponent()
         <div className="col-lg-10 mt-5">
           <div className="row mb-3">
             <div className="col-lg-6 col-md-8">
-              <div className="d-flex flex-column align-items-center">
-                <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h2>
-                <p className="text-secondary text-center" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+              <div className="d-flex flex-column">
+                <h2 className="text-secondary" >Des services accessibles et flexibles </h2>
+                <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
               </div>
             </div>
             <div className="col-lg-12">
@@ -196,8 +196,8 @@ export function HouseComponent() {
     return (
 
         <div className="col-lg-10 mt-5">
-          <div className="row justify-content-center mb-4">
-            <div className="col-lg-6 col-md-8">
+          <div className="row justify-content-center">
+            <div className="col-lg-6 col-md-8 mb-4">
               <div className="d-flex flex-column align-items-center">
                 <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h2>
                 <p className="text-secondary text-center" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
