@@ -210,7 +210,7 @@ export function HouseComponent() {
                     </div> ) 
                 }  
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead mb-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead mb-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
                     ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead mb-3"> La liste de propriétés, vide. </div> ) : null

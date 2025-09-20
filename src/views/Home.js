@@ -40,7 +40,7 @@ export function Home(){
           </div>
             
           {/* ************************************************************************ */}
-            <div className="container-fluid bg-three-clr py-5 my-5"> <LocationComponent /> </div>
+            <div className="container-fluid bg-gray-light py-5 my-5"> <LocationComponent /> </div>
           {/* ************************************************************************ */}
           <div className="row justify-content-center"> 
             <HouseComponent /> 
