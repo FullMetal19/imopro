@@ -50,31 +50,30 @@ export function HouseContainer({ data, onVisit, onDetails })
          <span className="text-secondary mb-2"> { data?.company?.name} </span>
         </div>
         {/* Image principale */}
-        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "200px", objectFit: "cover" }} />
+        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "240px", objectFit: "cover" }} />
         {/* Galerie */}
-        <div className="d-flex justify-content-around p-3">
+        <div className="d-flex justify-content-around p-2">
           <img src={ data?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
           <img src={ data?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
           <img src={ data?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
         </div>
 
         {/* Contenu */}
-       <div className="card-body">
+       <div className="card-body border-top">
          {/* Badge prix */}
-         <span className="badge bg-light text-primary mb-2 px-3 py-2">
+         <span className="badge lead bg-gray-light-clr border text-secondary mb-2 px-3 py-2">
            { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
          </span>
          <hr />
          <h5 className="card-title text-secondary"> { data?.subtitle + ' ' + data?.title } </h5>
-         <p className="text-muted mb-2"> { data?.address } </p>
+         <p className="text-secondary mb-2"> { data?.address } </p>
          <hr />
         {/* Boutons */}
         <div className="d-flex justify-content-between">
-          <a href={"/propriete/" + data?.id } className="btn btn-outline-primary d-flex align-items-center" onClick={onDetails}  >
+          <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center" onClick={onDetails}  >
             <i className="bi bi-eye me-2"></i> Details
           </a>
-
-          <button className="btn btn-primary d-flex align-items-center" onClick={onVisit} >
+          <button className="btn btn-secondary d-flex align-items-center" onClick={onVisit} >
             <i className="bi bi-geo-alt-fill me-2"></i> Visit
           </button>
         </div>
