@@ -39,7 +39,7 @@ export function Home(){
             <ServiceComponent/>
           </div>
           {/* ************************************************************************ */}
-          <div className="row justify-content-center"> 
+          <div className="row justify-content-center bg-gray-light py-5"> 
             <LocationComponent />
           </div>
           {/* ************************************************************************ */}
