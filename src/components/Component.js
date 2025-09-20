@@ -55,10 +55,10 @@ export function ServiceComponent()
                 }))
               }
               {
-                error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                error ? ( <div className="col-md-12 mt-3"> <div className="bg-light border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
               }
               {
-                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
               } 
               </div> 
             </div>
@@ -85,10 +85,16 @@ export function LocationComponent()
         
     return (
 
-        <div className="container py-5"> 
-            <SectionTitle text={ 'Lorem Ipsum is simply' } />
-            <SubTitle text={ 'Lorem Ipsum is simply' } />
-            <div className="row mt-4 d-flex justify-content-center">       
+        <div className="col-lg-10 mt-5">
+          <div className="row mb-3">
+            <div className="col-lg-6 col-md-8">
+              <div className="d-flex flex-column align-items-center">
+                <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h2>
+                <p className="text-secondary text-center" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="row mt-4 d-flex justify-content-center">       
                 { 
                     isLoading ? ( <div className="row"> <LocationSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} /> </div> ) : (
                     <div className="slider-container">
@@ -107,7 +113,9 @@ export function LocationComponent()
                 {
                     ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
                 } 
-            </div> 
+              </div>
+            </div>
+          </div> 
         </div> 
 
     )
@@ -188,7 +196,7 @@ export function HouseComponent() {
     return (
 
         <div className="col-lg-10 mt-5">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-4">
             <div className="col-lg-6 col-md-8">
               <div className="d-flex flex-column align-items-center">
                 <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h2>
