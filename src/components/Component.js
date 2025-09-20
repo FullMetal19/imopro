@@ -308,8 +308,8 @@ export function FieldComponent() {
           <div className="row justify-content-center">
             <div className="col-lg-5 col-md-8">
               <div className="d-flex flex-column align-items-center mb-3">
-                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
-                <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+                <h3 className="text-secondary text-center" >Des services accessibles et flexibles </h3>
+                <p className="text-secondary text-center" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
               </div>
             </div>
             <div className="col-lg-12">

@@ -45,7 +45,7 @@ export function HouseContainer({ data, onVisit, onDetails })
 {
     return (
 
-      <div className="card my-4 shadow-sm">
+      <div className="card my-4 shadow-sm border-0">
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Galerie */}

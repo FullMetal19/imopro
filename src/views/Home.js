@@ -61,7 +61,7 @@ export function Home(){
               <FieldComponent />
             </div>
             {/* ************************************************************************ */}
-            <div className="row justify-content-center"> 
+            <div className="row justify-content-center pb-5"> 
               <TestimonialComponent />
             </div>
             
