@@ -189,9 +189,9 @@ export function HouseComponent() {
 
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
-            <div className="col-lg-5 col-md-8">
-              <div className="d-flex flex-column align-items-center mb-3">
-                <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h3>
+            <div className="col-lg-6 col-md-8">
+              <div className="d-flex flex-column align-items-center">
+                <h2 className="text-secondary text-center" >Des services accessibles et flexibles </h2>
                 <p className="text-secondary text-center" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
               </div>
             </div>
