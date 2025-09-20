@@ -55,8 +55,8 @@ export function HouseContainer({ data, onVisit, onDetails })
           <img src={ data?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
         </div>
         {/* Contenu */}
-        <div className="px-3">
-          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4 mb-3">
+        <div className="px-3 pb-3 pt-1">
+          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
            { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
         </div>
