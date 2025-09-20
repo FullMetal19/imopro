@@ -50,7 +50,7 @@ export function Home(){
             <div className="row d-flex justify-content-center align-items-center h-100"> 
               <div className="d-flex justify-content-center align-items-center mt-3" > 
                 <button className='btn circle bg-white shadow p-4 rounded-circle' onClick={ ()=>{ setModalState(true) } } > 
-                  <i class="bi bi-play-circle fs-3 bg-blue-clr"></i> 
+                  <i class="bi bi-play-circle fs-1 text-blue-clr"></i> 
                 </button>
               </div>
             </div>
