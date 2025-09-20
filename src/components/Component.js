@@ -28,26 +28,41 @@ export function ServiceComponent()
 
     return (
 
-        <div className="container mt-5">
-            <SectionTitle text={ 'Lorem Ipsum is simply' } />
-            <div className="row py-5 d-flex justify-content-center"> 
-            {  
+        <div className="col-lg-10 mt-5">
+          <div className="row">
+            <div className="col-lg-5 col-md-8">
+              <div className="d-flex flex-column mb-3">
+                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
+                <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="row py-5 d-flex justify-content-center"> 
+              {  
                 isLoading ? ( <div className="row"> <ServiceSkeleton value={ 3 } /> </div> ) : (
                 data?.map( (item , index) => {
                     return (
-                        <ServiceContainer title={ item.title } desc={ item.desc } key={index} > 
-                            <a type="submit" href={"/service"} className="btn btn-white mb-2 px-4"> Explorer plus </a> 
-                        </ ServiceContainer>
+                      <div className="col-lg-4" key={index}>
+                        <div className="shadow-sm rounded-2 d-flex flex-column align-items-center p-4 scale bg-white">
+                          <span className="text-secondatry mb-3"> <i className="bi bi-patch-check fs-3"></i> </span>
+                          <div className="card-body mt-2">
+                            <p className="font-lg bold text-muted text-center"> { item.title } </p>
+                            <p className="text-muted text-center"> { item.desc } </p>
+                          </div>
+                        </div>
+                      </div>
                     )
                 }))
-            }
-            {
-                error ? ( <div className="col-md-12 mt-3"> <div className="alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
-            }
-            {
-                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
-            } 
-            </div> 
+              }
+              {
+                error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+              }
+              {
+                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+              } 
+              </div> 
+            </div>
+          </div>
         </div>
     )
 }
@@ -172,29 +187,37 @@ export function HouseComponent() {
 
     return (
 
-        <div className="container py-5"> 
-            <SectionTitle text={ 'Lorem Ipsum is simply' } />
-            <SubTitle text={ 'Lorem Ipsum is simply' } />
-            <div className="row mt-4 d-flex justify-content-center"> 
+        <div className="col-lg-10 mt-5">
+          <div className="row">
+            <div className="col-lg-5 col-md-8">
+              <div className="d-flex flex-column mb-3">
+                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
+                <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
                     <div className="slider-container">
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <HouseContainer key={index} price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company?.name} />
+                                    <HouseContainer key={index} data={item} price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company?.name} />
                                 )}) 
                             }
                         </Slider>
                     </div> ) 
                 }  
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead mb-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead mb-3"> La liste de propriétés, vide. </div> ) : null
                 }  
+              </div> 
             </div> 
+          </div> 
         </div> 
     )
 }
@@ -273,10 +296,16 @@ export function FieldComponent() {
 
     return (
 
-        <div className="container py-5"> 
-            <SectionTitle text={ 'Lorem Ipsum is simply' } />
-            <SubTitle text={ 'Voir quelques terrains' } />
-            <div className="row mt-4 d-flex justify-content-center"> 
+        <div className="col-lg-10 mt-5">
+          <div className="row">
+            <div className="col-lg-5 col-md-8">
+              <div className="d-flex flex-column mb-3">
+                <h3 className="text-secondary" >Des services accessibles et flexibles </h3>
+                <p className="text-secondary" > Agrospace propose des solutions faciles à utiliser avec des offres spéciales pour récompenser votre fidélité.</p>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? ( <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div> ) : (
                     <div className="slider-container">
@@ -290,12 +319,14 @@ export function FieldComponent() {
                     </div> ) 
                 } 
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead"> Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }  
-            </div> 
+              </div> 
+            </div>
+          </div>  
         </div> 
     )
 }
@@ -333,10 +364,10 @@ export function TestimonialComponent() {
                     </div> ) 
                 }  
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-gray-light border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-gray-light border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 } 
             </div> 
         </div> 

@@ -7,7 +7,8 @@
     --four-clr : #171B2A ;
     --five-clr : #282B38 ;
     --six-clr : #707070 ;
-    --blue-clr : rgb(29, 56, 92);
+    --blue-clr : #3b5998;
+    --gray-light : #e6e6e6;
 }
 .hide-item{
     display: none;
@@ -33,7 +34,13 @@
 .bg-white-trans{
     background-color: rgba(0,0,0,0.1)  !important;
 }
+.bg-gray-light{
+    background-color: var(--gray-light)  !important;
+}
 
+.text-blue-clr{
+    color: var(--blue-clr)  !important;
+}
 
 .text-clr {
     color: var(--four-clr)  !important;
@@ -176,12 +183,24 @@
 /* ********************* * SLIDE * ******************* */
 .slides , .slide-fixed, .bg-img{
     width: 100% !important;
-    height: 100vh !important;
+    height: 60vh !important;
     margin: 0 !important;
-    background-image: url('../img/slide-1-2.png') !important;
+    background-image: url('../img/home-top-img.jpg') !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+}
+.slides-half-cover{
+    position: absolute;
+    margin-left: 0px !important;
+    float: left;
+    left: 0px;
+    width: 50%;
+    height: 60vh !important;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.slides{
+    background-attachment: fixed !important;
 }
 .slide-fixed{
     height: 80vh !important;
@@ -204,7 +223,6 @@
     height: 90vh !important;
     background-color: rgba(255, 255, 255, 0.4) !important;
 }
-
 .sidebar, .sub-sidebar{
     width: 120px !important;
     padding: 0px;
@@ -243,8 +261,10 @@
         display: flex !important;
         flex-direction: column !important;
     }
-
-}
+    .slides-half-cover{
+      width: 100%;
+    }
+ } 
 
 .fs-xs{
     font-size: small !important;
@@ -367,7 +387,6 @@
 
 
 
-
 .containes {
     display: flex;
     gap: 4px;
@@ -392,4 +411,10 @@
     .column {
         flex: 1 1 100%; /* 1 colonne en mobile */
     }
+}
+
+.scale:hover{
+   transform: scale(1.04) !important;
+   transition: 0.5s;
+   cursor: pointer;
 }

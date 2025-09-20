@@ -1,117 +1,94 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { UserApi } from '../services/user.api';
+
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 
-export function TopBar ({designClass=null}){
-
-    return (
-  
-      <div className={`row d-flex justify-content-between align-items-center px-4 ${designClass}`}> 
-          {/* ****************************************************************** */}
-          <div className="col-md-5 d-flex align-items-center"> 
-              <div className="d-flex align-items-center justify-content-center me-5">
-                  <img src={'../img/icons8-nouveau-message-96.png'} alt="Logo" width={20} height={20} className="hide me-1" />
-                  <span className="color-gray hide" > immoPro@gmail.com </span>
+export function NavigationBar({page=1}) 
+{
+  return (
+    <div className="col-12">
+      <div className={`row bg-white`}> 
+        <nav className="navbar navbar-expand-lg bg-white shadow-sm">
+          <div className="container-fluid py-2">
+            {/* Logo */}
+            <a className="navbar-brand d-flex align-items-center" href="/">
+              <span className="bg-secondary px-2 py-1 text-light fw-bold rounded-start-2 small border border-light"> <i class="bi bi-house-door-fill"></i> </span>
+              <span className="bg-secondary border border-light text-light px-2 py-1 fw-bold rounded-end-2 small">  IMOPRO </span>
+            </a>
+            {/* Burger menu pour mobile */}
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            {/* Liens */}
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===1) && 'text-blue-clr'}`} href="/"> <i className="bi bi-plus"></i> Accueil </a>
+                </li>
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/produits"> <i className="bi bi-plus"></i> Produits</a>
+                </li>
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/tarifs"> <i className="bi bi-plus"></i> Tarifs freemium</a>
+                </li>
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/support"> <i className="bi bi-plus"></i> Support</a>
+                </li>
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/partenariats"> <i className="bi bi-plus"></i> Partenariats</a>
+                </li>
+              </ul>
+              {/* Actions à droite */}
+              <div className="d-flex align-items-center">
+                <a className="btn btn-sm btn-outline-secondary me-2" href="/inscription"> S'inscrire </a>
+                {
+                  localStorage.getItem('token') ? 
+                  ( <button className="btn btn-sm btn-secondary" type="button" > Se-déconnecter </button> ) :
+                  ( <a href="/" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
+                }     
               </div>
-              <div className="d-flex align-items-center justify-content-center">
-                  <img src={'../img/icons8-position-100-3.png'} alt="Logo" width={20} height={20} className="me-1 hide" />
-                  <span className="color-gray hide" > Sanar,Saint Louis </span>
-              </div>
-          </div>
-          {/* ****************************************************************** */}
-          <div className="col-lg-6 d-flex align-items-center justify-content-end"> 
-              {/* <a className="me-5 nav-link" href="/recherche"> <img src={'../img/icons8-search-50.png'} alt="Logo" title="recherche" width={20} height={20} className="" /> </a> */}
-              <span className="color-gray me-5"> Français </span>
-              <div className="d-flex"> 
-                  <a className="me-2 nav-link" href="/"> <img src={'../img/icons8-twitter-100.png'} alt="Logo" title="twitter" width={20} height={20} className="" /> </a>
-                  <a className="me-2 nav-link" href="/"> <img src={'../img/icons8-facebook-90.png'} alt="Logo" title="facebook" width={20} height={20} className="" /> </a>
-                  <a className="me-2 nav-link" href="/"> <img src={'../img/icons8-instagram-100.png'} alt="Logo" title="instagram" width={20} height={20} className="" /> </a>
-                  <a className="me-2 nav-link" href="/"> <img src={'../img/icons8-lecture-de-youtube-100.png'} alt="Logo" title="youtube" width={20} height={20} className="" /> </a>
-                  <a className="me-2 nav-link" href="/"> <img src={'../img/icons8-tic-tac-100.png'} alt="Logo" title="tik tok" width={20} height={20} className="" /> </a>
-              </div>
-          </div>
-          {/* ****************************************************************** */}
-      </div>
-    )
-  }
-  
-
-export function NavigationBar ({designClass, page}) {
-
-    const navigate = useNavigate();
-    const user = UserApi();
-
-    const logout = async () => {
-        try {
-            sessionStorage.clear();  
-            navigate('/');
-            // const res = await user.logout();
-            // if(res.status) {
-            //     sessionStorage.clear();  
-            //     navigate('/');
-            // }      
-        } catch (err) { 
-            throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
-        }
-    } 
-
-    const [isSticky, setIsSticky] = useState(false);
-    
-    useEffect(() => {
-        const handleScroll = () => setIsSticky(window.scrollY > 60); 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    return (
-
-        <nav className={`navbar navbar-expand-lg ${designClass} ${isSticky ? "fixed-top shadow navBar-outline" : "transition-2"}`} >
-            <div className="container-fluid px-4">
-                {/* ********************************************************* */}
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                {/* ********************************************************* */}
-                <div className="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <div className="d-flex align-items-center justify-content-center">
-                            <img src={'../img/icons8-accueil-128.png'} alt="Logo" width={60} height={60} className="" />
-                            {/* <span className="h1 ms-2 color-gray" > USVC </span> */}
-                        </div>
-                    </div>
-                    <div className="navbar-nav gap-4">          
-                        <a className={`nav-link link-outline ${ (page === 1) ? 'main-color' : 'color-gray' }`} href="/"> Accueil </a>
-                        <a className={`nav-link link-outline ${ (page === 2) ? 'main-color' : 'color-gray' }`} href="/logement"> Logement + </a>
-                        <a className={`nav-link link-outline ${ (page === 3) ? 'main-color' : 'color-gray' }`} href="/terrain"> Terrain + </a>
-                        <a className={`nav-link link-outline ${ (page === 4) ? 'main-color' : 'color-gray' }`} href="/service"> Service + </a>
-                        <a className={`nav-link link-outline ${ (page === 5) ? 'main-color' : 'color-gray' }`} href="/contact"> Contact </a>
-                        {
-                            ( sessionStorage.getItem('token') ) ?
-                            (   <div className='d-flex align-items-center justify-content-center' >
-                                    <a className={`nav-link link-outline me-4 ${ (page === 6) ? 'main-color' : 'color-gray' }`} href={ '/mon-compte' } > mon-compte </a>
-                                    <button className="btn btn-main" onClick={logout} > Deconnexion </button>
-                                </div>   
-                            ) :
-                            ( <a className="btn btn-main" href="/connexion">  Se-connecter </a> )           
-                        } 
-                    </div>
-                </div>
-  
             </div>
+          </div>
         </nav>
-    )
+      </div>
+    </div>
+  );
 }
 
-export function Header({designClass, page}) 
+
+
+export function TopBar() 
 {
-    return (
-    
-        <div className="container-fluid"> 
-            <TopBar designClass={'bg-blue-clr py-2'} />
-            <NavigationBar designClass={designClass} page={page} />
+  return (
+
+    <div className="col-12">
+      <div className={`row bg-blue-clr d-flex justify-content-between align-items-center px-4 py-3`}> 
+        {/* ****************************************************************** */}
+        <div className="col-lg-5 d-flex align-items-center"> 
+          <div className="d-flex align-items-center justify-content-center me-4">
+            <i class="bi bi-envelope text-white me-1 mt-1 small hide"></i>
+            <span className="color-gray hide"> imopro@gmail.com </span>
+          </div>
+          <div className="d-flex align-items-center justify-content-center">
+            <i class="bi bi-geo-alt text-white me-1 mt-1 small hide"></i>
+            <span className="color-gray hide"> Dakar, Medina </span>
+          </div>
         </div>
-    )
+        {/* ****************************************************************** */}
+        <div className="col-lg-6 d-flex align-items-center justify-content-end"> 
+          <div className="d-flex gap-2"> 
+            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-twitter-x text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-facebook text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-linkedin text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-youtube text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-instagram text-white"></i> </a>
+          </div>
+        </div>
+        {/* ****************************************************************** */}
+      </div> 
+    </div>
+  );
 }
 
