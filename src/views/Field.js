@@ -122,13 +122,13 @@ export function Field(){
             </div> 
           </div>
           {/* ******************************************** */}
-          <div className="row justify-content-center p-3">
+          <div className="row justify-content-center py-2 px-1">
           <div className="col-lg-11">
-          <div className="row py-2"> 
+          <div className="row pb-5"> 
             { 
                 isLoading ? (  <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
                     filteredData?.map(( item , index ) => { return(
-                    <div className="col-md-6 col-lg-4 mb-4" key={index}> 
+                    <div className="col-md-6 col-lg-4 mb-2" key={index}> 
                         <FieldContainer data={ item } />
                     </div>      
                     )

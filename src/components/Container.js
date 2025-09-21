@@ -45,9 +45,9 @@ export function HouseContainer({ data, onVisit })
 {
     return (
 
-      <div className="d-flex flex-column bg-white my-4 shadow-sm border">
+      <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
         {/* Image principale */}
-        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
+        <img src={ data?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Galerie */}
         <div className="d-flex gap-3 p-3">
           <img src={ data?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
@@ -84,9 +84,9 @@ export function FieldContainer({ data, onVisit }) {
 
     return (
     
-        <div className="d-flex flex-column bg-white my-4 shadow-sm border">
+        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
         {/* Image principale */}
-        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
+        <img src={ data?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Contenu */}
         <div className="px-3 py-4">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
