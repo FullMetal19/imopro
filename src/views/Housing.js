@@ -117,12 +117,12 @@ export function Housing(){
             </div> 
           </div>
           {/* ******************************************** */}
-          <div className="row py-5"> 
+          <div className="row py-5 px-2"> 
             { 
                 isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
                 filteredClasses?.map(( item , index ) => { return(
                     <div className="col-md-6 col-lg-4 mb-5" key={index}> 
-                        <HouseContainer price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company.name} />
+                        <HouseContainer data={ item } />
                     </div>      
                     )
                 }))      

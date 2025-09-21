@@ -120,7 +120,7 @@ export function Field(){
                 isLoading ? (  <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
                     filteredData?.map(( item , index ) => { return(
                     <div className="col-md-6 col-lg-4 mb-5" key={index}> 
-                        <FieldContainer image={ item.media[0].path } price={ item.price } title={ item.title } desc={ item.description } id={ item.id } />
+                        <FieldContainer data={ item } />
                     </div>      
                     )
                 }))      
