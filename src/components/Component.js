@@ -164,13 +164,13 @@ export function NearestHousesComponent() {
                     </div> ) 
                 } 
                 {
-                    errCoord ? ( <div className="col-lg-6 col-md-8 shadow bg-white rounded-3 p-4 color-blue"> Veuillez autoriser la géolocalisation pour avoir la liste de nos logements qui vous sont proche. </div> ) : null
+                    errCoord ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> Veuillez autoriser la géolocalisation pour avoir la liste de nos logements qui vous sont proche. </div> ) : null
                 } 
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="d-flex alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }  
             </div> 
         </div> 
@@ -275,7 +275,7 @@ export function NearestFieldsComponent() {
                     errCoord ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> Veuillez autoriser la géolocalisation pour avoir la liste de nos terrains qui vous sont proche. </div> ) : null
                 } 
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="mt-3 bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
                     ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
