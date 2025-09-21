@@ -44,10 +44,10 @@ export function ServiceComponent()
                     return (
                       <div className="col-lg-4" key={index}>
                         <div className="shadow-sm rounded-2 d-flex flex-column align-items-center p-4 scale bg-white">
-                          <span className="text-secondatry mb-3"> <i className="bi bi-patch-check fs-3"></i> </span>
+                          <span className="text-secondatry mb-3"> <i className="bi bi-patch-check fs-1"></i> </span>
                           <div className="card-body mt-2">
-                            <p className="font-lg bold text-muted text-center"> { item.title } </p>
-                            <p className="text-muted text-center"> { item.desc } </p>
+                            <p className="lead text-secondary text-center"> { item.title } </p>
+                            <p className="text-secondary text-center"> { item.description } </p>
                           </div>
                         </div>
                       </div>
