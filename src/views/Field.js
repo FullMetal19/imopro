@@ -83,7 +83,10 @@ export function Field(){
           <div className="row"> 
             <div className="col-lg-12 py-5"> 
               {/* ------------------------------------------------ */}
-              <div className="row p-3 bg-blue-clr">
+              <div className="row justify-content-center p-3 bg-blue-clr">
+              <div className="col-lg-11"> 
+              <div className="row">
+
                 <div className="col-12 d-flex align-items-center mb-3 p-1 rounded-1 px-4"> 
                    <span className="text-white lead"> <i class="bi bi-funnel"></i> Filtrer les terrains </span>
                 </div> 
@@ -111,7 +114,11 @@ export function Field(){
                     }
                   </select>
                 </div>  
+
               </div>
+              </div>
+              </div>
+
             </div> 
           </div>
           {/* ******************************************** */}

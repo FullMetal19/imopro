@@ -85,8 +85,11 @@ export function Housing(){
           <div className="row"> 
             <div className="col-lg-12 py-5"> 
               {/* ------------------------------------------------ */}
-              <div className="row p-3 bg-gray-light">
-                <div className="col-12 d-flex align-items-center mb-3 border-bottom p-1 rounded-1 px-4"> 
+              <div className="row justify-content-center p-3 bg-gray-light">
+              <div className="col-lg-11"> 
+              <div className="row">
+
+                <div className="col-lg-11 d-flex align-items-center mb-3 border-bottom p-1 rounded-1 px-4"> 
                    <span className="text-secondary lead"> <i class="bi bi-funnel text-secondary"></i> Filtrer les logements </span>
                 </div> 
                 <div className="col-sm-4 mb-2"> 
@@ -113,7 +116,11 @@ export function Housing(){
                     }
                   </select>
                 </div>  
+
               </div> 
+              </div>
+              </div>
+
             </div> 
           </div>
           {/* ******************************************** */}
