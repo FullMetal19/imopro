@@ -55,7 +55,7 @@ export function ValidatedProperty()
                     }
                     <div className={filter ? "col-md-9" : "col-md-12"}>
                         <div className="d-flex flex-column">   
-                            <div className="row d-flex flex-column bg-gray-light pt-4 px-4 border-bottom"> 
+                            <div className="row d-flex flex-column alert alert-primary pt-4 px-4 border-bottom"> 
                                 <div className="flex-fluid gap-2 mb-4"> 
                                     <span className="h5 text-secondary mt-2 ps-2 me-4"> Généralité </span> 
                                     <div className="d-flex gap-3">

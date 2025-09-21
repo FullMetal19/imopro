@@ -60,7 +60,7 @@ export function Layout({ menu, companyId, children })
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/solde` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-wallet2-fill fs-3 text-blue-clr"></i>
+                                    <i class="bi bi-wallet-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Solde </span> 
                                 </div>
                             </a>
