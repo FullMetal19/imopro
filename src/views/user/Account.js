@@ -23,12 +23,11 @@ export function Account()
 {
     const [btnstate, setBtnstate] = useState(true);
 
-    const uid = sessionStorage.getItem('uid');
     const user = UserApi();
 
     const fetchUser = async () => {
         try {
-            const res = await user.findOne(uid);
+            const res = await user.findOne();
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);

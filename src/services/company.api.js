@@ -15,11 +15,11 @@ export function CompanyApi(contentType = "application/json")
 
         insert : (data, uid) => https.post(`/api/company/${uid}`, data), 
 
-        setStatus : (id, uid, status) => https.put(`/api/company/update-status/${id}/${uid}`, status),
+        setStatus : (id, status) => https.put(`/api/company/update-status/${id}`, status),
 
         // validate : (id, uid) => https.put(`/api/company/validate/${id}/${uid}`),
         
-        unvalidate : (id, uid, message) => https.put(`/api/company/unvalidate/${id}/${uid}`, message),
+        unvalidate : (id, message) => https.put(`/api/company/unvalidate/${id}`, message),
 
         // setBlock : (id, uid) => https.put(`/api/company/block/${id}/${uid}`),
 

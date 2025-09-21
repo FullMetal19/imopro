@@ -9,7 +9,6 @@ import { refresh } from "aos";
 export function Modal({ method, message, companyId, refetch })
 {
     const company = CompanyApi();
-    const uid = sessionStorage.getItem('uid');
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +17,7 @@ export function Modal({ method, message, companyId, refetch })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await company.setStatus(companyId, uid, {status : 2});
+            const res = await company.setStatus(companyId, {status : 2});
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
             refetch();
@@ -65,7 +64,6 @@ export function Modal({ method, message, companyId, refetch })
 export function Modal1({ method, message, companyId })
 {
     const company = CompanyApi();
-    const uid = sessionStorage.getItem('uid');
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +72,7 @@ export function Modal1({ method, message, companyId })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await company.setStatus(companyId, uid, {status : -2});
+            const res = await company.setStatus(companyId, {status : -2});
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 
@@ -120,7 +118,6 @@ export function Modal1({ method, message, companyId })
 export function Modal2({ method, message, companyId, refetch })
 {
     const company = CompanyApi();
-    const uid = sessionStorage.getItem('uid');
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -129,7 +126,7 @@ export function Modal2({ method, message, companyId, refetch })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await company.setStatus(companyId, uid, {status : 2});
+            const res = await company.setStatus(companyId, {status : 2});
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
             refetch();
@@ -176,7 +173,6 @@ export function Modal2({ method, message, companyId, refetch })
 export function UnvalidationForm({ method, companyId })
 {
     const company = CompanyApi();
-    const uid = sessionStorage.getItem('uid');
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -189,7 +185,7 @@ export function UnvalidationForm({ method, companyId })
         setIsLoading(true);
         const data = {message : message}
         try{
-            const res = await company.unvalidate(companyId, uid, data);
+            const res = await company.unvalidate(companyId, data);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 

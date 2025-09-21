@@ -8,7 +8,7 @@ export function UserApi(contentType = "application/json")
 
     return {
 
-        findOne: (id) => https.get(`/api/user/${id}`),
+        findOne: (id) => https.get(`/api/user/one`),
 
         findAll: () => https.get(`/api/user`),
 

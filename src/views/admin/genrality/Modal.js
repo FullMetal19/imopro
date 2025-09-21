@@ -27,7 +27,6 @@ export function MessageModal({ method, message })
 export function Modal({ method, message, propertyId })
 {
     const product = ProductApi();
-    const uid = sessionStorage.getItem('uid');
     
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +35,7 @@ export function Modal({ method, message, propertyId })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await product.updateStatus(propertyId, uid, {status : 1});
+            const res = await product.updateStatus(propertyId, {status : 1});
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 
@@ -80,7 +79,6 @@ export function Modal({ method, message, propertyId })
 export function UnvalidationForm({ method, propertyId })
 {
     const product = ProductApi();
-    const uid = sessionStorage.getItem('uid');
     
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -92,7 +90,7 @@ export function UnvalidationForm({ method, propertyId })
         setIsLoading(true);
         const data = {message : message}
         try{
-            const res = await product.unvalidate(propertyId, uid, data);
+            const res = await product.unvalidate(propertyId, data);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 

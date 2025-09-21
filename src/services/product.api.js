@@ -27,9 +27,9 @@ export function ProductApi(contentType = "application/json")
         findOne: (id) => http.get(`/api/property/${id}`),
 
         // Admin
-        updateStatus: (propertyId, uid, status) => https.put(`/api/property/update-status/${propertyId}/${uid}`, status),
+        updateStatus: (propertyId, status) => https.put(`/api/property/update-status/${propertyId}`, status),
 
-        unvalidate: (propertyId, uid, message) => https.put(`/api/property/unvalidate/${propertyId}/${uid}`, message),
+        unvalidate: (propertyId, message) => https.put(`/api/property/unvalidate/${propertyId}`, message),
 
         findAllByStatus: (status) => https.get(`/api/property/find-all-by-status/${status}`),
 
