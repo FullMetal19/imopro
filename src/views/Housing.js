@@ -126,11 +126,11 @@ export function Housing(){
           {/* ******************************************** */}
           <div className="row justify-content-center p-3">
           <div className="col-lg-11"> 
-          <div className="row py-5 px-2"> 
+          <div className="row py-2 px-2"> 
             { 
                 isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
                 filteredClasses?.map(( item , index ) => { return(
-                    <div className="col-md-6 col-lg-4 mb-5" key={index}> 
+                    <div className="col-md-6 col-lg-4 mb-4" key={index}> 
                         <HouseContainer data={ item } />
                     </div>      
                     )
