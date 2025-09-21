@@ -210,7 +210,7 @@ export function HouseComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <div className="px-2">
+                                    <div className="px-3">
                                       <HouseContainer key={index} data={item} />
                                     </div>
                                 )}) 
@@ -320,7 +320,7 @@ export function FieldComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <div className="px-2">  
+                                    <div className="px-3">  
                                       <FieldContainer data={item} key={index} />  
                                     </div>
                                 )}) 
