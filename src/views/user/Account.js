@@ -94,7 +94,7 @@ export function Account()
           <div className="row sticky-top"> 
             <NavigationBar />
           </div>
-          <div className="row justify-content-center border"> 
+          <div className="row justify-content-center border px-3"> 
               <div className="col-lg-10 py-5"> 
                               <div className="row mt-4">
                                   {/* ************************************************************************ */}
@@ -103,15 +103,15 @@ export function Account()
                                       <div className="col-md-8 d-flex gap-3 mb-2"> 
                                           <img src={`${process.env.REACT_APP_PATH}/${data?.image}`} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-primary" /> 
                                           <div className="d-flex flex-column"> 
-                                              <span className="color-blue"> { sessionStorage.getItem('fname') + " " + sessionStorage.getItem('lname') } </span>
+                                              <span className="color-blue"> { data?.fname + " " + data?.lname } </span>
                                               <span className="color-gray"> En ligne </span>
                                           </div>
                                       </div>
                                       <div className="col-md-4 d-flex align-items-center">
                                           {
-                                            (data?.companyStatus == 0 && data?.status == 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-main" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                                            ( (data?.companyStatus == 2 && data?.status == 1) ? ( <a className="mb-3 btn px-3 btn-main" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                                            ( (data?.companyStatus == 0 && data?.status == 2) ? ( <a className="mb-3 btn px-3 btn-main" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                                            (data?.companyStatus == 0 && data?.status == 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
+                                            ( (data?.companyStatus == 2 && data?.status == 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                                            ( (data?.companyStatus == 0 && data?.status == 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                                           }
                                       </div>
                                       </div>
