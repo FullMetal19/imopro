@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { UserApi } from "../services/user.api";
 import { PaymentApi } from "../services/payment.api";
 import { ProductApi } from "../services/product.api";
+import vector from "../config/data";
 
 
 export function VideoModal( { method, url })
@@ -11,10 +12,10 @@ export function VideoModal( { method, url })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
-                    <div className="col-md-8 bg-three-clr p-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
+                    <div className="col-lg-8 col-md-11 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
+                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -65,10 +66,10 @@ export function LoginCheckerModal({ method, message })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
-                    <div className="col-md-6 bg-three-clr p-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
+                    <div className="col-md-6 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
+                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex border-top border-bottom pt-4 pb-2 mb-2">
                             <p className="color-blue"> {message} </p>
                         </div>
@@ -87,6 +88,15 @@ export function PasswordModal({ method })
     const user = UserApi();
     
     const [phone, setPhone] = useState();
+
+    const [ inputs, setInputs ] = useState();
+    
+    const handleInputs = ( event ) => {
+        const { name , value } =  event.target;
+        setInputs( { ...inputs, [name] : value   } );
+    }
+    
+
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -94,7 +104,7 @@ export function PasswordModal({ method })
         e.preventDefault();
         setIsLoading(true);
         try {
-            const res = await user.genPasswordToken({phone : phone});
+            const res = await user.genPasswordToken(inputs);
             setIsLoading(false);
             if(res.data.success){
                 setStatus(1);
@@ -110,31 +120,60 @@ export function PasswordModal({ method })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
-                    <div className="col-md-6 bg-three-clr py-3 px-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
-                        <span className="h6 main-color mt-4"> Etes vous sure de vouloir changé de mot de passe </span>
-                        <div className="d-flex border-top border-bottom py-4 mb-2">
-                            <form className="row" onSubmit={ handleForm }>  
-                                {
-                                    isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={24} width={24} alt="Logo" /> </div>  ) : null 
-                                }
-                                {
-                                    ( status === 1 ) ? 
-                                    ( <div className="col-md-12 mb-4"> <div className="alert alert-success"> Un code vous sera envoyé par messagerie mobile. </div> </div> ) :
-                                    ( status === -1 ) ?
-                                    ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Une erreur est survenue durant le traitement. Réessayez </div> </div> ) 
-                                    : null
-                                }
-                                <div className="col-lg-12 mb-3 d-flex flex-column">
-                                    <span className="border-left-main fs-xs ps-1 mb-1 color-blue"> Saisir le numéro de téléphone associé à ce compte </span> 
-                                    <input type="number" name="phone" className="form-control" placeholder="numero de tel" required onChange={ e => setPhone(e.target.value)  } />
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
+                    <div className="col-lg-6 col-md-9 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
+                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <span className="text-secondary small mt-4"> Etes vous sure de vouloir changé de mot de passe </span>
+                        <div className="d-flex border-top py-4 mb-2">
+
+                          <form onSubmit={ handleForm } className="d-flex flex-column mt-2">
+                            <div className="d-flex flex-column align-items-center gap-2 mb-4" > 
+                              <div className="d-flex mb-1" >
+                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-4 text-white"></i> </span>
+                              </div>
+                              <span className="fs-4 text-muted"> Imopro - Mot de passe oublié </span>
+                              <span className="text-muted text-center px-4 mb-4">
+                                Saisissez votre numéro de téléphone, et nous vous enverrons un code de validation pour réinitialiser rapidement et en toute sécurité votre mot de passe."  
+                              </span>
+                            </div>
+                            {
+                              isLoading && (
+                                <div className="d-flex justify-content-center align-items-center mb-3"> 
+                                   <div className="spinner-border text-success" role="status" aria-label="Chargement"></div>
                                 </div>
-                                <div className="col-md-12" > 
-                                    <button type="submit" className="btn btn-main"> Envoyez </button> 
+                              )
+                            }
+                            {
+                              status === -1 && (
+                                <div className="col-md-12 mb-2">
+                                  <div className="alert alert-danger">
+                                    Une erreur est survenue durant le traitement. Vérifiez votre numéro puis réessayez.
+                                  </div>
                                 </div>
-                            </form>
+                              )
+                            }
+                            {/* -------------------------------- */}
+                            <div className="col-md-12 mb-2"> 
+                              <div className="d-flex gap-2 mb-2">
+                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' required onChange={ handleInputs }>
+                                  <option value=""> index </option>
+                                  {
+                                    vector.phoneIndex.map( (item, index) => (
+                                       <option key={index} value={item}> {item} </option>
+                                     ) )
+                                  }
+                                </select> 
+                                <input type="number" name="phone" placeholder="Numéro de téléphone" className="w-100 border input py-3 px-3 text-muted rounded-2" required onChange={ handleInputs } />
+                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                              </div>
+                            </div>
+                            {/* -------------------------------- */}
+                            <button type="submit" className="btn btn-lg btn-secondary px-4 mt-2"> 
+                              Soumettre <i className="bi bi-arrow-right"></i> 
+                            </button> 
+                    
+                          </form>
                         </div>
                     </div>
                 </div>

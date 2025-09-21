@@ -2,15 +2,15 @@ import React from "react";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import { Home } from "./views/Home";
-// import { Housing } from "./views/Housing";
-// import { Field } from "./views/Field";
+import { Housing } from "./views/Housing";
+import { Field } from "./views/Field";
 // import { Service } from "./views/Service";
 // import { Contact } from "./views/Contact";
 import { Signin } from "./views/Signin";
 import { Signup } from "./views/Signup";
-// import { ValidateAccount } from "./views/ValidationAccount";
+import { ValidateAccount } from "./views/ValidationAccount";
 // import { PropertyDetails } from "./views/PropertyDetails";
-// import { Password } from "./views/Password";
+import { Password } from "./views/Password";
 
 // import { Account } from "./views/user/Account";
 // import { MonthPay } from "./views/user/MonthPay";
@@ -58,9 +58,13 @@ function App()
             <Routes>
 
                 <Route exact path="/" element={ <Home /> }> </Route>
+                <Route exact path="/logement" element={ <Housing /> }> </Route>
+                <Route exact path="/terrain" element={ <Field /> }> </Route>
+
                 <Route exact path="/connexion" element={ <Signin /> }> </Route>
                 <Route exact path="/inscription" element={ <Signup /> }> </Route>
-                {/* <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route> */}
+                <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route>
+                <Route exact path="/mot-de-passe-oublie" element={ <Password /> }> </Route>
                 {/* <Route exact path="/recherche" element={ <SearchProperties /> }> </Route> */}
                 
                 {/* <Route exact path="/logement" element={ <Housing /> }> </Route>

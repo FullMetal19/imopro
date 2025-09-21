@@ -10,7 +10,7 @@ export function Footer()
 
           <div className="row mt-5">
            
-            <div className="col-md-5">
+            <div className="col-md-5 mb-4">
               <div className="d-flex flex-column border border-secondary rounded-3 p-4">
                 <div className="d-flex gap-3 align-items-center">
                   <div className="fs-3 text-blue-clr mb-2">

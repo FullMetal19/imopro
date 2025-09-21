@@ -50,7 +50,7 @@ const vector = {
             ],
         
 
-     listOfFieldType :   [ 
+    listOfFieldType :   [ 
 
                {  type : 'Logement', 
                   subType : [
@@ -90,7 +90,13 @@ const vector = {
                         'tel1' : '+221 77 000 00 00',
                         'tel2' : '+221 33 000 00 00 '
                     },   
-                ]
+                ],
+
+    phoneIndex  : [  '+221', '+41', '+37'
+                    // { 'index' : '+221' },
+                    // { 'index' : '+41' },
+                    // { 'index' : '+37' },
+    ]
     
     }
     

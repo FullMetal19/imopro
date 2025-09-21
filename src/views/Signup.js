@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BottomBar } from "../components/Footer";
-import { Header } from '../components/Header';
 import { UserApi } from '../services/user.api';
+import vector from '../config/data';
 
 
 export function Signup(){
@@ -49,22 +49,22 @@ export function Signup(){
       <div className="container-fluid">
                     <div className="row">
                       {/* ************************************************************************ */}  
-                      <div className="col-md-4 d-flex align-items-center bg-gray-light p-4">
-                        <div className="d-flex flex-column p-4" >
-                          <div className="d-flex mb-3" >
-                            <span className="d-flex align-items-center justify-content-center bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                      <div className="col-md-4 d-flex align-items-center bg-gray-light px-4 py-2">
+                        <div className="d-flex flex-column p-2" >
+                          <div className="d-flex" >
+                            <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
                           </div>
-                          <span className="h1 text-secondary"> ImoPro votre entreprise immobilière </span>
-                          <span className="lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
+                          <span className="hide h1 text-secondary"> ImoPro votre entreprise immobilière </span>
+                          <span className="hide lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
                         </div>
                       </div>
                       {/* ************************************************************************ */}  
                       <div className="col-md-8 vh-100 d-flex justify-content-center px-4 align-items-center">
-                        <div className="row d-flex justify-content-center px-4">
+                        <div className="row d-flex justify-content-center px-2">
                           <div className="col-md-12 pt-4">
-                            <div className=" d-flex flex-column gap-2 mb-4" > 
+                            <div className=" d-flex flex-column gap-2" > 
                               <div className="d-flex mb-1" >
-                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-white"></i> </span>
+                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-4 text-white"></i> </span>
                               </div>
                               <span className="lead text-muted text-start fs-3"> Imopro - inscription </span>
                             </div>
@@ -75,7 +75,7 @@ export function Signup(){
                             {
                               isLoading && (
                                 <div className="col-lg-12 d-flex justify-content-center align-items-center mb-3"> 
-                                  <div className="spinner-border text-success" role="status" aria-label="Chargement"></div>
+                                  <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                                 </div>
                               )
                             }
@@ -124,8 +124,15 @@ export function Signup(){
                             </div>
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
-                              <div className="d-flex gap-1 mb-2" >
-                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-secondary"> +221 </span> 
+                              <div className="d-flex gap-1 mb-2">
+                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' onChange={ handleInputs }>
+                                  <option value=""> index </option>
+                                  {
+                                    vector.phoneIndex.map( (item, index) => (
+                                       <option key={index} value={item}> {item} </option>
+                                     ) )
+                                  }
+                                </select>
                                 <input type="number" name="phone" placeholder="Numéro de téléphone joignable" className="w-100 border input py-3 px-3 text-muted rounded-2 text-secondary" onChange={ handleInputs } required />
                                 <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                               </div>
@@ -145,7 +152,7 @@ export function Signup(){
                             </div>
                             {/* -------------------------------- */}
                             <div className="col-lg-6 mb-2"> 
-                              <div className="d-flex gap-1 mb-4" >
+                              <div className="d-flex gap-1 mb-3" >
                                 <input type="password" name="cpassword" placeholder="Confirmer mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                 <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                               </div>
@@ -163,13 +170,13 @@ export function Signup(){
                             </div>
                             {/* -------------------------------- */} 
                             <div className="col-md-12 mb-2"> 
-                              <div className="d-flex pt-3" >
-                                <button type="submit" disabled={!checked} className="btn btn-lg text-white bg-blue-clr px-4 mt-2 mb-4"> Enregistrer maintenant </button> 
+                              <div className="d-flex pt-1" >
+                                <button type="submit" disabled={!checked} className="btn text-white bg-blue-clr px-4 mt-2 mb-4"> Enregistrer maintenant </button> 
                               </div>
                             </div>
                             {/* -------------------------------- */}             
 
-                            </form>
+                          </form>
                       </div>
                     </div>
                   

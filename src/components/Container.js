@@ -41,7 +41,7 @@ export function LocationContainer({title , desc, id})
 }
 
 // ****************************************************************************************************************
-export function HouseContainer({ data, onVisit, onDetails }) 
+export function HouseContainer({ data, onVisit }) 
 {
     return (
 
@@ -66,7 +66,7 @@ export function HouseContainer({ data, onVisit, onDetails })
         </div>
         {/* Boutons */}
         <div className="d-flex justify-content-between p-3">
-          <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center" onClick={onDetails}  >
+          <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center"  >
             <i className="bi bi-eye me-2"></i> Details
           </a>
           <button className="btn btn-secondary d-flex align-items-center" onClick={onVisit} >
@@ -80,27 +80,33 @@ export function HouseContainer({ data, onVisit, onDetails })
 }
 
 //******************************************************************************************************************
-export function FieldContainer({image, price, desc, title, id}) {
+export function FieldContainer({ data, onVisit }) {
 
     return (
     
-        <div className="d-flex flex-column border bg-white mx-2"> 
-            <div className="d-flex flex-column justify-content-center align-items-center mb-3" >
-               <img alt="Logo" height={200} className="w-100" src={`${process.env.REACT_APP_PATH}/${image}`} />
-            </div>
-            <div className="d-flex flex-column px-3" >
-                <span className="text-start main-color h5 mb-1" > { title } </span>
-                <span className="text-start text-clr" > < TextReducer text={desc} maxsize={80} /> </span>
-            </div>
-            <hr />
-            <div className="d-flex justify-content-between px-3 mb-1" >
-                <div className="d-flex align-items-center mb-3">
-                    <img src={'../img/icons8-calendrier-96.png'} alt="Logo" width={20} height={20} className="me-1" />
-                    <span className="text-start" > { price } Fcfa </span>
-                </div>
-                <a className="mb-3 px-2 btn btn-main text-center nav-link text-white fs-xs py-1 link" href={ "/propriete/"+ id }> voir plus </a>
-            </div>
+        <div className="card my-4 shadow-sm border-0">
+        {/* Image principale */}
+        <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
+        {/* Contenu */}
+        <div className="px-3 pb-3 pt-1">
+          <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
+           { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
+          </span>
         </div>
+        <div className="border-top border-bottom py-2 px-3">
+          <h5 className="card-title text-secondary"> { data?.subtitle + ' ' + data?.title } </h5>
+          <p className="text-secondary mb-2"> { data?.address } </p>
+        </div>
+        {/* Boutons */}
+        <div className="d-flex justify-content-between p-3">
+          <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center" >
+            <i className="bi bi-eye me-2"></i> Details
+          </a>
+          <button className="btn btn-secondary d-flex align-items-center" onClick={onVisit} >
+            <i className="bi bi-geo-alt-fill me-2"></i> Visit
+          </button>
+        </div>
+      </div>
     )
 }
 

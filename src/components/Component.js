@@ -150,7 +150,6 @@ export function NearestHousesComponent() {
     return (
 
         <div className="container py-5"> 
-            <SectionTitle text={ 'Liste des logements les plus proches de votre position' } />
             <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -258,8 +257,7 @@ export function NearestFieldsComponent() {
 
     return (
 
-        <div className="container py-5"> 
-            <SectionTitle text={ 'Liste des terrains les plus proches de votre position' } />
+        <div className="col-lg-12 py-5"> 
             <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? (  <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -274,13 +272,13 @@ export function NearestFieldsComponent() {
                     </div> ) 
                 } 
                 {
-                    errCoord ? ( <div className="col-lg-6 col-md-8 shadow bg-white rounded-3 p-4 color-blue"> Veuillez autoriser la géolocalisation pour avoir la liste de nos terrains qui vous sont proche. </div> ) : null
+                    errCoord ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> Veuillez autoriser la géolocalisation pour avoir la liste de nos terrains qui vous sont proche. </div> ) : null
                 } 
                 {
-                    error ? ( <div className="col-md-12 mt-3"> <div className="alert alert-danger p-5 mt-3 " > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                    error ? ( <div className="col-md-12 mt-3"> <div className="mt-3 bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex alert alert-primary p-5 mt-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }   
             </div> 
         </div> 
@@ -320,7 +318,7 @@ export function FieldComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <FieldContainer title={ item.title } desc={ item.description } image={ item.media[0].path } price={ item.price } id={ item.id } key={index} />
+                                    <FieldContainer data={item} key={index} />
                                 )}) 
                             }
                         </Slider>

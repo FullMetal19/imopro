@@ -191,10 +191,8 @@
     background-repeat: no-repeat !important;
 }
 .slides-half-cover{
-    position: absolute;
-    margin-left: 0px !important;
-    float: left;
-    left: 0px;
+    position: relative;
+    left: 0;
     width: 50%;
     height: 60vh !important;
     background-color: rgba(0, 0, 0, 0.7);
@@ -277,10 +275,12 @@
 }
 .modal-container{
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
+    top: 0px;
+    left: 0px;
+    background-color: rgba(99, 106, 112, 0.7);
     width: 100%;
     height: 100vh;
-    z-index: 999;
+    z-index: 99999;
 }
 .img-slide{
     width: 100%;
@@ -411,6 +411,9 @@
     .column {
         flex: 1 1 100%; /* 1 colonne en mobile */
     }
+    .flex-column-sm{
+        flex-direction: column !important;
+    }
 }
 
 .scale:hover{
@@ -425,4 +428,8 @@
 }
 .checkbox:checked{
     accent-color: var(--blue-clr);
+}
+
+.width-140{
+    width: 140px !important;
 }

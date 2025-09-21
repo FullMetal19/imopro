@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Footer } from "../components/Footer";
 import { NearestHousesComponent} from "../components/Component";
-import { Header } from "../components/Header";
+import { NavigationBar, TopBar } from "../components/Header";
 import { HouseSkeleton } from "../components/Skeleton";
 import { HouseContainer } from "../components/Container";
 import { ProductApi } from "../services/product.api";
@@ -64,66 +64,82 @@ export function Housing(){
 
     return (
 
-        <div>
-            <Header designClass={'row shadow'} page={2} />   
-            {/* ************************************************************************ */}
-            <div className="container-fluid bg-three-clr">
-                <NearestHousesComponent lat={'14.12345'} lon={'16.111234'} /> 
+        <div className="container-fluid bg-light">
+          <div className="row"> 
+            <TopBar  />
+          </div> 
+          <div className="row sticky-top"> 
+            <NavigationBar page={2} />
+          </div>
+          {/* *********************************************************************** */}
+          <div className="row justify-content-center bg-gray-light py-5 px-2"> 
+            <div className="col-md-8 col-lg-5 d-flex flex-column"> 
+                <div className="px-5 py-3 w-100 text-center text-secondary border bg-three-clr rounded-5 lead"> Liste des logements les plus proches de votre position </div>
             </div>
-            {/* ************************************************************************ */}
-            <div className="container py-5"> 
-                {/* ------------------------------------------------ */}
-                <div className="row px-3">
-                    <div className="col-12 bg-main d-flex align-items-center mb-3 border-bottom p-1 rounded-1 px-4"> 
-                        <span className="font color-gray"> Filtrer les logements </span>
-                    </div> 
-                    <div className="col-md-4 mb-2"> 
-                        <select className="form-control border w-100 p-2 text-muted font fs-xs rounded-2" value={country} name="country" required onChange={ handleInputs } >
-                            <option value=""> Choisir un pays  </option>
-                            {
-                                vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
-                            }
-                        </select>
-                    </div>
-                    <div className="col-md-4 mb-2"> 
-                        <select className="form-control border w-100 p-2 text-muted font fs-xs rounded-2" value={region} name="region" required onChange={ handleInputs } >
-                            <option value=""> Choisir une région  </option>
-                                                        {
-                                selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
-                            }
-                        </select>
-                    </div>
-                    <div className="col-md-4 mb-3"> 
-                        <select className="form-control border w-100 p-2 text-muted font fs-xs rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
-                            <option value=""> Choisir un type de propriété  </option>
-                            {
-                                vector.listOfFieldType[0].subType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
-                            }
-                        </select>
-                    </div>  
-                </div>                      
-                {/* ***************************************************************************************** */}
-                <div className="row mt-4 d-flex"> 
-                    { 
-                        isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
-                        filteredClasses?.map(( item , index ) => { return(
-                            <div className="col-md-6 col-lg-4 mb-5" key={index}> 
-                                <HouseContainer price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company.name} />
-                            </div>      
-                            )
-                        }))      
-                    }
-                    {
-                        error ? ( <div className="col-md-12 mt-3"> <div className="border alert alert-danger text-muted px-4 py-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
-                    }
-                    {
-                        ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex px-4 mt-3 w-100 py-3 border shadow-sm bg-white text-muted"> Aucune propriété n'a été enregistrée. </div> ) : null
-                    }  
+          </div>
+          {/* ******************************************** */}
+          <div className="row"> 
+            <NearestHousesComponent lat={'14.12345'} lon={'16.111234'} /> 
+          </div>
+          {/* ******************************************** */}
+          <div className="row"> 
+            <div className="col-lg-12 py-5"> 
+              {/* ------------------------------------------------ */}
+              <div className="row p-3 bg-gray-light">
+                <div className="col-12 d-flex align-items-center mb-3 border-bottom p-1 rounded-1 px-4"> 
+                   <span className="text-secondary lead"> <i class="bi bi-funnel text-secondary"></i> Filtrer les logements </span>
                 </div> 
+                <div className="col-sm-4 mb-2"> 
+                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >
+                    <option value=""> Choisir un pays  </option>
+                    {
+                      vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                    }
+                  </select>
+                </div>
+                <div className="col-sm-4 mb-2"> 
+                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={region} name="region" required onChange={ handleInputs } >
+                    <option value=""> Choisir une région  </option>
+                    {
+                      selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
+                    }
+                  </select>
+                </div>
+                <div className="col-sm-4 mb-3"> 
+                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
+                    <option value=""> Choisir un type de propriété  </option>
+                    {
+                      vector.listOfFieldType[0].subType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                    }
+                  </select>
+                </div>  
+              </div> 
             </div> 
-            {/* ************************************************************************ */}
-            <Footer /> 
+          </div>
+          {/* ******************************************** */}
+          <div className="row py-5"> 
+            { 
+                isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
+                filteredClasses?.map(( item , index ) => { return(
+                    <div className="col-md-6 col-lg-4 mb-5" key={index}> 
+                        <HouseContainer price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company.name} />
+                    </div>      
+                    )
+                }))      
+                                }
+            {
+                error ? ( <div className="col-md-12"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+            }
+            {
+                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des logements est vide. </div> ) : null
+            }  
+          </div>
+
+        <div className="row"> 
+          <Footer />
         </div>
+                 
+      </div>
     )
 }
 

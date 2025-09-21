@@ -40,7 +40,7 @@ export function NavigationBar({page=1})
                   <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/contact"> <i className="bi bi-plus"></i> Contact </a>
                 </li>
                 {
-                    ( sessionStorage.getItem('token') ) && ( 
+                    ( localStorage.getItem('token') ) && ( 
                     <li className="nav-item mx-2">
                       <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> <i className="bi bi-plus"></i> Mon-compte </a>
                     </li> )
@@ -50,7 +50,7 @@ export function NavigationBar({page=1})
               <div className="d-flex align-items-center">
                 <a className="btn btn-sm btn-outline-secondary me-2" href="/inscription"> S'inscrire </a>
                 {
-                  sessionStorage.getItem('token') ? 
+                  localStorage.getItem('token') ? 
                   ( <button className="btn btn-sm btn-secondary" type="button" > Se-déconnecter </button> ) :
                   ( <a href="/connexion" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
                 }     
@@ -70,7 +70,7 @@ export function TopBar()
   return (
 
     <div className="col-12">
-      <div className={`row bg-blue-clr d-flex justify-content-between align-items-center px-4 py-3`}> 
+      <div className={`row bg-blue-clr d-flex justify-content-between align-items-center py-3`}> 
         {/* ****************************************************************** */}
         <div className="col-lg-5 d-flex align-items-center"> 
           <div className="d-flex align-items-center justify-content-center me-4">

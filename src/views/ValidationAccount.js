@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BottomBar } from "../components/Footer";
 import { UserApi } from '../services/user.api';
+import { useParams } from 'react-router';
 
 
 export function ValidateAccount(){
@@ -10,12 +11,20 @@ export function ValidateAccount(){
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
+    const navigate = useParams();
+
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
         try {
             const res = await user.activateAccount({ code : code });
-            (res.data.success) ? setStatus(1) : setStatus(-1);
+            if (res.data.success){
+                setStatus(1);
+                navigate('/');
+            }
+            else{
+                setStatus(-1);
+            }
             setIsLoading(false);
         } catch (err) { 
             setStatus(-1); 
@@ -24,59 +33,64 @@ export function ValidateAccount(){
     } 
     
     return (
+  
+    <div className="container-fluid"> 
+      <div className="row vh-100 d-flex align-items-center ">
+        <div className="col-lg-12 py-5">
+          <div className="row d-flex flex-column align-items-center justify-content-center py-5 px-2">
+            <div className="col-lg-6 rounded-4 border py-5 px-4 mb-5 shadow-sm">
 
-        <div>
-            {/* ************************************************************************ */}   
-            <div className="container-fluid bg-three-clr p-4"> 
-                <div className="d-flex flex-column align-items-center ps-2 ms-1" > 
-                    <span className="circle bg-snd-clr"> <img src={'../img/icons8-accueil-128.png'} alt="Logo" width={60} height={60} className="mb-2" /> </span>
-                    <span className="fs-lg color-blue"> Univers service </span>
+              <form onSubmit={ handleForm } className="d-flex flex-column">
+                <div className=" d-flex flex-column gap-2 mb-4" > 
+                  <div className="d-flex" >
+                     <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                  </div>
+                  <span className="fs-4 text-secondary text-start"> Imopro - Validation compte </span>
+                  <span className="text-secondary text-start">
+                    Merci de votre inscription ! Un code de validation vous a été envoyé par SMS. Saisissez-le ci-dessous pour activer votre compte.
+                  </span>
                 </div>
-            </div>
-            {/* ************************************************************************ */}
-            <div className="container" >
-                <div className="row py-5 d-flex justify-content-center" >
-                    <div className="col-lg-7 col-md-8 mb-5 border py-5 px-4" >
-                        <form className="" onSubmit={ handleForm }>  
-                            {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={24} width={24} alt="Logo" /> </div> ) : null 
-                            }
-                            {
-                                ( status === 1 ) ? 
-                                ( <div className="col-md-12 mb-4"> <div className="alert alert-success"> USVC vous remercie, votre compte est créé avec succes. </div> </div> ) :
-                                ( status === -1 ) ?
-                                ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Erreur! veillez revoir le code reçu. </div> </div> ) 
-                                : null
-                            }
-                            <div className="row" >
-                                <div className="col-md-12 mb-5" > 
-                                    <div className="d-flex flex-column border-left-main ps-2 ms-1" > 
-                                        <span className="fs-lg bold main-color"> Validation de compte utilisateur </span>
-                                        <span className="color-blue"> Veillez consulter votre messagerie un code de validation vous sera envoyé pour finaliser la creation de votre compte. </span>
-                                    </div>
-                                </div>
-                                <div className="col-md-12 mb-2" > 
-                                    <span className="border-left-main fs-xs ps-1"> Veuillez mettre le code que vous avez reçu ici </span> 
-                                </div>
-                                <div className="col-lg-12 mb-3">
-                                    <input type="text" name="code" className="form-control" placeholder="code" required onChange={ e => setCode(e.target.value)  } />
-                                </div>
-                                <div className="col-md-12 mb-3" > 
-                                    <button type="submit" className="btn btn-main"> Valider compte </button> 
-                                </div>
-                            </div>
-                        </form>
+                {
+                  isLoading && (
+                    <div className="d-flex justify-content-center align-items-center mb-3"> 
+                      <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                     </div>
-                    <div className="col-lg-7 col-md-8 d-flex justify-content-end" >
-                        <a href="/" className="link btn-white btn main-color"> Acceuil </a>
+                  )
+                }
+                {
+                  status === -1 && (
+                    <div className="col-md-12 mb-2">
+                      <div className="alert alert-danger">
+                        Erreur! veillez revérifier le code reçu puis rééssayer.
+                      </div>
                     </div>
-                </div> 
+                  )
+                }
+                {/* -------------------------------- */}
+                <div className="col-md-12 mb-2"> 
+                  <div className="d-flex gap-2 mb-2" >
+                    <input type="number" name="code" placeholder="Code" className="w-100 border input py-3 px-3 text-muted rounded-2"  required onChange={ e => setCode(e.target.value)  }/>
+                    <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                  </div>
+                </div>
+                {/* -------------------------------- */}
+                <div>
+                  <button type="submit" className="btn btn-lg bg-blue-clr text-white px-4 mt-2"> 
+                    Soumettre <i className="bi bi-arrow-right"></i> 
+                  </button> 
+                </div>    
+              </form>
+                
             </div>
-            {/* ************************************************************************ */}
-            <div className="container-fluid"> 
-                <BottomBar /> 
-            </div>
+            
+          </div>
         </div>
+      </div>
+      <div className="row bg-blue-clr">
+        <BottomBar /> 
+      </div>
+    </div>
+      
     )
 }
 

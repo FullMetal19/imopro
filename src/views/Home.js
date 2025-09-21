@@ -21,14 +21,14 @@ export function Home(){
           <div className="row sticky-top"> 
             <NavigationBar />
           </div>
-          <div className="row px-0 border"> 
+          <div className="row border"> 
             <Slide/>
           </div>
           {/* *********************************************************************** */}
           <div className="row justify-content-center bg-gray-light p-5"> 
             <div className="col-md-8 col-lg-5 d-flex flex-column"> 
                 <span className="lead text-secondary text-center mb-3 p-4 border rounded-2" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
-                <div className="d-flex justify-content-center gap-2"> 
+                <div className="d-flex flex-column-sm justify-content-center gap-2 pb-4"> 
                   <a className="btn btn-lg btn-outline-secondary me-2" href="/inscription"> Version android </a>
                   <a className="btn btn-lg btn-outline-secondary me-2" href="/inscription"> Version IOS </a>
                 </div>
@@ -47,8 +47,8 @@ export function Home(){
             <HouseComponent /> 
           </div>
           {/* ************************************************************************ */}
-          <div className="container-fluid slide-fixed my-5"> 
-            <div className="row d-flex justify-content-center align-items-center h-100"> 
+          <div className="slide-fixed my-5"> 
+            <div className="d-flex justify-content-center align-items-center h-100"> 
               <div className="d-flex justify-content-center align-items-center mt-3" > 
                 <button className='btn circle bg-white shadow p-4 rounded-circle' onClick={ ()=>{ setModalState(true) } } > 
                   <i class="bi bi-play-circle fs-1 text-blue-clr"></i> 
@@ -66,7 +66,10 @@ export function Home(){
             </div>
             
             {/* ************************************************************************ */}
-            <Footer /> 
+            <div className="row"> 
+              <Footer />
+            </div>
+             
         </div>
     )
 }

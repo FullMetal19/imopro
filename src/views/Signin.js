@@ -29,14 +29,14 @@ export function Signin(){
             setIsLoading(false);
             if( res.data.success ){
                 setIsLoading(false);
-                sessionStorage.setItem("uid", res.data.uid);
-                sessionStorage.setItem("token", res.data.token);
-                sessionStorage.setItem("status", res.data.status);
-                sessionStorage.setItem("companyStatus", res.data.companyStatus);
-                sessionStorage.setItem("fname", res.data.fname);
-                sessionStorage.setItem("lname", res.data.lname);
-                sessionStorage.setItem("email", res.data.email);
-                sessionStorage.setItem("phone", res.data.phone);
+                // sessionStorage.setItem("uid", res.data.uid);
+                localStorage.setItem("token", res.data.token);
+                // sessionStorage.setItem("status", res.data.status);
+                // sessionStorage.setItem("companyStatus", res.data.companyStatus);
+                // sessionStorage.setItem("fname", res.data.fname);
+                // sessionStorage.setItem("lname", res.data.lname);
+                // sessionStorage.setItem("email", res.data.email);
+                // sessionStorage.setItem("phone", res.data.phone);
                 navigate('/');
             }
         } catch (err) { 
@@ -114,15 +114,14 @@ export function Signin(){
                   </form>
                 </div>
               </div>
-            
           
-               </div>
-              </div>
-              <div className="row bg-blue-clr">
-                <BottomBar /> 
-              </div>
             </div>
+          </div>
+          <div className="row bg-blue-clr">
+            <BottomBar /> 
+          </div>
         </div>
+      </div>
     )
 }
 
