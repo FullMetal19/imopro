@@ -35,7 +35,7 @@ export function Home(){
             </div>
           </div>
           {/* *********************************************************************** */}
-          <div className="row justify-content-center"> 
+          <div className="row justify-content-center py-5"> 
             <ServiceComponent/>
           </div>
           {/* ************************************************************************ */}
@@ -43,7 +43,7 @@ export function Home(){
             <LocationComponent />
           </div>
           {/* ************************************************************************ */}
-          <div className="row justify-content-center"> 
+          <div className="row justify-content-center py-5"> 
             <HouseComponent /> 
           </div>
           {/* ************************************************************************ */}
@@ -55,20 +55,19 @@ export function Home(){
                 </button>
               </div>
             </div>
-            </div> 
-            {/* ************************************************************************ */}
-            <div className="row justify-content-center"> 
-              <FieldComponent />
-            </div>
-            {/* ************************************************************************ */}
-            <div className="row justify-content-center pb-5"> 
-              <TestimonialComponent />
-            </div>
-            
-            {/* ************************************************************************ */}
-            <div className="row"> 
-              <Footer />
-            </div>
+          </div> 
+          {/* ************************************************************************ */}
+          <div className="row justify-content-center"> 
+            <FieldComponent />
+          </div>
+          {/* ************************************************************************ */}
+          <div className="row justify-content-center pb-5"> 
+            <TestimonialComponent />
+          </div>
+          {/* ************************************************************************ */}
+          <div className="row"> 
+            <Footer />
+          </div>
              
         </div>
     )

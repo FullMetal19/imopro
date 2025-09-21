@@ -45,9 +45,9 @@ export function ServiceComponent()
                       <div className="col-lg-4" key={index}>
                         <div className="shadow-sm rounded-2 d-flex flex-column align-items-center p-4 scale bg-white">
                           <span className="text-secondatry mb-3"> <i className="bi bi-patch-check fs-1"></i> </span>
-                          <div className="card-body mt-2">
-                            <p className="lead text-secondary text-center"> { item.title } </p>
-                            <p className="text-secondary text-center"> { item.description } </p>
+                          <div className="card-body">
+                            <p className="lead bold text-secondary text-center"> { item.title } </p>
+                            <p className="lead text-secondary text-center"> { item.description } </p>
                           </div>
                         </div>
                       </div>
@@ -85,7 +85,7 @@ export function LocationComponent()
         
     return (
 
-        <div className="col-lg-10 mt-5">
+        <div className="col-lg-10 my-5">
           <div className="row mb-3">
             <div className="col-lg-6 col-md-8">
               <div className="d-flex flex-column">
