@@ -54,26 +54,26 @@ export function Layout({ menu, companyId, children })
                         <div className={`d-flex flex-column p-0`}>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 1) ? 'sidebar-menu-active' : null } `} href={ `/entreprise/${companyId}` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Généralité </span> 
+                                    <i class="bi bi-grid-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Généralité </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/solde` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Solde </span> 
+                                    <i class="bi bi-wallet2-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Solde </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 3) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/propriete-reserve` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Mensualités </span> 
+                                    <i class="bi bi-calendar-check-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Mensualités </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 4) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/notifications` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Notification </span> 
+                                    <i class="bi bi-bell-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Notification </span> 
                                 </div>
                             </a>
                         </div>
