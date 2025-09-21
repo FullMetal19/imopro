@@ -210,7 +210,9 @@ export function HouseComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <HouseContainer key={index} data={item} price={ item.price } title={ item.title } desc={ item.description } id={ item.id } image={ item.media[0].path } companyName={item.company?.name} />
+                                   <div className="col-lg-4 col-md-6">
+                                      <HouseContainer key={index} data={item} />
+                                   </div>
                                 )}) 
                             }
                         </Slider>
@@ -318,7 +320,9 @@ export function FieldComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <FieldContainer data={item} key={index} />
+                                    <div className="col-lg-4 col-md-6">  
+                                      <FieldContainer data={item} key={index} />  
+                                    </div>
                                 )}) 
                             }
                         </Slider>

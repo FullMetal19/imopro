@@ -60,13 +60,13 @@ export function Layout({ menu, children })
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ "/admin/services" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-tools-fill fs-3 text-blue-clr"></i>
+                                    <i class="bi bi-briefcase-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Services </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 3) ? 'sidebar-menu-active' : null } `} href={ "/admin/entreprise" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-briefcase-fill fs-3 text-blue-clr"></i>  
+                                    <i class="bi bi-building-fill fs-3 text-blue-clr"></i>  
                                     <span className="text-secondary mt-2"> Entreprises </span> 
                                 </div>
                             </a>
@@ -79,7 +79,7 @@ export function Layout({ menu, children })
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 5) ? 'sidebar-menu-active' : null } `} href={ "/admin/parametre" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-gear-fill fs-3 text-blue-clr"></i>
-                                    <span className="fs-xs color-gray mt-2"> Paramétres </span> 
+                                    <span className="text-secondary mt-2"> Paramétres </span> 
                                 </div>
                             </a>
                         </div>
