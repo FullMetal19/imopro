@@ -9,6 +9,7 @@
     --six-clr : #707070 ;
     --blue-clr : #3b5998;
     --gray-light : #e6e6e6;
+    --blue-light : #cfe2ff;
 }
 .hide-item{
     display: none;
@@ -21,6 +22,9 @@
 }
 .bg-blue-clr{
     background-color: var(--blue-clr)  !important;
+}
+.bg-blue-light-clr{
+    background-color: var(--blue-light)  !important;
 }
 .bg-three-clr{
     background-color: var(--three-clr)  !important;

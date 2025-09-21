@@ -98,7 +98,7 @@ export function Configuration()
         <Layout menu={1} companyId={companyId}> 
             <div className="container-fluid">
                 <div className="row d-flex flex-column bg-white">   
-                    <div className="d-flex flex-column bg-gray-light pt-4 px-4 border-bottom"> 
+                    <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
                         <div className="d-flex justify-content-between gap-4 align-items-center mb-4"> 
                             <span className="h5 text-secondary mt-2 border px-4 py-2"> Configuration </span>
                             <button className="btn btn-sm btn-main" onClick={ setModal } > Supprimer </button>

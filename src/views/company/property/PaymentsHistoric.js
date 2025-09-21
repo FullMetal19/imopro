@@ -41,7 +41,7 @@ export function PaymentsHistoric()
 
             <div className="contain bg-white">
                 <div className="d-flex flex-column w-100">   
-                    <div className="d-flex flex-column bg-gray-light pt-4 px-4 border-bottom w-100"> 
+                    <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom w-100"> 
                         <div className="d-flex flex-column"> 
                             <span className="h5 text-secondary my-2"> Historique des mensualités </span>
                             <div className="row pt-3 pb-2 border-top border-start border-end">

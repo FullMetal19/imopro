@@ -45,7 +45,7 @@ export function Layout({ menu, companyId, children })
                 <div className="row"> 
                     {/* ************************************************************************ */}
                     <div className="sidebar d-flex flex-column p-0 pb-4 border-bottom">  
-                        <div className="p-3 d-flex justify-content-end bg-gray-light border-bottom"> 
+                        <div className="p-3 d-flex justify-content-end bg-blue-light-clr border-bottom"> 
                             <button className={`btn btn-sm rounded-4 text-muted sidebar-trigger`} onClick={toggleSidebar} >  
                                 <img src={'../../img/icons8-menu-96.png'} height={34} width={34} alt="Logo" />
                             </button>  

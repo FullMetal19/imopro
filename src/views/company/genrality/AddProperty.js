@@ -77,7 +77,7 @@ export function AddProperty()
         <Layout menu={1} companyId={companyId}> 
             <div className="container-fluid">
                 <div className="row d-flex flex-column bg-white">   
-                    <div className="col-md-12 py-4 px-4 border-bottom bg-gray-light"> 
+                    <div className="col-md-12 py-4 px-4 border-bottom bg-blue-light-clr"> 
                         <div className="d-flex justify-content-between gap-4 align-items-center"> 
                             <span className="h5 text-secondary mt-2 border px-4 py-2"> Ajouter nouvelle propriété </span>
                         </div>

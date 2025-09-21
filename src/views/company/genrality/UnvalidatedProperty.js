@@ -79,7 +79,7 @@ export function UnvalidatedProperty()
                     }
                     <div className={filter ? "col-md-9" : "col-md-12"}>
                         <div className="d-flex flex-column">   
-                            <div className="row d-flex flex-column bg-gray-light pt-4 px-4 border-bottom"> 
+                            <div className="row d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
                                 <div className="d-flex gap-4 align-items-center mb-4"> 
                                     <span className="h5 text-secondary mt-2"> Généralité </span>
                                     <button className="btn btn-sm border rounded-4 text-secondary px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
