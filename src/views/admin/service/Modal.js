@@ -4,7 +4,6 @@ import { ServiceApi } from "../../../services/service.api";
 export function Modal({ method, message, serviceId, serviceStatus, refetch })
 {
     const service = ServiceApi();
-    const adminId = sessionStorage.getItem('uid');
     
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +12,7 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await service.setStatus(serviceId, adminId);
+            const res = await service.setStatus(serviceId);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
             refetch();
@@ -59,7 +58,6 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
 
 export function NewServiceModal({ method, refetch })
 {
-    const adminId = sessionStorage.getItem('uid');
     const service = ServiceApi();
 
     const [ inputs, setInputs ] = useState();
@@ -75,7 +73,7 @@ export function NewServiceModal({ method, refetch })
         event.preventDefault();
         setIsLoading(true);
         try{
-            const res = await service.insert(adminId, inputs);
+            const res = await service.insert(inputs);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
             refetch();
@@ -129,7 +127,7 @@ export function NewServiceModal({ method, refetch })
 
 export function UpdatingServiceModal({ method, serviceId, title, desc, refetch })
 {
-    const adminId = sessionStorage.getItem('uid');
+    
     const service = ServiceApi();
 
     const [ inputs, setInputs ] = useState({ title : title, description : desc });
@@ -145,7 +143,7 @@ export function UpdatingServiceModal({ method, serviceId, title, desc, refetch }
         event.preventDefault();
         setIsLoading(true);
         try{
-            const res = await service.update(serviceId, adminId, inputs);
+            const res = await service.update(serviceId, inputs);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
             refetch();

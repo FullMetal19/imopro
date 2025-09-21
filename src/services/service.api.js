@@ -13,11 +13,11 @@ export function ServiceApi(contentType = "application/json")
 
         find: (value) => https.get(`/api/service/limit/${value}`),
 
-        insert : (uid, data) => https.post(`/api/service/${uid}`, data), 
+        insert : (data) => https.post(`/api/service`, data), 
 
-        update : (id, uid, data) => https.put(`/api/service/${id}/${uid}`, data), 
+        update : (id, data) => https.put(`/api/service/${id}`, data), 
 
-        setStatus : (id, uid) => https.put(`/api/service/updtate-status/${id}/${uid}`), 
+        setStatus : (id) => https.put(`/api/service/updtate-status/${id}`), 
 
         view : (id) => https.put(`/api/service/read/${id}`), 
 
