@@ -110,7 +110,7 @@ export function Account()
                                       <div className="col-md-4 d-flex align-items-center">
                                           {
                                             (data?.companyStatus == 0 && data?.status == 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                                            ( (data?.companyStatus == 2 && data?.status == 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                                            ( (data?.companyStatus == 2 && data?.status == 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
                                             ( (data?.companyStatus == 0 && data?.status == 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                                           }
                                       </div>

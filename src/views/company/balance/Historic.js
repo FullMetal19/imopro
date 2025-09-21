@@ -36,10 +36,10 @@ export function Historic({ companyId })
             <div className="p-3 border-bottom border-start border-end mb-3 text-muted"> 
                 <div className="row">
                     <div className="col-md-6" > 
-                        <div className="color-gray mb-2 d-flex align-items-center px-3 w-100 form-control"> Historique des retraits </div>
+                        <div className="text-secondary mb-2 d-flex align-items-center px-3 w-100 form-control"> Historique des retraits </div>
                     </div>
                     <div className="col-md-3" > 
-                        <div className="color-gray mb-2 d-flex align-items-center px-3 w-100 form-control"> Filtrer </div>
+                        <div className="text-secondary mb-2 d-flex align-items-center px-3 w-100 form-control"> Filtrer </div>
                     </div>
                     <div className="col-md-3" > 
                         <input type="month" name="month" value={month} className="form-control mb-2" required onChange={ handleInputChange } />

@@ -55,12 +55,12 @@ export function ValidatedProperty()
                     }
                     <div className={filter ? "col-md-9" : "col-md-12"}>
                         <div className="d-flex flex-column">   
-                            <div className="row d-flex flex-column bg-three-clr pt-4 px-4 border-bottom"> 
+                            <div className="row d-flex flex-column bg-gray-light pt-4 px-4 border-bottom"> 
                                 <div className="flex-fluid gap-2 mb-4"> 
-                                    <span className="h5 text-muted mt-2 ps-2 me-4"> Généralité </span> 
+                                    <span className="h5 text-secondary mt-2 ps-2 me-4"> Généralité </span> 
                                     <div className="d-flex gap-3">
-                                        <button className="btn btn-sm border rounded-4 text-muted px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
-                                        <a className="btn btn-sm border rounded-4 text-muted px-4 link" href={ `/entreprise/${companyId}/nouvelle-propriete` } > Nouvelle propriété </a>
+                                        <button className="btn btn-sm border rounded-4 text-secondary px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
+                                        <a className="btn btn-sm border rounded-4 text-secondary px-4 link" href={ `/entreprise/${companyId}/nouvelle-propriete` } > Nouvelle propriété </a>
                                     </div>
                                 </div>
                                 <Navigation page={1} companyId={companyId} />

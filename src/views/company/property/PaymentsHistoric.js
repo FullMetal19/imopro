@@ -41,12 +41,12 @@ export function PaymentsHistoric()
 
             <div className="contain bg-white">
                 <div className="d-flex flex-column w-100">   
-                    <div className="d-flex flex-column bg-three-clr pt-4 px-4 border-bottom w-100"> 
+                    <div className="d-flex flex-column bg-gray-light pt-4 px-4 border-bottom w-100"> 
                         <div className="d-flex flex-column"> 
-                            <span className="h5 text-muted my-2"> Historique des mensualités </span>
+                            <span className="h5 text-secondary my-2"> Historique des mensualités </span>
                             <div className="row pt-3 pb-2 border-top border-start border-end">
                                 <div className="col-sm-4" > 
-                                    <div className="color-gray mb-2 d-flex align-items-center py-1 px-3 w-100 border"> Filtrer </div>
+                                    <div className="text-secondary mb-2 d-flex align-items-center py-1 px-3 w-100 border"> Filtrer </div>
                                 </div>
                                 <div className="col-sm-4 mb-2" > 
                                     <input type="month" name="month" value={month} className="py-1 px-3 bg-light border rounded-2 w-100" required onChange={ handleInputChange } />

@@ -36,10 +36,10 @@ export function Balance()
                     filter ? ( <WithdrawForm /> ) : null
                 }
                 <div className="d-flex flex-column w-100">   
-                    <div className="d-flex flex-column bg-three-clr pt-4 px-4 border-bottom"> 
+                    <div className="d-flex flex-column bg-gray-light pt-4 px-4 border-bottom"> 
                         <div className="d-flex gap-4 align-items-center mb-4"> 
-                            <span className="h5 text-muted mt-2"> Mon solde </span>
-                            <button className="btn btn-sm border rounded-4 text-muted px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
+                            <span className="h5 text-secondary mt-2"> Mon solde </span>
+                            <button className="btn btn-sm border rounded-4 text-secondary px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
                         </div>
                     </div>
                     <div className="contain">
