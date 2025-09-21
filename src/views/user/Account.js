@@ -27,8 +27,9 @@ export function Account()
 
     const fetchUser = async () => {
         try {
-            const res = await user.findOne();
-            return res.data.data; 
+            const { data } = await user.findOne();
+            console.log(data)
+            return data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
