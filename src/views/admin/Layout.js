@@ -54,31 +54,31 @@ export function Layout({ menu, children })
                         <div className={`d-flex flex-column p-0`}>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 1) ? 'sidebar-menu-active' : null } `} href={ "/admin" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Généralité </span> 
+                                    <i class="bi bi-grid-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Généralité </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ "/admin/services" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Services </span> 
+                                    <i class="bi bi-tools-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Services </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 3) ? 'sidebar-menu-active' : null } `} href={ "/admin/entreprise" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Entreprises </span> 
+                                    <i class="bi bi-briefcase-fill fs-3 text-blue-clr"></i>  
+                                    <span className="text-secondary mt-2"> Entreprises </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 4) ? 'sidebar-menu-active' : null } `} href={ "/admin/notification" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
-                                    <span className="fs-xs color-gray mt-2"> Notification </span> 
+                                    <i class="bi bi-bell-fill fs-3 text-blue-clr"></i>
+                                    <span className="text-secondary mt-2"> Notification </span> 
                                 </div>
                             </a>
                             <a className={`border-bottom p-3 sidebar-menu ${ (menu === 5) ? 'sidebar-menu-active' : null } `} href={ "/admin/parametre" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" />
+                                    <i class="bi bi-gear-fill fs-3 text-blue-clr"></i>
                                     <span className="fs-xs color-gray mt-2"> Paramétres </span> 
                                 </div>
                             </a>

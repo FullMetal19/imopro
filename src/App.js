@@ -27,23 +27,23 @@ import { Notification } from "./views/company/notification/Notification";
 import { Property } from "./views/company/property/Property";
 import { PaymentsHistoric } from "./views/company/property/PaymentsHistoric";
 
-// import { ValidatingProperty } from "./views/admin/genrality/ValidatingProperty";
-// import { UnvalidatedProperties } from "./views/admin/genrality/UnvalidatedProperties";
-// import { Configurations } from "./views/admin/genrality/Configurations";
-// import { MoreDetails } from "./views/admin/genrality/MoreDetails";
+import { ValidatingProperty } from "./views/admin/genrality/ValidatingProperty";
+import { UnvalidatedProperties } from "./views/admin/genrality/UnvalidatedProperties";
+import { Configurations } from "./views/admin/genrality/Configurations";
+import { MoreDetails } from "./views/admin/genrality/MoreDetails";
 
-// import { Notifications } from "./views/admin/notification/Notifications";
+import { Notifications } from "./views/admin/notification/Notifications";
 
-// import { Companies } from "./views/admin/company/Companies";
-// import { Withdraws } from "./views/admin/company/Withdraws";
-// import { Stat } from "./views/admin/company/Stat";
+import { Companies } from "./views/admin/company/Companies";
+import { Withdraws } from "./views/admin/company/Withdraws";
+import { Stat } from "./views/admin/company/Stat";
 
-// import { Users } from "./views/admin/user/Users";
+import { Users } from "./views/admin/user/Users";
 
-// import { Services } from "./views/admin/service/Services";
-// import { ValidatingCompany } from "./views/admin/company/ValidatingCompany";
-// import { BlockedCompany } from "./views/admin/company/BlockedCompany";
-// import { ValidateCompany } from "./views/admin/company/ValidateCompany";
+import { Services } from "./views/admin/service/Services";
+import { ValidatingCompany } from "./views/admin/company/ValidatingCompany";
+import { BlockedCompany } from "./views/admin/company/BlockedCompany";
+import { ValidateCompany } from "./views/admin/company/ValidateCompany";
 // import { ModifyCompany } from "./views/user/ModifyCompany";
 
 
@@ -96,7 +96,7 @@ function App()
                 <Route exact path="/mensualites/:companyId/:propertyId" element={ <PaymentsHistoric /> }> </Route>
 
 
-                {/* <Route exact path="/admin" element={ <ValidatingProperty /> }> </Route>
+                <Route exact path="/admin" element={ <ValidatingProperty /> }> </Route>
                 <Route exact path="/admin/propriete-invalide" element={ <UnvalidatedProperties /> }> </Route>
                 <Route exact path="/admin/configuration/:propertyId" element={ <Configurations /> }> </Route>
                 <Route exact path="/admin/details/:propertyId" element={ <MoreDetails /> }> </Route>
@@ -114,7 +114,7 @@ function App()
 
                 <Route exact path="/admin/parametre" element={ <Users /> }> </Route>
 
-                <Route exact path="/admin/services" element={ <Services /> }> </Route> */}
+                <Route exact path="/admin/services" element={ <Services /> }> </Route>
 
     
                 {/* <Route path="*" element={ <Error />  } ></Route> */}
