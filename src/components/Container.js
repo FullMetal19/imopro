@@ -88,7 +88,7 @@ export function FieldContainer({ data, onVisit }) {
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Contenu */}
-        <div className="px-3 pb-3 pt-1">
+        <div className="px-3 py-4">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
            { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
