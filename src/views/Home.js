@@ -35,7 +35,7 @@ export function Home(){
             </div>
           </div>
           {/* *********************************************************************** */}
-          <div className="row justify-content-center py-5"> 
+          <div className="row justify-content-center py-4"> 
             <ServiceComponent/>
           </div>
           {/* ************************************************************************ */}
