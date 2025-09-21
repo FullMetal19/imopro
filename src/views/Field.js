@@ -122,6 +122,8 @@ export function Field(){
             </div> 
           </div>
           {/* ******************************************** */}
+          <div className="row justify-content-center p-3">
+          <div className="col-lg-11">
           <div className="row py-5"> 
             { 
                 isLoading ? (  <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -139,6 +141,9 @@ export function Field(){
                 ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des terrains est vide. </div> ) : null
             }  
           </div>
+          </div>
+          </div>
+          
           {/* ******************************************** */}
           <div className="row"> 
             <Footer />

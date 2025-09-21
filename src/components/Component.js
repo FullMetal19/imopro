@@ -366,7 +366,7 @@ export function TestimonialComponent() {
               </div>
             </div>
             <div className="col-lg-12">
-              <div className="row mt-4 mb-5 d-flex justify-content-center"> 
+              <div className="row mt-4 mb-5 d-flex justify-content-center px-3"> 
                 { 
                     isLoading ? ( <div className="row">  <TestimonialSkeleton value={ 4 } /> </div> ) : (
                     <div className="slider-container">

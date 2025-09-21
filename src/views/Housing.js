@@ -124,6 +124,8 @@ export function Housing(){
             </div> 
           </div>
           {/* ******************************************** */}
+          <div className="row justify-content-center p-3">
+          <div className="col-lg-11"> 
           <div className="row py-5 px-2"> 
             { 
                 isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -140,6 +142,8 @@ export function Housing(){
             {
                 ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des logements est vide. </div> ) : null
             }  
+          </div>
+          </div>
           </div>
 
         <div className="row"> 
