@@ -38,7 +38,7 @@ export function AccomodationSlideComponent({  })
                     data?.map(( item , index ) => { return (
 
                       <div className="col-md-6 mb-4" key={index}>
-                        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
+                        <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
                            {/* Image principale */}
                            <img src={ item?.Property?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
                            {/* Galerie */}

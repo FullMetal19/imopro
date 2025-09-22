@@ -45,7 +45,7 @@ export function HouseContainer({ data, onVisit })
 {
     return (
 
-      <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
+      <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Galerie */}
@@ -84,7 +84,7 @@ export function FieldContainer({ data, onVisit }) {
 
     return (
     
-        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
+        <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Contenu */}

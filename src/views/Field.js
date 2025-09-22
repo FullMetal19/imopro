@@ -91,7 +91,7 @@ export function Field(){
                    <span className="text-secondary lead"> <i class="bi bi-funnel"></i> Filtrer les terrains </span>
                 </div> 
                 <div className="col-md-4 mb-2"> 
-                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >
+                  <select className="border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >
                     <option value=""> Choisir un pays  </option>
                     {
                         vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
@@ -99,7 +99,7 @@ export function Field(){
                   </select>
                 </div>
                 <div className="col-md-4 mb-2"> 
-                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={region} name="region" required onChange={ handleInputs } >
+                  <select className="border w-100 p-3 text-secondary rounded-2" value={region} name="region" required onChange={ handleInputs } >
                     <option value=""> Choisir une région  </option>
                     {
                         selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
@@ -107,7 +107,7 @@ export function Field(){
                   </select>
                 </div>
                 <div className="col-md-4 mb-3"> 
-                  <select className="form-control border w-100 p-3 text-secondary rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
+                  <select className="border w-100 p-3 text-secondary rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
                     <option value=""> Choisir un type de propriété  </option>
                     {
                       vector.listOfFieldType[1].subType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
