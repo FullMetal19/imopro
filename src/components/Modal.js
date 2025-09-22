@@ -423,7 +423,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
                             </div>
                             <div className="col-md-6" > 
                                 <div className="d-flex flex-column">  
-                                    <span className="text-muted fs-xs mb-1"> Montant à débiter </span>
+                                    <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group mb-2">
                                         <input type="text" name="amount" value={ guaranty || 0} className="text-secondary p-2 border rounded-2" required onChange={ handleInputs } />
                                         <div className="input-group-append">  <span className="input-group-text" > Fcfa </span>  </div>
@@ -432,17 +432,17 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
                             </div> 
                             <div className="col-md-6 mb-2" > 
                                 <div className="d-flex flex-column">  
-                                    <span className="text-muted fs-xs mb-1"> Numéro du compte à débiter </span>
+                                    <span className="text-secondary fs-xs mb-1"> Numéro du compte à débiter </span>
                                     <input type="number" name="account" className="text-secondary p-2 border rounded-2" placeholder="77000000" required onChange={ handleInputs } />
                                 </div>
                             </div>
                             <div className="col-md-12" > 
                                 <div className="alert alert-danger p-2">  
-                                    <span className="fs-xs"> Assurer d'avoir ce montant dans votre compte. </span>
+                                    <span className="fs-xs text-secondary"> Assurer d'avoir ce montant dans votre compte. </span>
                                 </div>
                             </div>
-                            <div className="d-flex justify-content-end">
-                                <button type="submit" className="btn btn-sm btn-outline-main"> Enregistrer </button>  
+                            <div className="d-flex pt-3">
+                                <button type="submit" className="btn bg-blue-clr text-white"> Enregistrer </button>  
                             </div>
                         </form>
                     </div>
