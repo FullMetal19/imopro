@@ -42,7 +42,7 @@ export function PropertyDetails(){
     const closeoginCheckerModal = ( arg ) => {  setloginChecker( arg ) }  
 
     const reservation = () => {
-        if (sessionStorage.getItem('token')) {
+        if (localStorage.getItem('token')) {
             setloginChecker(false);
             setModalState(true);
         } 
@@ -83,7 +83,7 @@ export function PropertyDetails(){
                                 <Slider {...settings}> 
                                     { 
                                         data?.media.map( (item , index) => { return (
-                                            <div className="d-flex" key={index} > <img src={`${process.env.REACT_APP_PATH}/${item.path}`} alt="Logo" height={300} className="img-fluid" />  </div>
+                                            <div className="d-flex" key={index} > <img src={`${item.path}`} alt="Logo" height={300} className="img-fluid" />  </div>
                                         )}) 
                                     }    
                                 </Slider>
