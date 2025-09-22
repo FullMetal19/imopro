@@ -8,13 +8,6 @@ import { VisitSlideComponent } from "./VisitSlideComponent";
 import { AccomodationSlideComponent } from "./AccomodationSlideComponent";
 import { GeolocalisationModal, ValidationPaymentModal } from "../../components/Modal";
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-};
 
 export function Account()
 {

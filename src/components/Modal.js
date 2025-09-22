@@ -524,16 +524,16 @@ export function MonthPaymentModal({ method, refetch, propertyId })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column rounded-3">
                         <div className="d-flex justify-content-between gap-4"> 
-                            <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2"> Payement mensuel </div>
-                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
+                            <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2 p-2"> Payement mensuel </div>
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
-                        <form className="d-flex flex-column mt-4" onSubmit={ handleForm }>
+                        <form className="row mt-4" onSubmit={ handleForm }>
                             {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 
@@ -541,45 +541,59 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                                 ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
-                            <div className="col-md-12 mb-2" > 
+                            <div className="col-md-8 mb-2" > 
                                 <div className="d-flex flex-column">  
-                                    <span className="text-muted fs-xs mb-1"> Mois à payer </span>
-                                    <input type="month" name="month" className="form-control" required onChange={ handleInputs } />
+                                    <span className="text-secondary fs-xs mb-1"> Mois à payer </span>
+                                    <input type="month" name="month" className="text-secondary p-2 border rounded-2" required onChange={ handleInputs } />
                                 </div>
                             </div>
-                             <div className="col-md-12 mb-2" > 
+                            <div className="col-md-12 mb-2 bg-light py-2">
+                                <span className="text-center fs-xs text-secondary"> Choisir l'opérateur de paiement </span>
+                            </div>
+                            <div className="col-md-12 mb-3 d-flex gap-4">
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={handleInputs} />
+                                    <label className="text-secondary font-xs" htmlFor="flexRadioDefault1"> wave </label>
+                                </div>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={handleInputs} />
+                                    <label className="text-secondary font-xs" htmlFor="flexRadioDefault2"> Orange moneey </label>
+                                </div>
+                            </div>
+                            <div className="col-md-8 mb-2">
+                                <div className="d-flex flex-column">
+                                    <span className="text-secondary fs-xs mb-1"> Prénom </span>
+                                    <input type="text" name="fname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
+                                </div>
+                            </div>
+                            <div className="col-md-4 mb-2">
+                                <div className="d-flex flex-column">
+                                    <span className="text-secondary fs-xs mb-1"> Nom </span>
+                                    <input type="text" name="lname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
+                                </div>
+                            </div>
+                             <div className="col-md-6 mb-2" > 
                                 <div className="d-flex flex-column">  
-                                    <span className="text-muted fs-xs mb-1"> Montant à débiter </span>
+                                    <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group">
-                                        <input type="text" name="amount" value={inputs.amount} className="form-control" required onChange={handleInputs} />
-                                        <div className="input-group-append">  <span className="input-group-text" > Fcfa </span>  </div>
+                                        <input type="text" name="amount" value={inputs.amount} className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
+                                        <div className="input-group-append">  <span className="input-group-text text-secondary py-2" > Fcfa </span>  </div>
                                     </div> 
                                 </div>
                             </div> 
+                             <div className="col-md-6 mb-2" > 
+                                <div className="d-flex flex-column">  
+                                    <span className="text-secondary fs-xs mb-1"> Numéro du compte à débiter </span>
+                                    <input type="number" name="account" className="text-secondary p-2 border rounded-2" placeholder="77000000" required onChange={ handleInputs } />
+                                </div>
+                            </div>
                             <div className="col-md-12" > 
                                 <div className="alert alert-danger py-1">  
-                                    <span className="fs-xs"> Assurer d'avoir ce montant dans votre compte. </span>
+                                    <span className="fs-xs text-secondary"> Assurer d'avoir ce montant dans votre compte. </span>
                                 </div>
                             </div>
-                            <div className="col-md-12 mb-2" > 
-                                <div className="d-flex flex-column">  
-                                    <span className="text-muted fs-xs mb-1"> Numéro du compte à débiter </span>
-                                    <input type="number" name="account" className="form-control" placeholder="77000000" required onChange={ handleInputs } />
-                                </div>
-                            </div>
-                            <div className="col-md-12 mb-2" > <span className="text-center fs-xs color-dark"> Choisir l'opérateur de paiement </span> </div>  
-                            <div className="col-md-12 mb-2 d-flex gap-4" > 
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={ handleInputs } />
-                                    <label className="text-muted font-xs" htmlFor="flexRadioDefault1"> wave </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={ handleInputs } />
-                                    <label className="text-muted font-xs" htmlFor="flexRadioDefault2"> Orange money </label>
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-end">
-                                <button type="submit" className="btn btn-sm btn-outline-main" > Enregistrer </button>  
+                            <div className="d-flex pt-2">
+                                <button type="submit" className="btn btn-secondary px-4" > Enregistrer </button>  
                             </div>
                         </form>
                     </div>

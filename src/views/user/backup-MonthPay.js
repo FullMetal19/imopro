@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Header, NavigationBar, TopBar } from "../../components/Header";
+import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { ProductApi } from "../../services/product.api";
 import { MonthPayDetailModal, PaymentFormModal} from "./Modal";
@@ -51,29 +51,23 @@ export function MonthPay(){
 
     return (
 
-        <div className="container-fluid bg-light">
+        <div>
             { modalState ? ( <MonthPayDetailModal method={ closeModal } data={ dataModal } /> ) : null }
             {/* ************************************************************************ */}
             { paymentModalState ? ( <MonthPaymentModal refetch={funct} propertyId={housingId} method={ closePaymentForm } /> ) : null }
             {/* ************************************************************************ */}
-            <div className="row"> 
-              <TopBar />
-            </div> 
-            <div className="row sticky-top"> 
-              <NavigationBar page={6} />
-            </div>
+            <Header designClass={'row shadow'} page={6} />
             {/* ************************************************************************ */}
-            <div className="row justify-content-center border px-3"> 
-              <div className="col-lg-10 py-5"> 
+            <div className="container-md py-5 bg-white"> 
                 <div className="row mt-4">
                     {/* ************************************************************************ */}
                     <div className="col-lg-12 col-md-12"> 
-                      <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
+                        <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
                         <div className="col-md-8 d-flex gap-3 mb-2"> 
-                            <img src={`${process.env.REACT_APP_PATH}/${data?.image}`} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
+                            <img src={'../img/icons8-photo-100.png'} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-primary" /> 
                             <div className="d-flex flex-column"> 
-                                <span className="text-secondary"> { data?.fname + " " + data?.lname } </span>
-                                <span className="color-gray small"> En ligne </span>
+                                <span className="color-blue"> { sessionStorage.getItem('fname') + " " + sessionStorage.getItem('lname') } </span>
+                                <span className="color-gray"> En ligne </span>
                             </div>
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
@@ -83,18 +77,15 @@ export function MonthPay(){
                               ( (data?.companyStatus == 0 && data?.status == 2) ? ( <a className="mb-3 btn px-3 btn-main" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                             }
                         </div>
-                      </div>
+                        </div>
                     </div>
                     {/* ************************************************************************ */}.                  
                     <HistoricMonthpaySlideComponent setPaymentForm={ setPaymentForm } setModal={ setModal } /> 
                     {/* ************************************************************************ */} 
                 </div> 
-              </div> 
             </div> 
             {/* ************************************************************************ */}
-            <div className="row"> 
-                <Footer />
-            </div>
+            <Footer /> 
         </div>
     )
 }

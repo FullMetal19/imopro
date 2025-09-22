@@ -13,7 +13,7 @@ import { PropertyDetails } from "./views/PropertyDetails";
 import { Password } from "./views/Password";
 
 import { Account } from "./views/user/Account";
-// import { MonthPay } from "./views/user/MonthPay";
+import { MonthPay } from "./views/user/MonthPay";
 // import { NewCompany } from "./views/user/NewCompany";
 
 import { ValidatedProperty } from "./views/company/genrality/ValidatedProperty";
@@ -60,13 +60,16 @@ function App()
                 <Route exact path="/" element={ <Home /> }> </Route>
                 <Route exact path="/logement" element={ <Housing /> }> </Route>
                 <Route exact path="/terrain" element={ <Field /> }> </Route>
+                    <Route exact path="/propriete/:id" element={ <PropertyDetails /> }> </Route>
+
                 <Route exact path="/mon-compte" element={ <Account /> }> </Route>
+                    <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route>
 
                 <Route exact path="/connexion" element={ <Signin /> }> </Route>
                 <Route exact path="/inscription" element={ <Signup /> }> </Route>
                 <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route>
                 <Route exact path="/mot-de-passe-oublie" element={ <Password /> }> </Route>
-                <Route exact path="/propriete/:id" element={ <PropertyDetails /> }> </Route>
+                
 
                 {/* <Route exact path="/recherche" element={ <SearchProperties /> }> </Route> */}
                 
