@@ -74,7 +74,7 @@ export function Housing(){
           {/* *********************************************************************** */}
           <div className="row justify-content-center bg-gray-light py-5 px-2"> 
             <div className="col-md-8 col-lg-5 d-flex flex-column"> 
-                <div className="px-5 py-3 w-100 text-center text-secondary border bg-three-clr rounded-5 lead"> Liste des logements les plus proches de votre position </div>
+                <div className="px-5 py-3 w-100 text-center text-secondary border bg-light rounded-5 lead"> Liste des logements les plus proches de votre position </div>
             </div>
           </div>
           {/* ******************************************** */}

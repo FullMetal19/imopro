@@ -83,7 +83,7 @@ export function Field(){
           <div className="row"> 
             <div className="col-lg-12 py-5"> 
               {/* ------------------------------------------------ */}
-              <div className="row justify-content-center p-3 bg-blue-light-clr">
+              <div className="row justify-content-center p-3 bg-three-clr">
               <div className="col-lg-11"> 
               <div className="row">
 
