@@ -386,7 +386,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
                             <div className="text-secondary py-2 border px-4 bg-three-clr d-flex align-items-center rounded-2"> Payement de la caution pour la validation </div>
                             <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
-                        <form className="d-flex flex-column mt-4" onSubmit={ handleForm }>
+                        <form className="row d-flex flex-column mt-4" onSubmit={ handleForm }>
                             {
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                             }
