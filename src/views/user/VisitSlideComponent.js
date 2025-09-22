@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { PaymentApi } from "../../services/payment.api";
 
 
-export function VisitSlideComponent({ openLocalisationModal,openValidationModal })
+export function VisitSlideComponent({ openLocalisationModal,openValidationModal, setRefetch })
 {
 
     const payment = PaymentApi();
@@ -11,14 +11,15 @@ export function VisitSlideComponent({ openLocalisationModal,openValidationModal 
         const fetchData = async () => {
             try {
                 const res = await payment.findVisitsByUser();
-                console.log(res.data.data)
+                // console.log(res.data.data)
                 return res.data.data; 
             } catch (err) { 
                 throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
             }
         }
-        const { isLoading, data, error } = useQuery({  queryKey: ["allVisit"], queryFn: fetchData });
+        const { isLoading, data, error, refetch } = useQuery({  queryKey: ["allVisit"], queryFn: fetchData });
 
+        useEffect( ()=> setRefetch(refetch) , [refetch] )
 
     return (
        

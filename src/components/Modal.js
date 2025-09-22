@@ -341,7 +341,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
 
 
 
-export function ValidationPaymentModal({ method, propertyId, guaranty })
+export function ValidationPaymentModal({ method, propertyId, guaranty, refetch })
 {
     const payment = PaymentApi();
 
@@ -366,8 +366,15 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
         try{
             const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
+            if(res.data.success) {
+                setStatus(1);
+                refetch();
+            }
+            else{
+                setStatus(-1);
+            }
             // console.log(res.data)
-            res.data.success ? setStatus(1) : setStatus(-1);
+
         } catch (err) { 
             setStatus(-1);
             setIsLoading(false);

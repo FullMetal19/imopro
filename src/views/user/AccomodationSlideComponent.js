@@ -12,12 +12,11 @@ const settings = {
 
 export function AccomodationSlideComponent({  })
 {
-    const uid = sessionStorage.getItem('uid');
     const payment = PaymentApi();
         
     const fetchData = async () => {
         try {
-            const res = await payment.findBookingsByUser(uid);
+            const res = await payment.findBookingsByUser();
             console.log(res.data.data)
             return res.data.data; 
         } catch (err) { 

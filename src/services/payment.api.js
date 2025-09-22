@@ -21,7 +21,7 @@ export function PaymentApi(contentType = "application/json")
 
 
 
-        findBookingsByUser: (userId) => https.get(`/api/booking/${userId}`),
+        findBookingsByUser: () => https.get(`/api/booking`),
 
 
 

@@ -21,34 +21,22 @@ const settings = {
 
 export function Account()
 {
+    const [refetch, setRefetch] = useState(true);
     const [btnstate, setBtnstate] = useState(true);
+    
 
     const user = UserApi();
 
     const fetchUser = async () => {
         try {
             const { data } = await user.findOne();
-            console.log(data)
+            // console.log(data)
             return data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
     }
     const { isLoading, data, error } = useQuery({ queryKey: ["user"], queryFn: fetchUser });
-
-
-        // const product = ProductApi();
-    
-        // const fetchBookedHousing = async () => {
-        //     try {
-        //         const res = await product.findBookedHouses();
-        //         // console.log(res.data.data)
-        //         return res.data.data; 
-        //     } catch (err) { 
-        //         throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
-        //     }
-        // }
-        // const { isLoading, data, error } = useQuery({  queryKey: ["allHouses"], queryFn: fetchBookedHousing });
 
     //-------------------------------------------------------------------------  
     const [ modal1State , setModal1State] = useState(false);
@@ -87,7 +75,7 @@ export function Account()
           {/* ************************************************************************ */}
             { modal1State ? ( <MessageModal method={ closeForm1 } message={msg} /> ) : null }
             { localisation && ( <GeolocalisationModal latitude={latitude} longitude={longitude} method={ ()=> setLocalisation(false) } /> ) }
-            { validation && ( <ValidationPaymentModal guaranty={guaranty} propertyId={propertyId} method={ ()=> setValidation(false) } /> ) }
+            { validation && ( <ValidationPaymentModal guaranty={guaranty} propertyId={propertyId} method={ ()=> setValidation(false) } refetch={refetch} /> ) }
           <div className="row"> 
             <TopBar />
           </div> 
@@ -143,7 +131,7 @@ export function Account()
                         </div>
                     </div>
                     {/* ************************************************************************ */}
-                    { btnstate ? ( <VisitSlideComponent openLocalisationModal={openLocalisationModal} openValidationModal={openValidationModal} /> ) :  ( <AccomodationSlideComponent /> ) }
+                    { btnstate ? ( <VisitSlideComponent openLocalisationModal={openLocalisationModal} openValidationModal={openValidationModal} setRefetch={setRefetch} /> ) :  ( <AccomodationSlideComponent /> ) }
                     {/* ************************************************************************ */} 
                 </div> 
               </div>     
