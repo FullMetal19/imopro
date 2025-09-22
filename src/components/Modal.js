@@ -426,7 +426,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
                                     <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group mb-2">
                                         <input type="text" name="amount" value={ guaranty || 0} className="text-secondary p-2 border rounded-2" required onChange={ handleInputs } />
-                                        <div className="input-group-append">  <span className="input-group-text" > Fcfa </span>  </div>
+                                        <div className="input-group-append">  <span className="input-group-text text-secondary" > Fcfa </span>  </div>
                                     </div> 
                                 </div>
                             </div> 
