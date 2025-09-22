@@ -7,7 +7,7 @@ export function PaymentApi(contentType = "application/json")
 
     return {
 
-        insert: (data, userId, propertyId) => https.post(`/api/payment/${userId}/${propertyId}`, data),  
+        insert: (data, propertyId) => https.post(`/api/payment/${propertyId}`, data),  
 
         findByTypeAndUser: (userId, type) => https.get(`/api/payment/${userId}/${type}`),
 
@@ -17,7 +17,7 @@ export function PaymentApi(contentType = "application/json")
 
 
 
-        findVisitsByUser: (userId) => https.get(`/api/visit/${userId}`),
+        findVisitsByUser: () => https.get(`/api/visit`),
 
 
 

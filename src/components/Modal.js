@@ -187,7 +187,6 @@ export function PasswordModal({ method })
 //****************************************************************************************************** */
 export function VisitBookingModal({ method, refetch, propertyId }) 
 {
-    const userId = sessionStorage.getItem('uid');
     const payment = PaymentApi();
 
     const [inputs, setInputs] = useState({ type: 'Visit' });
@@ -234,7 +233,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
         setIsLoading(true);
 
         try {
-            const res = await payment.insert( inputs, userId, propertyId);
+            const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
             console.log(res.data)
             res.data.success ? setStatus(1) : setStatus(-1);
@@ -250,7 +249,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
         <div className="modal-container">
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
-                    <div className="col-lg-6 col-md-8 bg-white px-4 py-5 d-flex flex-column rounded-2">
+                    <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column rounded-2">
                         <div className="d-flex justify-content-between gap-4">
                             <div className="text-muted border px-4 small py-2 bg-three-clr d-flex align-items-center rounded-2">
                                 Prise de rendez vous de visite
@@ -313,13 +312,8 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             </div>
                             <div className="col-md-6 mb-2">
                                 <div className="d-flex flex-column">
-                                    <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
-                                    <div className="input-group mb-2">
-                                        <input type="number" name="amount" value={inputs.amount || ''} className="text-secondary p-2 border rounded-2 me-1" required readOnly />
-                                        <div className="input-group-append">
-                                            <span className="input-group-text text-secondary p-2"> Fcfa </span>
-                                        </div>
-                                    </div>
+                                    <span className="text-secondary fs-xs mb-1"> Montant à débiter ( Fcfa ) </span>
+                                    <input type="number" name="amount" value={inputs.amount || ''} className="text-secondary p-2 border rounded-2 me-1" required readOnly />
                                 </div>
                             </div>
                             <div className="col-md-6 mb-2">
@@ -334,7 +328,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                 </div>
                             </div>
                             
-                            <div className="d-flex pt-3">
+                            <div className="d-flex pt-2">
                                 <button type="submit" className="btn btn-outline-secondary"> Enregistrer </button>
                             </div>
                         </form>
