@@ -18,8 +18,13 @@ export function MonthPay(){
     
      const fetchUser = async () => {
          try {
-             const res = await user.findOne(uid);
-             return res.data.data; 
+            const { data } = await user.findOne();
+            // console.log(data)
+            if(data.success) {
+                localStorage.setItem('cname', data?.data?.company?.name);
+                localStorage.setItem('cicon', data?.data?.company?.icon);
+            }
+            return data.data; 
          } catch (err) { 
              throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
          }
@@ -70,7 +75,7 @@ export function MonthPay(){
                     <div className="col-lg-12 col-md-12"> 
                       <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
                         <div className="col-md-8 d-flex gap-3 mb-2"> 
-                            <img src={`${process.env.REACT_APP_PATH}/${data?.image}`} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
+                            <img src={`${data?.image}`} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
                             <div className="d-flex flex-column"> 
                                 <span className="text-secondary"> { data?.fname + " " + data?.lname } </span>
                                 <span className="color-gray small"> En ligne </span>

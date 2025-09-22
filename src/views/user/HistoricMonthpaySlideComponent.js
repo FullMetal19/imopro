@@ -72,11 +72,11 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
                             isLoading ? ( <div className="p-2 mt-3 d-flex justify-content-center"> <div className="spinner-border text-blue-clr fs-1" role="status" aria-label="Chargement"></div> </div> ) : (
                                 filteredData?.map(( item , index ) => { return (
                                 <tr key={index}>
-                                    <td className="text-muted"> {item?.createdAt} </td>
-                                    <td className="text-muted"> {item?.operator} </td>
-                                    <td className="text-muted"> {item?.amount} Fcfa </td>
-                                    <td className="text-muted"> {item?.month} </td>
-                                    <td className="text-muted"> <button className="btn btn-sm btn-outline-main" onClick={ ()=> setModal(item) }> Voir-plus </button>  </td>
+                                    <td className="text-secondary"> {item?.createdAt} </td>
+                                    <td className="text-secondary"> {item?.operator} </td>
+                                    <td className="text-secondary"> {item?.amount} Fcfa </td>
+                                    <td className="text-secondary"> {item?.month} </td>
+                                    <td className="text-secondary"> <button className="btn btn-sm btn-outline-main" onClick={ ()=> setModal(item) }> Voir-plus </button>  </td>
                                  </tr>     
                                 )
                             }))      

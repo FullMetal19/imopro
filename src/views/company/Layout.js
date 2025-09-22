@@ -29,14 +29,14 @@ export function Layout({ menu, companyId, children })
                 <div className="d-flex justify-content-between p-2 align-items-center">
                     <div className="d-flex gap-2">
                         <a className="btn btn-sm btn-outline-main" href={ "/mon-compte" } >  <i className="bi bi-arrow-left"></i>   </a>
-                        <span className="text-muted border py-1 px-3 hide"> ImmoPro </span>    
+                        <span className="text-muted border py-1 px-3 hide"> Imopro </span>    
                     </div> 
                     <div className="d-flex gap-4"> 
                         <div className="d-flex flex-column"> 
-                            <span className="fs-xs text-muted"> < TextReducer text={ 'Logetude' } maxsize={20} /> </span>
+                            <span className="fs-xs text-muted"> < TextReducer text={ localStorage.getItem('cname') } maxsize={20} /> </span>
                             <span className="fs-xs color-gray"> En ligne </span>
                         </div>
-                        <img src={'../../img/icons8-photo-100.png'} height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" /> 
+                        <img src={ localStorage.getItem('cicon') } height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" /> 
                     </div> 
                 </div> 
             </div>
