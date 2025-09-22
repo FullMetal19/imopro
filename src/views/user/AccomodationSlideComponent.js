@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { TextReducer } from "../../components/Component";
-import Slider from "react-slick";
-import { MessageModal } from "./Modal";
 import { PaymentApi } from "../../services/payment.api";
 
 const settings = {
@@ -34,52 +31,51 @@ export function AccomodationSlideComponent({  })
        
         <div className="col-lg-12 border rounded-top-2"> 
             <div className="row d-flex align-item-center py-3 px-4 border-bottom">
-                <span className="text-muted"> Liste des propriétés réservées ou achetées </span>
+                <span className="text-secondary lead"> Liste des propriétés réservées ou achetées </span>
             </div>
             <div className="row px-4 py-5">
                 { 
                     isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
                     data?.map(( item , index ) => { return (
 
-                       <div className="col-lg-6 px-2 mb-4" key={index}> 
-                            <div className="row d-flex border ps-3 rounded-2 mx-2"> 
-                                            <div className="py-4 col-lg-4 col-sm-5">
-                                    <div className="slider-container">
-                                        <Slider {...settings}> 
-                                            { 
-                                                item?.Property.media.map( (image , index1) => { return (
-                                                    <div className="d-flex" key={index1} > <img src={`${process.env.REACT_APP_PATH}/${image.path}`} alt="Logo"  className="img-fluid" />  </div>
-                                                )}) 
-                                            }    
-                                        </Slider>
-                                    </div>
-                                </div>
-                                <div className="col-lg-8 col-sm-7 d-flex flex-column py-4 border-start px-0"> 
-                                    <span className="text-muted mb-2 px-3"> < TextReducer text={ item?.Property.description } maxsize={70} /> </span>
-                                    <span className="text-muted mb-2 px-3 border-top border-bottom bg-light"> Adresse : { item?.Property.address } </span>
-                                    <div className="d-flex justify-content-between align-items-center px-3"> 
-                                        <div className="d-flex align-items-center">
-                                            <img src={'../img/icons8-calendrier-96.png'} alt="Logo" width={20} height={20} className="me-1 hide" />
-                                            <span className="main-color" > { item?.Property.price } Fcfa </span>
-                                        </div>
-                                        {
-                                           ( item?.Property.title === 'à louer' ) && ( <a className="btn btn-sm btn-outline-main" href={`/mensualites/${item?.Property.id}`} > Mensualité </a> )
-                                        }
-                                        {
-                                           ( item?.Property.title === 'à vendre' ) && ( <span className="text-muted px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
-                                        }   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
+                        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2" key={index}>
+                           {/* Image principale */}
+                           <img src={ item?.Property?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
+                           {/* Galerie */}
+                           <div className="d-flex gap-3 p-3">
+                             <img src={ item?.Property?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                             <img src={ item?.Property?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                             <img src={ item?.Property?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                           </div>
+                           {/* Contenu */}
+                           <div className="px-3 pb-3 pt-1">
+                             <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
+                              { item?.Property?.price +  ' Fcfa ' } { ( item?.Property?.title === "à louer" ) && " / mois" } 
+                             </span>
+                           </div>
+                           <div className="border-top border-bottom py-2 px-3">
+                             <h5 className="card-title text-secondary"> { item?.Property?.subtitle + ' ' + item?.Property?.title } </h5>
+                             <p className="text-secondary mb-2"> { item?.Property?.address } </p>
+                           </div>
+                           {/* Boutons */}
+                           <div className="d-flex p-3">
+                              {
+                                  ( item?.Property.title === 'à louer' ) && ( <a className="btn btn-outline-secondary" href={`/mensualites/${item?.Property.id}`} > Mensualité </a> )
+                              }
+                              {
+                                 ( item?.Property.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
+                              }  
+                           </div>
+                         </div>
+                           
                         )
                     }))      
                 }
                 {
-                    error ? ( <div className="d-flex text-muted"> Une erreur est survenue, veuillez verifier votre connexion </div> ) : null
+                    error ? ( <div className="d-flex text-secondary"> Une erreur est survenue, veuillez verifier votre connexion </div> ) : null
                 } 
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-muted"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) : null
+                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-secondary"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) : null
                 }                          
 
             </div>
