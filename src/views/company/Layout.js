@@ -84,7 +84,7 @@ export function Layout({ menu, companyId, children })
                 </div>
             </div>
             {/* ************************************************************************ */}
-            <div className="container-fluid level"> 
+            <div className="container-fluid level bg-blue-clr"> 
                 <BottomBar /> 
             </div>
             {/* ************************************************************************ */} 
