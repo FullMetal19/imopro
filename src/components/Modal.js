@@ -235,7 +235,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
         try {
             const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
-            console.log(res.data)
+            // console.log(res.data)
             res.data.success ? setStatus(1) : setStatus(-1);
             refetch();
 
@@ -343,7 +343,6 @@ export function VisitBookingModal({ method, refetch, propertyId })
 
 export function ValidationPaymentModal({ method, propertyId, guaranty })
 {
-    const uid = sessionStorage.getItem('uid');
     const payment = PaymentApi();
 
     const [inputs, setInputs] = useState({
@@ -365,9 +364,9 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
         event.preventDefault();
         setIsLoading(true);
         try{
-            const res = await payment.insert( inputs, uid, propertyId);
+            const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
-            console.log(res.data)
+            // console.log(res.data)
             res.data.success ? setStatus(1) : setStatus(-1);
         } catch (err) { 
             setStatus(-1);
@@ -456,7 +455,6 @@ export function ValidationPaymentModal({ method, propertyId, guaranty })
 
 export function MonthPaymentModal({ method, refetch, propertyId })
 {
-    const uid = sessionStorage.getItem('uid');
     const payment = PaymentApi();
     const product = ProductApi();
 
@@ -501,7 +499,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
         setIsLoading(true);
         
         try{
-            const res = await payment.insert( inputs, uid, propertyId);
+            const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
             if (res.data.success) {
                setStatus(1);
