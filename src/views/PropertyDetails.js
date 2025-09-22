@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginCheckerModal, VideoModal, VisitBookingModal } from "../components/Modal";
-import { Header, NavigationBar, TopBar } from "../components/Header";
+import { NavigationBar, TopBar } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import { ProductApi } from "../services/product.api";
 import { PaymentForm } from "../components/Form";
 import { useQuery } from "@tanstack/react-query";
-import { refresh } from "aos";
+
 
 const settings = {
     dots: true,

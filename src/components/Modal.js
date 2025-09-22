@@ -248,14 +248,14 @@ export function VisitBookingModal({ method, refetch, propertyId })
 
     return (
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between gap-4">
                             <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2">
                                 Prise de rendez vous de visite
                             </div>
-                            <button className="btn btn-sm btn-white bold mb-2" onClick={() => { method(false); }} > X </button>
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="row mt-4" onSubmit={handleForm}>
                             {isLoading && (
@@ -277,20 +277,20 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             <div className="col-md-6 mb-2">
                                 <div className="d-flex flex-column">
                                     <span className="text-muted fs-xs mb-1"> Date de rendez-vous </span>
-                                    <input type="date" name="date" className="form-control" required onChange={handleInputs} min={new Date().toISOString().split("T")[0]} max={`${new Date().getFullYear()}-12-31`} />
+                                    <input type="date" name="date" className="p-3 border rounded-2" required onChange={handleInputs} min={new Date().toISOString().split("T")[0]} max={`${new Date().getFullYear()}-12-31`} />
                                 </div>
                             </div>
                             <div className="col-md-6 mb-2">
                                 <div className="d-flex flex-column">
                                     <span className="text-muted fs-xs mb-1"> Heure du rendez-vous </span>
-                                    <input type="time" name="time" className="form-control" required onChange={handleInputs} />
+                                    <input type="time" name="time" className="p-3 border rounded-2" required onChange={handleInputs} />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="d-flex flex-column">
                                     <span className="text-muted fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group mb-2">
-                                        <input type="number" name="amount" value={inputs.amount || ''} className="form-control" required readOnly />
+                                        <input type="number" name="amount" value={inputs.amount || ''} className="p-3 border rounded-2" required readOnly />
                                         <div className="input-group-append">
                                             <span className="input-group-text"> Fcfa </span>
                                         </div>
@@ -305,7 +305,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             <div className="col-md-12 mb-2">
                                 <div className="d-flex flex-column">
                                     <span className="text-muted fs-xs mb-1"> Numéro du compte à débiter </span>
-                                    <input type="number" name="account" className="form-control" placeholder="77000000" min="100000000" max="999999999" required onChange={handleInputs} />
+                                    <input type="number" name="account" className="p-3 border rounded-2" placeholder="77000000" min="100000000" max="999999999" required onChange={handleInputs} />
                                 </div>
                             </div>
                             <div className="col-md-12 mb-2">
