@@ -6,20 +6,19 @@ import { TextReducer } from "./Component";
 
 
 
-export function ServiceContainer({children, title , desc}) 
+export function ServiceContainer({children, title , description }) 
 {
     return (
 
-        <div className="col-md-6 col-lg-4 mb-4"> 
-            <div className="d-flex flex-column border p-4 bg-white"> 
-                <div className="d-flex justify-content-center align-items-center mb-2" > 
-                    <span className='circle bg-snd-clr' > <img src={'../img/icons8-accueil-128.png'} alt="Logo" width={60} height={60} className="" /> </span>
-                </div>
-                <span className="text-center text-clr h4 mb-2" width="200" height="200" > { title }  </span>
-                <span className="text-center text-clr mb-3" width="200" height="200" > { desc }  </span>
-                <div className="text-center"> { children } </div>
-            </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+        <div className="shadow-sm rounded-2 d-flex flex-column align-items-center p-4 scale bg-white">
+          <span className="text-secondatry mb-3"> <i className="bi bi-patch-check fs-1"></i> </span>
+          <div className="card-body">
+            <p className="lead bold text-secondary text-center"> { title } </p>
+            <p className="lead text-secondary text-center"> { description } </p>
+          </div>
         </div>
+      </div>
     )
 }
 

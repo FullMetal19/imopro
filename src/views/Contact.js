@@ -56,7 +56,7 @@ export function Contact(){
             </div>
             {/* ************************************************************************ */}   
             <div className="row bg-three-clr py-5 px-4 d-flex justify-content-center"> 
-               <span className="h3 text-center text-secondary"> Nos contacts </span>
+               <span className="lead fs-2 text-center text-secondary"> Nos contacts </span>
             </div>
             {/* ************************************************************************ */}
             <div className="row justify-content-center py-5" > 

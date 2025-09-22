@@ -103,7 +103,7 @@ export function Service(){
                     <div className="row mt-5"> 
                     {  isLoading ? ( <div className="row"> <ServiceSkeleton value={ 3 } /> </div> ) : (
                         data?.map( (item , index) => { return (
-                            <ServiceContainer title={ item.title } desc={ item.description } key={index} />
+                            <ServiceContainer title={ item.title } description={ item.description } key={index} />
                         )})) 
                     }  
                     </div> 
