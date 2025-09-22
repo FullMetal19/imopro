@@ -28,7 +28,7 @@ export function Layout({ menu, companyId, children })
             <div className="container-fluid border-bottom">
                 <div className="d-flex justify-content-between p-2 align-items-center">
                     <div className="d-flex gap-2">
-                        <a className="btn btn-sm btn-outline-main" href={ "/mon-compte" } >  { '<' }  </a>
+                        <a className="btn btn-sm btn-outline-main" href={ "/mon-compte" } >  <i className="bi bi-arrow-left"></i>   </a>
                         <span className="text-muted border py-1 px-3 hide"> ImmoPro </span>    
                     </div> 
                     <div className="d-flex gap-4"> 

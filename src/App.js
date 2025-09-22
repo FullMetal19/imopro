@@ -9,7 +9,7 @@ import { Field } from "./views/Field";
 import { Signin } from "./views/Signin";
 import { Signup } from "./views/Signup";
 import { ValidateAccount } from "./views/ValidationAccount";
-// import { PropertyDetails } from "./views/PropertyDetails";
+import { PropertyDetails } from "./views/PropertyDetails";
 import { Password } from "./views/Password";
 
 import { Account } from "./views/user/Account";
@@ -66,6 +66,8 @@ function App()
                 <Route exact path="/inscription" element={ <Signup /> }> </Route>
                 <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route>
                 <Route exact path="/mot-de-passe-oublie" element={ <Password /> }> </Route>
+                <Route exact path="/propriete/:id" element={ <PropertyDetails /> }> </Route>
+
                 {/* <Route exact path="/recherche" element={ <SearchProperties /> }> </Route> */}
                 
                 {/* <Route exact path="/logement" element={ <Housing /> }> </Route>
