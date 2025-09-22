@@ -78,7 +78,7 @@ export function Housing(){
             </div>
           </div>
           {/* ******************************************** */}
-          <div className="row"> 
+          <div className="row justify-content-center"> 
             <NearestHousesComponent lat={'14.12345'} lon={'16.111234'} /> 
           </div>
           {/* ******************************************** */}

@@ -149,7 +149,7 @@ export function NearestHousesComponent() {
 
     return (
 
-        <div className="container py-5"> 
+        <div className="col-lg-11 py-5"> 
             <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? (  <div className="row"> <HouseSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -157,7 +157,7 @@ export function NearestHousesComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <HouseContainer key={index} price={ item.price } title={ item.title } desc={ item.desc } id={ item.id } image={ item.media[1].path } />
+                                    <HouseContainer key={index} data={item} />
                                 )}) 
                             }
                         </Slider>
@@ -259,7 +259,7 @@ export function NearestFieldsComponent() {
 
     return (
 
-        <div className="col-lg-12 py-5"> 
+        <div className="col-lg-11 py-5"> 
             <div className="row mt-4 d-flex justify-content-center"> 
                 { 
                     isLoading ? (  <div className="row"> <FieldSkeleton value={ 3 } design={"col-md-6 col-lg-4 mb-5"} />  </div>  ) : (
@@ -267,7 +267,7 @@ export function NearestFieldsComponent() {
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <FieldContainer title={ item.title } desc={ item.desc } image={ item.media[0].path } price={ item.price } id={ item.id } key={index} />
+                                    <FieldContainer data={item} key={index} />
                                 )}) 
                             }
                         </Slider>

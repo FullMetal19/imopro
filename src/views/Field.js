@@ -76,19 +76,19 @@ export function Field(){
             </div>
           </div>
           {/* ******************************************** */}
-          <div className="row"> 
+          <div className="row justify-content-center"> 
             <NearestFieldsComponent lat={'14.12345'} lon={'16.111234'} /> 
           </div>
           {/* ******************************************** */}
           <div className="row"> 
             <div className="col-lg-12 py-5"> 
               {/* ------------------------------------------------ */}
-              <div className="row justify-content-center p-3 bg-blue-clr">
+              <div className="row justify-content-center p-3 bg-blue-light-clr">
               <div className="col-lg-11"> 
               <div className="row">
 
                 <div className="col-12 d-flex align-items-center mb-3 p-1 rounded-1 px-4"> 
-                   <span className="text-white lead"> <i class="bi bi-funnel"></i> Filtrer les terrains </span>
+                   <span className="text-secondary lead"> <i class="bi bi-funnel"></i> Filtrer les terrains </span>
                 </div> 
                 <div className="col-md-4 mb-2"> 
                   <select className="form-control border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Header, NavigationBar, TopBar } from "../../components/Header";
+import { NavigationBar, TopBar } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { TextReducer } from "../../components/Component";
-import { ProductApi } from "../../services/product.api";
-import Slider from "react-slick";
 import { UserApi } from "../../services/user.api";
 import { MessageModal } from "./Modal";
 import { VisitSlideComponent } from "./VisitSlideComponent";
@@ -80,7 +77,7 @@ export function Account()
             <TopBar />
           </div> 
           <div className="row sticky-top"> 
-            <NavigationBar />
+            <NavigationBar page={6} />
           </div>
           <div className="row justify-content-center border px-3"> 
               <div className="col-lg-10 py-5"> 

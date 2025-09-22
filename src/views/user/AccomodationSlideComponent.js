@@ -37,7 +37,8 @@ export function AccomodationSlideComponent({  })
                     isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
                     data?.map(( item , index ) => { return (
 
-                        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2" key={index}>
+                      <div className="col-md-6 mb-4" key={index}>
+                        <div className="d-flex flex-column bg-white my-4 shadow-sm border rounded-2">
                            {/* Image principale */}
                            <img src={ item?.Property?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
                            {/* Galerie */}
@@ -65,7 +66,8 @@ export function AccomodationSlideComponent({  })
                                  ( item?.Property.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
                               }  
                            </div>
-                         </div>
+                        </div>
+                      </div>
                            
                         )
                     }))      
