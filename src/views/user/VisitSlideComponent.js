@@ -5,13 +5,12 @@ import { PaymentApi } from "../../services/payment.api";
 
 export function VisitSlideComponent({ openLocalisationModal,openValidationModal })
 {
-    const uid = sessionStorage.getItem('uid');
 
     const payment = PaymentApi();
     
         const fetchData = async () => {
             try {
-                const res = await payment.findVisitsByUser(uid);
+                const res = await payment.findVisitsByUser();
                 console.log(res.data.data)
                 return res.data.data; 
             } catch (err) { 
