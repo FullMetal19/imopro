@@ -132,11 +132,11 @@ export function ContactContainer({image, tel1 , tel2})
     
         <div className="col-md-6 col-lg-4 mb-3"> 
             <div className="d-flex flex-column border p-4 bg-white"> 
-                <div className="d-flex justify-content-center align-items-center mb-2" > 
-                    <span className='circle bg-snd-clr' > <img src={ image } alt="Logo" width={60} height={60} className="" /> </span>
+                <div className="d-flex justify-content-center align-items-center my-3 " > 
+                    <span className='circle bg-three-clr' > <i class="bi bi-check-circle text-blue-clr fs-1"></i> </span>
                 </div>
-                <span className="text-center text-clr mb-2" width="200" height="200" > { tel1 } </span>
-                <span className="text-center text-clr mb-3" width="200" height="200"> { tel2 } </span>
+                <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel1 } </span>
+                <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel2 } </span>
             </div>
         </div>
     )

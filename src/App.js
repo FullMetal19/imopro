@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { Home } from "./views/Home";
 import { Housing } from "./views/Housing";
 import { Field } from "./views/Field";
-// import { Service } from "./views/Service";
-// import { Contact } from "./views/Contact";
+import { Service } from "./views/Service";
+import { Contact } from "./views/Contact";
+
 import { Signin } from "./views/Signin";
 import { Signup } from "./views/Signup";
 import { ValidateAccount } from "./views/ValidationAccount";
@@ -64,6 +65,11 @@ function App()
 
                 <Route exact path="/mon-compte" element={ <Account /> }> </Route>
                     <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route>
+
+
+                <Route exact path="/service" element={ <Service /> }> </Route>
+                <Route exact path="/contact" element={ <Contact /> }> </Route>
+                {/* <Route exact path="/contact" element={ <Contact /> }> </Route> */}
 
                 <Route exact path="/connexion" element={ <Signin /> }> </Route>
                 <Route exact path="/inscription" element={ <Signup /> }> </Route>
