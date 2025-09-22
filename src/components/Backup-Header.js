@@ -45,13 +45,8 @@ export function NavigationBar ({designClass, page}) {
 
     const logout = async () => {
         try {
-            sessionStorage.clear();  
-            navigate('/');
-            // const res = await user.logout();
-            // if(res.status) {
-            //     sessionStorage.clear();  
-            //     navigate('/');
-            // }      
+            localStorage.clear();  
+            navigate('/');    
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }

@@ -3,10 +3,20 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useNavigate } from "react-router";
 
 
 export function NavigationBar({page=1}) 
 {
+
+  const navigate = useNavigate();
+
+  const logout = async () => {
+ 
+    localStorage.clear();  
+    navigate('/');      
+  } 
+
   return (
     <div className="col-12">
       <div className={`row bg-white`}> 
@@ -51,7 +61,7 @@ export function NavigationBar({page=1})
                 <a className="btn btn-sm btn-outline-secondary me-2" href="/inscription"> S'inscrire </a>
                 {
                   localStorage.getItem('token') ? 
-                  ( <button className="btn btn-sm btn-secondary" type="button" > Se-déconnecter </button> ) :
+                  ( <button className="btn btn-sm btn-secondary" type="button" onClick={logout} > Se-déconnecter </button> ) :
                   ( <a href="/connexion" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
                 }     
               </div>
