@@ -264,12 +264,12 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             )}
                             {status === 1 && (
                                 <div className="">
-                                    <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div>
+                                    <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div>
                                 </div>
                             )}
                             {status === -1 && (
                                 <div className="">
-                                    <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div>
+                                    <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div>
                                 </div>
                             )}
 

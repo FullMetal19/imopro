@@ -8,7 +8,6 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
 {
     const payment = PaymentApi();
 
-    const uid = sessionStorage.getItem('uid');
     const {housingId} = useParams();
 
     const [month, setMonth] = useState();
@@ -16,7 +15,7 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
     
     const fetchBookedHousing = async () => {
         try {
-            const res = await payment.findByTypeUserAndProperty(uid, housingId, 'MonthPay');
+            const res = await payment.findByTypeUserAndProperty(housingId, 'MonthPay');
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);

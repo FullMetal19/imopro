@@ -9,11 +9,11 @@ export function PaymentApi(contentType = "application/json")
 
         insert: (data, propertyId) => https.post(`/api/payment/${propertyId}`, data),  
 
-        findByTypeAndUser: (userId, type) => https.get(`/api/payment/${userId}/${type}`),
+        findByTypeAndUser: (type) => https.get(`/api/payment/${type}`),
 
         findByTypeAndProperty: (propertyId, type) => https.get(`/api/payment/property/${propertyId}/${type}`),
 
-        findByTypeUserAndProperty: (userId, propertyId, type) => https.get(`/api/payment/${userId}/${propertyId}/${type}`),
+        findByTypeUserAndProperty: (propertyId, type) => https.get(`/api/payment/${propertyId}/${type}`),
 
 
 
