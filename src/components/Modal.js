@@ -249,10 +249,10 @@ export function VisitBookingModal({ method, refetch, propertyId })
     return (
         <div className="modal-container">
             <div className="container">
-                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
-                    <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
+                    <div className="col-lg-6 col-md-8 bg-white px-4 py-5 d-flex flex-column rounded-2">
                         <div className="d-flex justify-content-between gap-4">
-                            <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2">
+                            <div className="text-muted border px-4 small py-2 bg-three-clr d-flex align-items-center rounded-2">
                                 Prise de rendez vous de visite
                             </div>
                             <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
@@ -265,7 +265,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             )}
                             {status === 1 && (
                                 <div className="">
-                                    <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div>
+                                    <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div>
                                 </div>
                             )}
                             {status === -1 && (
@@ -276,23 +276,23 @@ export function VisitBookingModal({ method, refetch, propertyId })
 
                             <div className="col-md-6 mb-2">
                                 <div className="d-flex flex-column">
-                                    <span className="text-muted fs-xs mb-1"> Date de rendez-vous </span>
-                                    <input type="date" name="date" className="p-3 border rounded-2" required onChange={handleInputs} min={new Date().toISOString().split("T")[0]} max={`${new Date().getFullYear()}-12-31`} />
+                                    <span className="text-secondary fs-xs mb-1"> Date de rendez-vous </span>
+                                    <input type="date" name="date" className="text-secondary p-3 border rounded-2" required onChange={handleInputs} min={new Date().toISOString().split("T")[0]} max={`${new Date().getFullYear()}-12-31`} />
                                 </div>
                             </div>
                             <div className="col-md-6 mb-2">
                                 <div className="d-flex flex-column">
-                                    <span className="text-muted fs-xs mb-1"> Heure du rendez-vous </span>
-                                    <input type="time" name="time" className="p-3 border rounded-2" required onChange={handleInputs} />
+                                    <span className="text-secondary fs-xs mb-1"> Heure du rendez-vous </span>
+                                    <input type="time" name="time" className="text-secondary p-3 border rounded-2" required onChange={handleInputs} />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="d-flex flex-column">
-                                    <span className="text-muted fs-xs mb-1"> Montant à débiter </span>
+                                    <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group mb-2">
-                                        <input type="number" name="amount" value={inputs.amount || ''} className="p-3 border rounded-2" required readOnly />
+                                        <input type="number" name="amount" value={inputs.amount || ''} className="text-secondary p-3 border rounded-2" required readOnly />
                                         <div className="input-group-append">
-                                            <span className="input-group-text"> Fcfa </span>
+                                            <span className="input-group-text p-3"> Fcfa </span>
                                         </div>
                                     </div>
                                 </div>
@@ -304,25 +304,25 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             </div>
                             <div className="col-md-12 mb-2">
                                 <div className="d-flex flex-column">
-                                    <span className="text-muted fs-xs mb-1"> Numéro du compte à débiter </span>
-                                    <input type="number" name="account" className="p-3 border rounded-2" placeholder="77000000" min="100000000" max="999999999" required onChange={handleInputs} />
+                                    <span className="text-secondary fs-xs mb-1"> Numéro du compte à débiter </span>
+                                    <input type="number" name="account" className="text-secondary p-3 border rounded-2" placeholder="77000000" min="100000000" max="999999999" required onChange={handleInputs} />
                                 </div>
                             </div>
                             <div className="col-md-12 mb-2">
-                                <span className="text-center fs-xs color-dark"> Choisir l'opérateur de paiement </span>
+                                <span className="text-center fs-xs text-secondary"> Choisir l'opérateur de paiement </span>
                             </div>
                             <div className="col-md-12 mb-2 d-flex gap-4">
                                 <div className="form-check">
                                     <input className="form-check-input" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={handleInputs} />
-                                    <label className="text-muted font-xs" htmlFor="flexRadioDefault1"> wave </label>
+                                    <label className="text-secondary font-xs" htmlFor="flexRadioDefault1"> wave </label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={handleInputs} />
-                                    <label className="text-muted font-xs" htmlFor="flexRadioDefault2"> Orange moneey </label>
+                                    <label className="text-secondary font-xs" htmlFor="flexRadioDefault2"> Orange moneey </label>
                                 </div>
                             </div>
                             <div className="d-flex justify-content-end">
-                                <button type="submit" className="btn btn-sm btn-outline-main"> Enregistrer </button>
+                                <button type="submit" className="btn btn-sm btn-outline-secondary"> Enregistrer </button>
                             </div>
                         </form>
                     </div>
