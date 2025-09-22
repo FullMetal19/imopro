@@ -280,13 +280,13 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                     <input type="date" name="date" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} min={new Date().toISOString().split("T")[0]} max={`${new Date().getFullYear()}-12-31`} />
                                 </div>
                             </div>
-                            <div className="col-md-6 mb-2">
+                            <div className="col-md-6 mb-4">
                                 <div className="d-flex flex-column">
                                     <span className="text-secondary fs-xs mb-1"> Heure du rendez-vous </span>
                                     <input type="time" name="time" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
                                 </div>
                             </div>
-                            <div className="col-md-12 mb-2 bg-light">
+                            <div className="col-md-12 mb-2 bg-light py-2">
                                 <span className="text-center fs-xs text-secondary"> Choisir l'opérateur de paiement </span>
                             </div>
                             <div className="col-md-12 mb-2 d-flex gap-4">
@@ -305,7 +305,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                     <input type="text" name="fname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
                                 </div>
                             </div>
-                            <div className="col-md-6 mb-2">
+                            <div className="col-md-4 mb-2">
                                 <div className="d-flex flex-column">
                                     <span className="text-secondary fs-xs mb-1"> Nom </span>
                                     <input type="text" name="lname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
@@ -315,7 +315,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                 <div className="d-flex flex-column">
                                     <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group mb-2">
-                                        <input type="number" name="amount" value={inputs.amount || ''} className="w-100 text-secondary p-2 border rounded-2 me-1" required readOnly />
+                                        <input type="number" name="amount" value={inputs.amount || ''} className="text-secondary p-2 border rounded-2 me-1" required readOnly />
                                         <div className="input-group-append">
                                             <span className="input-group-text p-2"> Fcfa </span>
                                         </div>
