@@ -11,7 +11,7 @@ export function MessageApi(contentType = "application/json")
 
         findOne: (id) => https.get(`/api/message/${id}`),
 
-        insert : (data, uid) => https.post(`/api/message/${uid}`, data), 
+        insert : (data) => https.post(`/api/message`, data), 
 
         update : (id, data) => https.put(`/api/message/${id}`, data), 
 

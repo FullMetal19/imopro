@@ -25,13 +25,12 @@ export function Contact(){
 
     const handleForm = async ( event ) => {
         event.preventDefault();
-        setIsLoading(true);
 
-         if (sessionStorage.getItem('token')) {
+         if (localStorage.getItem('token')) {
+            setIsLoading(true);
             setloginChecker(false);
-            const uid = sessionStorage.getItem('uid');
             try {
-                const res = await message.insert(inputs, uid);
+                const res = await message.insert(inputs);
                 setIsLoading(false);
                 (res.data.success) ? setStatus(1) : setStatus(-1); 
             } catch (err) { 

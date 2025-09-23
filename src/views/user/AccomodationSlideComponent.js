@@ -34,7 +34,7 @@ export function AccomodationSlideComponent({  })
             </div>
             <div className="row px-4 py-5">
                 { 
-                    isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                    isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <div className="spinner-border text-blue-clr fs-1" role="status" aria-label="Chargement"></div> </div>  ) : (
                     data?.map(( item , index ) => { return (
 
                       <div className="col-md-6 mb-4" key={index}>

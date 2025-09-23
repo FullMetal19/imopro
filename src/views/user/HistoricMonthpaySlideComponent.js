@@ -49,7 +49,7 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
                     </div>
                 </div>
                 <div className="col-lg-4 mt-2" > 
-                    <div className="d-flex justify-content-end" > 
+                    <div className="d-flex" > 
                         <button className="btn btn-secondary" onClick={ ()=> setPaymentForm( refetch ) }> Nouveau mensualité </button> 
                     </div>
                 </div>

@@ -84,13 +84,9 @@ export function LoaderModal()
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
-                    <div className="col-lg-2 bg-white mt-5 p-4 d-flex flex-column">
-                        <div className="col-md-12 d-flex justify-content-center p-4"> 
-                            <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> 
-                        </div> 
-                    </div>
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
+                    <div className="spinner-border text-white fs-1" role="status" aria-label="Chargement"></div>
                 </div>
             </div>
         </div>

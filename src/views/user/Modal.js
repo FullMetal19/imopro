@@ -8,12 +8,12 @@ export function MessageModal({ method, message })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-9 col-md-10 bg-three-clr p-4 d-flex flex-column">
-                        <div className="d-flex justify-content-between"> 
+                        <div className="d-flex"> 
                             <span className="text-muted"> La raison de l'invalidité de la propriété </span>
-                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <div className="d-flex border-top scroll-md border p-4 mb-2">
                             {message} 
@@ -33,15 +33,15 @@ export function MonthPayDetailModal({ method, data })
         <div className="modal-container">
             <div className="container pt-5">
                 <div className="row d-flex justify-content-center mt-5 px-2">
-                    <div className="col-lg-6 col-md-8 bg-three-clr p-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
+                    <div className="col-lg-6 col-md-8 bg-white rounded-3 p-4 d-flex flex-column">
+                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex flex-column border-top border-bottom pt-4 pb-2 mb-2">
-                            <div className="rounded-1 border-blue bg-blue-clr text-light p-2 mb-3"> Détail du payment </div>
-                            <div className="rounded-1 border text-muted py-1 px-2 mb-2"> Opérateur : { data?.operator } </div>
-                            <div className="rounded-1 border text-muted py-1 px-2 mb-2"> Compte débité : { data?.senderAccount }  </div>
-                            <div className="rounded-1 border text-muted py-1 px-2 mb-2"> Montant débité : { data?.amount } Fcfa  </div>
-                            <div className="rounded-1 border text-muted py-1 px-2 mb-2"> Mois payé : { data?.month } </div>
-                            <div className="rounded-1 border text-muted py-1 px-2 mb-2"> Date : { data?.createdAt }  </div>
+                            <div className="rounded-1 bg-blue-light-clr text-secondary p-2 mb-3"> Détail du payment </div>
+                            <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Opérateur : { data?.operator } </div>
+                            <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Compte débité : { data?.senderAccount }  </div>
+                            <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Montant débité : { data?.amount } Fcfa  </div>
+                            <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Mois payé : { data?.month } </div>
+                            <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Date : { data?.createdAt }  </div>
                         </div>
                     </div>
                 </div>

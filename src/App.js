@@ -15,7 +15,7 @@ import { Password } from "./views/Password";
 
 import { Account } from "./views/user/Account";
 import { MonthPay } from "./views/user/MonthPay";
-// import { NewCompany } from "./views/user/NewCompany";
+import { NewCompany } from "./views/user/NewCompany";
 
 import { ValidatedProperty } from "./views/company/genrality/ValidatedProperty";
 import { UnvalidatedProperty } from "./views/company/genrality/UnvalidatedProperty";
@@ -45,7 +45,7 @@ import { Services } from "./views/admin/service/Services";
 import { ValidatingCompany } from "./views/admin/company/ValidatingCompany";
 import { BlockedCompany } from "./views/admin/company/BlockedCompany";
 import { ValidateCompany } from "./views/admin/company/ValidateCompany";
-// import { ModifyCompany } from "./views/user/ModifyCompany";
+import { ModifyCompany } from "./views/user/ModifyCompany";
 
 
 
@@ -65,6 +65,8 @@ function App()
 
                 <Route exact path="/mon-compte" element={ <Account /> }> </Route>
                     <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route>
+                    <Route exact path="/creation-entreprise" element={ <NewCompany /> }> </Route>
+                    <Route exact path="/modification-entreprise/:companyId" element={ <ModifyCompany /> }> </Route>
 
 
                 <Route exact path="/service" element={ <Service /> }> </Route>

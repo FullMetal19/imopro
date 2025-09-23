@@ -13,7 +13,7 @@ export function CompanyApi(contentType = "application/json")
 
         findOne: (id) => https.get(`/api/company/${id}`),
 
-        insert : (data, uid) => https.post(`/api/company/${uid}`, data), 
+        insert : (data) => https.post(`/api/company`, data), 
 
         setStatus : (id, status) => https.put(`/api/company/update-status/${id}`, status),
 

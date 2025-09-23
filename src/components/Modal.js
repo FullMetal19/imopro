@@ -140,14 +140,14 @@ export function PasswordModal({ method })
                             {
                               isLoading && (
                                 <div className="d-flex justify-content-center align-items-center mb-3"> 
-                                   <div className="spinner-border text-success" role="status" aria-label="Chargement"></div>
+                                   <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                                 </div>
                               )
                             }
                             {
                               status === -1 && (
                                 <div className="col-md-12 mb-2">
-                                  <div className="alert alert-danger">
+                                  <div className="alert alert-danger text-secondary">
                                     Une erreur est survenue durant le traitement. Vérifiez votre numéro puis réessayez.
                                   </div>
                                 </div>
@@ -259,7 +259,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                         <form className="row mt-4" onSubmit={handleForm}>
                             {isLoading && (
                                 <div className="d-flex justify-content-center mb-4">
-                                    <img src={"../img/icons8-iphone-spinner.gif"} height={34} width={34} alt="Logo" />
+                                    <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                                 </div>
                             )}
                             {status === 1 && (
@@ -394,7 +394,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
                         </div>
                         <form className="row mt-4" onSubmit={ handleForm }>
                             {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 
@@ -528,7 +528,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column rounded-3">
                         <div className="d-flex justify-content-between gap-4"> 
-                            <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2 p-2"> Payement mensuel </div>
+                            <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2 p-2"> Payement de la mensualité </div>
                             <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="row mt-4" onSubmit={ handleForm }>
@@ -537,9 +537,9 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                             }
                             {
                                 ( status === 1 ) ? 
-                                (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div> </div> ) :
+                                (  <div className=""> <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Mensualité payée avec succes </div> </div> ) :
                                 ( status === -1 ) ?
-                                (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
+                                (  <div className=""> <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="col-md-8 mb-2" > 
                                 <div className="d-flex flex-column">  
