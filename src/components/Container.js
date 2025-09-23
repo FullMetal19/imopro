@@ -27,6 +27,7 @@ export function LocationContainer({region , count, id})
 {
     return (
 
+      <div className="px-2">
         <div className="region-container rounded-3">
           <div className="region-overlayer py-3 rounded-3">    
             <div className="d-flex flex-column"> 
@@ -40,6 +41,7 @@ export function LocationContainer({region , count, id})
             </div> 
           </div>
         </div>
+      </div>
     )
 }
 
