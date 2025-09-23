@@ -63,8 +63,7 @@ export function Property()
                                 isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                 
-
-                                    <div className="col-lg-4 col-sm-6 mb-4" key={index}>
+                                    <div className="col-lg-4 col-md-6 mb-4" key={index}>
                                       <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
                                         {/* Image principale */}
                                         <img src={ item?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "200px", objectFit: "cover" }} />

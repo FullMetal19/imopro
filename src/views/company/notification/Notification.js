@@ -58,17 +58,18 @@ export function Notification()
                     <div className="row scroll p-4">
                         { 
                             isLoading ? (  <div className="d-flex justify-content-center mt-5"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
-                                filteredData?.map(( item , index ) => { return(
-                                <div className="col-md-12 py-0 mb-3" key={index}> 
-                                    <div className="row border rounded-3 py-2" >
-                                        <div className="col-12 d-flex align-items-center gap-2 px-3 mb-1"> 
-                                            <img src={'../../img/icons8-nouveau-message-52.png'} height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
-                                            <span className="color-blue fs-xs"> { item.Payment.User.fname + " " + item.Payment.User.lname } </span>
+                                filteredData?.map(( item , index ) => { return (
+
+                                  <div className="col-lg-6 mb-3" key={index}> 
+                                    <div className="border rounded-3 py-2" >
+                                        <div className="d-flex align-items-center gap-2 px-3 mb-1"> 
+                                            <img src={ item.Payment.User.image }  height={30} width={30} alt="Logo" className="rounded-circle border border-secondary border-3 p-1" /> 
+                                            <span className="text-secondary fw-bole small"> { item.Payment.User.fname + " " + item.Payment.User.lname } </span>
                                         </div>
-                                        <div className="col-12 border-top border-bottom py-2 px-3 text-muted mb-2"> { item.content } </div> 
-                                        <span className="col-12 text-muted fs-xs px-3"> { item.createdAt } </span>
+                                        <div className="border-top border-bottom py-2 px-3 text-secondary mb-2"> { item.content } </div> 
+                                        <span className="text-secondary fs-xs px-3"> { item.createdAt } </span>
                                     </div>
-                                </div>   
+                                  </div>   
                                 )
                             }))      
                         }

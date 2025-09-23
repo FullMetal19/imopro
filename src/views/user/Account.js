@@ -83,7 +83,7 @@ export function Account()
                     <div className="col-lg-12 col-md-12"> 
                         <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
                         <div className="col-md-8 d-flex gap-3 mb-2"> 
-                            <img src={`${data?.image}`} height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
+                            <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
                             <div className="d-flex flex-column"> 
                                 <span className="text-secondary"> { data?.fname + " " + data?.lname } </span>
                                 <span className="color-gray small"> En ligne </span>
