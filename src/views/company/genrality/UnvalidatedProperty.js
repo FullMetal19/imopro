@@ -112,24 +112,10 @@ export function UnvalidatedProperty()
                                           </div>
                                           {/* Boutons */}
                                           <div className="d-flex justify-content-between align-items-center p-3">
-                                             <button className="btn btn-sm btn-outline-main" onClick={ ()=> setForm1(item?.message) } > Message </button>
+                                             <button className="btn btn-sm btn-outline-secondary" onClick={ ()=> setForm1(item?.message) } > Message </button>
                                              <button className="btn btn-sm btn-main" onClick={ ()=> setModal(item.id) } > Supprimer </button>
                                           </div>
                                         </div> 
-
-                                        {/* <div className="d-flex flex-column border ps-3 rounded-2 mx-2 w-100 bg-light">
-                                             <img src={`${process.env.REACT_APP_PATH}/${item.media[0].path}`} alt="Logo" height={200} className="mb-3 rounded-2" />
-                                            <div className="d-flex flex-column py-3 border-start border-top px-0 bg-white"> 
-                                               <div className="text-muted mb-2 px-3">
-                                                    < TextReducer text={ "Configuration genrality onfiguration genrality onfiguration genrality onfiguration genrality" } maxsize={70} />  
-                                                </div>
-                                                <span className="text-muted mb-2 px-3 border-top border-bottom bg-light"> Adresse : { item?.address } </span>
-                                                <div className="d-flex justify-content-between align-items-center px-3"> 
-                                                    <button className="btn btn-sm btn-outline-main" onClick={ ()=> setForm1(item?.message) } > Message </button>
-                                                    <button className="btn btn-sm btn-main" onClick={ ()=> setModal(item.id) } > Supprimer </button>
-                                                </div>
-                                            </div>
-                                        </div> */}
 
                                     </div>    
                                     )

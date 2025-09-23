@@ -91,26 +91,9 @@ export function ValidatedProperty()
                                         </div>
                                         {/* Boutons */}
                                         <div className="d-flex p-3">
-                                           <a className="btn btn-sm btn-outline-main" href={ `/configuration/${companyId}/${ item?.id }` } > Configuration </a>
+                                           <a className="btn btn-sm btn-outline-secondary" href={ `/configuration/${companyId}/${ item?.id }` } > Configuration </a>
                                         </div>
-                                    </div> 
-
-                                        {/* <div className="d-flex flex-column border ps-3 rounded-2 mx-2 w-100">
-                                            <img src={`${process.env.REACT_APP_PATH}/${item.media[0].path}`} alt="Logo" height={200} className="mb-3 rounded-2" />
-                                            <div className="d-flex flex-column py-3 border-start border-top px-0"> 
-                                                <div className="text-muted mb-2 px-3">
-                                                    < TextReducer text={ item?.description } maxsize={70} />
-                                                </div>
-                                                <span className="text-muted mb-2 px-3 border-top border-bottom bg-light"> Adresse : { item?.address } </span>
-                                                <div className="d-flex justify-content-between align-items-center px-3"> 
-                                                    <div className="d-flex align-items-center">
-                                                        <img src={'../../img/icons8-calendrier-96.png'} alt="Logo" width={20} height={20} className="me-1 hide" />
-                                                        <span className="main-color" > { item?.price } F </span>
-                                                    </div>
-                                                    <a className="btn btn-sm btn-outline-main" href={ `/configuration/${companyId}/${ item?.id }` } > Configuration </a>
-                                                </div>
-                                            </div>
-                                        </div> */}
+                                      </div> 
 
                                     </div>       
                                     )
