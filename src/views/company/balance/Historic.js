@@ -42,7 +42,7 @@ export function Historic({ companyId })
                         <div className="text-secondary mb-2 d-flex align-items-center px-3 w-100 form-control"> Filtrer </div>
                     </div>
                     <div className="col-md-3" > 
-                        <input type="month" name="month" value={month} className="form-control mb-2" required onChange={ handleInputChange } />
+                        <input type="month" name="month" value={month} className="text-secondary p-2 border rounded-2 mb-2" required onChange={ handleInputChange } />
                     </div>
                 </div>
             </div>
@@ -61,19 +61,19 @@ export function Historic({ companyId })
                         isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div> ) : (
                             filteredData?.map(( item , index ) => { return (
                             <tr key={index}>                        
-                                <td className="text-muted"> { item?.createdAt } </td>
-                                <td className="text-muted"> { item?.recipient } </td>
-                                <td className="text-muted"> { item?.amount }  </td>
-                                <td className="text-muted"> { item?.operator } </td>
+                                <td className="text-secondary"> { item?.createdAt } </td>
+                                <td className="text-secondary"> { item?.recipient } </td>
+                                <td className="text-secondary"> { item?.amount }  </td>
+                                <td className="text-secondary"> { item?.operator } </td>
                             </tr>     
                             )
                         }))      
                     }  
                     {
-                        error && ( <tr className="d-flex text-muted p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) 
+                        error && ( <tr className="d-flex text-secondary p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) 
                     } 
                     {
-                        ( Array.isArray(data) && data.length === 0 ) && ( <tr className="d-flex text-muted p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) 
+                        ( Array.isArray(data) && data.length === 0 ) && ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) 
                     }     
                     </tbody>
                 </table>

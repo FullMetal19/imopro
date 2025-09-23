@@ -34,8 +34,8 @@ export function WithdrawForm()
     return (
 
         <div className="filter border-end pb-4">
-            <div className="d-flex py-3 border-bottom mb-4 bg-three-clr"> 
-                <span className="h5 px-4 text-muted mt-2"> Retrait d'argent </span> 
+            <div className="d-flex py-3 border-bottom mb-4 bg-blue-light-clr"> 
+                <span className="lead px-4 text-secondary mt-2"> Retrait d'argent </span> 
             </div>
             <form className="pb-2 px-3 mb-2" onSubmit={ handleForm }>
                 <div className="row" > 
@@ -50,30 +50,42 @@ export function WithdrawForm()
                     }
                     <div className="col-md-12 mb-2" > 
                         <div className="d-flex flex-column">  
-                            <span className="text-muted fs-xs mb-1"> Numéro destinataire </span>
-                            <input type="number" name="recipient" className="form-control" placeholder="77000000" required onChange={ handleInputs } />
+                            <span className="text-secondary fs-xs mb-1"> Numéro destinataire </span>
+                            <input type="number" name="recipient" className="text-secondary p-2 border rounded-2" placeholder="77000000" required onChange={ handleInputs } />
+                        </div>
+                    </div>
+                    <div className="col-md-12 mb-2" > <span className="text-center fs-xs text-secondary p-2 border rounded-2"> L'opérateur mobile </span> </div>  
+                    <div className="col-md-12 mb-2 d-flex flex-column" > 
+                        <div className="form-check">
+                            <input className="text-secondary p-2 border rounded-2" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={ handleInputs } />
+                            <label className="text-secondary font-xs" htmlFor="flexRadioDefault1"> wave </label>
+                        </div>
+                        <div className="form-check">
+                            <input className="text-secondary p-2 border rounded-2" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={ handleInputs } />
+                            <label className="text-secondary font-xs" htmlFor="flexRadioDefault2"> Orange money </label>
                         </div>
                     </div>
                     <div className="col-md-12 mb-2" > 
                         <div className="d-flex flex-column">  
-                            <span className="text-muted fs-xs mb-1"> Montant à débiter </span>
+                            <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                             <div className="input-group mb-3">
-                                <input type="number" name="amount" className="form-control" required onChange={ handleInputs } />
-                                <div className="input-group-append">  <span className="input-group-text" > Fcfa </span>  </div>
+                                <input type="number" name="amount" className="text-secondary p-2 border rounded-2" required onChange={ handleInputs } />
                             </div> 
                         </div>
                     </div> 
-                    <div className="col-md-12 mb-2" > <span className="text-center fs-xs color-dark"> L'opérateur mobile </span> </div>  
-                    <div className="col-md-12 mb-2 d-flex flex-column" > 
-                        <div className="form-check">
-                            <input className="form-check-input" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={ handleInputs } />
-                            <label className="text-muted font-xs" htmlFor="flexRadioDefault1"> wave </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={ handleInputs } />
-                            <label className="text-muted font-xs" htmlFor="flexRadioDefault2"> Orange money </label>
+                    <div className="col-md-8 mb-2">
+                        <div className="d-flex flex-column">
+                            <span className="text-secondary fs-xs mb-1"> Prénom </span>
+                            <input type="text" name="fname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
                         </div>
                     </div>
+                    <div className="col-md-4 mb-2">
+                        <div className="d-flex flex-column">
+                            <span className="text-secondary fs-xs mb-1"> Nom </span>
+                            <input type="text" name="lname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
+                        </div>
+                    </div>
+             
                     <div className="col-md-12 my-2 p-3 border-top border-bottom" > 
                         <button type="submit" className="btn btn-sm btn-main"> Envoyez </button> 
                     </div>

@@ -39,18 +39,18 @@ export function Balance()
                     <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
                         <div className="d-flex gap-4 align-items-center mb-4"> 
                             <span className="h5 text-secondary mt-2"> Mon solde </span>
-                            <button className="btn btn-sm border rounded-4 text-secondary px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
+                            <button className="btn btn-sm btn-outline-main px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
                         </div>
                     </div>
                     <div className="contain">
                         {/* ************************************************************** */}
                         <div className="flex-1 border-bottom border-end">
                             <div className="d-flex flex-column mb-3 px-3" > 
-                                <div className="color-gray mb-3 d-flex align-items-center p-3 border-bottom border-start border-end"> Montant solde </div>
+                                <div className="text-secondary lead mb-3 d-flex align-items-center p-3 border-bottom border-start border-end"> Montant solde </div>
                                 <div className="d-flex flex-column gap-2 mb-4"> 
                                     <div className="text-center border text-muted py-4 bg-three-clr rounded-1 mb-2"> { view ?  `${ data?.totalAmount }` : '*************' } Fcfa </div>
                                     <div className="d-flex justify-content-end"> 
-                                        <button className="btn btn-sm border rounded-4 text-muted px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
+                                        <button className="btn btn-sm btn-outline-secondary border rounded-4 text-muted px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
                                     </div>
                                 </div>       
                             </div>  
