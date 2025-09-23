@@ -101,7 +101,7 @@ export function LocationComponent()
                         <Slider {...settings}> 
                             { 
                                 data?.map( (item , index) => { return (
-                                    <LocationContainer title={ item.region } desc={ item.count + ' Propriétés' } id={ item.region } index={index} />
+                                    <LocationContainer region={ item.region } count={ item.count } index={index} />
                                 )}) 
                             }
                         </Slider>

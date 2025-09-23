@@ -42,6 +42,7 @@
     background-color: var(--gray-light)  !important;
 }
 
+
 .text-blue-clr{
     color: var(--blue-clr)  !important;
 }
@@ -185,6 +186,17 @@
     width: 200px;
 }
 /* ********************* * SLIDE * ******************* */
+.region-container{
+    background-image: url('../img/home-top-img.jpg') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.region-overlayer{
+    position: relative;
+    background-color: #1c2332ee !important;
+    width: 100%;
+}
 .slides , .slide-fixed, .bg-img{
     width: 100% !important;
     height: 60vh !important;

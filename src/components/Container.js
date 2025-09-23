@@ -23,18 +23,22 @@ export function ServiceContainer({children, title , description })
 }
 
 // ****************************************************************************************************
-export function LocationContainer({title , desc, id}) 
+export function LocationContainer({region , count, id}) 
 {
     return (
 
-        <div className="d-flex flex-column border p-2 bg-white border-btm-main mx-2"> 
-            <div className="d-flex flex-column justify-content-center align-items-center mb-2" >
-                {/* <span className="text-start property text-clr px-4" > 10 propriétés </span> */}
-                <img src={'../img/pexels-pixabay-534228.jpg'} alt="Logo" height={200} className="w-100" />
-            </div>
-            <span className="text-start text-clr mb-1" > { desc } </span>
-            <span className="text-start text-clr h5 mb-1" > { title } </span>
-            <a className="mb-2 nav-link text-start main-color link" href={ "/proprietes/" + id } > Plus d'information </a>
+        <div className="region-container rounded-3">
+          <div className="region-overlayer py-3 rounded-3">    
+            <div className="d-flex flex-column"> 
+              <div className="d-flex flex-column align-items-center border-bottom px-4"> 
+                <span className="text-light fs-5 mb-3"> { region } </span>
+              </div>
+              <div className="d-flex flex-column align-items-center pt-4 px-4 pb-3"> 
+                <span className="text-light h2 mb-2 py-2 px-4 border border-light border-2"> { count } </span>
+                <span className="text-light lead"> propriété(s) </span>
+              </div>
+            </div> 
+          </div>
         </div>
     )
 }
