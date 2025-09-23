@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { PaymentApi } from "../../../services/payment.api";
 
-export function Historic({ companyId })
+export function Historic({ companyId, setRefetch })
 {      
     const payment = PaymentApi();
 
@@ -18,9 +18,12 @@ export function Historic({ companyId })
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
     }
-    const { isLoading, data, error } = useQuery({  queryKey: ["Withdraws"], queryFn: fetchData });
+    const { isLoading, data, error, refetch } = useQuery({  queryKey: ["Withdraws"], queryFn: fetchData });
 
-    useEffect(() => { if (Array.isArray(data)) { setFilteredData(data) } }, [data]);
+    useEffect(() => { 
+        if (Array.isArray(data)) { setFilteredData(data) } 
+        setRefetch(refetch)
+    }, [data]);
                 
     const handleInputChange = (e) => {
         const value = e.target.value;

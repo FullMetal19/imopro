@@ -11,6 +11,8 @@ export function Balance()
 {
     const payment = PaymentApi();
 
+    const [refetch, setRefetch] = useState();
+
     const [filter, setFilter] = useState(false);
     const [view, setView] = useState(false);
 
@@ -33,7 +35,7 @@ export function Balance()
 
             <div className="contain bg-white">
                 {
-                    filter ? ( <WithdrawForm /> ) : null
+                    filter ? ( <WithdrawForm refetch={refetch} /> ) : null
                 }
                 <div className="d-flex flex-column w-100">   
                     <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
@@ -50,14 +52,14 @@ export function Balance()
                                 <div className="d-flex flex-column gap-2 mb-4"> 
                                     <div className="text-center border text-muted py-4 bg-three-clr rounded-1 mb-2"> { view ?  `${ data?.totalAmount }` : '*************' } Fcfa </div>
                                     <div className="d-flex justify-content-end"> 
-                                        <button className="btn btn-sm btn-outline-secondary border rounded-4 text-muted px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
+                                        <button className="btn btn-secondary border rounded-4 px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
                                     </div>
                                 </div>       
                             </div>  
                         </div>
                         {/* ************************************************************** */}
                         <div className="flex-3">
-                            <Historic companyId={companyId} />
+                            <Historic companyId={companyId} setRefetch={setRefetch} />
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import { PaymentApi } from "../../../services/payment.api";
 
-export function WithdrawForm()
+export function WithdrawForm({refetch})
 {
     const [ inputs, setInputs ] = useState();
     const [status, setStatus] = useState(0);
@@ -23,8 +23,12 @@ export function WithdrawForm()
         try {
             const res = await payment.NewWithdraw(inputs, companyId);
             setIsLoading(false);
-            console.log(res.data);
-            (res.data.success) ? setStatus(1) : setStatus(-1); 
+            // console.log(res.data);
+            if(res.data.success) {
+                setStatus(1);
+                refetch();
+            }  else { setStatus(-1); }
+
         } catch (err) { 
             setStatus(-1);
             setIsLoading(false);
@@ -49,20 +53,20 @@ export function WithdrawForm()
                         (  <div className="col-md-12 mb-2"> <div className="alert alert-danger fs-xs"> Une erreur est survenue lors de l'opération. </div> </div>) : null
                     }
                     <div className="col-md-12 mb-2" > 
-                        <div className="d-flex flex-column">  
+                        <div className="d-flex flex-column mb-3">  
                             <span className="text-secondary fs-xs mb-1"> Numéro destinataire </span>
                             <input type="number" name="recipient" className="text-secondary p-2 border rounded-2" placeholder="77000000" required onChange={ handleInputs } />
                         </div>
                     </div>
                     <div className="col-md-12 mb-2" > <span className="text-center fs-xs text-secondary p-2 border rounded-2"> L'opérateur mobile </span> </div>  
-                    <div className="col-md-12 mb-2 d-flex flex-column" > 
+                    <div className="col-md-12 mb-3 d-flex flex-column" > 
                         <div className="form-check">
                             <input className="text-secondary p-2 border rounded-2" type="radio" name="operator" value={"wave"} id="flexRadioDefault1" onChange={ handleInputs } />
-                            <label className="text-secondary font-xs" htmlFor="flexRadioDefault1"> wave </label>
+                            <label className="text-secondary font-xs ms-2" htmlFor="flexRadioDefault1"> wave </label>
                         </div>
                         <div className="form-check">
                             <input className="text-secondary p-2 border rounded-2" type="radio" name="operator" value={"orange money"} id="flexRadioDefault2" onChange={ handleInputs } />
-                            <label className="text-secondary font-xs" htmlFor="flexRadioDefault2"> Orange money </label>
+                            <label className="text-secondary font-xs ms-2" htmlFor="flexRadioDefault2"> Orange money </label>
                         </div>
                     </div>
                     <div className="col-md-12 mb-2" > 
@@ -73,13 +77,13 @@ export function WithdrawForm()
                             </div> 
                         </div>
                     </div> 
-                    <div className="col-md-8 mb-2">
+                    <div className="col-md-12 mb-2">
                         <div className="d-flex flex-column">
                             <span className="text-secondary fs-xs mb-1"> Prénom </span>
                             <input type="text" name="fname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
                         </div>
                     </div>
-                    <div className="col-md-4 mb-2">
+                    <div className="col-md-12 mb-2">
                         <div className="d-flex flex-column">
                             <span className="text-secondary fs-xs mb-1"> Nom </span>
                             <input type="text" name="lname" className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
