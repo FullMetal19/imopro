@@ -18,9 +18,9 @@ export function ValidateAccount(){
         setIsLoading(true);
         setStatus(0);
         try {
-            const res = await user.activateAccount({ code : code });
-            console.log(res)
-            if (res.data.success){
+            const {data} = await user.activateAccount({ code : code });
+            console.log(data);
+            if ( data.success === true ){
                 setStatus(1);
                 navigate('/');
             }
