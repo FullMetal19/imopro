@@ -101,9 +101,9 @@ export function PasswordModal({ method })
         e.preventDefault();
         setIsLoading(true);
         try {
-            const res = await user.genPasswordToken(inputs);
+            const {data} = await user.genPasswordToken(inputs);
             setIsLoading(false);
-            if(res.data.success){
+            if( data.success ){
                 setStatus(1);
                 navigate('/mot-de-passe-oublie');
             }  
@@ -127,7 +127,10 @@ export function PasswordModal({ method })
                           <form onSubmit={ handleForm } className="d-flex flex-column mt-2">
                             <div className="d-flex flex-column align-items-center gap-2 mb-4" > 
                               <div className="d-flex mb-1" >
-                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-4 text-white"></i> </span>
+                                <span className="d-flex align-items-center justify-content-center bg-white border px-3 py-2 rounded-2 shadow-sm"> 
+                                    {/* <i class="bi bi-house-door-fill fs-4 text-white"></i>  */}
+                                    <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                                </span>
                               </div>
                               <span className="fs-4 text-muted"> Imopro - Mot de passe oublié </span>
                               <span className="text-muted text-center px-4 mb-4">
