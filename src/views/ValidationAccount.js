@@ -44,7 +44,10 @@ export function ValidateAccount(){
               <form onSubmit={ handleForm } className="d-flex flex-column">
                 <div className=" d-flex flex-column gap-2 mb-4" > 
                   <div className="d-flex" >
-                     <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                     <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> 
+                      {/* <i class="bi bi-house-door-fill fs-3 text-light"></i>  */}
+                      <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "50px" }} />
+                      </span>
                   </div>
                   <span className="fs-4 text-secondary text-start"> Imopro - Validation compte </span>
                   <span className="text-secondary text-start">

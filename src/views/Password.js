@@ -57,7 +57,7 @@ export function Password(){
                         {
                           isLoading && (
                             <div className="d-flex justify-content-center align-items-center mb-3"> 
-                               <div className="spinner-border text-primary" role="status" aria-label="Chargement"></div>
+                               <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                             </div>
                           )
                         }
