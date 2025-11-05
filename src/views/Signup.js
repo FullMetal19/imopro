@@ -52,7 +52,10 @@ export function Signup(){
                       <div className="col-md-4 d-flex align-items-center bg-gray-light px-4 py-2">
                         <div className="d-flex flex-column p-2" >
                           <div className="d-flex" >
-                            <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                            <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> 
+                              {/* <i class="bi bi-house-door-fill fs-3 text-light"></i>  */}
+                              <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                            </span>
                           </div>
                           <span className="hide h1 text-secondary"> ImoPro votre entreprise immobilière </span>
                           <span className="hide lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
