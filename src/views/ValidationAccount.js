@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BottomBar } from "../components/Footer";
 import { UserApi } from '../services/user.api';
-import { useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 export function ValidateAccount(){
@@ -11,7 +11,7 @@ export function ValidateAccount(){
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
-    const navigate = useParams();
+    const navigate = useNavigate();
 
     const handleForm = async ( event ) => {
         event.preventDefault();
@@ -19,8 +19,7 @@ export function ValidateAccount(){
         setStatus(0);
         try {
             const {data} = await user.activateAccount({ code : code });
-            console.log(data);
-            if ( data.success === true ){
+            if ( data.success ){
                 setStatus(1);
                 navigate('/');
             }
@@ -40,7 +39,7 @@ export function ValidateAccount(){
       <div className="row vh-100 d-flex align-items-center ">
         <div className="col-lg-12 py-5">
           <div className="row d-flex flex-column align-items-center justify-content-center py-5 px-2">
-            <div className="col-lg-6 rounded-4 border py-5 px-4 mb-5 shadow-sm">
+            <div className="col-lg-6 col-md-9 rounded-4 border py-5 px-4 mb-5 shadow-sm">
 
               <form onSubmit={ handleForm } className="d-flex flex-column">
                 <div className=" d-flex flex-column gap-2 mb-4" > 
