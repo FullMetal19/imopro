@@ -16,8 +16,10 @@ export function ValidateAccount(){
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
+        setStatus(0);
         try {
             const res = await user.activateAccount({ code : code });
+            console.log(res)
             if (res.data.success){
                 setStatus(1);
                 navigate('/');

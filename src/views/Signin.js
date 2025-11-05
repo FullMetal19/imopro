@@ -21,7 +21,7 @@ export function Signin(){
   
     const handleForm = async ( event ) => {
         event.preventDefault();
-        console.log(inputs);
+        // console.log(inputs);
         setStatus(0);
         setIsLoading(true);
         try {
