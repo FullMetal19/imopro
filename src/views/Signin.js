@@ -111,7 +111,7 @@ export function Signin(){
 
                     <div className="d-flex gap-2 border text-secondary rounded-2 py-3 px-4 text-outline-muted mt-3">
                       <span> Mot de passe oublié : </span>
-                      <button className="btn nav-link text-blue-clr" target="outlet" onClick={ setModal } > Modifier içi <i className="bi bi-arrow-right"></i> </button>
+                      <span className="btn nav-link text-blue-clr" target="outlet" onClick={ setModal } > Modifier içi <i className="bi bi-arrow-right"></i> </span>
                     </div>
                    
                   </form>

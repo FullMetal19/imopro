@@ -86,8 +86,6 @@ export function PasswordModal({ method })
 {
     const navigate = useNavigate();
     const user = UserApi();
-    
-    const [phone, setPhone] = useState();
 
     const [ inputs, setInputs ] = useState();
     
@@ -95,7 +93,6 @@ export function PasswordModal({ method })
         const { name , value } =  event.target;
         setInputs( { ...inputs, [name] : value   } );
     }
-    
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
