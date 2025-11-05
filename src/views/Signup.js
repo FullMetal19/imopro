@@ -23,7 +23,7 @@ export function Signup(){
   
     const handleForm = async ( event ) => {
         event.preventDefault();
-        console.log(inputs);
+        // console.log(inputs);
         setIsLoading(true);
         if(inputs.password === inputs.cpassword )
         {   
