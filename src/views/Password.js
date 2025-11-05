@@ -17,7 +17,6 @@ export function Password(){
 
     const handleForm = async ( event ) => {
         event.preventDefault();
-        // console.log(inputs);
         setIsLoading(true);
         if(inputs.password ===inputs.cpassword )
         {    
@@ -43,7 +42,9 @@ export function Password(){
         
                       <div className=" d-flex flex-column align-items-center gap-2 mb-4" > 
                           <div className="d-flex" >
-                             <span className="mb-3 bg-blue-clr px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-light"></i> </span>
+                            <span className="d-flex align-items-center justify-content-center bg-white border px-3 py-2 rounded-2 shadow-sm"> 
+                                <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                            </span>
                           </div>
                           <span className="lead text-secondary text-center"> Imopro </span>
                           <span className="fs-4 text-secondary text-center"> Mise à jour mot de passe  </span>
@@ -56,14 +57,14 @@ export function Password(){
                         {
                           isLoading && (
                             <div className="d-flex justify-content-center align-items-center mb-3"> 
-                               <div className="spinner-border text-success" role="status" aria-label="Chargement"></div>
+                               <div className="spinner-border text-primary" role="status" aria-label="Chargement"></div>
                             </div>
                           )
                         }
                         {
                           status === 1 && (
                             <div className="col-md-12 mb-2">
-                              <div className="alert alert-success">
+                              <div className="alert alert-primary">
                                 Votre mot de passe est modifié avec succès
                               </div>
                             </div>
