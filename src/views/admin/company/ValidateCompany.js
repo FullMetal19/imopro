@@ -135,7 +135,7 @@ export function ValidateCompany()
                                         <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.ownerCni }  </span>
                                     </div>
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
                                         <span className="text-muted fs-xs mb-3"> Image de face de la carte d'identité </span>
                                         <a href={ data?.cniImage } className="btn btn-outline-main" target="_blank" rel="noopener noreferrer"> Voir le CNI [<span className=" px-2 text-danger"> format pdf </span>] </a>
