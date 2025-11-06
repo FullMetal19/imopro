@@ -61,7 +61,7 @@ export function Companies()
                                     <div className="col-md-6 mb-4" key={index} >
                                         <div className="d-flex flex-column border rounded-3 py-2" >
                                             <div className="d-flex align-items-center gap-2 px-3 mb-1"> 
-                                                <img src={`${process.env.REACT_APP_PATH}/${item.icon}`} height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
+                                                <img src={ item.icon } height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
                                                 <span className="color-blue fs-xs"> { item.name } </span>
                                             </div>
                                             <div className="border-top pb-2 pt-3 px-3 d-flex gap-3"> 

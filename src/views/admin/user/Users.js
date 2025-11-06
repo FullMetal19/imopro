@@ -82,14 +82,14 @@ export function Users()
                                             filteredData?.map(( item , index ) => { return(
                                                 <div className="d-flex flex-column border rounded-3 py-2 mb-3" key={index}>
                                                     <div className="d-flex align-items-center gap-2 px-3 mb-1"> 
-                                                        <img src={`${process.env.REACT_APP_PATH}/${item.image}`} height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" />  
+                                                        <img src={ item.image } height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" />  
                                                         <div className="d-flex flex-column"> 
-                                                            <span className="color-blue fs-xs"> { item?.fname + ' ' + item?.lname } </span>
+                                                            <span className="text-secondary"> { item?.fname + ' ' + item?.lname } </span>
                                                             <span className="color-gray fs-xs"> Tel : { item?.phone } </span>
                                                         </div>
                                                     </div>
                                                     <div className="d-flex justify-content-between border-top pb-2 pt-3 px-3 gap-3"> 
-                                                        <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (item.status == 1) ? 'Compte actif' : ( ( item.status == 2 ) ? 'Compte admin actif' : ( ( item.status == -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
+                                                        <span className="border fs-xs rounded-4 text-secondary py-1 px-4 bg-three-clr"> { (item.status == 1) ? 'Compte actif' : ( ( item.status == 2 ) ? 'Compte admin actif' : ( ( item.status == -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
                                                         <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ () => setModal(item?.id, item?.status ) } > Modifier </button> 
                                                     </div> 
                                                 </div>                                    

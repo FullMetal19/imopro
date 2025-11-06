@@ -63,7 +63,7 @@ export function Withdraws()
                                         </thead>
                                         <tbody >
                                             { 
-                                                 isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div> ) : (
+                                                 isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : (
                                                      filteredData?.map(( item , index ) => { return (
                                                      <tr key={index}>                        
                                                          <td className="text-muted"> { item?.createdAt } </td>
@@ -75,10 +75,10 @@ export function Withdraws()
                                                  }))      
                                             }  
                                             {
-                                                error ? ( <tr className="d-flex text-muted p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) : null
+                                                error ? ( <tr className="d-flex text-secondary p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) : null
                                             } 
                                             {
-                                                ( Array.isArray(data) && data.length === 0 ) ? ( <tr className="d-flex text-muted p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
+                                                ( Array.isArray(data) && data.length === 0 ) ? ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
                                             }     
                                         </tbody>
                                     </table>

@@ -34,7 +34,7 @@ export function Modal({ method, message, uid, state })
                             <p className="text-muted"> {message} </p>
                         </div>
                         {
-                            isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                            isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
                             ( status === 1 ) ? 

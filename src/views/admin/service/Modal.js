@@ -25,15 +25,15 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-5 col-md-8 bg-three-clr p-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
+                        <div className="text-end"> <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> </div>
                         <div className="d-flex border-top border-bottom pt-4 pb-2 mb-2">
                             <p className="text-muted"> {message} </p>
                         </div>
                         {
-                            isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                            isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
                             ( status === 1 ) ? 
@@ -87,16 +87,16 @@ export function NewServiceModal({ method, refetch })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-9 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between"> 
                             <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2"> Formulaire d'ajout de service  </div>
-                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> 
                         </div>
                         <form className="d-flex flex-column mt-4" onSubmit={ handleForm }>
                             {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 
@@ -156,16 +156,16 @@ export function UpdatingServiceModal({ method, serviceId, title, desc, refetch }
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-9 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between"> 
                             <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2"> Formulaire de modification de service  </div>
-                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="d-flex flex-column mt-4" onSubmit={ handleForm }>
                             {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
+                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 
