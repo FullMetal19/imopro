@@ -196,7 +196,7 @@ export function ModifyCompany(){
                                         <span className="text-secondary fs-xs mb-1"> Uploader l'image de face et de derière de la carte d'identité [ <span className=" px-2 text-danger"> Format PDF </span>  ] </span>
                                         <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2 mb-3" accept="image/*, application/pdf" required onChange={ handleInputs } />
                                         <div className="d-flex justify-content-center align-items-center border">  
-                                            <img src={data?.cniImage } height={200} width={240} alt="Logo" className="" /> 
+                                            <a href={ data?.cniImage } className="btn btn-outline-main" target="_blank" rel="noopener noreferrer"> Voir le CNI [<span className=" px-2 text-danger"> format pdf </span>] </a>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +205,7 @@ export function ModifyCompany(){
                                         <span className="text-secondary fs-xs mb-1"> Icone de l'entrprise [ <span className=" px-2 text-danger"> Format Image </span>  ] </span>
                                         <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2 mb-3" accept="image/*" required onChange={ handleInputs } />
                                         <div className="d-flex justify-content-center align-items-center border">  
-                                            <img src={`${process.env.REACT_APP_PATH}/${data?.icon}`} height={160} width={200} alt="Logo" className="" /> 
+                                            <img src={ data?.icon } height={160} width={200} alt="Logo" className="" /> 
                                         </div>
                                     </div>
                                 </div>
