@@ -62,7 +62,7 @@ export function ValidatingCompany()
                                     <div className="col-md-12 mb-3" >
                                     <div className="row border rounded-3 py-2" >
                                         <div className="col-sm-9 d-flex align-items-center gap-2 px-3 mb-2"> 
-                                            <img src={`${process.env.REACT_APP_PATH}/${item.icon}`} height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
+                                            <img src={ item.icon } height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
                                             <span className="color-blue fs-xs"> { item.name } </span>
                                             <span className="color-gray fs-xs"> { (item.status == 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
                                         </div>
