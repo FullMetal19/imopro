@@ -22,6 +22,14 @@ export function NewCompany(){
             const selectedRegionData = vector.listRegion.find(item => item.country === value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
         }
+        if( name === 'cniImage' ) {
+            const file = e.target.files[0];
+            if (file && file.type !== "application/pdf") {
+              alert("Veuillez télécharger un fichier PDF valide.");
+              e.target.value = "";
+              return;
+            }
+        }
         if (type === 'file') {
             setInputs((prev) => ({ ...prev, [name]: files[0] }));
         } else {
