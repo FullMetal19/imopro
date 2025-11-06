@@ -147,8 +147,8 @@ export function ValidateCompany()
                                 {
                                     ( data?.status === 1 || data?.status === -1 ) ? (
                                         <div className="d-flex justify-content-end gap-4"> 
-                                            <button className="btn btn-sm btn-outline-main" onClick={ setModal1 } > Invalider </button>  
-                                            <button className="btn btn-sm btn-main" onClick={ setModal } > Valider </button> 
+                                            <button className="btn btn-outline-main" onClick={ setModal1 } > Invalider </button>  
+                                            <button className="btn btn-main" onClick={ setModal } > Valider </button> 
                                         </div>
                                     ) : (
                                        <div className="alert alert-primary border py-3 px-4 rounded-1"> Votre entreprise est maintenant statuée </div>  
