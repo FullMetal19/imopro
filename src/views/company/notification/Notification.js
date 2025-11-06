@@ -57,7 +57,7 @@ export function Notification()
                     {/* ************************************************************** */}
                     <div className="row scroll p-4">
                         { 
-                            isLoading ? (  <div className="d-flex justify-content-center mt-5"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
+                            isLoading ? (  <div className="d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                  <div className="col-lg-6 mb-3" key={index}> 
                                    <div className="d-flex" >
@@ -75,10 +75,10 @@ export function Notification()
                             }))      
                         }
                         {
-                            error ? ( <div className="d-flex text-muted"> Une erreur est survenue, veuillez verifier votre connexion </div> ) : null
+                            error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue, veuillez verifier votre connexion </span> </div> ) : null
                         } 
                         {
-                            ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-muted"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) : null
+                            ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) : null
                         }  
 
 

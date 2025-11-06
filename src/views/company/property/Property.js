@@ -60,7 +60,7 @@ export function Property()
                             </div>
                             <div className="row p-4 scroll">
                             { 
-                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
+                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                 
                                     <div className="col-lg-4 col-md-6 mb-4" key={index}>
@@ -93,10 +93,10 @@ export function Property()
                                 }))      
                             }  
                             {
-                                error ? ( <div className="col-md-12"> <span className="border text-muted px-4 py-2 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
+                                error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-muted"> Aucune propriété n'a été enregistrée. </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" >  Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                           
 
                             </div>
