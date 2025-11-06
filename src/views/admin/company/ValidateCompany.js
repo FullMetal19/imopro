@@ -47,7 +47,7 @@ export function ValidateCompany()
          { modalState1 ? ( <UnvalidationForm method={ closeModal1 } companyId={ companyId }  /> ) : null }
         {/* ************************************************************************ */}
         <Layout menu={3}> 
-            <div className="container-fluid">
+            <div className="container-fluid bg-light">
                 <div className="row d-flex flex-column bg-white">   
                     <div className="d-flex flex-column bg-three-clr pt-4 px-4 border-bottom"> 
                         <div className="d-flex justify-content-between gap-4 align-items-center mb-4"> 
@@ -55,79 +55,84 @@ export function ValidateCompany()
                         </div>
                     </div>
                     <div className="col-md-12">
-                        <div className="p-4 scroll">
+                      <div className="p-4 scroll">
+                        <div className="row justify-content-center">
+                          <div className="col-lg-10">
 
+                            <div className="row d-flex align-item-center p-4 mb-4 bg-three-clr border-left-main">
+                               <span className="text-secondary lead py-1"> Validation de la création d'une entreprise </span>
+                            </div>
                             {/* ************************************************************************ */}
-                            <div className="row p-4 mb-4 border">
+                            <div className="row mb-4 bg-white p-4 border rounded-2">
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Nom de l'entreprise </span>
-                                        <span className="form-control text-muted"> { data?.name } </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.name } </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> L'adresse de l'entreprise </span>
-                                        <span className="form-control text-muted"> { data?.address } </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.address } </span>
                                     </div>
                                 </div>
                                 <div className="col-md-8 mb-3">  
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Description </span>
-                                        <textarea className="border form-control p-2" name="description" value={ data?.description } rows={8}  />
+                                        <textarea className="w-100 border input p-3 text-secondary rounded-2" name="description" value={ data?.description } rows={8}  />
                                     </div>
                                 </div>
                                 <div className="col-md-4 mb-3">  
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> icon </span>
                                         <div className="d-flex justify-content-center align-items-center border">  
-                                            <img src={`${process.env.REACT_APP_PATH}/${data?.icon}`} height={160} width={200} alt="Logo" className="" /> 
+                                            <img src={ data?.icon } height={160} width={200} alt="Logo" className="" /> 
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-8 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Lien siteweb </span>
-                                        <span className="form-control text-muted"> { data?.website } </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.website } </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Numéro de registre </span>
-                                        <span className="form-control text-muted"> { data?.registNumber }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.registNumber }  </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Ninea </span>
-                                        <span className="form-control text-muted">  { data?.ninea }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.ninea }  </span>
                                     </div>
                                 </div>
                             </div>
                             {/* ************************************************************************ */}
-                            <div className="row px-4 py-5 mb-4 border">
+                            <div className="row mb-4 bg-white p-4 border rounded-2">
                                 <div className="col-md-6 mb-2">
                                     <div className="d-flex flex-column mb-2">  
                                         <span className="text-muted fs-xs mb-1"> Nom du garant de l'entreprise </span>
-                                        <span className="form-control text-muted">  { data?.ownerName }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.ownerName }  </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Le numéro de téléphone du garant de l'entreprise </span>
-                                        <span className="form-control text-muted">  { data?.phone }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.phone }  </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Email du garant de l'entreprise </span>
-                                        <span className="form-control text-muted">  { data?.email }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.email }  </span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Numéro de carte d'identité du garant </span>
-                                        <span className="form-control text-muted">  { data?.ownerCni }  </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2">  { data?.ownerCni }  </span>
                                     </div>
                                 </div>
                                 <div className="col-md-12">
@@ -136,7 +141,7 @@ export function ValidateCompany()
                                         <div className="row">
                                              <div className="col-md-8">
                                                 <div className="d-flex justify-content-center align-items-center border">  
-                                                    <img src={`${process.env.REACT_APP_PATH}/${ data?.cniImage }`} height={200} width={240} alt="Logo" className="" /> 
+                                                    <img src={ data?.cniImage } height={200} width={240} alt="Logo" className="" /> 
                                                 </div>
                                              </div>
                                         </div>
@@ -144,7 +149,7 @@ export function ValidateCompany()
                                 </div>
                             </div>
                             {/* ************************************************************************ */}
-                            <div className="row p-4 mb-4 border">
+                            <div className="row mb-4 bg-white p-4 border rounded-2">
                                 {
                                     ( data?.status === 1 || data?.status === -1 ) ? (
                                         <div className="d-flex justify-content-end gap-4"> 
@@ -154,11 +159,12 @@ export function ValidateCompany()
                                     ) : (
                                        <div className="alert alert-primary border py-3 px-4 rounded-1"> Votre entreprise est maintenant statuée </div>  
                                     )
-                                }
-                                
+                                }    
                             </div>
-                        
-                        </div>
+
+                          </div>
+                        </div>  
+                      </div>
                     </div> 
                 </div>                    
             </div>

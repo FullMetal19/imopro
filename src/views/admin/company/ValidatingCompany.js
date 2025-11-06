@@ -60,9 +60,9 @@ export function ValidatingCompany()
                                 isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                     <div className="col-md-12 mb-3" >
-                                    <div className="row border rounded-3 py-2" >
-                                        <div className="col-sm-9 d-flex align-items-center gap-2 px-3 mb-2"> 
-                                            <img src={ item.icon } height={30} width={30} alt="Logo" className="rounded-circle border border-3 p-1" /> 
+                                    <div className="row border rounded-3 py-3" >
+                                        <div className="col-sm-9 d-flex align-items-center gap-2 px-3"> 
+                                            <img src={ item.icon } height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" /> 
                                             <span className="color-blue fs-xs"> { item.name } </span>
                                             <span className="color-gray fs-xs"> { (item.status == 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
                                         </div>
