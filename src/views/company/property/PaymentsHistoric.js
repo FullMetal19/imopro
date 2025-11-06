@@ -69,7 +69,7 @@ export function PaymentsHistoric()
                                 </thead>
                                 <tbody >
                                 { 
-                                    isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div> ) : (
+                                    isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : (
                                         filteredData?.map(( item , index ) => { return (
                                         <tr key={index}>                        
                                             <td className="text-muted"> { item?.createdAt } </td>

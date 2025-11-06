@@ -6,7 +6,7 @@ import { LoaderModal } from "./Modal";
 import vector from "../../../config/data";
 
 
-import MapPicker from "../../../components/MapPicker" ; // adjust path if needed
+import MapPicker from "../../../components/MapPicker"; 
 import { Modal } from "react-bootstrap";
 
 
@@ -88,7 +88,7 @@ export function AddProperty()
         }
         <Layout menu={1} companyId={companyId}> 
 
-            {/* 🌍 Map Modal */}
+            {/* Map Modal */}
             <Modal show={showMap} onHide={() => setShowMap(false)} centered size="xl" >
               <Modal.Header closeButton>
                 <Modal.Title>Choisir la localisation</Modal.Title>
@@ -119,7 +119,7 @@ export function AddProperty()
                                     <div className="col-lg-10 d-flex flex-column">
 
                                         <div className="row d-flex align-item-center p-4 mb-4 bg-three-clr border-left-main">
-                                          <span className="text-secondary lead py-1"> Formulaire de création d'entreprise immobilière </span>
+                                          <span className="text-secondary lead py-1"> Formulaire de création d'une propriété </span>
                                         </div>
 
                                         <div className="row">

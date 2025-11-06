@@ -41,7 +41,7 @@ export function Balance()
                     <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
                         <div className="d-flex gap-4 align-items-center mb-4"> 
                             <span className="h5 text-secondary mt-2"> Mon solde </span>
-                            <button className="btn btn-sm btn-outline-main px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
+                            <button className="btn btn-sm btn-outline-main rounded-4 px-4" onClick={ () => setFilter(!filter) }> Faire un retrait </button> 
                         </div>
                     </div>
                     <div className="contain">

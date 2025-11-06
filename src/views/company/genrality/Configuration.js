@@ -9,6 +9,10 @@ import { ProductApi } from "../../../services/product.api";
 import { useParams } from "react-router";
 import vector from "../../../config/data";
 
+import MapPicker from "../../../components/MapPicker" ; // adjust path if needed
+import { Modal } from "react-bootstrap";
+
+
 const settings = {
     dots: true,
     infinite: true,
@@ -36,6 +40,7 @@ export function Configuration()
 
     const [selectedRegion, setSelectedRegion] = useState([]);
     const [selectedType, setSelectedType] = useState([]); 
+    const [showMap, setShowMap] = useState(false);
 
     const handleInputs = ( event ) => {
         const { name , value } =  event.target ;
@@ -95,7 +100,23 @@ export function Configuration()
         {/* ************************************************************************ */}
         { modalState ? ( <RemovingModal method={ closeModal } propertyId={propertyId} refetch={refetch} message={"Voulez vous vraiment supprimer cette propriété."} /> ) : null }
         {/* ************************************************************************ */}
-        <Layout menu={1} companyId={companyId}> 
+        <Layout menu={1} companyId={companyId}>
+
+            {/* Map Modal */}
+            <Modal show={showMap} onHide={() => setShowMap(false)} centered size="xl" >
+              <Modal.Header closeButton>
+                <Modal.Title>Choisir la localisation</Modal.Title>
+              </Modal.Header>
+                 <Modal.Body>
+                <MapPicker
+                  onSelect={(coords) => {
+                    setInputs((prev) => ({ ...prev, latitude: coords.lat, longitude: coords.lng }));
+                    setShowMap(false); // close modal after picking
+                     }}
+                   />
+                </Modal.Body>
+            </Modal>
+
             <div className="container-fluid">
                 <div className="row d-flex flex-column bg-white">   
                     <div className="d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
@@ -108,153 +129,260 @@ export function Configuration()
                         <div className="row p-4 scroll">
 
                             <form className="col-md-12" onSubmit={ handleForm } >
-                                <div className="row d-flex justify-content-between my-4">
-                                    <div className="col-md-6 d-flex flex-column">
-                                        <div className="d-flex flex-column mb-4">  
-                                            <span className="text-muted fs-xs mb-1"> L'adresse </span>
-                                            <input type="text" name="address" value={ inputs?.address  || "" } className="form-control text-muted" required onChange={ handleInputs } />
-                                        </div> 
-                                        { 
-                                            isLoading ? ( <Skeleton height={500} /> ) : (
-                                            <div className="slider-container mb-4">
-                                                <Slider {...settings}> 
-                                                    { 
-                                                        data?.media.map( (item , index) => { return (
-                                                            <div className="d-flex" key={index} > <img src={`${process.env.REACT_APP_PATH}/${item.path}`} alt="Logo" height={400} className="img-fluid" />  </div>
-                                                        )}) 
-                                                    }    
-                                                </Slider>
-                                            </div>  ) 
-                                        } 
-                                    </div>
-                                    <div className="col-md-1"></div>
-                                    <div className="col-md-5 px-4 d-flex flex-column">
-                                        <div className="d-flex flex-column mb-2">  
-                                            <span className="text-muted fs-xs mb-1"> Le pays </span>
-                                            <select className="form-control border w-100 p-2 text-muted rounded-2" name="country" value={inputs?.country || ""} required onChange={ handleInputs } >
-                                                <option value=""> Choisir un pays  </option>
-                                                {
-                                                    vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
-                                                }
-                                            </select>
-                                        </div>
-                                        <div className="d-flex flex-column mb-2">  
-                                            <span className="text-muted fs-xs mb-1"> La région </span>
-                                            <select className="form-control border w-100 p-2 text-muted rounded-2" name="region" value={inputs?.region || ""} required onChange={ handleInputs } >
-                                                <option value=""> Choisir une région  </option>
-                                                {
-                                                    selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
-                                                }
-                                            </select>
-                                        </div>
-                                        <div className="d-flex flex-column mb-2">  
-                                            <span className="text-muted fs-xs mb-1"> Description </span>
-                                            <textarea className="form-control text-muted" value={inputs?.description || ""} name="description" rows={8} onChange={handleInputs} />
-                                        </div>
-                                        <div className="d-flex flex-column mb-2">  
-                                            <span className="text-muted fs-xs mb-1"> La longitude </span>
-                                            <input type="text" name="longitude" value={inputs?.longitude || ""} className="form-control text-muted" required onChange={ handleInputs } />
-                                        </div>
-                                        <div className="d-flex flex-column mb-2">  
-                                            <span className="text-muted fs-xs mb-1"> La latitude </span>
-                                            <input type="text" name="latitude" value={inputs?.latitude || ""} className="form-control text-muted" required onChange={ handleInputs } />
-                                        </div>
-                                    </div>
-                                    {/* *************************************** */}
-                                     <div className="col-lg-12 p-4"> <div className="border bg-three-clr py-2 mt-3"> </div> </div>
-                                    {/* *************************************** */}
-                                    <div className="col-lg-12 mt-4">
-                                        <div className="row">
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
-                                                <div className="d-flex flex-column mb-2">  
-                                                    <span className="text-muted fs-xs mb-1"> La catégorie  </span>
-                                                    <select className="form-control border w-100 p-2 text-muted rounded-2" name="type" value={ inputs?.type || "" } required onChange={ handleInputs } >
-                                                        <option value=""> Choisir une catégorie  </option>
-                                                        {
-                                                            vector.propertyType.map((item, index)=> ( <option value={item.name || ""} key={index}> {item.content} </option> ))
-                                                        }
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
-                                                <div className="d-flex flex-column mb-2">  
-                                                    <span className="text-muted fs-xs mb-1"> Le type  </span>
-                                                    <select className="form-control border w-100 p-2 text-muted rounded-2" name="subtitle" value={ inputs?.subtitle || "" } required onChange={ handleInputs } >
-                                                        <option value=""> Choisir un type  </option>
-                                                        {
-                                                            selectedType?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
-                                                        }
-                                                    </select>
-                                                </div>
-                                            </div>
+                                <div className="row d-flex justify-content-center my-4">
+                                 
+                                    <div className="col-lg-10 d-flex flex-column">
 
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
-                                                <div className="d-flex flex-column">  
-                                                    <span className="text-muted fs-xs mb-1"> La dimension en M2 </span>
-                                                    <input type="text" name="surface" value={inputs?.surface || ""} className="form-control text-muted" required onChange={ handleInputs } />
+                                        <div className="row d-flex align-item-center p-4 mb-4 bg-three-clr border-left-main">
+                                          <span className="text-secondary lead py-1"> Formulaire de mise à jour d'une propriété </span>
+                                        </div>
+
+                                        <div className="row">
+                                          {/* -------------------------------------------------------------------------  */}
+                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                            <div className="row"> 
+
+                                              <div className="col-md-6">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Catégorie de propriété  </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <select className="w-100 border input p-3 text-secondary rounded-2" name="type" value={ inputs?.type || "" } required onChange={ handleInputs } >
+                                                           <option value=""> Choisir une catégorie  </option>
+                                                           {
+                                                               vector.propertyType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                                                           }
+                                                       </select>
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div> 
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
-                                                <div className="d-flex flex-column">  
-                                                    <span className="text-muted fs-xs mb-1"> Le prix de la propriété (en Fcfa) </span>
-                                                    <input type="text" name="price" value={inputs?.price || ""} className="form-control text-muted" required onChange={ handleInputs } />
+                                              </div>
+                                              <div className="col-md-6">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Type de propriété  </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <select className="w-100 border input p-3 text-secondary rounded-2" name="subtitle" value={ inputs?.subtitle || "" } required onChange={ handleInputs } >
+                                                           <option value=""> Choisir un type  </option>
+                                                           {
+                                                               selectedType?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
+                                                           }
+                                                       </select>
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
+                                              </div>
+                                              <div className="col-md-6">
                                                 <div className="d-flex flex-column">  
-                                                    <span className="text-muted fs-xs mb-1"> Le montant de la guarantie (en Fcfa) </span>
-                                                    <input type="text" name="guaranty" value={inputs?.guaranty || ""} className="form-control text-muted" required onChange={ handleInputs } />
+                                                    <span className="text-muted fs-xs mb-1"> Dimension [<span className=" px-2 text-danger"> en metre carré </span>]  </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="number" name="surface" value={inputs?.surface || ""} className="w-100 border input p-3 text-secondary rounded-2" required onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Status de propriété </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                        <select className="w-100 border input p-3 text-secondary rounded-2" name="title" value={inputs?.title || ""} required onChange={ handleInputs } >
+                                                            <option value=""> Choisir un status  </option>
+                                                            <option value="à louer"> A louer </option>
+                                                            <option value="à vendre"> A vendre </option>
+                                                        </select>
+                                                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div className="col-md-12">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Description [ <span className=" px-2 text-danger"> * </span>  ] </span>
+                                                    <textarea className="w-100 border input p-3 text-secondary rounded-2" name="description" value={inputs?.description || ""} rows={8} required onChange={handleInputs} />
+                                                </div>
+                                              </div>
                                             </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
+                                          </div>
+                                           {/* -------------------------------------------------------------------------  */}
+                                           {
+                                              inputs?.type?.toLowerCase() === "logement" && (
+
+                                          <div className="col-md-12 mb-4 bg-white p-4 border border-primary rounded-2">
+                                            <div className="row"> 
+                                              <div className="col-lg-6">
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1">  Nombre de chambre  </span>
-                                                    <input type="number" name="bedRoom" value={inputs?.bedroom || ""} className="form-control text-muted" onChange={ handleInputs } />
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="number" name="bedroom" value={inputs?.bedroom || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
+                                              </div>
+                                              <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de Salon </span>
-                                                    <input type="number" name="livingRoom" value={inputs?.livingroom || ""} className="form-control text-muted" onChange={ handleInputs } />
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                      <input type="number" name="livingroom" value={inputs?.livingroom || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                      <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
+                                              </div>
+                                              <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de toilette </span>
-                                                    <input type="number" name="restroom" value={inputs?.restroom || ""} className="form-control text-muted" onChange={ handleInputs } />
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="number" name="restroom" value={inputs?.restroom || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
+                                              </div>
+                                              <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de cuisine </span>
-                                                    <input type="number" name="kitchen" value={inputs?.kitchen || ""} className="form-control" onChange={ handleInputs } />
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="number" name="kitchen" value={inputs?.kitchen || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-lg-4 col-md-6 px-4 mb-2" > 
-                                                <div className="d-flex flex-column">  
+                                              </div>
+                                              <div className="col-lg-6"> 
+                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de niveau </span>
-                                                    <input type="number" name="floor" value={inputs?.floor || ""} className="form-control text-muted" onChange={ handleInputs } />
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                      <input type="number" name="floor" value={inputs?.floor || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                      <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
                                                 </div>
+                                              </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    {/* *************************************** */}
-                                     <div className="col-lg-12 p-4"> <div className="border bg-three-clr py-2 mt-3"> </div> </div>
-                                    {/* *************************************** */}
-                                    <div className="col-lg-12 px-4 mb-2" > 
-                                        <div className="row d-flex justify-content-between align-items-center">  
-                                            {
+                                          </div>
+                                          )
+                                          }  
+                                          {/* -------------------------------------------------------------------------  */}
+                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                            <div className="row"> 
+                                              <div className="col-lg-6">
+                                                <div className="d-flex flex-column">  
+                                                    <span className="text-muted fs-xs mb-1"> Le prix de la propriété (en Fcfa) </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                      <input type="number" name="price" value={inputs?.price || ""} className="w-100 border input p-3 text-secondary rounded-2" required onChange={ handleInputs } />
+                                                      <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div className="col-lg-6"> 
+                                                <div className="d-flex flex-column">  
+                                                    <span className="text-muted fs-xs mb-1"> Le montant de la guarantie (en Fcfa) </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="number" name="guaranty" value={inputs?.guaranty || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          {/* -------------------------------------------------------------------------  */}
+                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                            <div className="row d-flex justify-content-center"> 
+                                              <div className="col-md-8">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-3"> Images des propriétés  </span>
+                                                    <div className="d-flex gap-1 mb-2 border rounded-3 p-3" >
+                                                       { 
+                                                            isLoading ? ( <Skeleton height={350} /> ) : (
+                                                            <div className="slider-container mb-4">
+                                                                <Slider {...settings}> 
+                                                                    { 
+                                                                        data?.media.map( (item , index) => { return (
+                                                                            <div className="d-flex" key={index} > <img src={`${process.env.REACT_APP_PATH}/${item.path}`} alt="Logo" height={350} className="img-fluid" />  </div>
+                                                                        )}) 
+                                                                    }    
+                                                                </Slider>
+                                                            </div>  ) 
+                                                       } 
+                                                    </div> 
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          {/* -------------------------------------------------------------------------  */}
+                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                            <div className="row"> 
+                                              <div className="col-lg-6">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Pays </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                        <select className="w-100 border input p-3 text-secondary rounded-2" name="country" value={inputs?.country || ""} required onChange={ handleInputs } >
+                                                            <option value=""> Choisir un pays  </option>
+                                                            {
+                                                                vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                                                            }
+                                                        </select>
+                                                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div className="col-lg-6"> 
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Région </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                        <select className="w-100 border input p-3 text-secondary rounded-2" name="region" value={inputs?.region || ""} required onChange={ handleInputs } >
+                                                            <option value=""> Choisir une région  </option>
+                                                            {
+                                                                selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
+                                                            }
+                                                        </select>
+                                                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                                    </div>
+                                                </div>
+                                              </div>
+                                               <div className="col-lg-9">
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> Adresse </span>
+                                                    <div className="d-flex gap-1 mb-2" >
+                                                       <input type="text" name="address" value={ inputs?.address  || "" } className="w-100 border input p-3 text-secondary rounded-2" required onChange={ handleInputs } />
+                                                       <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                                    </div>
+                                                </div>
+                                              </div> 
+                                              <div className="col-lg-3"> 
+                                                <div className="d-flex flex-column mb-2">
+                                                    <span className="text-muted fs-xs mb-1"> Localisation [ <span className=" px-2 text-danger"> * </span>  ]  </span>
+                                                    <button type="button" className="btn p-3 btn-outline-main mb-1" onClick={() => setShowMap(true)} > Géolocaliser la propriété </button>
+                                                    
+                                                </div>
+                                              </div>
+                                              <div className="col-lg-6" >
+                                                <div className="d-flex flex-column mb-2">  
+                                                  <span className="text-muted fs-xs mb-1"> La longitude </span>
+                                                  <input type="text" name="longitude" value={inputs?.longitude || ""} className="w-100 border input p-3 text-secondary rounded-2" />
+                                                </div>
+                                              </div>
+                                              <div className="col-lg-6" >
+                                                <div className="d-flex flex-column mb-2">  
+                                                    <span className="text-muted fs-xs mb-1"> La latitude </span>
+                                                    <input type="text" name="latitude" value={inputs?.latitude || ""} className="w-100 border input p-3 text-secondary rounded-2" />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          {/* -------------------------------------------------------------------------  */}
+                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                            <div className="row mb-4 border-bottom"> 
+                                                {
                                                 ( status === 1 ) ? 
-                                                (  <div className=""> <div className="alert alert-success border py-2 px-4 rounded-1 mb-4"> { message } </div> </div> ) :
+                                                (  <div className="my-3"> <div className="alert alert-success border py-2 px-4 rounded-1"> { message } </div> </div> ) :
                                                 ( status === -1 ) ?
-                                                (  <div className=""> <div className="alert alert-danger border py-2 px-4 rounded-1 mb-4"> { message } </div> </div>) : null
-                                            }
-                                            {/* ************************************************************************ */}
-                                            <div className="col-md-12 d-flex justify-content-end">
-                                               <button type="submit" className="btn btn-main"> Enregistrer </button>  
+                                                (  <div className="my-3"> <div className="alert alert-danger border py-2 px-4 rounded-1"> { message } </div> </div>) : null
+                                                }
                                             </div>
+                                            <div className="row"> 
+                                               <div> <button type="submit" className="btn btn-main"> Mettre à jour </button> </div>
+                                            </div>
+                                          </div>
+
+                                          {/* -------------------------------------------------------------------------  */}
+    
                                         </div>
                                     </div>
+
                                 </div>
                             </form>
                                                     

@@ -46,10 +46,10 @@ export function Notification()
                             <span className="h5 text-secondary my-2"> Boite de notification </span>
                             <div className="row pt-3 pb-2 border-top border-start border-end">
                                 <div className="col-sm-4" > 
-                                    <div className="text-secondary mb-2 d-flex align-items-center py-1 px-3 w-100 border border-secondary"> Filtrer </div>
+                                    <div className="text-secondary mb-2 d-flex align-items-center pt-1 pb-2 px-3 w-100 border border-secondary"> Filtrer </div>
                                 </div>
                                 <div className="col-sm-4 mb-2" > 
-                                    <input type="month" name="month" value={month} className="text-secondary p-2 border border-primary rounded-2" required onChange={ handleInputChange } />
+                                    <input type="month" name="month" value={month} className="bg-transparent text-secondary p-2 border border-primary rounded-2" required onChange={ handleInputChange } />
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ export function Notification()
                     {/* ************************************************************** */}
                     <div className="row scroll p-4">
                         { 
-                            isLoading ? (  <div className="d-flex justify-content-center mt-5"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                            isLoading ? (  <div className="d-flex justify-content-center mt-5"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                  <div className="col-lg-6 mb-3" key={index}> 
                                    <div className="d-flex" >

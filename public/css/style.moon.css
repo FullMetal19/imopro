@@ -118,6 +118,9 @@
 .bg-snd-clr{
     background-color: var(--snd-clr);
 }
+.bg-transparent{
+    background-color: transparent !important;
+}
 /* ******************** * DIFFERENT FONT COLOR * ******************** */
 .main-color{
     color : var(--main-clr) !important;

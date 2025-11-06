@@ -57,13 +57,13 @@ export function InprogressProperty()
                             <div className="row d-flex flex-column bg-blue-light-clr pt-4 px-4 border-bottom"> 
                                 <div className="d-flex gap-4 align-items-center mb-4"> 
                                     <span className="h5 text-secondary mt-2"> Généralité </span>
-                                    <button className="btn btn-sm btn-outline-main border px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
+                                    <button className="btn btn-sm btn-outline-main rounded-4  px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
                                 </div>
                                 <Navigation page={2} companyId={companyId} />
                             </div>
                             <div className="row p-4 scroll">
                             { 
-                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return (
 
                                     <div className="col-lg-4 col-md-6 mb-4" key={index}>
