@@ -137,14 +137,8 @@ export function ValidateCompany()
                                 </div>
                                 <div className="col-md-12">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-muted fs-xs mb-1"> Image de face de la carte d'identité </span>
-                                        <div className="row">
-                                             <div className="col-md-8">
-                                                <div className="d-flex justify-content-center align-items-center border">  
-                                                    <img src={ data?.cniImage } height={200} width={240} alt="Logo" className="" /> 
-                                                </div>
-                                             </div>
-                                        </div>
+                                        <span className="text-muted fs-xs mb-3"> Image de face de la carte d'identité </span>
+                                        <a href={ data?.cniImage } className="btn btn-outline-main" target="_blank" rel="noopener noreferrer"> Voir le CNI [<span className=" px-2 text-danger"> format pdf </span>] </a>
                                     </div>
                                 </div>
                             </div>
