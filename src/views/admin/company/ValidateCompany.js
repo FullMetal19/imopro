@@ -84,7 +84,7 @@ export function ValidateCompany()
                                 </div>
                                 <div className="col-md-4 mb-3">  
                                     <div className="d-flex flex-column">  
-                                        <span className="text-muted fs-xs mb-1"> icon </span>
+                                        <span className="text-muted fs-xs mb-1"> Icon </span>
                                         <div className="d-flex justify-content-center align-items-center border">  
                                             <img src={ data?.icon } height={160} width={200} alt="Logo" className="" /> 
                                         </div>
