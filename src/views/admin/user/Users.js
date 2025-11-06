@@ -69,16 +69,16 @@ export function Users()
                                 {/* ********************************************************************************************************** */}
                                 <div className="col-md-8">
                                     <div className="row px-4">
-                                        <div className="col-md-12 border-bottom border-start border-end px-3 py-2 bg-three-clr mb-3">
+                                        <div className="col-md-12 border-bottom border-start border-end px-3 py-3 mb-3">
                                             <div className="d-flex gap-2" > 
-                                                <span className="form-control text-muted bg-three-clr"> Filtre num-tel de l'utilisateur </span>
+                                                <span className="form-control text-secondary bg-light"> Filtrer les utilisateurs </span>
                                                 <input type="text" name="companyName" value={phone} className="form-control text-muted" placeholder="exemple : 778807689" required onChange={ handleInputChange } /> 
                                             </div>
                                         </div>
                                         {/* ------------------------------------------------- */}
                                         <div className="col-md-12 scroll d-flex flex-column px-0 pb-4">
                                         { 
-                                            isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                            isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                             filteredData?.map(( item , index ) => { return(
                                                 <div className="d-flex flex-column border rounded-3 py-2 mb-3" key={index}>
                                                     <div className="d-flex align-items-center gap-2 px-3 mb-1"> 
@@ -97,10 +97,10 @@ export function Users()
                                                 }))      
                                             }  
                                             {
-                                                error ? ( <div className="col-md-12"> <span className="border text-muted px-4 py-2 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
+                                                error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                                             }
                                             {
-                                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex bg-white shadow-sm text-muted p-3 border"> La liste des utilisateurs est vide. </div> ) : null
+                                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des utilisateurs est vide. </span> </div> ) : null
                                             }    
 
                                         </div>                                

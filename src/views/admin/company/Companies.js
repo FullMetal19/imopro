@@ -56,7 +56,7 @@ export function Companies()
                             {/* **************************************************** */}
                             <div className="p-4 row scroll">
                             { 
-                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                     <div className="col-md-6 mb-4" key={index} >
                                         <div className="d-flex flex-column border rounded-3 py-2" >
@@ -74,10 +74,10 @@ export function Companies()
                                 }))      
                             }  
                             {
-                                error ? ( <div className="col-md-12"> <span className="border alert alert-success text-muted px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
+                                error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="border shadow-sm py-3 px-4 text-muted"> Aucune propriété n'a été enregistrée. </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                                                   
                             </div>
                         </div>

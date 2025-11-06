@@ -43,20 +43,20 @@ export function Notifications()
                                 <div className="d-flex gap-4 align-items-center mb-2"> 
                                     <span className="h5 text-muted mt-2"> Notifications </span>
                                 </div>
-                                <div className="row pt-3 pb-2 border-top border-start border-end">
-                                    <div className="col-sm-4" > 
-                                        <div className="color-gray mb-2 d-flex align-items-center py-2 px-3 w-100 border"> Filtrer par mois </div>
-                                    </div>
-                                    <div className="col-sm-4 mb-2" > 
-                                        <input type="month" name="month" value={month} className="py-2 px-3 bg-light border rounded-2 w-100 text-muted" required onChange={ handleInputChange }   />
-                                    </div>
+                            </div>
+                            <div className="row pt-3 pb-2 border-bottom">
+                                <div className="col-sm-4" > 
+                                    <div className="text-secondary mb-2 d-flex align-items-center py-2 px-3 w-100 border"> Filtrer par mois </div>
+                                </div>
+                                <div className="col-sm-4 mb-2" > 
+                                    <input type="month" name="month" value={month} className="py-2 px-3 bg-light border rounded-2 w-100 text-muted" required onChange={ handleInputChange }   />
                                 </div>
                             </div>
                         
                             {/* ************************************************************** */}
                             <div className="row scroll p-4">
                             { 
-                                isLoading ? (  <div className="d-flex justify-content-center mt-5"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                isLoading ? (  <div className="d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                     filteredData?.map(( item , index ) => { return(
                                     <div className="col-md-12 py-0 mb-3" key={index}> 
                                         <div className="row border rounded-3 py-2" >
@@ -72,10 +72,10 @@ export function Notifications()
                                 }))      
                             }
                             {
-                                error && ( <div className="d-flex text-muted"> Une erreur est survenue, veuillez verifier votre connexion </div> ) 
+                                error && ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) 
                             } 
                             {
-                                ( Array.isArray(data) && data.length === 0 ) && ( <div className="d-flex text-muted"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) 
+                                ( Array.isArray(data) && data.length === 0 ) && ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) 
                             } 
                             </div>
                             

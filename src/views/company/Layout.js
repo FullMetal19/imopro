@@ -29,7 +29,7 @@ export function Layout({ menu, companyId, children })
                 <div className="d-flex justify-content-between p-2 align-items-center">
                     <div className="d-flex gap-2">
                         <a className="btn btn-sm btn-outline-main" href={ "/mon-compte" } >  <i className="bi bi-arrow-left"></i>   </a>
-                        <span className="text-secondary border py-1 px-3 hide"> Imopro </span>    
+                        <span className="text-secondary border py-1 px-3 hide"> Diwane <i className="bi bi-plus"></i> </span>    
                     </div> 
                     <div className="d-flex gap-4"> 
                         <div className="d-flex flex-column"> 

@@ -57,7 +57,7 @@ export function ValidatingCompany()
                             {/* **************************************************** */}
                             <div className="p-4 scroll">
                             { 
-                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                     <div className="col-md-12 mb-3" >
                                     <div className="row border rounded-3 py-2" >
@@ -76,10 +76,10 @@ export function ValidatingCompany()
                                 }))      
                             }  
                             {
-                                error ? ( <div className="col-md-12"> <span className="border text-muted px-4 py-2 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
+                                error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex bg-white shadow-sm text-muted p-3 border"> La liste des entreprises en cours de validation est vide. </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des entreprises en cours de validation est vide. </span> </div> ) : null
                             }                             
 
                             </div>

@@ -70,12 +70,12 @@ export function Services()
                     <div className="d-flex flex-column bg-three-clr pt-4 px-4 border-bottom"> 
                         <div className="d-flex gap-4 align-items-center mb-4"> 
                             <span className="h5 text-muted mt-2"> Mes services </span>
-                            <button className="btn btn-sm border rounded-4 text-muted px-4" onClick={ setModal1 } > Nouveau service </button> 
+                            <button className="btn btn-sm btn-outline-main rounded-4 px-4" onClick={ setModal1 } > Nouveau service </button> 
                         </div>
                     </div>
                     <div className="d-flex flex-column p-4 scroll">
                     { 
-                        isLoading ? (  <div className="col-md-12 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                        isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                         data?.map(( item , index ) => { return(
                             <div className="d-flex flex-column border rounded-3 py-2 mb-3" key={index} >
                                 <div className="d-flex flex-column px-3 mb-1"> 
@@ -92,10 +92,10 @@ export function Services()
                         }))      
                     }  
                     {
-                        error ? ( <div className="col-md-12"> <span className="border text-muted px-4 py-2 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
+                        error ? ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                     }
                     {
-                        ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-muted"> Aucune propriété n'a été enregistrée. </div> ) : null
+                        ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                     }                                 
 
                     </div>

@@ -53,7 +53,6 @@ export function NewCompany(){
             }
             //-------------------------------------------------------------------------
             const res = await company.insert(formData);
-            console.log(res)
             setIsLoading1(false);
             if(res.data.success){
                 setStatus(1);

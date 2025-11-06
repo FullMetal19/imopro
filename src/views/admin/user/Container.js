@@ -25,7 +25,7 @@ export function BalanceContainer ()
             <div className="d-flex flex-column gap-2 mb-4"> 
                 <div className="text-center border text-muted py-4 bg-three-clr rounded-1 mb-2"> { view ?  `${ data?.totalAmount }` : '*************' } Fcfa </div>
                 <div className="d-flex justify-content-end"> 
-                    <button className="btn btn-sm border rounded-4 text-muted px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
+                    <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
                 </div>
             </div>       
         </div>

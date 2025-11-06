@@ -71,7 +71,6 @@ function App()
 
                 <Route exact path="/service" element={ <Service /> }> </Route>
                 <Route exact path="/contact" element={ <Contact /> }> </Route>
-                {/* <Route exact path="/contact" element={ <Contact /> }> </Route> */}
 
                 <Route exact path="/connexion" element={ <Signin /> }> </Route>
                 <Route exact path="/inscription" element={ <Signup /> }> </Route>

@@ -55,13 +55,13 @@ export function ValidatingProperty()
                             <div className="row d-flex flex-column bg-three-clr pt-4 px-4 border-bottom"> 
                                 <div className="d-flex gap-4 align-items-center mb-4"> 
                                     <span className="h5 text-muted mt-2"> Généralité </span>
-                                    <button className="btn btn-sm border rounded-4 text-muted px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
+                                    <button className="btn btn-sm btn-outline-main rounded-4 px-4" onClick={() => setFilter(!filter)}> { filter ? 'Cacher' : 'Filtre'} </button> 
                                 </div>
                                 <Navigation page={2} />
                             </div>
                             <div className="row px-2 py-4 scroll">
                             { 
-                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <img src={'../../img/icons8-iphone-spinner.gif'} height={50} width={50} alt="Logo" /> </div>  ) : (
+                                isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
                                     <div className="col-lg-4 col-sm-6 mb-4" key={index}> 
                                         <div className="d-flex flex-column border ps-3 rounded-2 mx-2 ">
@@ -85,10 +85,10 @@ export function ValidatingProperty()
                                 }))      
                             }  
                             {
-                                error ? ( <div className="col-md-12 mt-3"> <div className="border alert alert-danger text-muted px-4 py-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
+                                error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(filteredData) && filteredData.length === 0 ) ? ( <div className="d-flex px-4 mt-3 w-100 py-3 border shadow-sm bg-white text-muted"> Aucune propriété n'a été enregistrée. </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                             
 
                             </div>
