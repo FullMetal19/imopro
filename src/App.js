@@ -58,10 +58,20 @@ function App()
         <BrowserRouter>
             <Routes>
 
+            {/* *************************************************************** USER ************************************************************************ */} 
+
                 <Route exact path="/" element={ <Home /> }> </Route>
+                <Route exact path="/service" element={ <Service /> }> </Route>
+                <Route exact path="/contact" element={ <Contact /> }> </Route>
+
                 <Route exact path="/logement" element={ <Housing /> }> </Route>
                 <Route exact path="/terrain" element={ <Field /> }> </Route>
                     <Route exact path="/propriete/:id" element={ <PropertyDetails /> }> </Route>
+
+                <Route exact path="/connexion" element={ <Signin /> }> </Route>
+                <Route exact path="/inscription" element={ <Signup /> }> </Route>
+                    <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route>
+                    <Route exact path="/mot-de-passe-oublie" element={ <Password /> }> </Route>
 
                 <Route exact path="/mon-compte" element={ <Account /> }> </Route>
                     <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route>
@@ -69,14 +79,7 @@ function App()
                     <Route exact path="/modification-entreprise/:companyId" element={ <ModifyCompany /> }> </Route>
 
 
-                <Route exact path="/service" element={ <Service /> }> </Route>
-                <Route exact path="/contact" element={ <Contact /> }> </Route>
-
-                <Route exact path="/connexion" element={ <Signin /> }> </Route>
-                <Route exact path="/inscription" element={ <Signup /> }> </Route>
-                <Route exact path="/validation-compte" element={ <ValidateAccount /> }> </Route>
-                <Route exact path="/mot-de-passe-oublie" element={ <Password /> }> </Route>
-                
+    
 
                 {/* <Route exact path="/recherche" element={ <SearchProperties /> }> </Route> */}
                 
@@ -92,41 +95,69 @@ function App()
                 <Route exact path="/mon-compte" element={ <Account /> }> </Route>
                 <Route exact path="/creation-entreprise" element={ <NewCompany /> }> </Route>
                 <Route exact path="/modification-entreprise/:companyId" element={ <ModifyCompany /> }> </Route>
-                <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route> */}
+                <Route exact path="/mensualites/:housingId" element={ <MonthPay /> }> </Route> */}  
+
+    {/* *************************************************************** COMPANY ************************************************************************ */}
+
+
+                {/* ----------------- ADMIN * COMPANY ----------------- */}
 
                 <Route exact path="/entreprise/:companyId" element={ <ValidatedProperty /> }> </Route>
+
                 <Route exact path="/entreprise/:companyId/propriete-invalide" element={ <UnvalidatedProperty /> }> </Route>
+
                 <Route exact path="/entreprise/:companyId/propriete-en-cours" element={ <InprogressProperty /> }> </Route>
-                <Route exact path="/configuration/:companyId/:propertyId" element={ <Configuration /> }> </Route>
+
+                    <Route exact path="/configuration/:companyId/:propertyId" element={ <Configuration /> }> </Route>
+
                 <Route exact path="/entreprise/:companyId/nouvelle-propriete" element={ <AddProperty /> }> </Route>
+                
+                {/* ----------------- COMPANY * BALANCE ----------------- */}
                  
                 <Route exact path="/company/:companyId/solde" element={ <Balance /> }> </Route>
 
+                {/* ----------------- COMPANY * NOTIFICATION ----------------- */}
+
                 <Route exact path="/company/:companyId/notifications" element={ <Notification /> }> </Route>
 
+                {/* ----------------- COMPANY * PROPERTY ----------------- */}
                 <Route exact path="/company/:companyId/propriete-reserve" element={ <Property /> }> </Route>
-                <Route exact path="/mensualites/:companyId/:propertyId" element={ <PaymentsHistoric /> }> </Route>
+                    <Route exact path="/mensualites/:companyId/:propertyId" element={ <PaymentsHistoric /> }> </Route>
 
+
+    {/* *************************************************************** ADMIN ************************************************************************ */}
+
+                
+                {/* ----------------- ADMIN * COMPANY ----------------- */}
 
                 <Route exact path="/admin" element={ <ValidatingProperty /> }> </Route>
+
                 <Route exact path="/admin/propriete-invalide" element={ <UnvalidatedProperties /> }> </Route>
-                <Route exact path="/admin/configuration/:propertyId" element={ <Configurations /> }> </Route>
-                <Route exact path="/admin/details/:propertyId" element={ <MoreDetails /> }> </Route>
 
+                    <Route exact path="/admin/configuration/:propertyId" element={ <Configurations /> }> </Route>
+                    <Route exact path="/admin/details/:propertyId" element={ <MoreDetails /> }> </Route>
 
-                <Route exact path="/admin/notification" element={ <Notifications /> }> </Route>
+                {/* ----------------- ADMIN * COMPANY ----------------- */}
 
                 <Route exact path="/admin/entreprise" element={ <Companies /> }> </Route>
+                    <Route exact path="/admin/retrait/:companyId" element={ <Withdraws /> }> </Route>
+                    <Route exact path="/admin/solde/:companyId" element={ <Stat /> }> </Route>
+
                 <Route exact path="/admin/entreprise-en-cours-validation" element={ <ValidatingCompany /> }> </Route>
+
                 <Route exact path="/admin/entreprise-bloque" element={ <BlockedCompany /> }> </Route>
-                <Route exact path="/admin/entreprise/:companyId" element={ <ValidateCompany /> }> </Route>
+                    <Route exact path="/admin/entreprise/:companyId" element={ <ValidateCompany /> }> </Route>
 
-                <Route exact path="/admin/retrait/:companyId" element={ <Withdraws /> }> </Route>
-                <Route exact path="/admin/solde/:companyId" element={ <Stat /> }> </Route>
-
+                {/* ----------------- ADMIN * USER'S SETTING ----------------- */}
+                
                 <Route exact path="/admin/parametre" element={ <Users /> }> </Route>
 
+                {/* ----------------- ADMIN * SERVICE ----------------- */}
                 <Route exact path="/admin/services" element={ <Services /> }> </Route>
+
+                {/* ----------------- ADMIN * NOTIFICATION ----------------- */}
+
+                <Route exact path="/admin/notification" element={ <Notifications /> }> </Route>
 
     
                 {/* <Route path="*" element={ <Error />  } ></Route> */}

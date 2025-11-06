@@ -24,7 +24,7 @@ export function FilterForm({filter, country, region, houseType, setCountry, setR
 
         <div className={`border-end pb-4 ${filter ? 'col-md-3' : 'col-md-12'} `}>
             
-            <div className="row d-flex py-3 border-bottom mb-4 bg-three-clr"> 
+            <div className="row d-flex py-3 border-bottom mb-4 bg-light"> 
                 <span className="h5 px-4 text-muted mt-2"> Filtrer </span> 
             </div>
 
