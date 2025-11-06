@@ -208,7 +208,7 @@ export function NewCompany(){
                                     <div className="d-flex flex-column mb-2">  
                                         <span className="text-secondary fs-xs mb-1"> Uploader l'image de face et de derière de la carte d'identité [ <span className=" px-2 text-danger"> Format PDF </span>  ] </span>
                                         <div className="d-flex gap-1 mb-3" >
-                                          <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*, application/pdf" required onChange={ handleInputs } />
+                                          <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" required onChange={ handleInputs } />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                                         </div>
                                     </div>
