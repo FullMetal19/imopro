@@ -726,23 +726,20 @@ export function Configuration() {
                                                         isLoading ? (
                                                           <Skeleton height={300} />
                                                         ) : (
-                                                          <div className="slider-container mb-4">
-                                                            <Slider {...settings}>
+                                                          <div className="row">
+                                                            
                                                               {inputs?.media && inputs.media.length > 0 ? (
-                                                                inputs.media.map((item, index) => {
-                                                                  const imageUrl = item?.path?.startsWith("http") ? item.path : `${process.env.REACT_APP_API_URL || ""}${item.path}`;
-                                                                  return (
-                                                                    <div className="d-flex justify-content-center" key={index}>
-                                                                      <img src={imageUrl} alt={`Image ${index + 1}`}  height={300} className="img-fluid rounded-3 border" />
+                                                                inputs.media.map((item, index) => (
+                                                                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center" key={index}>
+                                                                      <img src={item.path} alt={`Image ${index + 1}`}  height={200} className="img-fluid rounded-3 border" />
                                                                     </div>
-                                                                 );
-                                                                })
+                                                                 ))
                                                               ) : (
-                                                               <div className="text-center text-muted py-4">
+                                                               <div className="col-lg-12 text-center text-muted py-4">
                                                                   Aucune image disponible
                                                                 </div>
                                                               )}
-                                                            </Slider>
+                                                            
                                                           </div>
                                                         )
                                                       }
