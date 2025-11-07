@@ -220,9 +220,9 @@ export function ModifyCompany() {
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div>
                     {inputs?.cniImage && typeof inputs.cniImage === "string" && (
-                      <div className="d-flex justify-content-center align-items-center">
-                        <a href={inputs.cniImage} className="btn btn-outline-main" target="_blank" rel="noopener noreferrer" >
-                          Voir le CNI
+                      <div className="d-flex justify-content-start align-items-center">
+                        <a href={inputs.cniImage} className="btn btn-outline-main px-4" target="_blank" rel="noopener noreferrer" >
+                          Voir le CNI [ <span className=" px-2 text-danger"> Format PDF </span>  ]
                         </a>
                       </div>
                     )}
@@ -251,7 +251,7 @@ export function ModifyCompany() {
                 )}
                 <div className="row justify-content-end p-4 mb-4 border bg-white">
                   <div>  
-                    <button type="submit" className="btn btn-main">
+                    <button type="submit" className="btn btn-main px-4 py-1">
                       Mettre à jour <i className="bi bi-arrow-right ms-2"></i>
                     </button>
                   </div>
