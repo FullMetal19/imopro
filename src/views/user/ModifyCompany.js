@@ -66,8 +66,9 @@ export function ModifyCompany() {
         }
       }
 
-      const res = await company.update(formData, companyId);
+      const res = await company.update(companyId, formData);
       setIsLoading1(false);
+      console.log(res.data);
 
       if (res.data.success) {
         setStatus(1);
@@ -243,7 +244,7 @@ export function ModifyCompany() {
                 </div>
 
                 {status !== 0 && (
-                  <div className="alert border py-2 px-4 rounded-1 mb-4">
+                  <div className="col-md-6 py-2 rounded-1 mb-4">
                     <div className={`alert ${ status === 1 ? "alert-primary" : "alert-danger" }`}>
                       {message}
                     </div>
@@ -251,7 +252,7 @@ export function ModifyCompany() {
                 )}
                 <div className="row justify-content-end p-4 mb-4 border bg-white">
                   <div>  
-                    <button type="submit" className="btn btn-main px-4 py-1">
+                    <button type="submit" className="btn btn-main px-4 py-2">
                       Mettre à jour <i className="bi bi-arrow-right ms-2"></i>
                     </button>
                   </div>

@@ -23,7 +23,7 @@ export function CompanyApi(contentType = "application/json")
 
         // setBlock : (id, uid) => https.put(`/api/company/block/${id}/${uid}`),
 
-        // update : (id, data) => https.put(`/api/company/${id}`, data), 
+        update : (id, data) => https.put(`/api/company/${id}`, data), 
 
         // view : (id) => https.put(`/api/company/read/${id}`), 
 
