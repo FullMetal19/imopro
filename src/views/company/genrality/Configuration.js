@@ -722,18 +722,30 @@ export function Configuration() {
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-3"> Images des propriétés  </span>
                                                     <div className="d-flex gap-1 mb-2 border rounded-3 p-3" >
-                                                       { 
-                                                            isLoading ? ( <Skeleton height={300} /> ) : (
-                                                            <div className="slider-container mb-4">
-                                                                <Slider {...settings}> 
-                                                                    { 
-                                                                        data?.media.map( (item , index) => { return (
-                                                                            <div className="d-flex" key={index} > <img src= {`${item.path}`} alt="Logo" height={300} className="img-fluid" />  </div>
-                                                                        )}) 
-                                                                    }    
-                                                                </Slider>
-                                                            </div>  ) 
-                                                       } 
+                                                      {
+                                                        isLoading ? (
+                                                          <Skeleton height={300} />
+                                                        ) : (
+                                                          <div className="slider-container mb-4">
+                                                            <Slider {...settings}>
+                                                              {inputs?.media && inputs.media.length > 0 ? (
+                                                                inputs.media.map((item, index) => {
+                                                                  const imageUrl = item?.path?.startsWith("http") ? item.path : `${process.env.REACT_APP_API_URL || ""}${item.path}`;
+                                                                  return (
+                                                                    <div className="d-flex justify-content-center" key={index}>
+                                                                      <img src={imageUrl} alt={`Image ${index + 1}`}  height={300} className="img-fluid rounded-3 border" />
+                                                                    </div>
+                                                                 );
+                                                                })
+                                                              ) : (
+                                                               <div className="text-center text-muted py-4">
+                                                                  Aucune image disponible
+                                                                </div>
+                                                              )}
+                                                            </Slider>
+                                                          </div>
+                                                        )
+                                                      }
                                                     </div> 
                                                 </div>
                                               </div>
@@ -805,7 +817,7 @@ export function Configuration() {
                                             <div className="row mb-4 border-bottom"> 
                                                 {
                                                 ( status === 1 ) ? 
-                                                (  <div className="my-3"> <div className="alert alert-success border py-2 px-4 rounded-1"> { message } </div> </div> ) :
+                                                (  <div className="my-3"> <div className="alert alert-primary border py-2 px-4 rounded-1"> { message } </div> </div> ) :
                                                 ( status === -1 ) ?
                                                 (  <div className="my-3"> <div className="alert alert-danger border py-2 px-4 rounded-1"> { message } </div> </div>) : null
                                                 }
