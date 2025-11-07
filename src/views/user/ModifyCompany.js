@@ -151,8 +151,8 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-12">
-                    <label className="text-secondary fs-xs mb-1">Description</label>
-                    <textarea className="w-100 border input p-3 text-secondary rounded-2" name="description" value={inputs?.description || ""} rows={6} onChange={handleInputs} />
+                    <label className="text-secondary fs-xs mb-1">Description [ <span className=" px-2 text-danger"> * </span>  ]  </label>
+                    <textarea className="w-100 border input p-3 text-secondary rounded-2 mb-3" name="description" value={inputs?.description || ""} rows={6} onChange={handleInputs} />
                   </div>
 
                   <div className="col-md-6">
@@ -173,7 +173,7 @@ export function ModifyCompany() {
 
                   <div className="col-md-8">
                     <label className="text-secondary fs-xs mb-1">Site web</label>
-                    <input type="url" name="website" value={inputs?.website || ""} className="w-100 border input p-3 text-secondary rounded-2" required onChange={handleInputs} />
+                    <input type="url" name="website" value={inputs?.website || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={handleInputs} />
                   </div>
 
                 </div>
@@ -216,7 +216,7 @@ export function ModifyCompany() {
                   <div className="col-md-6">
                     <label className="text-secondary fs-xs mb-1"> Carte d'identité (PDF)</label>
                     <div className="d-flex gap-1 mb-3" >
-                        <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" required onChange={ handleInputs } />
+                        <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div>
                     {inputs?.cniImage && typeof inputs.cniImage === "string" && (
@@ -231,7 +231,7 @@ export function ModifyCompany() {
                   <div className="col-md-6">
                     <label className="text-secondary fs-xs mb-1"> Icône de l'entreprise (image)</label>
                     <div className="d-flex gap-1 mb-3" >
-                        <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" required onChange={ handleInputs } />
+                        <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div> 
                     {inputs?.icon && typeof inputs.icon === "string" && (
@@ -250,9 +250,11 @@ export function ModifyCompany() {
                   </div>
                 )}
                 <div className="row justify-content-end p-4 mb-4 border bg-white">
-                  <button type="submit" className="btn btn-main">
-                    Enregistrer <i className="bi bi-arrow-right ms-2"></i>
-                  </button>
+                  <div>  
+                    <button type="submit" className="btn btn-main">
+                      Mettre à jour <i className="bi bi-arrow-right ms-2"></i>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
