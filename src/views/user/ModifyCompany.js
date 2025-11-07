@@ -244,7 +244,7 @@ export function ModifyCompany() {
                 </div>
 
                 {status !== 0 && (
-                  <div className="col-md-6 py-2 rounded-1 mb-4">
+                  <div className="col-md-12 py-2 rounded-1 mb-3">
                     <div className={`alert ${ status === 1 ? "alert-primary" : "alert-danger" }`}>
                       {message}
                     </div>

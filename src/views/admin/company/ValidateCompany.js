@@ -76,6 +76,18 @@ export function ValidateCompany()
                                         <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.address } </span>
                                     </div>
                                 </div>
+                                <div className="col-md-6 mb-3">
+                                    <div className="d-flex flex-column">  
+                                        <span className="text-muted fs-xs mb-1"> Pays d'appartenance </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.country } </span>
+                                    </div>
+                                </div>
+                                <div className="col-md-6 mb-3">
+                                    <div className="d-flex flex-column">  
+                                        <span className="text-muted fs-xs mb-1"> Région </span>
+                                        <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.region } </span>
+                                    </div>
+                                </div>
                                 <div className="col-md-8 mb-3">  
                                     <div className="d-flex flex-column">  
                                         <span className="text-muted fs-xs mb-1"> Description </span>
