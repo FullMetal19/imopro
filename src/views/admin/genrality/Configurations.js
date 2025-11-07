@@ -88,69 +88,69 @@ export function Configurations()
                                                <div className="col-md-6">
                                                  <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Catégorie de propriété  </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { inputs?.type || "" } </span>
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.type || "" } </span>
                                                 </div>
                                               </div>
                                               <div className="col-md-6">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Type de propriété  </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { inputs?.subtitle || "" } </span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.subtitle || "" } </span>  
                                                 </div>
                                               </div>
                                               <div className="col-md-6">
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Dimension [<span className=" px-2 text-danger"> en metre carré </span>]  </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.surface || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.surface || ""} </span> 
                                                 </div>
                                               </div>
                                               <div className="col-md-6">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Status de propriété </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.title || ""}</span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.title || ""}</span>  
                                                 </div>
                                               </div>
                                               <div className="col-md-12">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Description </span>
-                                                    <textarea className="w-100 border input p-3 text-secondary rounded-2" name="description" value={inputs?.description || ""} rows={8} />
+                                                    <textarea className="w-100 border input p-3 text-secondary rounded-2" name="description" value={data?.description || ""} rows={8} />
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
                                            {/* -------------------------------------------------------------------------  */}
                                            {
-                                              inputs?.type?.toLowerCase() === "logement" && (
+                                              data?.type?.toLowerCase() === "logement" && (
 
                                           <div className="col-md-12 mb-4 bg-white p-4 border border-primary rounded-2">
                                             <div className="row"> 
                                               <div className="col-lg-6">
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1">  Nombre de chambre  </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.bedroom || ""} </span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.bedroom || ""} </span>  
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de Salon </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.livingroom || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.livingroom || ""} </span> 
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de toilette </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.restroom || ""} </span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.restroom || ""} </span>  
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de cuisine </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.kitchen || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.kitchen || ""} </span> 
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                  <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Nombre de niveau </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.floor || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.floor || ""} </span> 
                                                 </div>
                                               </div>
                                             </div>
@@ -163,13 +163,13 @@ export function Configurations()
                                               <div className="col-lg-6">
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Le prix de la propriété (en Fcfa) </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.price || ""} </span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.price || ""} </span>  
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
                                                     <span className="text-muted fs-xs mb-1"> Le montant de la guarantie (en Fcfa) </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { inputs?.guaranty || "" } </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> { data?.guaranty || "" } </span> 
                                                 </div>
                                               </div>
                                             </div>
@@ -187,8 +187,8 @@ export function Configurations()
                                                         ) : (
                                                           <div className="row">
                                                             
-                                                              {inputs?.media && inputs.media.length > 0 ? (
-                                                                inputs.media.map((item, index) => (
+                                                              {data?.media && data.media.length > 0 ? (
+                                                                data.media.map((item, index) => (
                                                                     <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4" key={index}>
                                                                       <img src={item.path} alt={`Image ${index + 1}`}  height={200} className="img-fluid rounded-3 border" />
                                                                     </div>
@@ -213,33 +213,32 @@ export function Configurations()
                                               <div className="col-lg-6">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Pays </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.country || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.country || ""} </span> 
 
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Région </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.region || ""} </span>  
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.region || ""} </span>  
                                                 </div>
                                               </div>
                                                <div className="col-lg-9">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Adresse </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.address  || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.address  || ""} </span> 
                                                 </div>
                                               </div> 
                                               <div className="col-lg-6" >
                                                 <div className="d-flex flex-column mb-2">  
                                                   <span className="text-muted fs-xs mb-1"> La longitude </span>
-                                                  <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.longitude || ""} </span>  
-                                                  <input type="text" name="longitude" value={inputs?.longitude || ""} className="w-100 border input p-3 text-secondary rounded-2" />
+                                                  <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.longitude || ""} </span>  
                                                 </div>
                                               </div>
                                               <div className="col-lg-6" >
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> La latitude </span>
-                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {inputs?.latitude || ""} </span> 
+                                                    <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.latitude || ""} </span> 
                                                 </div>
                                               </div>
                                             </div>
