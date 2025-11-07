@@ -5,11 +5,13 @@ import { Footer } from "../../components/Footer";
 import { CompanyApi } from "../../services/company.api";
 import { LoaderModal } from "../company/genrality/Modal";
 import vector from "../../config/data";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export function ModifyCompany() {
   const { companyId } = useParams();
   const company = CompanyApi("multipart/form-data");
+
+  const navigate = useNavigate();
 
   const fetchCompany = async () => {
     try {
@@ -72,6 +74,7 @@ export function ModifyCompany() {
 
       if (res.data.success) {
         setStatus(1);
+        navigate('/mon-compte');
         setMessage("Les informations de l'entreprise ont été mises à jour avec succès.");
       } else {
         setStatus(-1);
