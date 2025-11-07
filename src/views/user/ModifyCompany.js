@@ -236,7 +236,7 @@ export function ModifyCompany() {
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div> 
                     {inputs?.icon && typeof inputs.icon === "string" && (
-                      <div className="d-flex justify-content-center align-items-center border">
+                      <div className="d-flex justify-content-center align-items-center border p-3">
                         <img src={inputs.icon} height={160} width={200} alt="Logo" />
                       </div>
                     )}
