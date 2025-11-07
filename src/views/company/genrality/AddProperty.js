@@ -49,6 +49,13 @@ export function AddProperty()
      const handleForm = async (event) => {
         event.preventDefault();
         setIsLoading1(true);
+
+        if( !inputs?.latitude || !inputs?.longitude ){
+            setIsLoading1(false);
+            alert('Veuillez sélectionner la localisation de la propriété.');
+            return;
+        }
+
         try {
             const formData = new FormData();
             for (const key in inputs) {
@@ -379,7 +386,7 @@ export function AddProperty()
                                             <div className="row mb-4 border-bottom"> 
                                                 {
                                                 ( status === 1 ) ? 
-                                                (  <div className="my-3"> <div className="alert alert-success border py-2 px-4 rounded-1"> { message } </div> </div> ) :
+                                                (  <div className="my-3"> <div className="alert alert-primary border py-2 px-4 rounded-1"> { message } </div> </div> ) :
                                                 ( status === -1 ) ?
                                                 (  <div className="my-3"> <div className="alert alert-danger border py-2 px-4 rounded-1"> { message } </div> </div>) : null
                                                 }
