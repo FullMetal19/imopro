@@ -70,7 +70,6 @@ export function ModifyCompany() {
 
       const res = await company.update(companyId, formData);
       setIsLoading1(false);
-      console.log(res.data);
 
       if (res.data.success) {
         setStatus(1);
