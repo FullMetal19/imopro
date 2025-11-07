@@ -449,7 +449,7 @@ export function Configuration() {
   useEffect(() => {
     if (data) {
       setInputs(data);
-
+       console.log(data);
       // Preload regions and types based on data
       const selectedRegionData = vector.listRegion.find(
         (item) => item.country === data.country
