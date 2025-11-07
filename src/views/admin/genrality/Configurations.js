@@ -57,7 +57,7 @@ export function Configurations()
 
                     {/* ************************************************************************ */}
 
-                    <div className="col-md-12">
+                    {/* <div className="col-md-12">
                         <div className="row p-4 scroll">
                         { isLoading ? (
                                <Skeleton height={400} />
@@ -72,7 +72,7 @@ export function Configurations()
                                             <span className="text-secondary lead py-1"> Administration de la propriété </span>
                                          </div>
 
-                                         <div className="row">
+                                         <div className="row"> */}
                                            {/* -------------------------------------------------------------------------  */}
                                            {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                              <div className="row"> 
@@ -252,7 +252,7 @@ export function Configurations()
                                             </div>
                                           </div> */}
                                           {/* -------------------------------------------------------------------------  */}
-    
+{/*     
                                         </div>
                                     </div>
 
@@ -261,7 +261,7 @@ export function Configurations()
                               </div>
                           )}
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>                    
             </div>
