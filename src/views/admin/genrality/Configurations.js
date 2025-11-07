@@ -2,19 +2,11 @@ import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Layout } from "../Layout";
 import Skeleton from "react-loading-skeleton";
-import Slider from "react-slick";
 import { Modal, UnvalidationForm } from "./Modal";
 
 import { ProductApi } from "../../../services/product.api";
 import { useParams } from "react-router";
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-};
 
 export function Configurations()
 {
@@ -82,7 +74,7 @@ export function Configurations()
 
                                          <div className="row">
                                            {/* -------------------------------------------------------------------------  */}
-                                           <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                           {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                              <div className="row"> 
 
                                                <div className="col-md-6">
@@ -116,9 +108,9 @@ export function Configurations()
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                            {/* -------------------------------------------------------------------------  */}
-                                           {
+                                           {/* {
                                               data?.type?.toLowerCase() === "logement" && (
 
                                           <div className="col-md-12 mb-4 bg-white p-4 border border-primary rounded-2">
@@ -156,9 +148,9 @@ export function Configurations()
                                             </div>
                                           </div>
                                           )
-                                          }  
+                                          }   */}
                                           {/* -------------------------------------------------------------------------  */}
-                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                          {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row"> 
                                               <div className="col-lg-6">
                                                 <div className="d-flex flex-column">  
@@ -173,9 +165,9 @@ export function Configurations()
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                           {/* -------------------------------------------------------------------------  */}
-                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                          {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row d-flex justify-content-center"> 
                                               <div className="col-md-11">
                                                 <div className="d-flex flex-column mb-2">  
@@ -206,15 +198,14 @@ export function Configurations()
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                           {/* -------------------------------------------------------------------------  */}
-                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                          {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row"> 
                                               <div className="col-lg-6">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Pays </span>
                                                     <span className="w-100 border input p-3 text-secondary rounded-2"> {data?.country || ""} </span> 
-
                                                 </div>
                                               </div>
                                               <div className="col-lg-6"> 
@@ -242,9 +233,9 @@ export function Configurations()
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                           {/* -------------------------------------------------------------------------  */}
-                                          <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
+                                          {/* <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row"> 
                                                <div className="col-md-12 d-flex justify-content-end gap-4 mt-3">
                                                 {
@@ -259,7 +250,7 @@ export function Configurations()
                                                 }
                                                </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                           {/* -------------------------------------------------------------------------  */}
     
                                         </div>
