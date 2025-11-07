@@ -4,11 +4,14 @@ import { Footer } from "../../components/Footer";
 import { CompanyApi } from "../../services/company.api";
 import { LoaderModal } from "../company/genrality/Modal";
 import vector from "../../config/data";
+import { useNavigate } from "react-router";
 
 
 export function NewCompany(){
 
     const company = CompanyApi("multipart/form-data");
+
+    const navigate = useNavigate();
         
     const [inputs, setInputs] = useState();
     const [status, setStatus] = useState(0);
@@ -56,6 +59,7 @@ export function NewCompany(){
             setIsLoading1(false);
             if(res.data.success){
                 setStatus(1);
+                navigate('/mon-compte');
                 setMessage("Votre entreprise immobilier a bien été ajoutée");
             }
             else{

@@ -63,8 +63,8 @@ export function ValidatingCompany()
                                     <div className="row border rounded-3 py-3" >
                                         <div className="col-sm-9 d-flex align-items-center gap-2 px-3"> 
                                             <img src={ item.icon } height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" /> 
-                                            <span className="color-blue fs-xs"> { item.name } </span>
-                                            <span className="color-gray fs-xs"> { (item.status == 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
+                                            <span className="color-blue"> { item.name } </span>
+                                            <span className="text-secondary fs-xs"> { (item.status == 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
                                         </div>
                                         <div className="col-sm-3"> 
                                             <a className="btn btn-sm btn-outline-main" href={`/admin/entreprise/${item.id}` } > Administrer </a>
