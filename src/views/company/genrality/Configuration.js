@@ -291,7 +291,7 @@ export function Configuration()
                                                                 <Slider {...settings}> 
                                                                     { 
                                                                         data?.media.map( (item , index) => { return (
-                                                                            <div className="d-flex" key={index} > <img src={`${process.env.REACT_APP_PATH}/${item.path}`} alt="Logo" height={350} className="img-fluid" />  </div>
+                                                                            <div className="d-flex" key={index} > <img src={ item.path } alt="Logo" height={350} className="img-fluid" />  </div>
                                                                         )}) 
                                                                     }    
                                                                 </Slider>

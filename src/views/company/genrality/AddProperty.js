@@ -49,6 +49,7 @@ export function AddProperty()
      const handleForm = async (event) => {
         event.preventDefault();
         setIsLoading1(true);
+        setStatus(0);
 
         if( !inputs?.latitude || !inputs?.longitude ){
             setIsLoading1(false);
@@ -286,7 +287,7 @@ export function AddProperty()
                                                     </div>
                                                 </div>
                                               </div>
-                                               <div className="col-lg-9">
+                                               <div className="col-lg-8">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-1"> Adresse </span>
                                                     <div className="d-flex gap-1 mb-2" >
@@ -295,7 +296,7 @@ export function AddProperty()
                                                     </div>
                                                 </div>
                                               </div> 
-                                              <div className="col-lg-3"> 
+                                              <div className="col-lg-4"> 
                                                 <div className="d-flex flex-column mb-2">
                                                     <span className="text-muted fs-xs mb-1"> Localisation [ <span className=" px-2 text-danger"> * </span>  ]  </span>
                                                     <button type="button" className="btn p-3 btn-outline-main mb-1" onClick={() => setShowMap(true)} > Géolocaliser la propriété </button>
