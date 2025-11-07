@@ -286,12 +286,12 @@ export function Configuration()
                                                     <span className="text-muted fs-xs mb-3"> Images des propriétés  </span>
                                                     <div className="d-flex gap-1 mb-2 border rounded-3 p-3" >
                                                        { 
-                                                            isLoading ? ( <Skeleton height={350} /> ) : (
+                                                            isLoading ? ( <Skeleton height={300} /> ) : (
                                                             <div className="slider-container mb-4">
                                                                 <Slider {...settings}> 
                                                                     { 
                                                                         data?.media.map( (item , index) => { return (
-                                                                            <div className="d-flex" key={index} > <img src={ item.path } alt="Logo" height={350} className="img-fluid" />  </div>
+                                                                            <div className="d-flex" key={index} > <img src= {`${item.path}`} alt="Logo" height={300} className="img-fluid" />  </div>
                                                                         )}) 
                                                                     }    
                                                                 </Slider>

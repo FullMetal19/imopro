@@ -63,23 +63,32 @@ export function ValidatingProperty()
                             { 
                                 isLoading ? (  <div className="col-md-12 d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
-                                    <div className="col-lg-4 col-sm-6 mb-4" key={index}> 
-                                        <div className="d-flex flex-column border ps-3 rounded-2 mx-2 ">
-                                            <img src={`${process.env.REACT_APP_PATH}/${item.media[0].path}`} alt="Logo" height={200} className="mb-3 rounded-2" />
-                                            <div className="d-flex flex-column py-3 border-start border-top px-0"> 
-                                                <div className="text-muted mb-2 px-3">
-                                                    < TextReducer text={ item?.description } maxsize={70} />
-                                                </div>
-                                                <span className="text-muted mb-2 px-3 border-top border-bottom bg-light"> Adresse : { item?.address } </span>
-                                                <div className="d-flex justify-content-between align-items-center px-3"> 
-                                                    <div className="d-flex align-items-center">
-                                                        <img src={'../../img/icons8-calendrier-96.png'} alt="Logo" width={20} height={20} className="me-1 hide" />
-                                                        <span className="main-color" > { item?.price } F </span>
-                                                    </div>
-                                                    <a className="btn btn-sm btn-outline-main" href={ `/admin/configuration/${ item?.id }` } > Administrer </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="col-lg-4 col-md-6 mb-4" key={index}>
+
+                                        <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
+                                          {/* Image principale */}
+                                          <img src={ item?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "220px", objectFit: "cover" }} />
+                                          {/* Galerie */}
+                                          <div className="d-flex gap-3 p-3">
+                                            <img src={ item?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                                            <img src={ item?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                                          </div>
+                                          {/* Contenu */}
+                                          <div className="px-3 pb-3 pt-1">
+                                            <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
+                                             { item?.price +  ' Fcfa ' } { ( item?.title === "à louer" ) && " / mois" } 
+                                            </span>
+                                          </div>
+                                          <div className="border-top border-bottom py-2 px-3">
+                                            <h5 className="card-title text-secondary"> { item?.subtitle + ' ' + item?.title } </h5>
+                                            <p className="text-secondary mb-2"> { item?.address } </p>
+                                          </div>
+                                          {/* Boutons */}
+                                          <div className="d-flex p-3">
+                                              <a className="btn btn-sm btn-outline-main" href={ `/admin/configuration/${ item?.id }` } > Administrer </a>
+                                          </div>
+                                        </div> 
+
                                     </div> 
                                     )
                                 }))      
