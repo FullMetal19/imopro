@@ -6,12 +6,12 @@ export function MessageModal({ method, message })
     return (
 
         <div className="modal-container">
-            <div className="container">
-                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
+            <div className="container pt-5">
+                <div className="row d-flex justify-content-center mt-3 px-2">
                     <div className="col-lg-9 col-md-10 bg-three-clr p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between"> 
                             <span className="text-muted"> La raison de l'invalidité de la propriété </span>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
                         </div>
                         <div className="d-flex border-top scroll-md border p-4 mb-2">
                             {message} 
@@ -47,15 +47,15 @@ export function Modal({ method, message, propertyId })
     return (
 
         <div className="modal-container">
-            <div className="container">
-                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
+            <div className="container pt-5">
+                <div className="row d-flex justify-content-center mt-5 px-2">
                     <div className="col-lg-5 col-md-8 bg-three-clr p-4 d-flex flex-column">
-                        <div className="text-end"> <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> </div>
+                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
                         <div className="d-flex border-top border-bottom pt-4 pb-2 mb-2">
                             <p className="text-muted"> {message} </p>
                         </div>
                         {
-                            isLoading ? ( <div className="d-flex justify-content-center mb-4">  <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
+                            isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                         }
                         {
                             ( status === 1 ) ? 
@@ -102,12 +102,12 @@ export function UnvalidationForm({ method, propertyId })
     return (
 
         <div className="modal-container">
-            <div className="container">
-                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
+            <div className="container pt-5">
+                <div className="row d-flex justify-content-center mt-3 px-2">
                     <div className="col-lg-9 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between"> 
                             <div className="text-white bg-main px-3 d-flex align-items-center rounded-1"> Etes vous sure d'invalider cette propriété </div>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> 
                         </div>
                         <form className="d-flex flex-column mt-4" onSubmit={ handleForm } >
                             <div className="d-flex flex-column mb-4">  
@@ -115,7 +115,7 @@ export function UnvalidationForm({ method, propertyId })
                                 <textarea className="form-control" name="description" rows={10} onChange={ e=>{ setMessage(e.target.value) } } />
                             </div>
                             {
-                                isLoading ? ( <div className="d-flex justify-content-center mb-4">  <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
+                                isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 

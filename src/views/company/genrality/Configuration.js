@@ -718,7 +718,7 @@ export function Configuration() {
                                           {/* -------------------------------------------------------------------------  */}
                                           <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row d-flex justify-content-center"> 
-                                              <div className="col-md-11">
+                                              <div className="col-md-8">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-3"> Images des propriétés  </span>
                                                     <div className="d-flex gap-1 mb-2 border rounded-3 p-3" >
@@ -730,7 +730,7 @@ export function Configuration() {
                                                             
                                                               {inputs?.media && inputs.media.length > 0 ? (
                                                                 inputs.media.map((item, index) => (
-                                                                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4" key={index}>
+                                                                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center" key={index}>
                                                                       <img src={item.path} alt={`Image ${index + 1}`}  height={200} className="img-fluid rounded-3 border" />
                                                                     </div>
                                                                  ))
