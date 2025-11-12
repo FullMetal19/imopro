@@ -89,7 +89,7 @@ export function Stat()
                                     {/* ------------------------------------------------ */}
                                     <div className="d-flex flex-column p-3 border-bottom" >                                            
                                         <div className="d-flex justify-content-between gap-3"> 
-                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status == 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
+                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status === 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
                                             <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ setModal } > Modifier </button> 
                                         </div>      
                                     </div>

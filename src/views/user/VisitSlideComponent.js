@@ -41,7 +41,7 @@ export function VisitSlideComponent({ openLocalisationModal,openValidationModal,
                             <div className="d-flex justify-content-between bg-three-clr px-3 py-3">
                                 <button className="btn btn-sm btn-outline-secondary" onClick={ ()=> openLocalisationModal(item.Property.longitude, item.Property.latitude) }> <i className="bi bi-geo-alt-fill me-1"></i> Localisation </button>
                                 {
-                                   ( item.Property.isbooked == 1) ? (<span className="text-secondary px-2 py-1 border rounded-2 small"> propriété prise </span>) : (<button className="btn btn-sm btn-outline-secondary" onClick={ ()=> openValidationModal(item.Property.guaranty, item.Property.id) } > Validation <i className="bi bi-arrow-right ms-1"></i>   </button>) 
+                                   ( item.Property.isbooked === 1) ? (<span className="text-secondary px-2 py-1 border rounded-2 small"> propriété prise </span>) : (<button className="btn btn-sm btn-outline-secondary" onClick={ ()=> openValidationModal(item.Property.guaranty, item.Property.id) } > Validation <i className="bi bi-arrow-right ms-1"></i>   </button>) 
                                 }   
                             </div>
                         </div>

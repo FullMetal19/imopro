@@ -38,7 +38,7 @@ export function Modal({ method, message, uid, state })
                         }
                         {
                             ( status === 1 ) ? 
-                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state == 1 || state == 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
+                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state === 1 || state === 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
                             ( status === -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }

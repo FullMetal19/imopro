@@ -85,7 +85,7 @@ export function Services()
                                 <div className="border-top border-bottom py-2 px-3 text-muted mb-2"> { item?.description } </div> 
                                 <div className="d-flex px-3 py-1 gap-3">
                                     <button className="btn btn-sm fs-xs btn-outline-main" onClick={ ()=> setModal2(item?.id, item?.title, item?.description) } > Modifier </button>  
-                                    <button className="btn btn-sm fs-xs btn-main" onClick={ ()=> setModal(item?.id, item.status) }> { ( item.status == 1 ) ? 'Désactiver' : 'Activer'} </button>
+                                    <button className="btn btn-sm fs-xs btn-main" onClick={ ()=> setModal(item?.id, item.status) }> { ( item.status === 1 ) ? 'Désactiver' : 'Activer'} </button>
                                 </div>
                             </div>
                             )

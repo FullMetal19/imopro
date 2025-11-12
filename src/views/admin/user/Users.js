@@ -89,7 +89,7 @@ export function Users()
                                                         </div>
                                                     </div>
                                                     <div className="d-flex justify-content-between border-top pb-2 pt-3 px-3 gap-3"> 
-                                                        <span className="border fs-xs rounded-4 text-secondary py-1 px-4 bg-three-clr"> { (item.status == 1) ? 'Compte actif' : ( ( item.status == 2 ) ? 'Compte admin actif' : ( ( item.status == -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
+                                                        <span className="border fs-xs rounded-4 text-secondary py-1 px-4 bg-three-clr"> { (item.status === 1) ? 'Compte actif' : ( ( item.status === 2 ) ? 'Compte admin actif' : ( ( item.status === -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
                                                         <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ () => setModal(item?.id, item?.status ) } > Modifier </button> 
                                                     </div> 
                                                 </div>                                    
