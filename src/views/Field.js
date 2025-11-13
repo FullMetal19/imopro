@@ -62,6 +62,14 @@ export function Field(){
 
     return (
 
+      <>
+        
+        <Helmet>
+          <title>logements | Diwaneplus</title>
+          <meta name="description" content="Les terrains chez Diwaneplus" />
+        </Helmet>
+      
+
         <div className="container-fluid bg-light">
           <div className="row"> 
             <TopBar />
@@ -150,6 +158,8 @@ export function Field(){
           </div>
                  
         </div>
+
+      </>
     )
 }
 

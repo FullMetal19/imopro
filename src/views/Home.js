@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { FieldComponent, HouseComponent, LocationComponent, ServiceComponent, TestimonialComponent } from "../components/Component";
 import { VideoModal } from "../components/Modal";
 import {NavigationBar, TopBar } from "../components/Header";
+import { Helmet } from "react-helmet-async";
 
 
 export function Home(){ 
@@ -13,6 +14,13 @@ export function Home(){
 
     return ( 
         
+    <>
+
+      <Helmet>
+        <title>Accueil | Diwaneplus</title>
+        <meta name="description" content="Touvez facilement vos logements et terrains avec Diwaneplus" />
+      </Helmet>
+
       <div className="container-fluid bg-light">
         { modalState ? ( <VideoModal method={ closeModal } /> ) : null}
           <div className="row"> 
@@ -70,6 +78,8 @@ export function Home(){
           </div>
              
         </div>
+
+       </>
     )
 }
 

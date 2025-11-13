@@ -7,6 +7,7 @@ import { HouseSkeleton } from "../components/Skeleton";
 import { HouseContainer } from "../components/Container";
 import { ProductApi } from "../services/product.api";
 import vector from "../config/data";
+import { Helmet } from "react-helmet-async";
 
 
 export function Housing(){
@@ -63,6 +64,13 @@ export function Housing(){
 
 
     return (
+
+    <>
+  
+        <Helmet>
+          <title>logements | Diwaneplus</title>
+          <meta name="description" content="Les logements chez Diwaneplus" />
+        </Helmet>
 
         <div className="container-fluid bg-light">
           <div className="row"> 
@@ -151,6 +159,8 @@ export function Housing(){
         </div>
                  
       </div>
+
+     </>
     )
 }
 
