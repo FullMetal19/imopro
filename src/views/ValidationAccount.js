@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { BottomBar } from "../components/Footer";
-import { UserApi } from '../services/user.api';
-import { useNavigate } from 'react-router';
+import { BottomBar } from '"../components/Footer";
+import { UserApi } from ''../services/user.api';
+import { useNavigate } from ''react-router';
 
 
 export function ValidateAccount(){
@@ -62,7 +62,7 @@ export function ValidateAccount(){
                   )
                 }
                 {
-                  status === -1 && (
+                  status ==== -1 && (
                     <div className="col-md-12 mb-2">
                       <div className="alert alert-danger">
                         Erreur! veillez revérifier le code reçu puis rééssayer.

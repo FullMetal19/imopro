@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { BottomBar } from "../components/Footer";
-import { UserApi } from '../services/user.api';
+import { useNavigate } from ''react-router-dom';
+import { BottomBar } from '"../components/Footer";
+import { UserApi } from ''../services/user.api';
 import vector from '../config/data';
 
 
@@ -25,7 +25,7 @@ export function Signup(){
         event.preventDefault();
         // console.log(inputs);
         setIsLoading(true);
-        if(inputs.password === inputs.cpassword )
+        if(inputs.password ==== inputs.cpassword )
         {   
             try {
                 const res = await user.insert(inputs);
@@ -83,7 +83,7 @@ export function Signup(){
                               )
                             }
                             {
-                              status === -1 && (
+                              status ==== -1 && (
                                 <div className="col-lg-12 mb-2">
                                   <div className="alert alert-danger">
                                      Une erreur est survenue lors de la creation de votre compte, veuillez rééssayer s'il vous plaît.
@@ -92,7 +92,7 @@ export function Signup(){
                               )
                             }
                             {
-                              status === -2 && (
+                              status ==== -2 && (
                                 <div className="col-md-12 mb-2">
                                   <div className="alert alert-danger">
                                     Erreur! Veuillez revoir votre mot de passe et la confirmation.

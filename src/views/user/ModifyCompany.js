@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { NavigationBar, TopBar } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { CompanyApi } from "../../services/company.api";
-import { LoaderModal } from "../company/genrality/Modal";
+import { useQuery } from '"@tanstack/react-query";
+import { NavigationBar, TopBar } from '"../../components/Header";
+import { Footer } from '"../../components/Footer";
+import { CompanyApi } from '"../../services/company.api";
+import { LoaderModal } from '"../company/genrality/Modal";
 import vector from "../../config/data";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from '"react-router";
 
 export function ModifyCompany() {
   const { companyId } = useParams();
@@ -34,7 +34,7 @@ export function ModifyCompany() {
     if (data) {
       setInputs(data);
       const selectedRegionData = vector.listRegion.find(
-        (item) => item.country === data.country
+        (item) => item.country ==== data.country
       );
       setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
     }
@@ -43,14 +43,14 @@ export function ModifyCompany() {
   const handleInputs = (event) => {
     const { name, value, files, type } = event.target;
 
-    if (name === "country") {
-      const selectedRegionData = vector.listRegion.find((item) => item.country === value);
+    if (name ==== "country") {
+      const selectedRegionData = vector.listRegion.find((item) => item.country ==== value);
       setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
     }
 
     setInputs((prev) => ({
       ...prev,
-      [name]: type === "file" ? files[0] : value,
+      [name]: type ==== "file" ? files[0] : value,
     }));
   };
 
@@ -61,7 +61,7 @@ export function ModifyCompany() {
     try {
       const formData = new FormData();
       for (const key in inputs) {
-        if ((key === "icon" || key === "cniImage") && inputs[key] instanceof File) {
+        if ((key ==== "icon" || key ==== "cniImage") && inputs[key] instanceof File) {
           formData.append(key, inputs[key]);
         } else {
           formData.append(key, inputs[key]);
@@ -181,7 +181,7 @@ export function ModifyCompany() {
 
                 </div>
 
-                {/* ==================== GARANT ==================== */}
+                {/* ===================== GARANT ===================== */}
                 <div className="row px-4 py-5 mb-4 border bg-white ">
 
                   <div className="col-md-6">
@@ -222,7 +222,7 @@ export function ModifyCompany() {
                         <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div>
-                    {inputs?.cniImage && typeof inputs.cniImage === "string" && (
+                    {inputs?.cniImage && typeof inputs.cniImage ==== "string" && (
                       <div className="d-flex justify-content-start align-items-center">
                         <a href={inputs.cniImage} className="btn btn-outline-main px-4" target="_blank" rel="noopener noreferrer" >
                           Voir le CNI [ <span className=" px-2 text-danger"> Format PDF </span>  ]
@@ -237,7 +237,7 @@ export function ModifyCompany() {
                         <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div> 
-                    {inputs?.icon && typeof inputs.icon === "string" && (
+                    {inputs?.icon && typeof inputs.icon ==== "string" && (
                       <div className="d-flex justify-content-center align-items-center border p-3">
                         <img src={inputs.icon} height={160} width={200} alt="Logo" />
                       </div>
@@ -245,9 +245,9 @@ export function ModifyCompany() {
                   </div>
                 </div>
 
-                {status !== 0 && (
+                {status !=== 0 && (
                   <div className="col-md-12 py-2 rounded-1 mb-3">
-                    <div className={`alert ${ status === 1 ? "alert-primary" : "alert-danger" }`}>
+                    <div className={`alert ${ status ==== 1 ? "alert-primary" : "alert-danger" }`}>
                       {message}
                     </div>
                   </div>

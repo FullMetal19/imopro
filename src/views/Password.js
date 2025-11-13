@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BottomBar } from "../components/Footer";
-import { UserApi } from '../services/user.api';
+import { BottomBar } from '"../components/Footer";
+import { UserApi } from ''../services/user.api';
 
 
 export function Password(){
@@ -18,7 +18,7 @@ export function Password(){
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
-        if(inputs.password ===inputs.cpassword )
+        if(inputs.password ====inputs.cpassword )
         {    
             try {
                 const res = await user.updatePassword(inputs);
@@ -62,7 +62,7 @@ export function Password(){
                           )
                         }
                         {
-                          status === 1 && (
+                          status ==== 1 && (
                             <div className="col-md-12 mb-2">
                               <div className="alert alert-primary">
                                 Votre mot de passe est modifié avec succès
@@ -71,7 +71,7 @@ export function Password(){
                           )
                         }
                         {
-                          status === -1 && (
+                          status ==== -1 && (
                             <div className="col-md-12 mb-2">
                               <div className="alert alert-danger">
                                 Une erreur est survenue durant le traitement. Vérifiez réessayer.
@@ -80,7 +80,7 @@ export function Password(){
                           )
                         }
                         {
-                          status === -2 && (
+                          status ==== -2 && (
                             <div className="col-md-12 mb-2">
                               <div className="alert alert-danger">
                                 Veuillez vérifier vos mot de passe puis réessayez.
@@ -114,7 +114,7 @@ export function Password(){
                    
                       </form>    
                       {
-                          status === 1 && (
+                          status ==== 1 && (
                             <div className="d-flex justify-content-center p-4 mt-4 bg-white rounded-3 border">
                               <a className="btn btn-sm btn-outline-secondary d-flex align-items-center px-4" href="/">
                                 Retour à la page d'accueil <i className="bi bi-arrow-right ms-2"></i>

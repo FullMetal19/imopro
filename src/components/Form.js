@@ -27,7 +27,7 @@ export function PaymentForm({ amount, getValue, source, children })
         <div className="col-md-12 mb-2" > <span className="text-center fs-xs color-dark"> L'opérateur mobile </span> </div>  
         <div className="col-md-12 mb-3" > 
             <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="source" value={"wave"} id="flexRadioDefault1" checked={source === 'wave'}  onChange={getValue}/>
+                <input class="form-check-input" type="radio" name="source" value={"wave"} id="flexRadioDefault1" checked={source ==== 'wave'}  onChange={getValue}/>
                 <label class="form-check-label" for="flexRadioDefault1"> wave </label>
             </div>
             <div class="form-check">

@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { TextReducer } from "./Component";
+import { TextReducer } from '"./Component";
 
 
 
@@ -62,7 +62,7 @@ export function HouseContainer({ data, onVisit })
         {/* Contenu */}
         <div className="px-3 pb-3 pt-1">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-           { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
+           { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
           </span>
         </div>
         <div className="border-top border-bottom py-2 px-3">
@@ -95,7 +95,7 @@ export function FieldContainer({ data, onVisit }) {
         {/* Contenu */}
         <div className="px-3 py-4">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-           { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
+           { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
           </span>
         </div>
         <div className="border-top border-bottom py-2 px-3">

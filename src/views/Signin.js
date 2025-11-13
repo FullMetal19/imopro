@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { BottomBar } from "../components/Footer";
-import { Header } from '../components/Header';
-import { UserApi } from '../services/user.api';
-import { PasswordModal } from '../components/Modal';
+import { useNavigate } from ''react-router-dom';
+import { BottomBar } from '"../components/Footer";
+import { Header } from ''../components/Header';
+import { UserApi } from ''../services/user.api';
+import { PasswordModal } from ''../components/Modal';
 
 export function Signin(){
 
@@ -89,7 +89,7 @@ export function Signin(){
                       )
                     }
                     {
-                      status === -1 && (
+                      status ==== -1 && (
                         <div className="col-md-12 mb-2">
                           <div className="alert alert-danger">
                             Erreur d'authentification, rééssayer.

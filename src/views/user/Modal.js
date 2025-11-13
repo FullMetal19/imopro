@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { UserApi } from "../../services/user.api";
+import { useState } from '"react";
+import { UserApi } from '"../../services/user.api";
 
 
 
@@ -95,9 +95,9 @@ export function PaymentFormModal({ method })
                                     isLoading ? ( <div className="col-md-12 mb-4 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                                 }
                                 {
-                                    ( status === 1 ) ? 
+                                    ( status ==== 1 ) ? 
                                     (  <div className="col-md-12 mb-4"> <div className=""> Payement effectué avec succes </div> </div> ) :
-                                    ( status === -1 ) ?
+                                    ( status ==== -1 ) ?
                                     (  <div className="col-md-12 mb-4"> <div className=""> Une erreur est survenue lors de l'opération. </div> </div>) : null
                                 }
                                 <div className="col-md-12 mb-3" > 

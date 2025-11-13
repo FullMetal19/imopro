@@ -1,12 +1,12 @@
 import React, { useEffect, useState }  from 'react';
-import { useQuery } from "@tanstack/react-query";
-import { FieldSkeleton, HouseSkeleton, LocationSkeleton, ServiceSkeleton, TestimonialSkeleton } from './Skeleton';
-import { FieldContainer, HouseContainer, LocationContainer, ServiceContainer, TestimonialContainer } from './Container';
+import { useQuery } from '"@tanstack/react-query";
+import { FieldSkeleton, HouseSkeleton, LocationSkeleton, ServiceSkeleton, TestimonialSkeleton } from ''./Skeleton';
+import { FieldContainer, HouseContainer, LocationContainer, ServiceContainer, TestimonialContainer } from ''./Container';
 import Slider from 'react-slick';
 import config from '../config/slickConf';
-import { ServiceApi } from '../services/service.api';
-import { ProductApi } from '../services/product.api';
-import { TestimonialApi } from '../services/testimonial.api';
+import { ServiceApi } from ''../services/service.api';
+import { ProductApi } from ''../services/product.api';
+import { TestimonialApi } from ''../services/testimonial.api';
 
 const service = ServiceApi();
 const product = ProductApi();
@@ -58,7 +58,7 @@ export function ServiceComponent()
                 error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
               }
               {
-                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
               } 
               </div> 
             </div>
@@ -111,7 +111,7 @@ export function LocationComponent()
                     error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead my-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead my-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead my-3"> La liste de propriétés, vide. </div> ) : null
                 } 
               </div>
             </div>
@@ -170,7 +170,7 @@ export function NearestHousesComponent() {
                     error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }  
             </div> 
         </div> 
@@ -222,7 +222,7 @@ export function HouseComponent() {
                     error ? ( <div className="col-md-12"> <div className="bg-white border rounded-2 p-5 text-secondary lead mb-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead mb-3"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead mb-3"> La liste de propriétés, vide. </div> ) : null
                 }  
               </div> 
             </div> 
@@ -280,7 +280,7 @@ export function NearestFieldsComponent() {
                     error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }   
             </div> 
         </div> 
@@ -332,7 +332,7 @@ export function FieldComponent() {
                     error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead"> Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 }  
               </div> 
             </div>
@@ -383,7 +383,7 @@ export function TestimonialComponent() {
                     error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
                 }
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste de propriétés, vide. </div> ) : null
                 } 
               </div> 
             </div>

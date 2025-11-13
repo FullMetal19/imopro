@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { NavigationBar, TopBar } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { UserApi } from "../../services/user.api";
-import { MessageModal } from "./Modal";
-import { VisitSlideComponent } from "./VisitSlideComponent";
-import { AccomodationSlideComponent } from "./AccomodationSlideComponent";
-import { GeolocalisationModal, ValidationPaymentModal } from "../../components/Modal";
+import { useQuery } from '"@tanstack/react-query";
+import { NavigationBar, TopBar } from '"../../components/Header";
+import { Footer } from '"../../components/Footer";
+import { UserApi } from '"../../services/user.api";
+import { MessageModal } from '"./Modal";
+import { VisitSlideComponent } from '"./VisitSlideComponent";
+import { AccomodationSlideComponent } from '"./AccomodationSlideComponent";
+import { GeolocalisationModal, ValidationPaymentModal } from '"../../components/Modal";
 
 
 export function Account()
@@ -91,9 +91,9 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              (data?.companyStatus === 0 && data?.status === 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                              ( (data?.companyStatus === 2 && data?.status === 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                              ( (data?.companyStatus === 0 && data?.status === 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                              (data?.companyStatus ==== 0 && data?.status ==== 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
+                              ( (data?.companyStatus ==== 2 && data?.status ==== 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                              ( (data?.companyStatus ==== 0 && data?.status ==== 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                             }
                         </div>
                         </div>
@@ -102,8 +102,8 @@ export function Account()
                     <div className="col-lg-12 border rounded-top-2 mb-4 bg-gray-light"> 
                         <div className="d-flex px-4 py-4">
                             {
-                               (data?.companyStatus === 1) ? (<span className="text-secondary"> Votre demande de creation d'entreprise est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
-                               ( (data?.companyStatus === -1) ? (
+                               (data?.companyStatus ==== 1) ? (<span className="text-secondary"> Votre demande de creation d'entreprise est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
+                               ( (data?.companyStatus ==== -1) ? (
                                <div className="d-flex justify-content-between gap-4 w-100">
                                     <span className="text-secondary"> Votre demande d'ajout d'entreprise est invalidée </span>
                                     <div className="d-flex gap-3">
@@ -111,7 +111,7 @@ export function Account()
                                         <a className="btn btn-secondary" href={`/modification-entreprise/${data?.company.id}`} > Modifier </a> 
                                     </div> 
                                </div> ) :
-                               ( (data?.companyStatus === -2) ? (<span className="text-secondary"> Votre entreprise est bloqué. Appelez au (77 000 00 00) pour plus d'information </span>) : 
+                               ( (data?.companyStatus ==== -2) ? (<span className="text-secondary"> Votre entreprise est bloqué. Appelez au (77 000 00 00) pour plus d'information </span>) : 
                                (<span className="text-secondary lead"> Bienvenue chez ImmoPro </span>) ))
                             }   
                         </div>

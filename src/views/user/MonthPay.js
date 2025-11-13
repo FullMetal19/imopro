@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Header, NavigationBar, TopBar } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { ProductApi } from "../../services/product.api";
-import { MonthPayDetailModal, PaymentFormModal} from "./Modal";
-import { HistoricMonthpaySlideComponent } from "./HistoricMonthpaySlideComponent";
-import { UserApi } from "../../services/user.api";
-import { MonthPaymentModal, ValidationPaymentModal } from "../../components/Modal";
-import { useParams } from "react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { Header, NavigationBar, TopBar } from '"../../components/Header";
+import { Footer } from '"../../components/Footer";
+import { ProductApi } from '"../../services/product.api";
+import { MonthPayDetailModal, PaymentFormModal } from '"./Modal";
+import { HistoricMonthpaySlideComponent } from '"./HistoricMonthpaySlideComponent";
+import { UserApi } from '"../../services/user.api";
+import { MonthPaymentModal, ValidationPaymentModal } from '"../../components/Modal";
+import { useParams } from '"react-router";
 
 
 export function MonthPay(){
@@ -83,9 +83,9 @@ export function MonthPay(){
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              (data?.companyStatus === 0 && data?.status === 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-main" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                              ( (data?.companyStatus === 2 && data?.status === 1) ? ( <a className="mb-3 btn px-3 btn-main" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                              ( (data?.companyStatus === 0 && data?.status === 2) ? ( <a className="mb-3 btn px-3 btn-main" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                              (data?.companyStatus ==== 0 && data?.status ==== 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-main" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
+                              ( (data?.companyStatus ==== 2 && data?.status ==== 1) ? ( <a className="mb-3 btn px-3 btn-main" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                              ( (data?.companyStatus ==== 0 && data?.status ==== 2) ? ( <a className="mb-3 btn px-3 btn-main" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                             }
                         </div>
                       </div>

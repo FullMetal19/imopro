@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useParams } from "react-router";
-import { PaymentApi } from "../../../services/payment.api";
+import { useParams } from '"react-router";
+import { PaymentApi } from '"../../../services/payment.api";
 
 export function WithdrawForm({refetch})
 {
@@ -47,9 +47,9 @@ export function WithdrawForm({refetch})
                         isLoading ? ( <div className="col-md-12 mb-4 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                     }
                     {
-                        ( status === 1 ) ? 
+                        ( status ==== 1 ) ? 
                         (  <div className="col-md-12 mb-2"> <div className="alert alert-success fs-xs"> Payement effectué avec succes </div> </div> ) :
-                        ( status === -1 ) ?
+                        ( status ==== -1 ) ?
                         (  <div className="col-md-12 mb-2"> <div className="alert alert-danger fs-xs"> Une erreur est survenue lors de l'opération. </div> </div>) : null
                     }
                     <div className="col-md-12 mb-2" > 

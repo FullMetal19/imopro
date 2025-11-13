@@ -1,14 +1,8 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { PaymentApi } from "../../services/payment.api";
+import { useQuery } from '"@tanstack/react-query";
+import { PaymentApi } from '"../../services/payment.api";
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-};
+
 
 export function AccomodationSlideComponent({  })
 {
@@ -50,7 +44,7 @@ export function AccomodationSlideComponent({  })
                            {/* Contenu */}
                            <div className="px-3 pb-3 pt-1">
                              <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-                              { item?.Property?.price +  ' Fcfa ' } { ( item?.Property?.title === "à louer" ) && " / mois" } 
+                              { item?.Property?.price +  ' Fcfa ' } { ( item?.Property?.title ==== "à louer" ) && " / mois" } 
                              </span>
                            </div>
                            <div className="border-top border-bottom py-2 px-3">
@@ -60,10 +54,10 @@ export function AccomodationSlideComponent({  })
                            {/* Boutons */}
                            <div className="d-flex p-3">
                               {
-                                  ( item?.Property.title === 'à louer' ) && ( <a className="btn btn-outline-secondary" href={`/mensualites/${item?.Property.id}`} > Mensualité </a> )
+                                  ( item?.Property.title ==== 'à louer' ) && ( <a className="btn btn-outline-secondary" href={`/mensualites/${item?.Property.id}`} > Mensualité </a> )
                               }
                               {
-                                 ( item?.Property.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
+                                 ( item?.Property.title ==== 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
                               }  
                            </div>
                         </div>
@@ -76,7 +70,7 @@ export function AccomodationSlideComponent({  })
                     error ? ( <div className="d-flex text-secondary"> Une erreur est survenue, veuillez verifier votre connexion </div> ) : null
                 } 
                 {
-                    ( Array.isArray(data) && data.length === 0 ) ? ( <div className="d-flex text-secondary"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) : null
+                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="d-flex text-secondary"> Aucune propriété n'a été réservée ou achetée à votre compte. </div> ) : null
                 }                          
 
             </div>

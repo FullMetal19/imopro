@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { PaymentApi } from "../../services/payment.api";
-import { useParams } from "react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { PaymentApi } from '"../../services/payment.api";
+import { useParams } from '"react-router";
 
 
 export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
@@ -94,7 +94,7 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
                     ) 
                 } 
                 {
-                    ( Array.isArray(data) && data.length === 0 ) && ( <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">Liste vide, pas de correspondance à ce filtre. </div> ) 
+                    ( Array.isArray(data) && data.length ==== 0 ) && ( <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">Liste vide, pas de correspondance à ce filtre. </div> ) 
                 } 
 
                 </div>

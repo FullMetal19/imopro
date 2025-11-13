@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { CompanyApi } from "../../../services/company.api";
-import { refresh } from "aos";
+import { useState } from '"react";
+import { CompanyApi } from '"../../../services/company.api";
+import { refresh } from '"aos";
 
 
 //*********************************************************************************************
@@ -43,9 +43,9 @@ export function Modal({ method, message, companyId, refetch })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
+                            ( status ==== 1 ) ? 
                             (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Entreprise validée avec succes </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************ */}
@@ -97,9 +97,9 @@ export function Modal1({ method, message, companyId })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
+                            ( status ==== 1 ) ? 
                             (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Entreprise bloquée avec succes </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************ */}
@@ -152,9 +152,9 @@ export function Modal2({ method, message, companyId, refetch })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
+                            ( status ==== 1 ) ? 
                             (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Entreprise débloquée avec succes </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors du traitement. </div> </div>) : null
                         }
                         {/* ************************************************************************ */}
@@ -216,9 +216,9 @@ export function UnvalidationForm({ method, companyId })
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Entreprise invalidée avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de l'invalidation. </div> </div>) : null
                             }
                             <div className="d-flex justify-content-between ">

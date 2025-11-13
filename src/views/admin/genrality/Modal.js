@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ProductApi } from "../../../services/product.api";
+import { useState } from '"react";
+import { ProductApi } from '"../../../services/product.api";
 
 export function MessageModal({ method, message })
 {
@@ -58,9 +58,9 @@ export function Modal({ method, message, propertyId })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
+                            ( status ==== 1 ) ? 
                             (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Propriété validée avec succes </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************ */}
@@ -118,9 +118,9 @@ export function UnvalidationForm({ method, propertyId })
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Entreprise invalidée avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de l'invalidation. </div> </div>) : null
                             }
                             <div className="d-flex justify-content-between ">

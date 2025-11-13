@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { LoginCheckerModal, VideoModal, VisitBookingModal } from "../components/Modal";
-import { NavigationBar, TopBar } from "../components/Header";
-import { Footer } from "../components/Footer";
+import { LoginCheckerModal, VideoModal, VisitBookingModal } from '"../components/Modal";
+import { NavigationBar, TopBar } from '"../components/Header";
+import { Footer } from '"../components/Footer";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from ''react-router-dom';
 import Slider from "react-slick";
-import { ProductApi } from "../services/product.api";
-import { PaymentForm } from "../components/Form";
-import { useQuery } from "@tanstack/react-query";
+import { ProductApi } from '"../services/product.api";
+import { PaymentForm } from '"../components/Form";
+import { useQuery } from '"@tanstack/react-query";
 
 
 const settings = {
@@ -102,7 +102,7 @@ export function PropertyDetails(){
                               <div className="d-flex">
                                 <span className="bg-blue-light-clr px-2 py-1 text-secondary lead rounded-start-2 border border-light"> <i class="bi bi-cash"></i> </span>
                                 <span className="bg-blue-light-clr border border-light text-secondary lead px-3 py-1 rounded-end-2">  
-                                   { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
+                                   { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
                                 </span>  
                               </div>
                            ) 

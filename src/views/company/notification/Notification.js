@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
 
-import { PaymentApi } from "../../../services/payment.api";
-import { useParams } from "react-router";
+import { PaymentApi } from '"../../../services/payment.api";
+import { useParams } from '"react-router";
 
 
 export function Notification()
@@ -78,7 +78,7 @@ export function Notification()
                             error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue, veuillez verifier votre connexion </span> </div> ) : null
                         } 
                         {
-                            ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) : null
+                            ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) : null
                         }  
 
 

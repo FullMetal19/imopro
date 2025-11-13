@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
-import { Modal, NewServiceModal, UpdatingServiceModal } from "./Modal";
-import { ServiceApi } from "../../../services/service.api";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
+import { Modal, NewServiceModal, UpdatingServiceModal } from '"./Modal";
+import { ServiceApi } from '"../../../services/service.api";
 
 
 export function Services()
@@ -85,7 +85,7 @@ export function Services()
                                 <div className="border-top border-bottom py-2 px-3 text-muted mb-2"> { item?.description } </div> 
                                 <div className="d-flex px-3 py-1 gap-3">
                                     <button className="btn btn-sm fs-xs btn-outline-main" onClick={ ()=> setModal2(item?.id, item?.title, item?.description) } > Modifier </button>  
-                                    <button className="btn btn-sm fs-xs btn-main" onClick={ ()=> setModal(item?.id, item.status) }> { ( item.status === 1 ) ? 'Désactiver' : 'Activer'} </button>
+                                    <button className="btn btn-sm fs-xs btn-main" onClick={ ()=> setModal(item?.id, item.status) }> { ( item.status ==== 1 ) ? 'Désactiver' : 'Activer'} </button>
                                 </div>
                             </div>
                             )
@@ -95,7 +95,7 @@ export function Services()
                         error ? ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                     }
                     {
-                        ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
+                        ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                     }                                 
 
                     </div>

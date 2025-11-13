@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import vector from "../config/data";
-import { ContactContainer } from "../components/Container";
-import { Header, NavigationBar, TopBar } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { MessageApi } from "../services/messsage.api";
-import { LoginCheckerModal } from "../components/Modal";
+import { ContactContainer } from '"../components/Container";
+import { Header, NavigationBar, TopBar } from '"../components/Header";
+import { Footer } from '"../components/Footer";
+import { MessageApi } from '"../services/messsage.api";
+import { LoginCheckerModal } from '"../components/Modal";
 
 
 export function Contact(){
@@ -84,8 +84,8 @@ export function Contact(){
                         isLoading ? ( <div className="col-md-12 d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                     }
                     {
-                        (status === 1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-success">  Message envoyé avec succés. Notre équipe vous contactera d'ici peu. Merci  </div> </div> ) : 
-                        ( (status === -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoir. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
+                        (status ==== 1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-success">  Message envoyé avec succés. Notre équipe vous contactera d'ici peu. Merci  </div> </div> ) : 
+                        ( (status ==== -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoir. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
                     }
                     <div className="col-md-12 mb-4" > 
                         <input type="text" name="title" className="border p-3 rounded-2 text-secondary w-100" placeholder="Objet du message" required onChange={handleInputs} />

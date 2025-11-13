@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents } from '"react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
@@ -24,7 +24,7 @@ export default function MapPicker({ onSelect }) {
       },
     });
 
-    return position === null ? null : <Marker position={position}></Marker>;
+    return position ==== null ? null : <Marker position={position}></Marker>;
   }
 
   return (

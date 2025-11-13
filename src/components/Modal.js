@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { UserApi } from "../services/user.api";
-import { PaymentApi } from "../services/payment.api";
-import { ProductApi } from "../services/product.api";
+import { useNavigate } from '"react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { UserApi } from '"../services/user.api";
+import { PaymentApi } from '"../services/payment.api";
+import { ProductApi } from '"../services/product.api";
 import vector from "../config/data";
 
 
@@ -145,7 +145,7 @@ export function PasswordModal({ method })
                               )
                             }
                             {
-                              status === -1 && (
+                              status ==== -1 && (
                                 <div className="col-md-12 mb-2">
                                   <div className="alert alert-danger text-secondary">
                                     Une erreur est survenue durant le traitement. Vérifiez votre numéro puis réessayez.
@@ -200,7 +200,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
     const handleInputs = (event) => {
         const { name, value } = event.target;
 
-        if (name === "date") 
+        if (name ==== "date") 
         {
             const today = new Date();
             const selectedDate = new Date(value);
@@ -262,12 +262,12 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                     <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                                 </div>
                             )}
-                            {status === 1 && (
+                            {status ==== 1 && (
                                 <div className="">
                                     <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Rendez-vous ajouté avec succès </div>
                                 </div>
                             )}
-                            {status === -1 && (
+                            {status ==== -1 && (
                                 <div className="">
                                     <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div>
                                 </div>
@@ -356,7 +356,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
         const { name, value } = event.target;
         setInputs({
             ...inputs,
-            [name]: name === "amount" ? parseFloat(value) || 0 : value,
+            [name]: name ==== "amount" ? parseFloat(value) || 0 : value,
         });
     };
     
@@ -397,9 +397,9 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Caution payée avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="col-md-12 mb-2 bg-light py-2">
@@ -497,7 +497,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
         const { name, value } = event.target;
         setInputs(prev => ({
             ...prev,
-            [name]: name === "amount" ? parseFloat(value) || 0 : value,
+            [name]: name ==== "amount" ? parseFloat(value) || 0 : value,
         }));
     };
 
@@ -536,9 +536,9 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Mensualité payée avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="col-md-8 mb-2" > 

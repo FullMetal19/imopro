@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { PaymentApi } from "../../../services/payment.api";
-import { useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ProductApi } from "../../../services/product.api";
+import { useState } from '"react";
+import { PaymentApi } from '"../../../services/payment.api";
+import { useParams } from '"react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { ProductApi } from '"../../../services/product.api";
 
 
 export function SoldeContainer()

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
 import Skeleton from "react-loading-skeleton";
 import Slider from "react-slick";
-import { Modal, UnvalidationForm } from "./Modal";
+import { Modal, UnvalidationForm } from '"./Modal";
 
-import { ProductApi } from "../../../services/product.api";
-import { useParams } from "react-router";
+import { ProductApi } from '"../../../services/product.api";
+import { useParams } from '"react-router";
 
 const settings = {
     dots: true,
@@ -170,7 +170,7 @@ export function Configurations()
                                         <div className="row d-flex justify-content-between align-items-center">  
                                             <div className="col-md-12 d-flex justify-content-end gap-4 mt-3">
                                             {
-                                                ( data?.isvalidated === 0 ) ? (
+                                                ( data?.isvalidated ==== 0 ) ? (
                                                     <div className="d-flex justify-content-end gap-4"> 
                                                         <button className="btn btn-sm btn-outline-main" onClick={ setModal1 } > Invalider </button>  
                                                         <button className="btn btn-sm btn-main" onClick={ setModal } > Valider </button> 

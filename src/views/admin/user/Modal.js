@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { UserApi } from "../../../services/user.api";
+import { useState } from '"react";
+import { UserApi } from '"../../../services/user.api";
 
 export function Modal({ method, message, uid, state })
 {
@@ -37,9 +37,9 @@ export function Modal({ method, message, uid, state })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
-                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state === 1 || state === 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== 1 ) ? 
+                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state ==== 1 || state ==== 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************************** */}

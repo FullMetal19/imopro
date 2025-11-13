@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
 
-import { ProductApi } from "../../../services/product.api";
-import { useParams } from "react-router";
-import { PaymentApi } from "../../../services/payment.api";
+import { ProductApi } from '"../../../services/product.api";
+import { useParams } from '"react-router";
+import { PaymentApi } from '"../../../services/payment.api";
 
 
 export function PaymentsHistoric()
@@ -85,7 +85,7 @@ export function PaymentsHistoric()
                                     error ? ( <tr className="d-flex text-muted p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) : null
                                 } 
                                 {
-                                    ( Array.isArray(data) && data.length === 0 ) ? ( <tr className="d-flex text-muted p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
+                                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <tr className="d-flex text-muted p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
                                 }    
                            
                                                   

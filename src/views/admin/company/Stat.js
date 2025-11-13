@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
 
-import { Modal1 } from "./Modal";
-import { useParams } from "react-router";
-import { CompanyApi } from "../../../services/company.api";
-import { BoardContainer, SoldeContainer } from "./Containers";
+import { Modal1 } from '"./Modal";
+import { useParams } from '"react-router";
+import { CompanyApi } from '"../../../services/company.api";
+import { BoardContainer, SoldeContainer } from '"./Containers";
 
 
 export function Stat()
@@ -34,9 +34,7 @@ export function Stat()
     const [status, setStatus] = useState(0);
     const [isLoading1, setIsLoading1] = useState(false);
 
-    const block = async () => {
-        try{
-            const res = await company.setBlock(companyId, uid);
+    
             setIsLoading1(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 
@@ -89,7 +87,7 @@ export function Stat()
                                     {/* ------------------------------------------------ */}
                                     <div className="d-flex flex-column p-3 border-bottom" >                                            
                                         <div className="d-flex justify-content-between gap-3"> 
-                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status === 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
+                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status ==== 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
                                             <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ setModal } > Modifier </button> 
                                         </div>      
                                     </div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
-import { Navigation } from "./Navigation";
-import { CompanyApi } from "../../../services/company.api";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
+import { Navigation } from '"./Navigation";
+import { CompanyApi } from '"../../../services/company.api";
 
 
 export function Companies()
@@ -77,7 +77,7 @@ export function Companies()
                                 error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
+                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                                                   
                             </div>
                         </div>

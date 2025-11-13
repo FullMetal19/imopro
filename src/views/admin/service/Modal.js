@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { ServiceApi } from "../../../services/service.api";
+import { ServiceApi } from '"../../../services/service.api";
 
 export function Modal({ method, message, serviceId, serviceStatus, refetch })
 {
@@ -36,9 +36,9 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
-                            ( status === 1 ) ? 
-                            (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> { ( serviceStatus === 1 ) ? "Service désactivé avec succes" : "Utilisateur activé avec succes" }   </div> </div> ) :
-                            ( status === -1 ) ?
+                            ( status ==== 1 ) ? 
+                            (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> { ( serviceStatus ==== 1 ) ? "Service désactivé avec succes" : "Utilisateur activé avec succes" }   </div> </div> ) :
+                            ( status ==== -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************************** */}
@@ -99,9 +99,9 @@ export function NewServiceModal({ method, refetch })
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="d-flex flex-column mb-2">  
@@ -168,9 +168,9 @@ export function UpdatingServiceModal({ method, serviceId, title, desc, refetch }
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service modifié avec succes </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="d-flex flex-column mb-2">  

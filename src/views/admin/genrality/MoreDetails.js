@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
 import Skeleton from "react-loading-skeleton";
 import Slider from "react-slick";
 
-import { ProductApi } from "../../../services/product.api";
-import { useParams } from "react-router";
+import { ProductApi } from '"../../../services/product.api";
+import { useParams } from '"react-router";
 
 const settings = {
     dots: true,

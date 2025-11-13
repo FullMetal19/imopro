@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Header, NavigationBar, TopBar } from "../components/Header";
-import { LocationComponent, SectionTitle } from "../components/Component";
-import { ServiceContainer } from "../components/Container";
-import { Footer } from "../components/Footer";
-import { VideoModal } from "../components/Modal";
-import { ServiceApi } from "../services/service.api";
-import { ServiceSkeleton } from "../components/Skeleton";
+import { useQuery } from '"@tanstack/react-query";
+import { Header, NavigationBar, TopBar } from '"../components/Header";
+import { LocationComponent, SectionTitle } from '"../components/Component";
+import { ServiceContainer } from '"../components/Container";
+import { Footer } from '"../components/Footer";
+import { VideoModal } from '"../components/Modal";
+import { ServiceApi } from '"../services/service.api";
+import { ServiceSkeleton } from '"../components/Skeleton";
 
 
 export function Service(){

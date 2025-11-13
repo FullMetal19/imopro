@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
-import { PaymentApi } from "../../../services/payment.api";
-import { useParams } from "react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
+import { PaymentApi } from '"../../../services/payment.api";
+import { useParams } from '"react-router";
 
 
 
@@ -78,7 +78,7 @@ export function Withdraws()
                                                 error ? ( <tr className="d-flex text-secondary p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) : null
                                             } 
                                             {
-                                                ( Array.isArray(data) && data.length === 0 ) ? ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
+                                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
                                             }     
                                         </tbody>
                                     </table>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from '"react";
 import vector from "../../../config/data";
 
 export function FilterForm({filter, country, region, houseType, setCountry, setRegion, setHouseType})
@@ -7,15 +7,15 @@ export function FilterForm({filter, country, region, houseType, setCountry, setR
 
     const handleInputs = (event) => {
         const { name, value } = event.target;
-        if( name === 'country' ) {
-            const selectedRegionData = vector.listRegion.find(item => item.country === value);
+        if( name ==== 'country' ) {
+            const selectedRegionData = vector.listRegion.find(item => item.country ==== value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
             setCountry(value);
         }
-        if( name === 'region' ) {
+        if( name ==== 'region' ) {
             setRegion(value);
         }
-        if( name === 'houseType' ) {
+        if( name ==== 'houseType' ) {
              setHouseType(value);
         }
     };

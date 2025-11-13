@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from '"react-router";
 
 
 export function NavigationBar({page=1}) 
@@ -35,24 +35,24 @@ export function NavigationBar({page=1})
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===1) && 'text-blue-clr'}`} href="/"> <i className="bi bi-plus"></i> Accueil </a>
+                  <a className={`nav-link ${(page====1) && 'text-blue-clr'}`} href="/"> <i className="bi bi-plus"></i> Accueil </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/logement"> <i className="bi bi-plus"></i> Logement </a>
+                  <a className={`nav-link ${(page====2) && 'text-blue-clr'}`} href="/logement"> <i className="bi bi-plus"></i> Logement </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/terrain"> <i className="bi bi-plus"></i> Terrain </a>
+                  <a className={`nav-link ${(page====3) && 'text-blue-clr'}`} href="/terrain"> <i className="bi bi-plus"></i> Terrain </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/service"> <i className="bi bi-plus"></i> Service </a>
+                  <a className={`nav-link ${(page====4) && 'text-blue-clr'}`} href="/service"> <i className="bi bi-plus"></i> Service </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/contact"> <i className="bi bi-plus"></i> Contact </a>
+                  <a className={`nav-link ${(page====5) && 'text-blue-clr'}`} href="/contact"> <i className="bi bi-plus"></i> Contact </a>
                 </li>
                 {
                     ( localStorage.getItem('token') ) && ( 
                     <li className="nav-item mx-2">
-                      <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> <i className="bi bi-plus"></i> Mon-compte </a>
+                      <a className={`nav-link ${(page====6) && 'text-blue-clr'}`} href="/mon-compte"> <i className="bi bi-plus"></i> Mon-compte </a>
                     </li> )
                 }
               </ul>

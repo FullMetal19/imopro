@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { PaymentApi } from "../../../services/payment.api";
+import { useQuery } from '"@tanstack/react-query";
+import { PaymentApi } from '"../../../services/payment.api";
 
 export function Historic({ companyId, setRefetch })
 {      
@@ -76,7 +76,7 @@ export function Historic({ companyId, setRefetch })
                         error && ( <tr className="d-flex text-secondary p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) 
                     } 
                     {
-                        ( Array.isArray(data) && data.length === 0 ) && ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) 
+                        ( Array.isArray(data) && data.length ==== 0 ) && ( <tr className="d-flex text-secondary p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) 
                     }     
                     </tbody>
                 </table>

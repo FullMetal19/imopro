@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { NavigationBar, TopBar } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { CompanyApi } from "../../services/company.api";
-import { LoaderModal } from "../company/genrality/Modal";
+import { NavigationBar, TopBar } from '"../../components/Header";
+import { Footer } from '"../../components/Footer";
+import { CompanyApi } from '"../../services/company.api";
+import { LoaderModal } from '"../company/genrality/Modal";
 import vector from "../../config/data";
-import { useNavigate } from "react-router";
+import { useNavigate } from '"react-router";
 
 
 export function NewCompany(){
@@ -21,19 +21,19 @@ export function NewCompany(){
 
     const handleInputs = (event) => {
         const { name, value, files, type } = event.target;
-        if( name === 'country' ) {
-            const selectedRegionData = vector.listRegion.find(item => item.country === value);
+        if( name ==== 'country' ) {
+            const selectedRegionData = vector.listRegion.find(item => item.country ==== value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
         }
-        if (name === 'cniImage') {
+        if (name ==== 'cniImage') {
           const file = files[0];
-          if (file && file.type !== "application/pdf") {
+          if (file && file.type !=== "application/pdf") {
             alert("Veuillez télécharger un fichier PDF valide.");
             event.target.value = "";
             return;
           }
         }
-        if (type === 'file') {
+        if (type ==== 'file') {
             setInputs((prev) => ({ ...prev, [name]: files[0] }));
         } else {
             setInputs((prev) => ({ ...prev, [name]: value }));
@@ -46,7 +46,7 @@ export function NewCompany(){
         try {
             const formData = new FormData();
             for (const key in inputs) {
-                if (key === 'icon' || key === 'cniImage') {
+                if (key ==== 'icon' || key ==== 'cniImage') {
                     if (inputs[key] instanceof File) {
                         formData.append(key, inputs[key]);
                     }
@@ -235,9 +235,9 @@ export function NewCompany(){
                                 </div>
                             </div>
                             {
-                                ( status === 1 ) ? 
+                                ( status ==== 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary border py-2 px-4 rounded-1 mb-4"> { message } </div> </div> ) :
-                                ( status === -1 ) ?
+                                ( status ==== -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-2 px-4 rounded-1 mb-4"> { message } </div> </div>) : null
                             }
                             {/* ************************************************************************ */}

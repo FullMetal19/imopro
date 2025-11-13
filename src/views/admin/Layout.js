@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BottomBar } from "../../components/Footer";
-import { TextReducer } from "../../components/Component";
+import { BottomBar } from '"../../components/Footer";
+import { TextReducer } from '"../../components/Component";
 
 
 export function Layout({ menu, children })
@@ -45,31 +45,31 @@ export function Layout({ menu, children })
                         </div>
                         {showSidebar && (
                         <div className={`d-flex flex-column p-0`}>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 1) ? 'sidebar-menu-active' : null } `} href={ "/admin" } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 1) ? 'sidebar-menu-active' : null } `} href={ "/admin" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-grid-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Généralité </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ "/admin/services" } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 2) ? 'sidebar-menu-active' : null } `} href={ "/admin/services" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-briefcase-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Services </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 3) ? 'sidebar-menu-active' : null } `} href={ "/admin/entreprise" } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 3) ? 'sidebar-menu-active' : null } `} href={ "/admin/entreprise" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-building-fill fs-3 text-blue-clr"></i>  
                                     <span className="text-secondary mt-2"> Entreprises </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 4) ? 'sidebar-menu-active' : null } `} href={ "/admin/notification" } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 4) ? 'sidebar-menu-active' : null } `} href={ "/admin/notification" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-bell-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Notification </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 5) ? 'sidebar-menu-active' : null } `} href={ "/admin/parametre" } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 5) ? 'sidebar-menu-active' : null } `} href={ "/admin/parametre" } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
                                     <i class="bi bi-gear-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Paramétres </span> 

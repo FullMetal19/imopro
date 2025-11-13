@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Footer } from "../components/Footer";
-import { NearestFieldsComponent } from "../components/Component";
-import { Header, NavigationBar, TopBar } from "../components/Header";
-import { FieldSkeleton } from "../components/Skeleton";
-import { FieldContainer } from "../components/Container";
-import { ProductApi } from "../services/product.api";
+import { useQuery } from '"@tanstack/react-query";
+import { Footer } from '"../components/Footer";
+import { NearestFieldsComponent } from '"../components/Component";
+import { Header, NavigationBar, TopBar } from '"../components/Header";
+import { FieldSkeleton } from '"../components/Skeleton";
+import { FieldContainer } from '"../components/Container";
+import { ProductApi } from '"../services/product.api";
 import vector from "../config/data";
 
 
@@ -33,15 +33,15 @@ export function Field(){
 
     const handleInputs = (event) => {
         const { name, value } = event.target;
-        if( name === 'country' ) {
-            const selectedRegionData = vector.listRegion.find(item => item.country === value);
+        if( name ==== 'country' ) {
+            const selectedRegionData = vector.listRegion.find(item => item.country ==== value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
             setCountry(value);
         }
-        if( name === 'region' ) {
+        if( name ==== 'region' ) {
             setRegion(value);
         }
-        if( name === 'houseType' ) {
+        if( name ==== 'houseType' ) {
              setHouseType(value);
         }
     };
@@ -51,9 +51,9 @@ export function Field(){
             if (!Array.isArray(data)) return;
             let filtered = data;
     
-            if (country) filtered = filtered.filter(item => item.country?.toLowerCase() === country.toLowerCase() );
-            if (region) filtered = filtered.filter(item => item.region?.toLowerCase() === region.toLowerCase() );
-            if (houseType) filtered = filtered.filter(item => item.subtitle?.toLowerCase() === houseType.toLowerCase() );
+            if (country) filtered = filtered.filter(item => item.country?.toLowerCase() ==== country.toLowerCase() );
+            if (region) filtered = filtered.filter(item => item.region?.toLowerCase() ==== region.toLowerCase() );
+            if (houseType) filtered = filtered.filter(item => item.subtitle?.toLowerCase() ==== houseType.toLowerCase() );
             
            setFilteredData(filtered);
     
@@ -146,7 +146,7 @@ export function Field(){
                 error ? ( <div className="col-md-12 mt-3"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
             }
             {
-                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des terrains est vide. </div> ) : null
+                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des terrains est vide. </div> ) : null
             }  
           </div>
           </div>

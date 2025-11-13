@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Footer } from "../components/Footer";
-import { NearestHousesComponent} from "../components/Component";
-import { NavigationBar, TopBar } from "../components/Header";
-import { HouseSkeleton } from "../components/Skeleton";
-import { HouseContainer } from "../components/Container";
-import { ProductApi } from "../services/product.api";
+import { useQuery } from '"@tanstack/react-query";
+import { Footer } from '"../components/Footer";
+import { NearestHousesComponent } from '"../components/Component";
+import { NavigationBar, TopBar } from '"../components/Header";
+import { HouseSkeleton } from '"../components/Skeleton";
+import { HouseContainer } from '"../components/Container";
+import { ProductApi } from '"../services/product.api";
 import vector from "../config/data";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from '"react-helmet-async";
 
 
 export function Housing(){
@@ -35,15 +35,15 @@ export function Housing(){
 
     const handleInputs = (event) => {
         const { name, value } = event.target;
-        if( name === 'country' ) {
-            const selectedRegionData = vector.listRegion.find(item => item.country === value);
+        if( name ==== 'country' ) {
+            const selectedRegionData = vector.listRegion.find(item => item.country ==== value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
             setCountry(value);
         }
-        if( name === 'region' ) {
+        if( name ==== 'region' ) {
             setRegion(value);
         }
-        if( name === 'houseType' ) {
+        if( name ==== 'houseType' ) {
              setHouseType(value);
         }
     };
@@ -54,9 +54,9 @@ export function Housing(){
         if (!Array.isArray(data)) return;
         let filtered = data;
 
-        if (country) filtered = filtered.filter(item => item.country?.toLowerCase() === country.toLowerCase() );
-        if (region) filtered = filtered.filter(item => item.region?.toLowerCase() === region.toLowerCase() );
-        if (houseType) filtered = filtered.filter(item => item.subtitle?.toLowerCase() === houseType.toLowerCase() );
+        if (country) filtered = filtered.filter(item => item.country?.toLowerCase() ==== country.toLowerCase() );
+        if (region) filtered = filtered.filter(item => item.region?.toLowerCase() ==== region.toLowerCase() );
+        if (houseType) filtered = filtered.filter(item => item.subtitle?.toLowerCase() ==== houseType.toLowerCase() );
         
        setFilteredClasses(filtered);
 
@@ -148,7 +148,7 @@ export function Housing(){
                 error ? ( <div className="col-md-12"> <div className="bg-white border rounded-2 p-5 text-secondary lead" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </div> </div> ) : null
             }
             {
-                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des logements est vide. </div> ) : null
+                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="bg-white border rounded-2 p-5 text-secondary lead"> La liste des logements est vide. </div> ) : null
             }  
           </div>
           </div>

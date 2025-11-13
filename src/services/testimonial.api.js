@@ -1,4 +1,4 @@
-import { apiClient, apiClientAuth } from "../config/httpClient";
+import { apiClient, apiClientAuth } from '"../config/httpClient";
 
 
 export function TestimonialApi(contentType = "application/json")

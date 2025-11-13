@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
-import { WithdrawForm } from "./Form";
-import { Historic } from "./Historic";
-import { PaymentApi } from "../../../services/payment.api";
-import { useParams } from "react-router";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
+import { WithdrawForm } from '"./Form";
+import { Historic } from '"./Historic";
+import { PaymentApi } from '"../../../services/payment.api";
+import { useParams } from '"react-router";
 
 
 export function Balance()

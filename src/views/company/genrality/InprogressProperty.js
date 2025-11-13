@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Layout } from "../Layout";
-import { FilterForm } from "./Form";
-import { Navigation } from "./Navigation";
-import { TextReducer } from "../../../components/Component";
+import { useQuery } from '"@tanstack/react-query";
+import { Layout } from '"../Layout";
+import { FilterForm } from '"./Form";
+import { Navigation } from '"./Navigation";
+import { TextReducer } from '"../../../components/Component";
 
-import { ProductApi } from "../../../services/product.api";
-import { useParams } from "react-router";
+import { ProductApi } from '"../../../services/product.api";
+import { useParams } from '"react-router";
 
 
 export function InprogressProperty()
@@ -35,9 +35,9 @@ export function InprogressProperty()
         if (!Array.isArray(data)) return;
         let filtered = data;
 
-        if (country) filtered = filtered.filter(item => item.country?.toLowerCase() === country.toLowerCase() );
-        if (region) filtered = filtered.filter(item => item.region?.toLowerCase() === region.toLowerCase() );
-        if (houseType) filtered = filtered.filter(item => item.type?.toLowerCase() === houseType.toLowerCase() );
+        if (country) filtered = filtered.filter(item => item.country?.toLowerCase() ==== country.toLowerCase() );
+        if (region) filtered = filtered.filter(item => item.region?.toLowerCase() ==== region.toLowerCase() );
+        if (houseType) filtered = filtered.filter(item => item.type?.toLowerCase() ==== houseType.toLowerCase() );
         
         setFilteredData(filtered);
 
@@ -79,7 +79,7 @@ export function InprogressProperty()
                                           {/* Contenu */}
                                           <div className="px-3 pb-3 pt-1">
                                             <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-                                             { item?.price +  ' Fcfa ' } { ( item?.title === "à louer" ) && " / mois" } 
+                                             { item?.price +  ' Fcfa ' } { ( item?.title ==== "à louer" ) && " / mois" } 
                                             </span>
                                           </div>
                                           <div className="border-top border-bottom py-2 px-3">
@@ -100,7 +100,7 @@ export function InprogressProperty()
                                 error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
+                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                                                     
 
                             </div>
