@@ -4,18 +4,20 @@ const url = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 
 // It's for all request that don't need to be authenticated first
-export 
-
+export const apiClient = (contentType) => {
+  const axiosInstance =  axios.create({
+      baseURL: url,
+      headers: { "Content-Type": contentType },
+  });
   return axiosInstance;
 }
 
 
 // Authentication is required in order to benefit to this instance for all HTTP method 
-export  
+export const apiClientAuth = (contentType) => {
 
     const headers = {};
-    if (contentType !=== "multipart/form-data") { headers["Content-Type"] = contentType; }
-
+    if (contentType !== "multipart/form-data") { headers["Content-Type"] = contentType; }
 
     const axiosInstance = axios.create({ baseURL: url, headers });
 

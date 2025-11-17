@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-import { PaymentApi } from '"../../../services/payment.api";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { PaymentApi } from "../../../services/payment.api";
 
 
 export function Notifications()
@@ -13,7 +13,6 @@ export function Notifications()
     const fetchData = async () => {
         try {
             const res = await payment.findNotifications();
-            // console.log(res.data.data);
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
@@ -75,7 +74,7 @@ export function Notifications()
                                 error && ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) 
                             } 
                             {
-                                ( Array.isArray(data) && data.length ==== 0 ) && ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) 
+                                ( Array.isArray(data) && data.length === 0 ) && ( <div className="col-md-12"> <span className="d-flex border text-muted px-4 py-3 mt-3"> Aucune propriété n'a été réservée ou achetée à votre compte. </span> </div> ) 
                             } 
                             </div>
                             

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useParams } from '"react-router";
-import { PaymentApi } from '"../../../services/payment.api";
+import { useParams } from "react-router";
+import { PaymentApi } from "../../../services/payment.api";
 
 export function WithdrawForm({refetch})
 {
@@ -23,10 +23,11 @@ export function WithdrawForm({refetch})
         try {
             const res = await payment.NewWithdraw(inputs, companyId);
             setIsLoading(false);
-            // console.log(res.data);
             if(res.data.success) {
                 setStatus(1);
-                refetch();
+                if (typeof refetch === "function") {
+                    refetch(); 
+                }
             }  else { setStatus(-1); }
 
         } catch (err) { 
@@ -38,7 +39,7 @@ export function WithdrawForm({refetch})
     return (
 
         <div className="filter border-end pb-4">
-            <div className="d-flex py-3 border-bottom mb-4 bg-blue-light-clr"> 
+            <div className="d-flex py-3 border-bottom mb-4 bg-three-clr"> 
                 <span className="lead px-4 text-secondary mt-2"> Retrait d'argent </span> 
             </div>
             <form className="pb-2 px-3 mb-2" onSubmit={ handleForm }>
@@ -47,9 +48,9 @@ export function WithdrawForm({refetch})
                         isLoading ? ( <div className="col-md-12 mb-4 d-flex justify-content-center"> <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                     }
                     {
-                        ( status ==== 1 ) ? 
+                        ( status === 1 ) ? 
                         (  <div className="col-md-12 mb-2"> <div className="alert alert-success fs-xs"> Payement effectué avec succes </div> </div> ) :
-                        ( status ==== -1 ) ?
+                        ( status === -1 ) ?
                         (  <div className="col-md-12 mb-2"> <div className="alert alert-danger fs-xs"> Une erreur est survenue lors de l'opération. </div> </div>) : null
                     }
                     <div className="col-md-12 mb-2" > 
@@ -72,7 +73,7 @@ export function WithdrawForm({refetch})
                     <div className="col-md-12 mb-2" > 
                         <div className="d-flex flex-column">  
                             <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
-                            <div className="input-group mb-3">
+                            <div className="input-group mb-1">
                                 <input type="number" name="amount" className="text-secondary p-2 border rounded-2" required onChange={ handleInputs } />
                             </div> 
                         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { BottomBar } from '"../components/Footer";
-import { UserApi } from ''../services/user.api';
-import { useNavigate } from ''react-router';
+import { BottomBar } from "../components/Footer";
+import { UserApi } from '../services/user.api';
+import { useNavigate } from 'react-router';
 
 
 export function ValidateAccount(){
@@ -44,12 +44,11 @@ export function ValidateAccount(){
               <form onSubmit={ handleForm } className="d-flex flex-column">
                 <div className=" d-flex flex-column gap-2 mb-4" > 
                   <div className="d-flex" >
-                     <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> 
-                      {/* <i class="bi bi-house-door-fill fs-3 text-light"></i>  */}
-                      <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "50px" }} />
+                     <span className="mb-3 hide bg-light border px-4 py-3 rounded-2"> 
+                      <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                       </span>
                   </div>
-                  <span className="fs-4 text-secondary text-start"> Imopro - Validation compte </span>
+                  <span className="fs-4 text-secondary text-start"> Diwane+ - Validation compte </span>
                   <span className="text-secondary text-start">
                     Merci de votre inscription ! Un code de validation vous a été envoyé par SMS. Saisissez-le ci-dessous pour activer votre compte.
                   </span>
@@ -62,7 +61,7 @@ export function ValidateAccount(){
                   )
                 }
                 {
-                  status ==== -1 && (
+                  status === -1 && (
                     <div className="col-md-12 mb-2">
                       <div className="alert alert-danger">
                         Erreur! veillez revérifier le code reçu puis rééssayer.

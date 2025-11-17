@@ -1,10 +1,9 @@
-import { useState } from '"react";
-import { UserApi } from '"../../../services/user.api";
+import { useState } from "react";
+import { UserApi } from "../../../services/user.api";
 
 export function Modal({ method, message, uid, state })
 {
     const user = UserApi();
-    const adminId = sessionStorage.getItem('uid');
     
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +12,7 @@ export function Modal({ method, message, uid, state })
         setStatus(0);
         setIsLoading(true);
         try{
-            const res = await user.setStatus(uid, adminId);
+            const res = await user.setStatus(uid);
             setIsLoading(false);
             (res.data.success) ? setStatus(1) : setStatus(-1); 
         } catch (err) { 
@@ -37,9 +36,9 @@ export function Modal({ method, message, uid, state })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
-                            ( status ==== 1 ) ? 
-                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state ==== 1 || state ==== 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
-                            ( status ==== -1 ) ?
+                            ( status === 1 ) ? 
+                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( state === 1 || state === 2 ) ? "Utilisateur bloqué avec succes" : "Utilisateur débloqué avec succes" }   </div> </div> ) :
+                            ( status === -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************************** */}

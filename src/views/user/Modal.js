@@ -1,5 +1,5 @@
-import { useState } from '"react";
-import { UserApi } from '"../../services/user.api";
+import { useState } from "react";
+import { UserApi } from "../../services/user.api";
 
 
 
@@ -31,8 +31,8 @@ export function MonthPayDetailModal({ method, data })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-5 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center vh-100 px-3">
                     <div className="col-lg-6 col-md-8 bg-white rounded-3 p-4 d-flex flex-column">
                         <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex flex-column border-top border-bottom pt-4 pb-2 mb-2">
@@ -85,19 +85,21 @@ export function PaymentFormModal({ method })
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center vh-100 px-3">
                     <div className="col-lg-8 col-md-10 bg-white p-4 d-flex flex-column">
-                        <div className="text-end"> <button className='btn btn-sm btn-white bold mb-2' onClick={ ()=>{ method ( false ) } } > X </button> </div>
+                        <div className="text-end"> 
+                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        </div>
                         <form className="border-top pt-4 pb-2 px-3 mb-2" onSubmit={ handleForm }>
                             <div className="row" > 
                                 {
                                     isLoading ? ( <div className="col-md-12 mb-4 d-flex justify-content-center"> <img src={'../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> </div> ) : null 
                                 }
                                 {
-                                    ( status ==== 1 ) ? 
+                                    ( status === 1 ) ? 
                                     (  <div className="col-md-12 mb-4"> <div className=""> Payement effectué avec succes </div> </div> ) :
-                                    ( status ==== -1 ) ?
+                                    ( status === -1 ) ?
                                     (  <div className="col-md-12 mb-4"> <div className=""> Une erreur est survenue lors de l'opération. </div> </div>) : null
                                 }
                                 <div className="col-md-12 mb-3" > 
@@ -156,8 +158,8 @@ export function LoaderModal()
     return (
 
         <div className="modal-container">
-            <div className="container pt-5">
-                <div className="row d-flex justify-content-center mt-3 px-2">
+            <div className="container">
+                <div className="row d-flex justify-content-center vh-100 px-3">
                     <div className="col-lg-2 bg-white mt-5 p-4 d-flex flex-column">
                         <div className="col-md-12 d-flex justify-content-center p-4"> 
                             <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> 

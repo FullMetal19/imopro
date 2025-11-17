@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from '"react-router";
-import { useQuery } from '"@tanstack/react-query";
-import { UserApi } from '"../services/user.api";
-import { PaymentApi } from '"../services/payment.api";
-import { ProductApi } from '"../services/product.api";
+import { useNavigate } from "react-router";
+import { useQuery } from "@tanstack/react-query";
+import { UserApi } from "../services/user.api";
+import { PaymentApi } from "../services/payment.api";
+import { ProductApi } from "../services/product.api";
 import vector from "../config/data";
 
 
@@ -23,8 +23,6 @@ export function VideoModal( { method, url })
         </div>
     )
 }
-
-// ************************************************************************************************************
 
 
 export function GeolocalisationModal( { method, latitude, longitude })
@@ -59,8 +57,6 @@ export function GeolocalisationModal( { method, latitude, longitude })
 }
 
 
-
-
 export function LoginCheckerModal({ method, message })
 {
     return (
@@ -81,7 +77,7 @@ export function LoginCheckerModal({ method, message })
     )
 }
 
-// ************************************************************************************************************
+
 export function PasswordModal({ method })
 {
     const navigate = useNavigate();
@@ -128,13 +124,12 @@ export function PasswordModal({ method })
                             <div className="d-flex flex-column align-items-center gap-2 mb-4" > 
                               <div className="d-flex mb-1" >
                                 <span className="d-flex align-items-center justify-content-center bg-white border px-3 py-2 rounded-2 shadow-sm"> 
-                                    {/* <i class="bi bi-house-door-fill fs-4 text-white"></i>  */}
                                     <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                                 </span>
                               </div>
-                              <span className="fs-4 text-muted"> Imopro - Mot de passe oublié </span>
+                              <span className="fs-4 text-muted"> Diwane+ - Mot de passe oublié </span>
                               <span className="text-muted text-center px-4 mb-4">
-                                Saisissez votre numéro de téléphone, et nous vous enverrons un code de validation pour réinitialiser rapidement et en toute sécurité votre mot de passe."  
+                                Saisissez votre numéro de téléphone, et nous vous enverrons un code de validation pour réinitialiser rapidement et en toute sécurité votre mot de passe. 
                               </span>
                             </div>
                             {
@@ -145,7 +140,7 @@ export function PasswordModal({ method })
                               )
                             }
                             {
-                              status ==== -1 && (
+                              status === -1 && (
                                 <div className="col-md-12 mb-2">
                                   <div className="alert alert-danger text-secondary">
                                     Une erreur est survenue durant le traitement. Vérifiez votre numéro puis réessayez.
@@ -183,8 +178,6 @@ export function PasswordModal({ method })
 }
 
 
-
-//****************************************************************************************************** */
 export function VisitBookingModal({ method, refetch, propertyId }) 
 {
     const payment = PaymentApi();
@@ -193,14 +186,14 @@ export function VisitBookingModal({ method, refetch, propertyId })
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
-    // Base price you want to start with
+    
     const BASE_PRICE = 5000; 
     const DAILY_DISCOUNT = 25; 
 
     const handleInputs = (event) => {
         const { name, value } = event.target;
 
-        if (name ==== "date") 
+        if (name === "date") 
         {
             const today = new Date();
             const selectedDate = new Date(value);
@@ -235,7 +228,6 @@ export function VisitBookingModal({ method, refetch, propertyId })
         try {
             const res = await payment.insert( inputs, propertyId);
             setIsLoading(false);
-            // console.log(res.data)
             res.data.success ? setStatus(1) : setStatus(-1);
             refetch();
 
@@ -262,12 +254,12 @@ export function VisitBookingModal({ method, refetch, propertyId })
                                     <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
                                 </div>
                             )}
-                            {status ==== 1 && (
+                            {status === 1 && (
                                 <div className="">
                                     <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Rendez-vous ajouté avec succès </div>
                                 </div>
                             )}
-                            {status ==== -1 && (
+                            {status === -1 && (
                                 <div className="">
                                     <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div>
                                 </div>
@@ -356,7 +348,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
         const { name, value } = event.target;
         setInputs({
             ...inputs,
-            [name]: name ==== "amount" ? parseFloat(value) || 0 : value,
+            [name]: name === "amount" ? parseFloat(value) || 0 : value,
         });
     };
     
@@ -368,12 +360,13 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
             setIsLoading(false);
             if(res.data.success) {
                 setStatus(1);
-                refetch();
+                if (typeof refetch === "function") {
+                    refetch();
+                }
             }
             else{
                 setStatus(-1);
             }
-            // console.log(res.data)
 
         } catch (err) { 
             setStatus(-1);
@@ -397,9 +390,9 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status ==== 1 ) ? 
+                                ( status === 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Caution payée avec succes </div> </div> ) :
-                                ( status ==== -1 ) ?
+                                ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="col-md-12 mb-2 bg-light py-2">
@@ -475,7 +468,6 @@ export function MonthPaymentModal({ method, refetch, propertyId })
     }
     const { data } = useQuery({  queryKey: ["property", propertyId], queryFn: () => fetchProperty(propertyId),  enabled: !!propertyId });
 
-    // ******************************************************************************************
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     
@@ -497,7 +489,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
         const { name, value } = event.target;
         setInputs(prev => ({
             ...prev,
-            [name]: name ==== "amount" ? parseFloat(value) || 0 : value,
+            [name]: name === "amount" ? parseFloat(value) || 0 : value,
         }));
     };
 
@@ -536,9 +528,9 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
-                                ( status ==== 1 ) ? 
+                                ( status === 1 ) ? 
                                 (  <div className=""> <div className="alert alert-primary text-secondary border py-1 px-3 rounded-1 mb-4"> Mensualité payée avec succes </div> </div> ) :
-                                ( status ==== -1 ) ?
+                                ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger text-secondary border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="col-md-8 mb-2" > 

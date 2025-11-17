@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-
-import { Modal1 } from '"./Modal";
-import { useParams } from '"react-router";
-import { CompanyApi } from '"../../../services/company.api";
-import { BoardContainer, SoldeContainer } from '"./Containers";
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { Modal1 } from "./Modal";
+import { useParams } from "react-router";
+import { CompanyApi } from "../../../services/company.api";
+import { BoardContainer, SoldeContainer } from "./Containers";
 
 
 export function Stat()
 {
     const { companyId } = useParams();
     const company = CompanyApi();
-    const uid = sessionStorage.getItem('uid');
     
     const fetchCompany = async () => {
         try {
@@ -22,7 +20,7 @@ export function Stat()
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
     }
-    const { isLoading, data, error } = useQuery({  queryKey: ["company"], queryFn: fetchCompany });
+    const { data } = useQuery({  queryKey: ["company"], queryFn: fetchCompany });
 
     //-------------------------------------------------------------------------
     const [ modalState , setModalState ] = useState(false);
@@ -31,17 +29,19 @@ export function Stat()
     }
     const closeModal = ( arg ) => {  setModalState( arg ) } 
     //------------------------------------------------------------------------
-    const [status, setStatus] = useState(0);
-    const [isLoading1, setIsLoading1] = useState(false);
+    // const [status, setStatus] = useState(0);
+    // const [isLoading1, setIsLoading1] = useState(false);
 
-    
-            setIsLoading1(false);
-            (res.data.success) ? setStatus(1) : setStatus(-1); 
-        } catch (err) { 
-            setStatus(-1);
-            setIsLoading1(false);
-        }
-    }
+    // const block = async () => {
+    //     try{
+    //         const res = await company.setBlock(companyId, uid);
+    //         setIsLoading1(false);
+    //         (res.data.success) ? setStatus(1) : setStatus(-1); 
+    //     } catch (err) { 
+    //         setStatus(-1);
+    //         setIsLoading1(false);
+    //     }
+    // }
     
     
     return (
@@ -81,13 +81,13 @@ export function Stat()
                                             <span className="form-control text-muted"> { data?.user.phone } </span>
                                         </div>       
                                     </div>
-                                    <div className="p-3 border-bottom"> 
-                                        <span className="main-color fs-xs"> Bloquer le compte  </span>
+                                    <div className="p-3 border-bottom bg-light"> 
+                                        <span className="text-secondary"> Bloquer le compte  </span>
                                     </div>
                                     {/* ------------------------------------------------ */}
-                                    <div className="d-flex flex-column p-3 border-bottom" >                                            
+                                    <div className="d-flex flex-column p-3 border-bottom mb-5" >                                            
                                         <div className="d-flex justify-content-between gap-3"> 
-                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status ==== 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
+                                            <span className="border rounded-4 text-muted py-1 px-4 bg-three-clr"> { (data?.status === 2) ? 'Compte actif' : 'Compte bloqué' }  </span>
                                             <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ setModal } > Modifier </button> 
                                         </div>      
                                     </div>

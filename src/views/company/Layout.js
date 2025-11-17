@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { BottomBar } from '"../../components/Footer";
-import { TextReducer } from '"../../components/Component";
+import { BottomBar } from "../../components/Footer";
+import { TextReducer } from "../../components/Component";
 
 
 export function Layout({ menu, companyId, children })
 {
     const [showSidebar, setShowSidebar] = useState(true);
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 900);
+    // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 900);
 
     useEffect(() => {
         const handleResize = () => {
             const isSmall = window.innerWidth <= 900;
-            setIsSmallScreen(isSmall);
+            // setIsSmallScreen(isSmall);
             (isSmall) ? setShowSidebar(false) : setShowSidebar(true);
         };
         window.addEventListener('resize', handleResize);
@@ -46,33 +46,33 @@ export function Layout({ menu, companyId, children })
                     {/* ************************************************************************ */}
                     <div className="sidebar d-flex flex-column p-0 pb-4 border-bottom">  
                         <div className="p-3 d-flex justify-content-end bg-blue-light-clr border-bottom"> 
-                            <button className={`btn btn-sm rounded-4 text-muted sidebar-trigger`} onClick={toggleSidebar} >  
-                                <img src={'../../img/icons8-menu-96.png'} height={34} width={34} alt="Logo" />
+                            <button className="btn btn-sm rounded-4 text-muted sidebar-trigger" onClick={toggleSidebar} >  
+                                <img src="../../img/icons8-menu-96.png" height={34} width={34} alt="Logo" />
                             </button>  
                         </div>
                         {showSidebar && (
-                        <div className={`d-flex flex-column p-0`}>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 1) ? 'sidebar-menu-active' : null } `} href={ `/entreprise/${companyId}` } >
+                        <div className="d-flex flex-column p-0">
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 1) ? 'sidebar-menu-active' : null } `} href={`/entreprise/${companyId}`} >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-grid-fill fs-3 text-blue-clr"></i>
+                                    <i className="bi bi-grid-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Généralité </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 2) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/solde` } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 2) ? 'sidebar-menu-active' : null } `} href={ `/entreprise/${companyId}/solde` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-wallet-fill fs-3 text-blue-clr"></i>
+                                    <i className="bi bi-wallet-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Solde </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 3) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/propriete-reserve` } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 3) ? 'sidebar-menu-active' : null } `} href={ `/entreprise/${companyId}/propriete-reserve` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-calendar-check-fill fs-3 text-blue-clr"></i>
+                                    <i className="bi bi-calendar-check-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Mensualités </span> 
                                 </div>
                             </a>
-                            <a className={`border-bottom p-3 sidebar-menu ${ (menu ==== 4) ? 'sidebar-menu-active' : null } `} href={ `/company/${companyId}/notifications` } >
+                            <a className={`border-bottom p-3 sidebar-menu ${ (menu === 4) ? 'sidebar-menu-active' : null } `} href={ `/entreprise/${companyId}/notifications` } >
                                 <div className="d-flex flex-column justify-content-center align-items-center"> 
-                                    <i class="bi bi-bell-fill fs-3 text-blue-clr"></i>
+                                    <i className="bi bi-bell-fill fs-3 text-blue-clr"></i>
                                     <span className="text-secondary mt-2"> Notification </span> 
                                 </div>
                             </a>

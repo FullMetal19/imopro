@@ -1,26 +1,25 @@
 import React, { useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { NavigationBar, TopBar } from '"../../components/Header";
-import { Footer } from '"../../components/Footer";
-import { UserApi } from '"../../services/user.api";
-import { MessageModal } from '"./Modal";
-import { VisitSlideComponent } from '"./VisitSlideComponent";
-import { AccomodationSlideComponent } from '"./AccomodationSlideComponent";
-import { GeolocalisationModal, ValidationPaymentModal } from '"../../components/Modal";
+import { useQuery } from "@tanstack/react-query";
+import { NavigationBar, TopBar } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { UserApi } from "../../services/user.api";
+import { MessageModal } from "./Modal";
+import { VisitSlideComponent } from "./VisitSlideComponent";
+import { AccomodationSlideComponent } from "./AccomodationSlideComponent";
+import { GeolocalisationModal, ValidationPaymentModal } from "../../components/Modal";
 
 
 export function Account()
 {
-    const [refetch, setRefetch] = useState(true);
+    const [refetchFunction, setRefetchFunction] = useState();
+
     const [btnstate, setBtnstate] = useState(true);
     
-
     const user = UserApi();
 
     const fetchUser = async () => {
         try {
             const { data } = await user.findOne();
-            // console.log(data)
             if(data.success) {
                 localStorage.setItem('cname', data?.data?.company?.name);
                 localStorage.setItem('cicon', data?.data?.company?.icon);
@@ -30,9 +29,8 @@ export function Account()
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
     }
-    const { isLoading, data, error } = useQuery({ queryKey: ["user"], queryFn: fetchUser });
-
-    //-------------------------------------------------------------------------  
+    const { data } = useQuery({ queryKey: ["user"], queryFn: fetchUser });
+ 
     const [ modal1State , setModal1State] = useState(false);
     const [ msg , setMsg] = useState();
     const setForm1 = (msg) => {
@@ -69,7 +67,7 @@ export function Account()
           {/* ************************************************************************ */}
             { modal1State ? ( <MessageModal method={ closeForm1 } message={msg} /> ) : null }
             { localisation && ( <GeolocalisationModal latitude={latitude} longitude={longitude} method={ ()=> setLocalisation(false) } /> ) }
-            { validation && ( <ValidationPaymentModal guaranty={guaranty} propertyId={propertyId} method={ ()=> setValidation(false) } refetch={refetch} /> ) }
+            { validation && ( <ValidationPaymentModal guaranty={guaranty} propertyId={propertyId} method={ ()=> setValidation(false) } refetch={refetchFunction} /> ) }
           <div className="row"> 
             <TopBar />
           </div> 
@@ -82,8 +80,15 @@ export function Account()
                     {/* ************************************************************************ */}
                     <div className="col-lg-12 col-md-12"> 
                         <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
-                        <div className="col-md-8 d-flex gap-3 mb-2"> 
-                            <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> 
+                        <div className="col-md-8 d-flex gap-3 mb-2">
+                            {
+                              data?.image === null ? ( 
+                                <div className="bg-blue-clr text-light border border-secondary rounded-circle rounded-circle border fw-bold d-flex align-items-center justify-content-center" style={{ width:45, height:45 }}>
+                                   { data?.fname ? data.fname.charAt(0).toUpperCase() : ""}{data?.lname ? data.lname.charAt(0).toUpperCase() : ""}
+        </                       div>
+                               ) :  (  <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> )
+                            } 
+                            
                             <div className="d-flex flex-column"> 
                                 <span className="text-secondary"> { data?.fname + " " + data?.lname } </span>
                                 <span className="color-gray small"> En ligne </span>
@@ -91,9 +96,9 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              (data?.companyStatus ==== 0 && data?.status ==== 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                              ( (data?.companyStatus ==== 2 && data?.status ==== 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                              ( (data?.companyStatus ==== 0 && data?.status ==== 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                              (data?.companyStatus === 0 && data?.status === 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
+                              ( (data?.companyStatus === 2 && data?.status === 1) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                              ( (data?.companyStatus === 0 && data?.status === 2) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
                             }
                         </div>
                         </div>
@@ -102,8 +107,8 @@ export function Account()
                     <div className="col-lg-12 border rounded-top-2 mb-4 bg-gray-light"> 
                         <div className="d-flex px-4 py-4">
                             {
-                               (data?.companyStatus ==== 1) ? (<span className="text-secondary"> Votre demande de creation d'entreprise est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
-                               ( (data?.companyStatus ==== -1) ? (
+                               (data?.companyStatus === 1) ? (<span className="text-secondary"> Votre demande de creation d'entreprise est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
+                               ( (data?.companyStatus === -1) ? (
                                <div className="d-flex justify-content-between gap-4 w-100">
                                     <span className="text-secondary"> Votre demande d'ajout d'entreprise est invalidée </span>
                                     <div className="d-flex gap-3">
@@ -111,7 +116,7 @@ export function Account()
                                         <a className="btn btn-secondary" href={`/modification-entreprise/${data?.company.id}`} > Modifier </a> 
                                     </div> 
                                </div> ) :
-                               ( (data?.companyStatus ==== -2) ? (<span className="text-secondary"> Votre entreprise est bloqué. Appelez au (77 000 00 00) pour plus d'information </span>) : 
+                               ( (data?.companyStatus === -2) ? (<span className="text-secondary"> Votre entreprise est bloqué. Appelez au (77 000 00 00) pour plus d'information </span>) : 
                                (<span className="text-secondary lead"> Bienvenue chez ImmoPro </span>) ))
                             }   
                         </div>
@@ -125,7 +130,7 @@ export function Account()
                         </div>
                     </div>
                     {/* ************************************************************************ */}
-                    { btnstate ? ( <VisitSlideComponent openLocalisationModal={openLocalisationModal} openValidationModal={openValidationModal} setRefetch={setRefetch} /> ) :  ( <AccomodationSlideComponent /> ) }
+                    { btnstate ? ( <VisitSlideComponent openLocalisationModal={openLocalisationModal} openValidationModal={openValidationModal} refetchHandler={ setRefetchFunction } /> ) :  ( <AccomodationSlideComponent /> ) }
                     {/* ************************************************************************ */} 
                 </div> 
               </div>     

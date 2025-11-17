@@ -1,18 +1,16 @@
-import { useState } from '"react";
-import { PaymentApi } from '"../../../services/payment.api";
-import { useParams } from '"react-router";
-import { useQuery } from '"@tanstack/react-query";
-import { ProductApi } from '"../../../services/product.api";
+import { useState } from "react";
+import { PaymentApi } from "../../../services/payment.api";
+import { useParams } from "react-router";
+import { useQuery } from "@tanstack/react-query";
+import { ProductApi } from "../../../services/product.api";
 
 
 export function SoldeContainer()
 {
     const payment = PaymentApi();
-    
-    const [filter, setFilter] = useState(false);
-    const [view, setView] = useState(false);
-    
     const {companyId} = useParams();
+    
+    const [view, setView] = useState(false);
     
     const fetchData = async () => {
         try {
@@ -32,7 +30,7 @@ export function SoldeContainer()
             <div className="d-flex flex-column gap-2 mb-4"> 
                 <div className="text-center border text-muted py-4 bg-three-clr rounded-1 mb-2"> { view ?  `${ data?.totalAmount }` : '*************' } Fcfa </div>
                 <div className="d-flex justify-content-end"> 
-                    <button className="btn btn-sm border rounded-4 text-muted px-3" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
+                    <button className="btn btn-sm border rounded-4 px-3 btn-secondary" onClick={ () => setView(!view) }> { view ? 'Cacher solde' : 'Voir solde' } </button> 
                 </div>
             </div>       
         </div>

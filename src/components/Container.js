@@ -1,12 +1,11 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { TextReducer } from '"./Component";
+import { TextReducer } from "./Component";
 
 
 
 
-export function ServiceContainer({children, title , description }) 
+export function ServiceContainer({ title, description }) 
 {
     return (
 
@@ -23,7 +22,7 @@ export function ServiceContainer({children, title , description })
 }
 
 // ****************************************************************************************************
-export function LocationContainer({region , count, id}) 
+export function LocationContainer({region, count}) 
 {
     return (
 
@@ -62,7 +61,7 @@ export function HouseContainer({ data, onVisit })
         {/* Contenu */}
         <div className="px-3 pb-3 pt-1">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-           { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
+           { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
         </div>
         <div className="border-top border-bottom py-2 px-3">
@@ -80,7 +79,6 @@ export function HouseContainer({ data, onVisit })
         </div>
       </div>
   
-         
     )
 }
 
@@ -89,13 +87,13 @@ export function FieldContainer({ data, onVisit }) {
 
     return (
     
-        <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
+      <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
         {/* Image principale */}
         <img src={ data?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
         {/* Contenu */}
         <div className="px-3 py-4">
           <span className="lead bg-gray-light border text-secondary px-3 py-1 rounded-4">
-           { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
+           { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
           </span>
         </div>
         <div className="border-top border-bottom py-2 px-3">
@@ -122,7 +120,7 @@ export function TestimonialContainer({title, desc})
              
         <div className="mb-3 px-2"> 
             <div className="d-flex flex-column bg-snd-clr px-4 py-3 rounded-4 w-100"> 
-                <span className='circle bg-white border-main mb-2' > <img src={'../img/icons8-citation-à-droite-100.png'} alt="Logo" width={60} height={60} className="" /> </span>
+                <span className='circle bg-white border-main mb-2' > <img src={'../img/icons8-citation-à-droite-100.png'} alt="Logo" width={60} height={60} /> </span>
                 <div className="text-start text-clr mb-3"> < TextReducer text={desc} maxsize={100} /> </div>
                 <div className="text-start text-clr h6"> { title }  </div>
             </div>
@@ -131,14 +129,14 @@ export function TestimonialContainer({title, desc})
 }
 
 //***********************************************************************************************************************
-export function ContactContainer({image, tel1 , tel2}) 
+export function ContactContainer({ tel1 , tel2 }) 
 {
     return (
     
         <div className="col-md-6 col-lg-4 mb-3"> 
             <div className="d-flex flex-column border p-4 bg-white"> 
                 <div className="d-flex justify-content-center align-items-center my-3 " > 
-                    <span className='circle bg-three-clr' > <i class="bi bi-check-circle text-blue-clr fs-1"></i> </span>
+                    <span className='circle bg-three-clr' > <i className="bi bi-check-circle text-blue-clr fs-1"></i> </span>
                 </div>
                 <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel1 } </span>
                 <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel2 } </span>

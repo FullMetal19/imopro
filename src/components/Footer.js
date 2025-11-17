@@ -1,4 +1,3 @@
-import React from "react";
 
 export function Footer() 
 {
@@ -16,10 +15,10 @@ export function Footer()
                   <div className="fs-3 text-blue-clr mb-2">
                     <i className={`bi bi bi-patch-check`}></i>
                   </div>
-                  <h5 className="fs-5 text-secondary"> Univers service </h5>
+                  <h4 className="fs-4 text-secondary"> Diwane plus </h4>
                 </div>
                 <p className="text-secondary">
-                    Lors de l’inscription, l’utilisateur recevra un SMS sur son numéro de téléphone contenant un code de validation pour sécuriser et confirmer la création de son compte.
+                    Diwane+ est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance.
                 </p>
               </div>
             </div>
@@ -28,20 +27,20 @@ export function Footer()
 
             <div className="col-md-3 mb-4">
               <div className="d-flex flex-column">
-                <h6 className="border-bottom border-secondary text-secondary lead pb-2 mb-3">Customers</h6>
+                <h6 className="border-bottom border-secondary text-secondary lead pb-2 mb-3"> Support clients </h6>
                 <ul className="list-unstyled">
-                  <li className="mb-2"><a href="/support" className="text-decoration-none text-secondary">Support</a></li>
-                  <li className="mb-2"><a href="/support" className="text-decoration-none text-secondary">FAQ</a></li>
+                  <li className="mb-2"><a href="/service" className="text-decoration-none text-secondary"> Nos services </a></li>
+                  <li className="mb-2"><a href="/contact" className="text-decoration-none text-secondary"> Contact </a></li>
                 </ul>
               </div>
             </div>
 
             <div className="col-md-3 mb-4">
               <div className="d-flex flex-column">
-                <h6 className="border-bottom border-secondary text-secondary lead pb-2 mb-3">Customers</h6>
+                <h6 className="border-bottom border-secondary text-secondary lead pb-2 mb-3"> Catlogues </h6>
                 <ul className="list-unstyled">
-                  <li className="mb-2"><a href="/support" className="text-decoration-none text-secondary">Support</a></li>
-                  <li className="mb-2"><a href="/support" className="text-decoration-none text-secondary">FAQ</a></li>
+                  <li className="mb-2"><a href="/logement" className="text-decoration-none text-secondary"> Logements </a></li>
+                  <li className="mb-2"><a href="/terrain" className="text-decoration-none text-secondary"> Terrains </a></li>
                 </ul>
               </div>
             </div>
@@ -69,7 +68,7 @@ export function BottomBar()
         {/* Bottom Section */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center text-light py-3">
           <p className="text-light mb-2 mb-md-0">
-            © 2025 Imopro. Tout droit réservé.
+            © 2025 Diwane plus. Tout droit réservé.
           </p>
 
           <div className="d-flex flex-wrap gap-3">
@@ -77,7 +76,7 @@ export function BottomBar()
                condition d'utilisation
             </p>
             <p className="text-light mb-2 mb-md-0">
-               powered by Mayama
+               alimenté par Diwane+
             </p>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-import { Navigation } from '"./Navigation";
-import { CompanyApi } from '"../../../services/company.api";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { Navigation } from "./Navigation";
+import { CompanyApi } from "../../../services/company.api";
 
 
 export function ValidatingCompany()
@@ -64,7 +64,7 @@ export function ValidatingCompany()
                                         <div className="col-sm-9 d-flex align-items-center gap-2 px-3"> 
                                             <img src={ item.icon } height={40} width={40} alt="Logo" className="rounded-circle border border-3 p-1" /> 
                                             <span className="color-blue"> { item.name } </span>
-                                            <span className="text-secondary fs-xs"> { (item.status ==== 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
+                                            <span className="text-secondary fs-xs"> { (item.status === 1) ? '(en cours de validation)' : '(invalidé)'  } </span>
                                         </div>
                                         <div className="col-sm-3"> 
                                             <a className="btn btn-sm btn-outline-main" href={`/admin/entreprise/${item.id}` } > Administrer </a>
@@ -79,7 +79,7 @@ export function ValidatingCompany()
                                 error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des entreprises en cours de validation est vide. </span> </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des entreprises en cours de validation est vide. </span> </div> ) : null
                             }                             
 
                             </div>

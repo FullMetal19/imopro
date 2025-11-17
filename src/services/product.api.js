@@ -1,5 +1,4 @@
-import { apiClient, apiClientAuth } from '"../config/httpClient";
-import { Property } from '"../views/company/property/Property";
+import { apiClient, apiClientAuth } from "../config/httpClient";
 
 
 export function ProductApi(contentType = "application/json")

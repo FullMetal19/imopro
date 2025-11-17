@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-
-import { ProductApi } from '"../../../services/product.api";
-import { useParams } from '"react-router";
-import { PaymentApi } from '"../../../services/payment.api";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { useParams } from "react-router";
+import { PaymentApi } from "../../../services/payment.api";
 
 
 export function PaymentsHistoric()
@@ -46,10 +44,10 @@ export function PaymentsHistoric()
                             <span className="h5 text-secondary my-2"> Historique des mensualités </span>
                             <div className="row pt-3 pb-2 border-top border-start border-end">
                                 <div className="col-sm-4" > 
-                                    <div className="text-secondary mb-2 d-flex align-items-center py-1 px-3 w-100 border"> Filtrer </div>
+                                    <div className="text-secondary mb-2 d-flex align-items-center py-2 px-3 w-100 border border-secondary"> Filtrer </div>
                                 </div>
                                 <div className="col-sm-4 mb-2" > 
-                                    <input type="month" name="month" value={month} className="py-1 px-3 bg-light border rounded-2 w-100" required onChange={ handleInputChange } />
+                                    <input type="month" name="month" value={month} className="bg-transparent text-secondary p-2 border border-primary rounded-2" required onChange={ handleInputChange } />
                                 </div>
                             </div>
                         </div>
@@ -57,42 +55,64 @@ export function PaymentsHistoric()
                     {/* ************************************************************** */}
                     <div className="scroll p-4">
                         <div className="table-responsive mb-4">
-                            <table className="table table-striped table-bordered">
+                             
+                             <table className="table table-striped table-bordered">
                                 <thead>
-                                    <tr>
-                                        <td className="color-blue" > Date </td>
-                                        <td className="color-blue" > Emetteur </td>
-                                        <td className="color-blue" > Opérateur </td>
-                                        <td className="color-blue" > Montant </td>
-                                        <td className="color-blue" > Mois </td>
-                                    </tr>
+                                  <tr>
+                                    <th className="color-blue">Date</th>
+                                    <th className="color-blue">Émetteur</th>
+                                    <th className="color-blue">Opérateur</th>
+                                    <th className="color-blue">Montant</th>
+                                    <th className="color-blue">Mois</th>
+                                  </tr>
                                 </thead>
-                                <tbody >
-                                { 
-                                    isLoading ? ( <div className="col-md-12 p-2 mt-3 d-flex justify-content-center"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : (
-                                        filteredData?.map(( item , index ) => { return (
-                                        <tr key={index}>                        
-                                            <td className="text-muted"> { item?.createdAt } </td>
-                                            <td className="text-muted"> { item?.User.fname + ' ' + item?.User.lname  } </td>
-                                            <td className="text-muted"> { item?.operator } </td>
-                                            <td className="text-muted"> { item?.amount } </td>
-                                            <td className="text-muted"> { item?.month } </td>
-                                        </tr>     
-                                        )
-                                    }))      
-                                }
-                                {
-                                    error ? ( <tr className="d-flex text-muted p-2 border mt-3"> Une erreur est survenue, veuillez verifier votre connexion puis réessayer </tr> ) : null
-                                } 
-                                {
-                                    ( Array.isArray(data) && data.length ==== 0 ) ? ( <tr className="d-flex text-muted p-2 border mt-3"> Pas de correspondance à ce filtre. </tr> ) : null
-                                }    
-                           
-                                                  
+
+                                <tbody>
+                                  {/* === LOADING === */}
+                                  {isLoading && (
+                                    <tr>
+                                      <td colSpan={5} className="text-center py-4">
+                                        <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div>
+                                      </td>
+                                    </tr>
+                                  )}
+
+                                  {/* === DATA === */}
+                                  {!isLoading &&
+                                    filteredData?.map((item, index) => (
+                                      <tr key={index}>
+                                        <td className="text-muted">{item?.createdAt}</td>
+                                        <td className="text-muted">
+                                          {item?.User?.fname + " " + item?.User?.lname}
+                                        </td>
+                                        <td className="text-muted">{item?.operator}</td>
+                                        <td className="text-muted">{item?.amount}</td>
+                                        <td className="text-muted">{item?.month}</td>
+                                      </tr>
+                                    ))}
+
+                                  {/* === ERROR === */}
+                                  {error && (
+                                    <tr>
+                                      <td colSpan={5} className="text-center text-muted py-4">
+                                        Une erreur est survenue, veuillez vérifier votre connexion puis réessayer.
+                                      </td>
+                                    </tr>
+                                  )}
+
+                                  {/* === EMPTY LIST === */}
+                                  {!isLoading && Array.isArray(data) && data.length === 0 && (
+                                    <tr>
+                                      <td colSpan={5} className="text-center text-muted py-4">
+                                        Pas de correspondance à ce filtre.
+                                      </td>
+                                    </tr>
+                                  )}
                                 </tbody>
-                            </table>
-                        </div>
-                                   
+                              </table>
+
+
+                        </div>       
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { UserApi } from '"../../../services/user.api";
-import { Layout } from '"../Layout";
-import { Modal } from '"./Modal";
-import { BalanceContainer } from '"./Container";
+import { useQuery } from "@tanstack/react-query";
+import { UserApi } from "../../../services/user.api";
+import { Layout } from "../Layout";
+import { Modal } from "./Modal";
+import { BalanceContainer } from "./Container";
 
 
 export function Users()
@@ -71,8 +71,8 @@ export function Users()
                                     <div className="row px-4">
                                         <div className="col-md-12 border-bottom border-start border-end px-3 py-3 mb-3">
                                             <div className="d-flex gap-2" > 
-                                                <span className="form-control text-secondary bg-light"> Filtrer les utilisateurs </span>
-                                                <input type="text" name="companyName" value={phone} className="form-control text-muted" placeholder="exemple : 778807689" required onChange={ handleInputChange } /> 
+                                                <span className="form-control text-secondary"> Filtrer les utilisateurs </span>
+                                                <input type="text" name="companyName" value={phone} className="border py-2 px-4 rounded text-secondary w-100 bg-light" placeholder="exemple : 778807689" required onChange={ handleInputChange } /> 
                                             </div>
                                         </div>
                                         {/* ------------------------------------------------- */}
@@ -89,7 +89,7 @@ export function Users()
                                                         </div>
                                                     </div>
                                                     <div className="d-flex justify-content-between border-top pb-2 pt-3 px-3 gap-3"> 
-                                                        <span className="border fs-xs rounded-4 text-secondary py-1 px-4 bg-three-clr"> { (item.status ==== 1) ? 'Compte actif' : ( ( item.status ==== 2 ) ? 'Compte admin actif' : ( ( item.status ==== -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
+                                                        <span className="border fs-xs rounded-4 text-secondary py-1 px-4 bg-three-clr"> { (item.status === 1) ? 'Compte actif' : ( ( item.status === 2 ) ? 'Compte admin actif' : ( ( item.status === -2 ) ? 'Compte admin bloqué' : 'Compte bloqué' ) )  } </span>
                                                         <button className="btn btn-sm btn-outline-main rounded-4 px-3" onClick={ () => setModal(item?.id, item?.status ) } > Modifier </button> 
                                                     </div> 
                                                 </div>                                    
@@ -100,7 +100,7 @@ export function Users()
                                                 error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                                             }
                                             {
-                                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des utilisateurs est vide. </span> </div> ) : null
+                                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> La liste des utilisateurs est vide. </span> </div> ) : null
                                             }    
 
                                         </div>                                

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Slide } from '"../components/Slide";
-import { Footer } from '"../components/Footer";
-import { FieldComponent, HouseComponent, LocationComponent, ServiceComponent, TestimonialComponent } from '"../components/Component";
-import { VideoModal } from '"../components/Modal";
-import { NavigationBar, TopBar } from '"../components/Header";
-import { Helmet } from '"react-helmet-async";
+import { Slide } from "../components/Slide";
+import { Footer } from "../components/Footer";
+import { FieldComponent, HouseComponent, LocationComponent, ServiceComponent } from "../components/Component";
+import { VideoModal } from "../components/Modal";
+import {NavigationBar, TopBar } from "../components/Header";
 
 
 export function Home(){ 
@@ -14,13 +13,6 @@ export function Home(){
 
     return ( 
         
-    <>
-
-      <Helmet>
-        <title>Accueil | Diwaneplus</title>
-        <meta name="description" content="Touvez facilement vos logements et terrains avec Diwaneplus" />
-      </Helmet>
-
       <div className="container-fluid bg-light">
         { modalState ? ( <VideoModal method={ closeModal } /> ) : null}
           <div className="row"> 
@@ -35,7 +27,7 @@ export function Home(){
           {/* *********************************************************************** */}
           <div className="row justify-content-center bg-gray-light p-5"> 
             <div className="col-md-8 col-lg-5 d-flex flex-column"> 
-                <span className="lead text-secondary text-center mb-3 p-4 border rounded-2" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
+                <span className="lead text-muted text-center mb-3 p-4 border rounded-2" > Téléchargez notre application dès aujourd’hui pour explorer nos propriétés, gérer vos annonces et suivre vos transactions en toute simplicité. </span>
                 <div className="d-flex flex-column-sm justify-content-center gap-2 pb-4"> 
                   <a className="btn btn-lg btn-outline-secondary me-2" href="/inscription"> Version android </a>
                   <a className="btn btn-lg btn-outline-secondary me-2" href="/inscription"> Version IOS </a>
@@ -59,27 +51,25 @@ export function Home(){
             <div className="d-flex justify-content-center align-items-center h-100"> 
               <div className="d-flex justify-content-center align-items-center mt-3" > 
                 <button className='btn circle bg-white shadow p-4 rounded-circle' onClick={ ()=>{ setModalState(true) } } > 
-                  <i class="bi bi-play-circle fs-1 text-blue-clr"></i> 
+                  <i className="bi bi-play-circle fs-1 text-blue-clr"></i> 
                 </button>
               </div>
             </div>
           </div> 
           {/* ************************************************************************ */}
-          <div className="row justify-content-center"> 
+          <div className="row justify-content-center pb-5"> 
             <FieldComponent />
           </div>
           {/* ************************************************************************ */}
-          <div className="row justify-content-center pb-5"> 
+          {/* <div className="row justify-content-center pb-5"> 
             <TestimonialComponent />
-          </div>
+          </div> */}
           {/* ************************************************************************ */}
           <div className="row"> 
             <Footer />
           </div>
              
         </div>
-
-       </>
     )
 }
 

@@ -1,4 +1,4 @@
-import { apiClientAuth } from '"../config/httpClient";
+import { apiClientAuth } from "../config/httpClient";
 
 
 export function PaymentApi(contentType = "application/json")

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-import { Modal, UnvalidationForm } from '"./Modal";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { Modal, UnvalidationForm } from "./Modal";
 
-import { CompanyApi } from '"../../../services/company.api";
-import { useParams } from '"react-router";
+import { CompanyApi } from "../../../services/company.api";
+import { useParams } from "react-router";
 
 
 export function ValidateCompany()
@@ -157,7 +157,7 @@ export function ValidateCompany()
                             {/* ************************************************************************ */}
                             <div className="row mb-4 bg-white p-4 border rounded-2">
                                 {
-                                    ( data?.status ==== 1 || data?.status ==== -1 ) ? (
+                                    ( data?.status === 1 || data?.status === -1 ) ? (
                                         <div className="d-flex justify-content-end gap-4"> 
                                             <button className="btn btn-outline-main" onClick={ setModal1 } > Invalider </button>  
                                             <button className="btn btn-main" onClick={ setModal } > Valider </button> 

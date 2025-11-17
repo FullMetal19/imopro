@@ -1,5 +1,3 @@
-import { Property } from '"../views/company/property/Property";
-
 const vector = {
 
     listCountry : [

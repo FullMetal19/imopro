@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from ''react-router-dom';
-import { BottomBar } from '"../components/Footer";
-import { UserApi } from ''../services/user.api';
+import { useNavigate } from 'react-router-dom';
+import { BottomBar } from "../components/Footer";
+import { UserApi } from '../services/user.api';
 import vector from '../config/data';
 
 
@@ -23,9 +23,8 @@ export function Signup(){
   
     const handleForm = async ( event ) => {
         event.preventDefault();
-        // console.log(inputs);
         setIsLoading(true);
-        if(inputs.password ==== inputs.cpassword )
+        if(inputs.password === inputs.cpassword )
         {   
             try {
                 const res = await user.insert(inputs);
@@ -52,13 +51,14 @@ export function Signup(){
                       <div className="col-md-4 d-flex align-items-center bg-gray-light px-4 py-2">
                         <div className="d-flex flex-column p-2" >
                           <div className="d-flex" >
-                            <span className="mb-3 hide bg-secondary px-4 py-2 rounded-2 shadow-sm"> 
-                              {/* <i class="bi bi-house-door-fill fs-3 text-light"></i>  */}
+                            <span className="mb-3 hide border border-secondary px-4 py-2 rounded-2"> 
                               <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                             </span>
                           </div>
-                          <span className="hide h1 text-secondary"> ImoPro votre entreprise immobilière </span>
-                          <span className="hide lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
+                          <h1 className="hide h1 text-secondary"> Diwane+, la plateforme immobilière de référence </h1>
+                          <p className="hide lead text-secondary" > 
+                            Inscrivez-vous en quelques clics et découvrez un monde de propriétés à louer, acheter ou vendre, directement depuis votre espace personnel. 
+                          </p>
                         </div>
                       </div>
                       {/* ************************************************************************ */}  
@@ -67,9 +67,9 @@ export function Signup(){
                           <div className="col-md-12 pt-4">
                             <div className=" d-flex flex-column gap-2" > 
                               <div className="d-flex mb-1" >
-                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-4 text-white"></i> </span>
+                                <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i className="bi bi-house-door-fill fs-4 text-white"></i> </span>
                               </div>
-                              <span className="lead text-muted text-start fs-3"> Imopro - inscription </span>
+                              <span className="lead text-muted text-start fs-3"> Diwane+ - inscription </span>
                             </div>
                           </div>
                           <div className="col-md-12 rounded-2 py-4">
@@ -83,7 +83,7 @@ export function Signup(){
                               )
                             }
                             {
-                              status ==== -1 && (
+                              status === -1 && (
                                 <div className="col-lg-12 mb-2">
                                   <div className="alert alert-danger">
                                      Une erreur est survenue lors de la creation de votre compte, veuillez rééssayer s'il vous plaît.
@@ -92,7 +92,7 @@ export function Signup(){
                               )
                             }
                             {
-                              status ==== -2 && (
+                              status === -2 && (
                                 <div className="col-md-12 mb-2">
                                   <div className="alert alert-danger">
                                     Erreur! Veuillez revoir votre mot de passe et la confirmation.
@@ -166,8 +166,8 @@ export function Signup(){
                                 <input type="checkbox" name="checker" checked={checked} className="border text-muted checkbox" onChange={ handleChange } required />
                                 <span className="d-flex align-items-center gap-2 text-secondary"> 
                                   <span> J'accepte les  </span>  
-                                  <a href="/" target="outlet" className="nav-link text-blue-clr"> conditions d'utilisation <i className="bi bi-arrow-right"></i></a>
-                                  <span> d'Imopro </span> 
+                                  <a href="/condition-utilisation" target="outlet" className="nav-link text-blue-clr"> conditions d'utilisation <i className="bi bi-arrow-right"></i></a>
+                                  <span> de Diwane+ </span> 
                                   </span> 
                               </div>
                             </div>

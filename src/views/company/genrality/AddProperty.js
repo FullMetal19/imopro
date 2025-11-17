@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Layout } from '"../Layout";
-import { ProductApi } from '"../../../services/product.api";
-import { useParams } from '"react-router";
-import { LoaderModal } from '"./Modal";
+import { Layout } from "../Layout";
+import { ProductApi } from "../../../services/product.api";
+import { useParams } from "react-router";
+import { LoaderModal } from "./Modal";
 import vector from "../../../config/data";
 
 
 import MapPicker from "../../../components/MapPicker"; 
-import { Modal } from '"react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 
 
@@ -29,15 +29,15 @@ export function AddProperty()
 
     const handleInputs = (event) => {
         const { name, value, files, type } = event.target;
-        if( name ==== 'country' ) {
-            const selectedRegionData = vector.listRegion.find(item => item.country ==== value);
+        if( name === 'country' ) {
+            const selectedRegionData = vector.listRegion.find(item => item.country === value);
             setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
         }
-        if( name ==== 'type' ) {
-            const selectedTypeData = vector.listOfFieldType.find(item => item.type ==== value); 
+        if( name === 'type' ) {
+            const selectedTypeData = vector.listOfFieldType.find(item => item.type === value); 
             setSelectedType(selectedTypeData ? selectedTypeData.subType : []);
         }
-        if (type ==== 'file') {
+        if (type === 'file') {
             setInputs((prev) => ({ ...prev, [name]: files }));
             const previews = Array.from(files).map((file) => URL.createObjectURL(file) );
             setPreviewUrls(previews);
@@ -60,7 +60,7 @@ export function AddProperty()
         try {
             const formData = new FormData();
             for (const key in inputs) {
-                if (key ==== 'images') {
+                if (key === 'images') {
                     for(let i = 0; i < inputs.images.length; i++ ){
                         formData.append('images', inputs.images[i]);
                     }
@@ -328,7 +328,7 @@ export function AddProperty()
                                           {/* -------------------------------------------------------------------------  */}
 
                                            {
-                                              inputs?.type?.toLowerCase() ==== "logement" && (
+                                              inputs?.type?.toLowerCase() === "logement" && (
 
                                           <div className="col-md-12 mb-4 bg-white p-4 border border-primary rounded-2">
                                             <div className="row"> 
@@ -386,9 +386,9 @@ export function AddProperty()
                                           <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row mb-4 border-bottom"> 
                                                 {
-                                                ( status ==== 1 ) ? 
+                                                ( status === 1 ) ? 
                                                 (  <div className="my-3"> <div className="alert alert-primary border py-2 px-4 rounded-1"> { message } </div> </div> ) :
-                                                ( status ==== -1 ) ?
+                                                ( status === -1 ) ?
                                                 (  <div className="my-3"> <div className="alert alert-danger border py-2 px-4 rounded-1"> { message } </div> </div>) : null
                                                 }
                                             </div>

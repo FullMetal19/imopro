@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import vector from "../config/data";
-import { ContactContainer } from '"../components/Container";
-import { Header, NavigationBar, TopBar } from '"../components/Header";
-import { Footer } from '"../components/Footer";
-import { MessageApi } from '"../services/messsage.api";
-import { LoginCheckerModal } from '"../components/Modal";
+import { ContactContainer } from "../components/Container";
+import { NavigationBar, TopBar } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { MessageApi } from "../services/messsage.api";
+import { LoginCheckerModal } from "../components/Modal";
 
 
-export function Contact(){
+export function Contact()
+{
 
     const message = MessageApi();
 
@@ -55,7 +56,7 @@ export function Contact(){
             </div>
             {/* ************************************************************************ */}   
             <div className="row bg-three-clr py-5 px-4 d-flex justify-content-center"> 
-               <span className="lead fs-2 text-center text-secondary"> Nos contacts </span>
+               <h1 className="lead fs-2 text-center text-secondary"> Nos contacts </h1>
             </div>
             {/* ************************************************************************ */}
             <div className="row justify-content-center py-5" > 
@@ -76,16 +77,16 @@ export function Contact(){
                 <form className="row px-3 py-5 border bg-white rounded-3" onSubmit={handleForm} > 
                     <div className="col-md-12 mb-5" > 
                         <div className=" d-flex flex-column border-left-main px-3 ms-1 bg-gray-light py-3" > 
-                            <span className="lead fs-4 text-secondary mb-1"> Lorem Ipsum is simply dummy </span>
-                            <span className="text-secondary"> Lorem Ipsum is simply dummy text of the and typesetting </span>
+                            <p className="lead fs-4 text-secondary mb-1"> Envoyez-nous un message et commençons votre projet ensemble. </p>
+                            <p className="text-secondary"> Chez Diwane+, chaque projet compte. Que vous cherchiez à louer, acheter ou vendre, notre équipe est là pour vous écouter, vous conseiller et vous accompagner à chaque étape. </p>
                         </div> 
                     </div> 
                     {
                         isLoading ? ( <div className="col-md-12 d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                     }
                     {
-                        (status ==== 1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-success">  Message envoyé avec succés. Notre équipe vous contactera d'ici peu. Merci  </div> </div> ) : 
-                        ( (status ==== -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoir. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
+                        (status === 1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-success">  Message envoyé avec succés. Notre équipe vous contactera d'ici peu. Merci  </div> </div> ) : 
+                        ( (status === -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoir. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
                     }
                     <div className="col-md-12 mb-4" > 
                         <input type="text" name="title" className="border p-3 rounded-2 text-secondary w-100" placeholder="Objet du message" required onChange={handleInputs} />
@@ -94,7 +95,7 @@ export function Contact(){
                         <textarea className="border p-3 rounded-2 text-secondary w-100" name="message" rows={10} placeholder="Contenu du message message" onChange={handleInputs} />
                     </div>
                     <div className="col-md-12 mb-4" > 
-                        <button type="submit" className="btn btn-main"> Envoyez maintenant <i class="bi bi-arrow-right"></i>  </button> 
+                        <button type="submit" className="btn btn-main"> Envoyez maintenant <i className="bi bi-arrow-right"></i>  </button> 
                     </div>
                 </form> 
               </div>

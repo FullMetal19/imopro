@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-import { WithdrawForm } from '"./Form";
-import { Historic } from '"./Historic";
-import { PaymentApi } from '"../../../services/payment.api";
-import { useParams } from '"react-router";
+import React, { useCallback, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { WithdrawForm } from "./Form";
+import { Historic } from "./Historic";
+import { PaymentApi } from "../../../services/payment.api";
+import { useParams } from "react-router";
 
 
 export function Balance()
@@ -12,6 +12,10 @@ export function Balance()
     const payment = PaymentApi();
 
     const [refetch, setRefetch] = useState();
+
+    const setRefetchFn = useCallback((fn) => {
+       setRefetch(fn);
+    }, []);
 
     const [filter, setFilter] = useState(false);
     const [view, setView] = useState(false);
@@ -59,7 +63,7 @@ export function Balance()
                         </div>
                         {/* ************************************************************** */}
                         <div className="flex-3">
-                            <Historic companyId={companyId} setRefetch={setRefetch} />
+                            <Historic companyId={companyId} setRefetch={ setRefetchFn } />
                         </div>
                     </div>
                 </div>

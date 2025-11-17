@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { PaymentApi } from '"../../services/payment.api";
-import { useParams } from '"react-router";
+import { useQuery } from "@tanstack/react-query";
+import { PaymentApi } from "../../services/payment.api";
+import { useParams } from "react-router";
 
 
 export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
@@ -57,50 +57,63 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
             {/* ************************************************************************ */}
             <div className="row px-4 py-5">
                 <div className="table-responsive">
-                <table className="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th className="text-blue-clr" scope="col"> Date </th>
-                            <th className="text-blue-clr" scope="col"> Opérateur </th>
-                            <th className="text-blue-clr" scope="col"> Montant </th>
-                            <th className="text-blue-clr" scope="col"> Mensualité </th>
-                            <th className="text-blue-clr" scope="col"> Information </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { 
-                            isLoading ? ( <div className="p-2 mt-3 d-flex justify-content-center"> <div className="spinner-border text-blue-clr fs-1" role="status" aria-label="Chargement"></div> </div> ) : (
-                                filteredData?.map(( item , index ) => { return (
-                                <tr key={index}>
-                                    <td className="text-secondary"> {item?.createdAt} </td>
-                                    <td className="text-secondary"> {item?.operator} </td>
-                                    <td className="text-secondary"> {item?.amount} Fcfa </td>
-                                    <td className="text-secondary"> {item?.month} </td>
-                                    <td className="text-secondary"> <button className="btn btn-sm btn-outline-main" onClick={ ()=> setModal(item) }> Voir-plus </button>  </td>
-                                 </tr>     
-                                )
-                            }))      
-                        }
-                                       
-                    </tbody>
-                </table>
-                {
-                    error && (
-                                
-                        <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">
-                            Une erreur est survenue, veuillez verifier votre connexion puis réessayer
-                        </div>
-                            
-                    ) 
-                } 
-                {
-                    ( Array.isArray(data) && data.length ==== 0 ) && ( <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">Liste vide, pas de correspondance à ce filtre. </div> ) 
-                } 
+
+                    <table className="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th className="text-blue-clr">Date</th>
+                                <th className="text-blue-clr">Opérateur</th>
+                                <th className="text-blue-clr">Montant</th>
+                                <th className="text-blue-clr">Mensualité</th>
+                                <th className="text-blue-clr">Information</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {isLoading ? (
+                                <tr>
+                                    <td colSpan={5} className="text-center py-4">
+                                        <span className="spinner-border text-blue-clr fs-1"></span>
+                                    </td>
+                                </tr>
+                            ) : (
+                                filteredData?.map((item, index) => (
+                                    <tr key={index}>
+                                        <td className="text-secondary">{item?.createdAt}</td>
+                                        <td className="text-secondary">{item?.operator}</td>
+                                        <td className="text-secondary">{item?.amount} Fcfa</td>
+                                        <td className="text-secondary">{item?.month}</td>
+                                        <td className="text-secondary">
+                                            <button
+                                                className="btn btn-sm btn-outline-main"
+                                                onClick={() => setModal(item)}
+                                            >
+                                                Voir-plus
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
+                        </tbody>
+                    </table>
 
                 </div>
+
+                {/* Ces blocs doivent être EN DEHORS de la table */}
+                {error && (
+                    <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">
+                        Une erreur est survenue, veuillez vérifier votre connexion puis réessayer
+                    </div>
+                )}
+
+                {Array.isArray(data) && data.length === 0 && (
+                    <div className="p-3 mt-3 d-flex justify-content-center lead text-secondary">
+                        Liste vide, pas de correspondance à ce filtre.
+                    </div>
+                )}
             </div>
-        </div> 
-                    
+
+        </div>                  
     )
 }
 

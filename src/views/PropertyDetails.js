@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { LoginCheckerModal, VideoModal, VisitBookingModal } from '"../components/Modal";
-import { NavigationBar, TopBar } from '"../components/Header";
-import { Footer } from '"../components/Footer";
+import { LoginCheckerModal, VisitBookingModal } from "../components/Modal";
+import { NavigationBar, TopBar } from "../components/Header";
+import { Footer } from "../components/Footer";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useNavigate, useParams } from ''react-router-dom';
+import { useParams } from 'react-router-dom';
 import Slider from "react-slick";
-import { ProductApi } from '"../services/product.api";
-import { PaymentForm } from '"../components/Form";
-import { useQuery } from '"@tanstack/react-query";
+import { ProductApi } from "../services/product.api";
+// import { PaymentForm } from "../components/Form";
+import { useQuery } from "@tanstack/react-query";
 
 
 const settings = {
@@ -51,7 +51,7 @@ export function PropertyDetails(){
         }
     }
 
-    const [ payFormState, setPayForm ] = useState( false )
+    // const [ payFormState, setPayForm ] = useState( false )
 
     return (
         
@@ -100,9 +100,9 @@ export function PropertyDetails(){
                            isLoading ? ( <Skeleton height={30} width={350} /> ) :  (
 
                               <div className="d-flex">
-                                <span className="bg-blue-light-clr px-2 py-1 text-secondary lead rounded-start-2 border border-light"> <i class="bi bi-cash"></i> </span>
+                                <span className="bg-blue-light-clr px-2 py-1 text-secondary lead rounded-start-2 border border-light"> <i className="bi bi-cash"></i> </span>
                                 <span className="bg-blue-light-clr border border-light text-secondary lead px-3 py-1 rounded-end-2">  
-                                   { data?.price +  ' Fcfa ' } { ( data?.title ==== "à louer" ) && " / mois" } 
+                                   { data?.price +  ' Fcfa ' } { ( data?.title === "à louer" ) && " / mois" } 
                                 </span>  
                               </div>
                            ) 
@@ -141,12 +141,12 @@ export function PropertyDetails(){
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de niveau : { data?.floor } </span> ) } </div>
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de cuisine : { data?.kitchen } </span> ) } </div> 
                                         </div> 
-                                        {
+                                        {/* {
                                             payFormState ? ( <span className="text-clr h5 mb-2"> Les informations sur la geolocalisation de la propriété sont payant. </span> ) : null
                                         } 
                                         {
                                             payFormState ? ( <PaymentForm amount={1000} /> ) : null
-                                        } 
+                                        }  */}
                                     </div>
                                     {/* ************************************************************************ */}
                                     <div className="col-lg-1"></div>
@@ -155,16 +155,16 @@ export function PropertyDetails(){
                                     <div className="col-lg-4 d-flex flex-column">
                                         <div className="row d-flex flex-column border bg-white pt-4"> 
                                             <div className="d-flex justify-content-center align-items-center my-3 " > 
-                                                <span className='circle bg-three-clr' > <i class="bi bi-check-circle text-blue-clr fs-1"></i> </span>
+                                                <span className='circle bg-three-clr' > <i className="bi bi-check-circle text-blue-clr fs-1"></i> </span>
                                             </div>
                                             <span className="text-center text-secondary lead mb-2"> the location description </span>
                                             <span className="text-center text-secondary mb-4 px-4 pb-3" > this is the location description Lorem Ipsum is simply dummy text of the industrythis this is  </span>
                                             <div className="d-flex justify-content-center p-2 bg-blue-clr"> 
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-twitter-x text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-facebook text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-linkedin text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-youtube text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i class="small bi bi-instagram text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-twitter-x text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-facebook text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-linkedin text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-youtube text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-instagram text-white"></i> </a>
                                             </div>
                                         </div>
                                         {/* ********************************** FORM 2 ************************************** */}

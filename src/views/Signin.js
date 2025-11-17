@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from ''react-router-dom';
-import { BottomBar } from '"../components/Footer";
-import { Header } from ''../components/Header';
-import { UserApi } from ''../services/user.api';
-import { PasswordModal } from ''../components/Modal';
+import { useNavigate } from 'react-router-dom';
+import { BottomBar } from "../components/Footer";
+import { UserApi } from '../services/user.api';
+import { PasswordModal } from '../components/Modal';
 
 export function Signin(){
 
@@ -21,7 +20,6 @@ export function Signin(){
   
     const handleForm = async ( event ) => {
         event.preventDefault();
-        // console.log(inputs);
         setStatus(0);
         setIsLoading(true);
         try {
@@ -29,14 +27,7 @@ export function Signin(){
             setIsLoading(false);
             if( res.data.success ){
                 setIsLoading(false);
-                // sessionStorage.setItem("uid", res.data.uid);
                 localStorage.setItem("token", res.data.token);
-                // sessionStorage.setItem("status", res.data.status);
-                // sessionStorage.setItem("companyStatus", res.data.companyStatus);
-                // sessionStorage.setItem("fname", res.data.fname);
-                // sessionStorage.setItem("lname", res.data.lname);
-                // sessionStorage.setItem("email", res.data.email);
-                // sessionStorage.setItem("phone", res.data.phone);
                 navigate('/');
             }
         } catch (err) { 
@@ -60,13 +51,14 @@ export function Signin(){
                 <div className="col-md-6 d-flex align-items-center bg-gray-light p-4">
                   <div className="col-md-10 d-flex flex-column p-4" >
                     <div className="d-flex mb-3" >
-                      <span className="d-flex align-items-center justify-content-center bg-secondary px-4 py-2 rounded-2 shadow-sm"> 
-                        {/* <i class="bi bi-house-door-fill fs-3 text-light"></i>  */}
+                      <span className="d-flex align-items-center justify-content-center border border-secondary px-4 py-2 rounded-2"> 
                         <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                       </span>
                     </div>
-                    <span className="h1 text-secondary"> ImoPro votre entreprise immobilière </span>
-                    <span className="lead text-secondary" > Lorem Ipsum is simply dummy text of the and typesetting. Lorem Ipsum is simply dummy </span>
+                    <h1 className="h1 text-secondary"> Diwane+, la plateforme immobilière de référence </h1>
+                    <p className="lead text-secondary" > 
+                      Connectez-vous et accédez à votre espace personnel pour gérer vos annonces, vos favoris et vos transactions en toute sécurité.
+                    </p>
                   </div>
                 </div>
                 {/* ************************************************************************ */}  
@@ -77,9 +69,9 @@ export function Signin(){
                   <form onSubmit={ handleForm } className="d-flex flex-column">
                     <div className=" d-flex flex-column align-items-center gap-2 mb-4" > 
                       <div className="d-flex mb-3" >
-                        <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-4 py-2 rounded-2 shadow-sm"> <i class="bi bi-house-door-fill fs-3 text-white"></i> </span>
+                        <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-4 py-2 rounded-2 shadow-sm"> <i className="bi bi-house-door-fill fs-3 text-white"></i> </span>
                       </div>
-                      <span className="lead text-muted text-start"> Imopro - connexion </span>
+                      <span className="lead text-muted text-start"> Diwane+ - connexion </span>
                     </div>
                     {
                       isLoading && (
@@ -89,7 +81,7 @@ export function Signin(){
                       )
                     }
                     {
-                      status ==== -1 && (
+                      status === -1 && (
                         <div className="col-md-12 mb-2">
                           <div className="alert alert-danger">
                             Erreur d'authentification, rééssayer.

@@ -1,5 +1,5 @@
-import { useState } from '"react";
-import { ProductApi } from '"../../../services/product.api";
+import React, { useState } from "react";
+import { ProductApi } from "../../../services/product.api";
 
 export function MessageModal({ method, message })
 {
@@ -60,9 +60,9 @@ export function RemovingModal({ method, message, propertyId, refetch })
                             isLoading ? ( <div className="d-flex justify-content-center mb-4"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                         }
                         {
-                            ( status ==== 1 ) ? 
+                            ( status === 1 ) ? 
                             (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Propriété supprimée avec succes </div> </div> ) :
-                            ( status ==== -1 ) ?
+                            ( status === -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
                         {/* ************************************************************************ */}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
-import { Navigation } from '"./Navigation";
-import { CompanyApi } from '"../../../services/company.api";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
+import { Navigation } from "./Navigation";
+import { CompanyApi } from "../../../services/company.api";
 
 
 export function Companies()
@@ -14,7 +14,6 @@ export function Companies()
     const fetchCompanies = async () => {
         try {
             const res = await company.findAllByStatus(2);
-            // console.log(res.data.data)
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
@@ -49,8 +48,8 @@ export function Companies()
                             {/* **************************************************** */}
                             <div className="row d-flex justify-content-end align-items-center border-bottom py-3 px-4"> 
                                 <div className="col-md-8 d-flex gap-2"> 
-                                    <span className="form-control bg-light"> Filtre </span>
-                                    <input type="text" name="companyName" value={companyName} className="form-control text-muted" placeholder="Recherche entreprise" required onChange={ handleInputChange } /> 
+                                    <span className="form-control"> Filtre </span>
+                                    <input type="text" name="companyName" value={companyName} className="border rounded-2 p-2 w-100 text-muted bg-light" placeholder="Recherche entreprise" required onChange={ handleInputChange } /> 
                                 </div> 
                             </div>
                             {/* **************************************************** */}
@@ -77,7 +76,7 @@ export function Companies()
                                 error ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3" > Une erreur est survenue lors du traitement. Veuillez verifier votre connexion </span> </div> ) : null
                             }
                             {
-                                ( Array.isArray(data) && data.length ==== 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
+                                ( Array.isArray(data) && data.length === 0 ) ? ( <div className="col-md-12"> <span className="d-flex border text-secondary px-4 py-3 mt-3"> Aucune propriété n'a été enregistrée. </span> </div> ) : null
                             }                                                   
                             </div>
                         </div>

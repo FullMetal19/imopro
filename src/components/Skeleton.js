@@ -1,8 +1,7 @@
-import React from "react";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 
-// ***********************************************************************************
+
 export function ServiceSkeleton({value}) 
 {
     return (
@@ -23,7 +22,7 @@ export function ServiceSkeleton({value})
     )
 }
 
-// ******************************************************************************************************
+
 export function LocationSkeleton({value, design}) 
 {
     return (
@@ -31,11 +30,11 @@ export function LocationSkeleton({value, design})
         Array(value).fill(0).map( (item, index) => { return (
             <div className={ design } key={index}> 
                 <div className="d-flex flex-column border bg-white mx-2"> 
-                    <div className="d-flex flex-column justify-content-center align-items-center mb-2" >
-                        <Skeleton width={250} height={200} />
+                    <div className="mb-3" >
+                        <Skeleton height={200} />
                     </div>
                     <div className="d-flex flex-column px-3 pb-4" >
-                        <Skeleton width={180} count={3} />
+                        <Skeleton width={'70%'} count={3} height={22} />
                     </div>
                 </div>
             </div>
@@ -43,75 +42,73 @@ export function LocationSkeleton({value, design})
     )
 }
 
-// ************************************************************************************************
+
 export function HouseSkeleton({value, design}) 
 {   
     return (
 
         Array(value).fill(0).map( (item, index) => { return (        
             <div className={ design } key={index} > 
-                <div className="d-flex flex-column border bg-white mx-2"> 
-                    <div className="d-flex flex-column justify-content-center align-items-center mb-2" >
-                        <Skeleton width={250} height={190} />
+                
+                <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
+                    {/* Image principale */}
+                    <Skeleton height={250} />
+                    {/* Galerie */}
+                    <div className="d-flex gap-3 p-3">
+                        <Skeleton width={80} height={60} />
+                        <Skeleton width={80} height={60} />
+                        <Skeleton width={80} height={60} />
                     </div>
-                    <div className="d-flex flex-column px-3" >
-                        <Skeleton count={2} width={180} />
-                        <Skeleton count={2} />
+                    {/* Contenu */}
+                    <div className="px-3 pb-3 pt-1">
+                        <Skeleton width={"70%"} height={25} />
                     </div>
-                    <hr />
-                    <div className="row d-flex justify-content-between px-3 mb-4" >   
-                        <div className="col-6" >   
-                            <div className="d-flex" >   
-                                <Skeleton circle  width={50} height={50} />
-                                <div className="ms-1" >   
-                                    <Skeleton count={2} width={100} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-4" >   
-                            <Skeleton />
-                        </div>
+                    <div className="border-top border-bottom py-2 px-3">
+                        <Skeleton height={20} />
+                        <Skeleton height={18} />
+                    </div>
+                    {/* Boutons */}
+                    <div className="p-3">
+                        <Skeleton height={40} />
                     </div>
                 </div>
+
             </div>
         )})
     )
 }
 
-//******************************************************************************************************************
+
 export function FieldSkeleton({ value, design}) 
 {
     return (
 
         Array(value).fill(0).map( (item, index) => { return ( 
             <div className={ design } key={index} > 
-                <div className="d-flex flex-column border bg-white mx-2"> 
-                    <div className="d-flex flex-column justify-content-center align-items-center mb-2" >
-                        <Skeleton width={250} height={190} />
+                
+                <div className="d-flex flex-column bg-white my-2 shadow-sm border rounded-2">
+                    {/* Image principale */}
+                    <Skeleton height={250} />
+                    {/* Contenu */}
+                    <div className="px-3 py-4">
+                        <Skeleton width={"70%"} height={25} />
                     </div>
-                    <div className="d-flex flex-column px-3" >
-                        <Skeleton width={180} />
-                        <Skeleton count={2} />
+                    <div className="border-top border-bottom py-2 px-3">
+                        <Skeleton height={20} />
+                        <Skeleton height={18} />
                     </div>
-                    <hr />
-                    <div className="row d-flex justify-content-between px-3 mb-4" >   
-                        <div className="col-6" >   
-                            <div className="d-flex" >   
-                                <Skeleton width={30} height={30} />
-                                <div className="ms-1" > <Skeleton width={120} /> </div>
-                            </div>
-                        </div>
-                        <div className="col-4" >   
-                            <Skeleton />
-                        </div>
+                    {/* Boutons */}
+                    <div className="p-3">
+                        <Skeleton height={40} />
                     </div>
                 </div>
+
             </div>
         )})
     )
 }
 
-//*****************************************************************************************************************
+
 export function TestimonialSkeleton({value})
 {
     return (

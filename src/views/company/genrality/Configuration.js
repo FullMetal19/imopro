@@ -1,17 +1,14 @@
 
 import React, { useEffect, useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Layout } from '"../Layout";
+import { useQuery } from "@tanstack/react-query";
+import { Layout } from "../Layout";
 import Skeleton from "react-loading-skeleton";
-import Slider from "react-slick";
-import { LoaderModal, RemovingModal } from '"./Modal";
-import { ProductApi } from '"../../../services/product.api";
-import { useParams } from '"react-router";
+import { LoaderModal, RemovingModal } from "./Modal";
+import { ProductApi } from "../../../services/product.api";
+import { useParams } from "react-router";
 import vector from "../../../config/data";
 import MapPicker from "../../../components/MapPicker"; 
-import { Modal } from '"react-bootstrap";
-
-
+import { Modal } from "react-bootstrap";
 
 export function Configuration() {
   const product = ProductApi();
@@ -46,12 +43,12 @@ export function Configuration() {
        console.log(data);
       // Preload regions and types based on data
       const selectedRegionData = vector.listRegion.find(
-        (item) => item.country ==== data.country
+        (item) => item.country === data.country
       );
       setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
 
       const selectedTypeData = vector.listOfFieldType.find(
-        (item) => item.type ==== data.type
+        (item) => item.type === data.type
       );
       setSelectedType(selectedTypeData ? selectedTypeData.subType : []);
     }
@@ -61,16 +58,16 @@ export function Configuration() {
   const handleInputs = (event) => {
     const { name, value } = event.target;
 
-    if (name ==== "country") {
+    if (name === "country") {
       const selectedRegionData = vector.listRegion.find(
-        (item) => item.country ==== value
+        (item) => item.country === value
       );
       setSelectedRegion(selectedRegionData ? selectedRegionData.region : []);
     }
 
-    if (name ==== "type") {
+    if (name === "type") {
       const selectedTypeData = vector.listOfFieldType.find(
-        (item) => item.type ==== value
+        (item) => item.type === value
       );
       setSelectedType(selectedTypeData ? selectedTypeData.subType : []);
     }
@@ -233,7 +230,7 @@ export function Configuration() {
                                           </div>
                                            {/* -------------------------------------------------------------------------  */}
                                            {
-                                              inputs?.type?.toLowerCase() ==== "logement" && (
+                                              inputs?.type?.toLowerCase() === "logement" && (
 
                                           <div className="col-md-12 mb-4 bg-white p-4 border border-primary rounded-2">
                                             <div className="row"> 
@@ -312,7 +309,7 @@ export function Configuration() {
                                           {/* -------------------------------------------------------------------------  */}
                                           <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row d-flex justify-content-center"> 
-                                              <div className="col-md-8">
+                                              <div className="col-md-11">
                                                 <div className="d-flex flex-column mb-2">  
                                                     <span className="text-muted fs-xs mb-3"> Images des propriétés  </span>
                                                     <div className="d-flex gap-1 mb-2 border rounded-3 p-3" >
@@ -324,8 +321,8 @@ export function Configuration() {
                                                             
                                                               {inputs?.media && inputs.media.length > 0 ? (
                                                                 inputs.media.map((item, index) => (
-                                                                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center" key={index}>
-                                                                      <img src={item.path} alt={`Image ${index + 1}`}  height={200} className="img-fluid rounded-3 border" />
+                                                                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center mb-4" key={index}>
+                                                                      <img src={item.path} alt={`image-${index + 1}`}  height={200} className="img-fluid rounded-3 border" />
                                                                     </div>
                                                                  ))
                                                               ) : (
@@ -407,9 +404,9 @@ export function Configuration() {
                                           <div className="col-md-12 mb-4 bg-white p-4 border rounded-2">
                                             <div className="row mb-4 border-bottom"> 
                                                 {
-                                                ( status ==== 1 ) ? 
+                                                ( status === 1 ) ? 
                                                 (  <div className="my-3"> <div className="alert alert-primary border py-2 px-4 rounded-1"> { message } </div> </div> ) :
-                                                ( status ==== -1 ) ?
+                                                ( status === -1 ) ?
                                                 (  <div className="my-3"> <div className="alert alert-danger border py-2 px-4 rounded-1"> { message } </div> </div>) : null
                                                 }
                                             </div>

@@ -1,4 +1,4 @@
-import { apiClient, apiClientAuth } from '"../config/httpClient";
+import { apiClient, apiClientAuth } from "../config/httpClient";
 
 
 export function UserApi(contentType = "application/json")
@@ -24,7 +24,7 @@ export function UserApi(contentType = "application/json")
 
         blockAccount : (id) => https.put(`/api/user/block-account/${id}`), 
 
-        setStatus : (uid, adminId) => http.put(`/api/user/update-status/${uid}/${adminId}`), 
+        setStatus : (uid) => http.put(`/api/user/update-status/${uid}`), 
 
 
         // logout : (data) => https.post("/api/user/logging-out", data), 

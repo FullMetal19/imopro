@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { PaymentApi } from '"../../../services/payment.api";
-import { useQuery } from '"@tanstack/react-query";
+import { PaymentApi } from "../../../services/payment.api";
+import { useQuery } from "@tanstack/react-query";
 
 export function BalanceContainer ()
 {        
      const payment = PaymentApi();
 
-    const [filter, setFilter] = useState(false);
     const [view, setView] = useState(false);
 
     const fetchData = async () => {

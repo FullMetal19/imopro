@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useQuery } from '"@tanstack/react-query";
-import { Header, NavigationBar, TopBar } from '"../components/Header";
-import { LocationComponent, SectionTitle } from '"../components/Component";
-import { ServiceContainer } from '"../components/Container";
-import { Footer } from '"../components/Footer";
-import { VideoModal } from '"../components/Modal";
-import { ServiceApi } from '"../services/service.api";
-import { ServiceSkeleton } from '"../components/Skeleton";
+import { useQuery } from "@tanstack/react-query";
+import { NavigationBar, TopBar } from "../components/Header";
+import { LocationComponent } from "../components/Component";
+import { ServiceContainer } from "../components/Container";
+import { Footer } from "../components/Footer";
+import { VideoModal } from "../components/Modal";
+import { ServiceApi } from "../services/service.api";
+import { ServiceSkeleton } from "../components/Skeleton";
 
 
 export function Service(){
@@ -54,31 +54,33 @@ export function Service(){
                     </div>  
                     <div className="col-md-6"> 
                         <div className="d-flex flex-column">
-                            <div className="my-5" > <span className='py-3 px-4 bg-three-clr text-secondary lead rounded-5' > Service's title </span> </div> 
-                            <span className='fs-1 lead mb-4 text-secondary' > This is the title of this saction </span>
-                            <span className='text-secondary mb-5' > this is the location description Lorem Ipsum is simply dummy text of the industrythis this is the location description Lorem Ipsum is simply dummy text of the industrythis is the location description Lorem Ipsum is simply dummy text of the industry this is the location description Lorem Ipsum is simply dummy text of the industrythis is the location description Lorem Ipsum is simply dummy text of the industry </span>
+                            <div className="my-5" > <span className='py-3 px-4 bg-three-clr text-secondary lead rounded-5' > Diwane+ votre partenaire de confiance </span> </div> 
+                            <h1 className='fs-1 lead mb-4 text-secondary' > Pourquoi choisir Diwane+ </h1>
+                            <p className='text-muted mb-5 lead' > 
+                                Chez Diwane+, nous mettons la transparence, la simplicité et la confiance au cœur de chaque démarche immobilière. Notre plateforme vous offre des services fiables, des annonces de qualités, une expérience fluide et des outils modernes pour louer, vendre ou acheter en toute sérénité. Nous vous accompagnons à chaque étape avec professionnalisme, réactivité et un souci constant de qualité.
+                            </p>
                             <div className="row">
                                 <div className="col-lg-6 d-flex align-items-center mb-4">
-                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i class="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
-                                   <span className='text-secondary ms-2' > This is the title </span>
+                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i className="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
+                                   <span className='text-secondary ms-2' > Fiabilité et transparence </span>
                                 </div> 
                                 <div className="col-lg-6 d-flex align-items-center mb-4">
-                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i class="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
-                                   <span className='text-secondary ms-2' > This is the title </span>
+                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i className="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
+                                   <span className='text-secondary ms-2' > Technologie et simplicité </span>
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center mb-4">
-                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i class="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
-                                   <span className='text-secondary ms-2' > This is the title </span>
+                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i className="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
+                                   <span className='text-secondary ms-2' > Accompagnement personnalisé </span>
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center mb-4">
-                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i class="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
-                                   <span className='text-secondary ms-2' > This is the title </span>
+                                   <span className='rounded-circle d-flex bg-three-clr px-3 py-2' > <i className="bi bi-check-circle fs-4 text-blue-clr"></i> </span>
+                                   <span className='text-secondary ms-2' > Qualité et professionnalisme </span>
                                 </div>
                             </div> 
-                            <span className='p-4 bg-three-clr my-4 border-left-main text-secondary' > this is the location description Lorem Ipsum is simply dummy text of the industrythis this is the location description Lorem Ipsum is simply dummy text of the industrythis is the location description </span>     
+                            <p className='p-4 bg-three-clr my-4 border-left-main text-secondary lead' > Avec Diwane+, vous faites le choix d’un partenaire de confiance, engagé à valoriser votre patrimoine et à protéger vos investissements. </p>     
                             <div> 
                                 <button className="px-3 mt-2 btn btn-main" onClick={ setModal }>
-                                    <i class="bi bi-play-circle text-white me-2"></i>
+                                    <i className="bi bi-play-circle text-white me-2"></i>
                                     <span className="text-white"> Voir video </span>
                                 </button> 
                             </div> 
@@ -97,7 +99,7 @@ export function Service(){
                 <div className="py-5"> 
                     <div className="row justify-content-center"> 
                       <div className="col-md-8 col-lg-5 d-flex flex-column"> 
-                          <div className="px-5 py-3 w-100 text-center text-secondary border bg-light rounded-5 lead"> Nos services chez Imopro </div>
+                          <div className="px-5 py-3 w-100 text-center text-secondary border bg-light rounded-5 lead"> Nos Services Immobiliers </div>
                       </div>
                     </div>
                     <div className="row mt-5"> 
