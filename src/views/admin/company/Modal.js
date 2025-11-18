@@ -31,7 +31,7 @@ export function Modal({ method, message, companyId, refetch })
         <div className="modal-container">
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
-                    <div className="col-lg-5 col-md-8 bg-three-clr p-4 d-flex flex-column">
+                    <div className="col-lg-5 col-md-8 bg-white p-4 d-flex flex-column">
                         <div className="text-end"> 
                           <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>    
                         </div>
