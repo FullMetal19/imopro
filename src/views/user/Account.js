@@ -24,6 +24,7 @@ export function Account()
                 localStorage.setItem('cname', data?.data?.company?.name);
                 localStorage.setItem('cicon', data?.data?.company?.icon);
             }
+            console.log(data.data);
             return data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
@@ -96,8 +97,19 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {(() => {
+
+console.log("companyStatus type:", typeof data?.companyStatus);
+console.log("status type:", typeof data?.status);
+
+
   const companyStatus = parseInt(data?.companyStatus);
   const status = parseInt(data?.status);
+
+   console.log("DEBUG:", { companyStatus, status });
+
+   console.log("companyStatus type:", typeof companyStatus);
+console.log("status type:", typeof status);
+
 
   if (companyStatus === 0 && status === 1) {
     return (
