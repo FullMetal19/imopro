@@ -107,7 +107,7 @@ export function Account()
                                   );
                                 }
 
-                                if (data?.companyStatus === 2 && status === true) {
+                                if (data?.companyStatus === 2 && data?.status === true) {
                                   return (
                                     <a className="mb-3 btn px-3 btn-secondary" href={`/entreprise/${data?.company?.id}`}>
                                       Mon entreprise
@@ -115,7 +115,7 @@ export function Account()
                                   );
                                 }
 
-                                if (data?.companyStatus === 0 && status === 2) {
+                                if (data?.companyStatus === 0 && data?.status === 2) {
                                   return (
                                     <a className="mb-3 btn px-3 btn-secondary" href="/admin">
                                       Dashbaord admin
