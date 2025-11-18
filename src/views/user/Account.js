@@ -24,7 +24,6 @@ export function Account()
                 localStorage.setItem('cname', data?.data?.company?.name);
                 localStorage.setItem('cicon', data?.data?.company?.icon);
             }
-            console.log(data.data);
             return data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
@@ -86,7 +85,7 @@ export function Account()
                               data?.image === null ? ( 
                                 <div className="bg-blue-clr text-light border border-secondary rounded-circle rounded-circle border fw-bold d-flex align-items-center justify-content-center" style={{ width:45, height:45 }}>
                                    { data?.fname ? data.fname.charAt(0).toUpperCase() : ""}{data?.lname ? data.lname.charAt(0).toUpperCase() : ""}
-                                </div>
+        </                       div>
                                ) :  (  <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> )
                             } 
                             
@@ -96,37 +95,12 @@ export function Account()
                             </div>
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
-                            {(() => {
-
-
-                                if (data?.companyStatus === 0 && data?.status === true) {
-                                  return (
-                                    <a className="mb-3 btn px-3 btn-outline-secondary" href="/creation-entreprise">
-                                      Ouvrir une entreprise immobilier
-                                    </a>
-                                  );
-                                }
-
-                                if (data?.companyStatus === 2 && data?.status === true) {
-                                  return (
-                                    <a className="mb-3 btn px-3 btn-secondary" href={`/entreprise/${data?.company?.id}`}>
-                                      Mon entreprise
-                                    </a>
-                                  );
-                                }
-
-                                if (data?.companyStatus === 0 && data?.status === 2) {
-                                  return (
-                                    <a className="mb-3 btn px-3 btn-secondary" href="/admin">
-                                      Dashbaord admin
-                                       </a>
-                                  );
-                                }
-
-                                   return null;
-                               })()}
-
-                            </div>
+                            {
+                              ( data?.companyStatus === false &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
+                              ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
+                              ( ( data?.companyStatus === false &&  data?.status === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                            }
+                        </div>
                         </div>
                     </div>
                     {/* ************************************************************************ */}
