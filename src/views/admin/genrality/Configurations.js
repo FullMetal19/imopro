@@ -283,7 +283,7 @@ export function Configurations()
                                                     <div className="row d-flex justify-content-between align-items-center">  
                                                         <div className="col-md-12 d-flex gap-4 mt-3">
                                                         {
-                                                            ( parseInt( data?.isvalidated ) === 0 ) ? (
+                                                            ( data?.isvalidated === false ) ? (
                                                                 <div className="d-flex justify-content-end gap-4"> 
                                                                     <button className="btn btn-sm btn-outline-main" onClick={ setModal1 } > Invalider </button>  
                                                                     <button className="btn btn-sm btn-main" onClick={ setModal } > Valider </button> 

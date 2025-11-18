@@ -98,47 +98,35 @@ export function Account()
                         <div className="col-md-4 d-flex align-items-center">
                             {(() => {
 
-console.log("companyStatus type:", typeof data?.companyStatus);
-console.log("status type:", typeof data?.status);
 
+                                if (data?.companyStatus === 0 && data?.status === true) {
+                                  return (
+                                    <a className="mb-3 btn px-3 btn-outline-secondary" href="/creation-entreprise">
+                                      Ouvrir une entreprise immobilier
+                                    </a>
+                                  );
+                                }
 
-  const companyStatus = parseInt(data?.companyStatus);
-  const status = parseInt(data?.status);
+                                if (data?.companyStatus === 2 && status === true) {
+                                  return (
+                                    <a className="mb-3 btn px-3 btn-secondary" href={`/entreprise/${data?.company?.id}`}>
+                                      Mon entreprise
+                                    </a>
+                                  );
+                                }
 
-   console.log("DEBUG:", { companyStatus, status });
+                                if (data?.companyStatus === 0 && status === 2) {
+                                  return (
+                                    <a className="mb-3 btn px-3 btn-secondary" href="/admin">
+                                      Dashbaord admin
+                                       </a>
+                                  );
+                                }
 
-   console.log("companyStatus type:", typeof companyStatus);
-console.log("status type:", typeof status);
+                                   return null;
+                               })()}
 
-
-  if (companyStatus === 0 && status === 1) {
-    return (
-      <a className="mb-3 btn px-3 btn-outline-secondary" href="/creation-entreprise">
-        Ouvrir une entreprise immobilier
-      </a>
-    );
-  }
-
-  if (companyStatus === 2 && status === 1) {
-    return (
-      <a className="mb-3 btn px-3 btn-secondary" href={`/entreprise/${data?.company?.id}`}>
-        Mon entreprise
-      </a>
-    );
-  }
-
-  if (companyStatus === 0 && status === 2) {
-    return (
-      <a className="mb-3 btn px-3 btn-secondary" href="/admin">
-        Dashbaord admin
-      </a>
-    );
-  }
-
-  return null;
-})()}
-
-                        </div>
+                            </div>
                         </div>
                     </div>
                     {/* ************************************************************************ */}
