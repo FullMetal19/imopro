@@ -85,7 +85,7 @@ export function Account()
                               data?.image === null ? ( 
                                 <div className="bg-blue-clr text-light border border-secondary rounded-circle rounded-circle border fw-bold d-flex align-items-center justify-content-center" style={{ width:45, height:45 }}>
                                    { data?.fname ? data.fname.charAt(0).toUpperCase() : ""}{data?.lname ? data.lname.charAt(0).toUpperCase() : ""}
-        </                       div>
+                                </div>
                                ) :  (  <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> )
                             } 
                             
@@ -95,11 +95,37 @@ export function Account()
                             </div>
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
-                            {
-                              ( parseInt(data?.companyStatus) === 0 && parseInt(data?.status) === 1 ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                              ( ( parseInt(data?.companyStatus) === 2 && parseInt(data?.status) === 1 ) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                              ( ( parseInt(data?.companyStatus) === 0 && parseInt(data?.status) === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
-                            }
+                            {(() => {
+  const companyStatus = parseInt(data?.companyStatus);
+  const status = parseInt(data?.status);
+
+  if (companyStatus === 0 && status === 1) {
+    return (
+      <a className="mb-3 btn px-3 btn-outline-secondary" href="/creation-entreprise">
+        Ouvrir une entreprise immobilier
+      </a>
+    );
+  }
+
+  if (companyStatus === 2 && status === 1) {
+    return (
+      <a className="mb-3 btn px-3 btn-secondary" href={`/entreprise/${data?.company?.id}`}>
+        Mon entreprise
+      </a>
+    );
+  }
+
+  if (companyStatus === 0 && status === 2) {
+    return (
+      <a className="mb-3 btn px-3 btn-secondary" href="/admin">
+        Dashbaord admin
+      </a>
+    );
+  }
+
+  return null;
+})()}
+
                         </div>
                         </div>
                     </div>
