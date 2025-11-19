@@ -55,10 +55,10 @@ export function HouseContainer({ data, onVisit })
         {/* Galerie */}
         <div className="d-flex gap-3 p-3">
           {
-              item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+              data?.media[1] ? ( <img src={ data?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
           }
           {
-              item?.media[2] ? ( <img src={ item?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+              data?.media[2] ? ( <img src={ data?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
           } 
         </div>
         {/* Contenu */}
