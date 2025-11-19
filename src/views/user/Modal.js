@@ -32,7 +32,7 @@ export function MonthPayDetailModal({ method, data })
 
         <div className="modal-container">
             <div className="container">
-                <div className="row d-flex justify-content-center vh-100 px-3">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-6 col-md-8 bg-white rounded-3 p-4 d-flex flex-column">
                         <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex flex-column border-top border-bottom pt-4 pb-2 mb-2">
@@ -86,7 +86,7 @@ export function PaymentFormModal({ method })
 
         <div className="modal-container">
             <div className="container">
-                <div className="row d-flex justify-content-center vh-100 px-3">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-8 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="text-end"> 
                             <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
