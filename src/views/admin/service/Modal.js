@@ -27,7 +27,7 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
         <div className="modal-container">
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
-                    <div className="col-lg-5 col-md-8 bg-three-clr p-4 d-flex flex-column">
+                    <div className="col-lg-5 col-md-8 bg-white p-4 d-flex flex-column">
                         <div className="text-end"> <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> </div>
                         <div className="d-flex border-top border-bottom pt-4 pb-2 mb-2">
                             <p className="text-muted"> {message} </p>
@@ -37,7 +37,7 @@ export function Modal({ method, message, serviceId, serviceStatus, refetch })
                         }
                         {
                             ( status === 1 ) ? 
-                            (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> { ( serviceStatus === 1 ) ? "Service désactivé avec succes" : "Utilisateur activé avec succes" }   </div> </div> ) :
+                            (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> { ( serviceStatus === 1 ) ? "Service désactivé avec succes" : "Utilisateur activé avec succes" }   </div> </div> ) :
                             ( status === -1 ) ?
                             (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                         }
@@ -60,7 +60,7 @@ export function NewServiceModal({ method, refetch })
 {
     const service = ServiceApi();
 
-    const [ inputs, setInputs ] = useState();
+    const [ inputs, setInputs ] = useState({});
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     
@@ -71,11 +71,17 @@ export function NewServiceModal({ method, refetch })
     
     const handleForm = async ( event ) => {
         event.preventDefault();
+        setStatus(0);
         setIsLoading(true);
         try{
             const res = await service.insert(inputs);
             setIsLoading(false);
-            (res.data.success) ? setStatus(1) : setStatus(-1); 
+            if (res.data.success){
+                setStatus(1);
+                setInputs({});
+            }else{
+                setStatus(-1);
+            }
             refetch();
         } catch (err) { 
             setStatus(-1);
@@ -100,17 +106,21 @@ export function NewServiceModal({ method, refetch })
                             }
                             {
                                 ( status === 1 ) ? 
-                                (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div> </div> ) :
+                                (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Service ajouté avec succes </div> </div> ) :
                                 ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="d-flex flex-column mb-2">  
                                 <span className="text-muted fs-xs mb-1"> Titre du service </span>
-                                <input type="text" name="title" className="form-control" required onChange={ handleInputs } />
+                                <div className="d-flex gap-1 mb-2" >
+                                    <input type="text" name="title" className="border w-100 p-3 rounded-2 text-secondary" required onChange={ handleInputs } />
+                                    <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span>
+                                </div>
+                                
                             </div>
                             <div className="d-flex flex-column mb-4">  
-                                <span className="text-muted fs-xs mb-1"> Description du service </span>
-                                <textarea className="form-control" name="description" rows={8} required onChange={ handleInputs }  />
+                                <span className="text-muted fs-xs mb-1"> Description du service [ <span className=" px-2 text-danger"> * </span>  ] </span>
+                                <textarea className="border w-100 p-3 rounded-2 text-secondary" name="description" rows={8} required onChange={ handleInputs }  />
                             </div>
                             <div className="d-flex justify-content-end">
                                 <button type="submit" className="btn btn-sm btn-outline-main" > Enregistrer </button>  
@@ -169,17 +179,20 @@ export function UpdatingServiceModal({ method, serviceId, title, desc, refetch }
                             }
                             {
                                 ( status === 1 ) ? 
-                                (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Service modifié avec succes </div> </div> ) :
+                                (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Service modifié avec succes </div> </div> ) :
                                 ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de la validation. </div> </div>) : null
                             }
                             <div className="d-flex flex-column mb-2">  
                                 <span className="text-muted fs-xs mb-1"> Titre du service </span>
-                                <input type="text" name="title" value={ inputs.title } className="form-control" required onChange={ handleInputs } />
+                                <div className="d-flex gap-1 mb-2" >
+                                    <input type="text" name="title" value={ inputs.title } className="border w-100 p-3 rounded-2 text-secondary" required onChange={ handleInputs } />
+                                    <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span>
+                                </div>
                             </div>
                             <div className="d-flex flex-column mb-4">  
-                                <span className="text-muted fs-xs mb-1"> Description du service </span>
-                                <textarea className="form-control" value={ inputs.description } name="description" rows={8} required onChange={ handleInputs }  />
+                                <span className="text-muted fs-xs mb-1"> Description du service [ <span className=" px-2 text-danger"> * </span>  ] </span>
+                                <textarea className="border w-100 p-3 rounded-2 text-secondary" value={ inputs.description } name="description" rows={8} required onChange={ handleInputs }  />
                             </div>
                             <div className="d-flex justify-content-end">
                                 <button type="submit" className="btn btn-sm btn-outline-main" > Enregistrer </button>  
