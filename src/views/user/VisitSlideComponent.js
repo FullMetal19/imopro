@@ -49,7 +49,7 @@ export function VisitSlideComponent({ openLocalisationModal, openValidationModal
                   <button className="btn btn-sm btn-outline-secondary" onClick={() => openLocalisationModal(item.Property.longitude, item.Property.latitude)} >
                     <i className="bi bi-geo-alt-fill me-1"></i> Localisation
                   </button>
-                  {item.Property.isbooked === 1 ? (
+                  { parseInt( item?.Property.isbooked ) === 1 ? (
                     <span className="text-secondary px-2 py-1 border rounded-2 small">
                       propriété prise
                     </span>
