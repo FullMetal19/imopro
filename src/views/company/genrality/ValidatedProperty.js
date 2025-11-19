@@ -74,8 +74,12 @@ export function ValidatedProperty()
                                         <img src={ item?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "220px", objectFit: "cover" }} />
                                         {/* Galerie */}
                                         <div className="d-flex gap-3 p-3">
-                                          <img src={ item?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
-                                          <img src={ item?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                                          {
+                                                item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                            }
+                                            {
+                                                item?.media[2] ? ( <img src={ item?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                            }    
                                         </div>
                                         {/* Contenu */}
                                         <div className="px-3 pb-3 pt-1">

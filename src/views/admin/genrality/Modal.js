@@ -111,15 +111,15 @@ export function UnvalidationForm({ method, propertyId })
                         </div>
                         <form className="d-flex flex-column mt-4" onSubmit={ handleForm } >
                             <div className="d-flex flex-column mb-4">  
-                                <span className="text-muted fs-xs mb-1"> La raison de l'invalidation içi : </span>
-                                <textarea className="form-control" name="description" rows={10} onChange={ e=>{ setMessage(e.target.value) } } />
+                                <span className="text-secondary fs-xs mb-1"> La raison de l'invalidation içi : </span>
+                                <textarea className="border p-3 w-100 text-muted" name="description" rows={10} onChange={ e=>{ setMessage(e.target.value) } } />
                             </div>
                             {
                                 isLoading ? ( <div className="d-flex justify-content-center mb-4">  <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div> ) : null 
                             }
                             {
                                 ( status === 1 ) ? 
-                                (  <div className=""> <div className="alert alert-success border py-1 px-3 rounded-1 mb-4"> Entreprise invalidée avec succes </div> </div> ) :
+                                (  <div className=""> <div className="alert alert-primary border py-1 px-3 rounded-1 mb-4"> Entreprise invalidée avec succes </div> </div> ) :
                                 ( status === -1 ) ?
                                 (  <div className=""> <div className="alert alert-danger border py-1 px-3 rounded-1 mb-4"> Une erreur est survenue lors de l'invalidation. </div> </div>) : null
                             }
