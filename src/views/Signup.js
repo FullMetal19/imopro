@@ -46,6 +46,13 @@ export function Signup(){
     return (
 
       <div className="container-fluid">
+
+        <title> Inscription | Diwane-plus </title>
+        <meta name="author" content="Diwaneplus" />
+        <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+        <meta name="description" content="Créez votre compte gratuitement et accédez à l’ensemble de nos services immobiliers : publication d’annonces, suivi des demandes, gestion de vos favoris et assistance personnalisée. Rejoignez notre plateforme pour acheter, vendre ou louer en toute simplicité et sécurité." />
+        <link rel="icon" type="image/png" href="../favicon.png" />
+
                     <div className="row">
                       {/* ************************************************************************ */}  
                       <div className="col-md-4 d-flex align-items-center bg-gray-light px-4 py-2">

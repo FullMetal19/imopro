@@ -43,6 +43,13 @@ export function Signin(){
     return (
 
         <div>
+
+        <title> Connexion | Diwane-plus </title>
+        <meta name="author" content="Diwaneplus" />
+        <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+        <meta name="description" content="Connectez-vous à votre espace personnel et retrouvez vos annonces, vos recherches enregistrées et votre historique. Accédez rapidement à vos services immobiliers et gérez vos opérations en toute confidentialité grâce à une connexion sécurisée." />
+        <link rel="icon" type="image/png" href="../favicon.png" />
+
             { modalState ? ( <PasswordModal method={ closeModal } /> ) : null }
             {/* ************************************************************************ */}   
             <div className="container-fluid">
