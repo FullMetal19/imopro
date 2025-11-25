@@ -47,7 +47,15 @@ export function Contact()
     return (
 
         <div className="container-fluid bg-light">
+
+            <title> Contact | Diwane-plus </title>
+            <meta name="author" content="Diwaneplus" />
+            <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+            <meta name="description" content="Besoin d’informations ou d’un accompagnement personnalisé ? Contactez notre équipe via notre formulaire, téléphone ou email. Nous sommes disponibles pour répondre à vos questions et vous aider à concrétiser votre projet immobilier rapidement et efficacement." />
+            <link rel="icon" type="image/png" href="../favicon.png" />
+
             { loginChecker ? ( <LoginCheckerModal method={ closeoginCheckerModal } message={" Refus d'accès !!! veuillez vous authentifier dabord avant d'envoyer un message."}  />  ) : null }
+            
             <div className="row"> 
               <TopBar  />
             </div> 

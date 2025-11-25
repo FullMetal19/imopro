@@ -63,6 +63,13 @@ export function Field(){
     return (
 
         <div className="container-fluid bg-light">
+
+          <title> Terrains | Diwane-plus </title>
+          <meta name="author" content="Diwaneplus" />
+          <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+          <meta name="description" content="Trouvez facilement des terrains à vendre adaptés à vos projets de construction ou d’investissement. Nos annonces vérifiées incluent localisation, superficie, prix et détails techniques pour vous permettre de choisir le terrain idéal en toute confiance." />
+          <link rel="icon" type="image/png" href="../favicon.png" />
+
           <div className="row"> 
             <TopBar />
           </div> 

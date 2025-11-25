@@ -1,3 +1,24 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+# Autoriser tout le site
+Allow: /
+
+# Empêcher l’accès aux dossiers privés ou inutiles
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /node_modules/
+Disallow: /scripts/
+
+# Empêcher l'indexation des fichiers sensibles
+Disallow: /*.env$
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*?*token=
+
+
+# Indique le lien vers le sitemap
+Sitemap: https://www.diwaneplus.com/sitemap.xml

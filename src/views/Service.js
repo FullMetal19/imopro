@@ -37,6 +37,13 @@ export function Service(){
     return (
 
         <div className="container-fluid bg-light">
+
+            <title> Service | Diwane-plus </title>
+            <meta name="author" content="Diwaneplus" />
+            <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+            <meta name="description" content="Découvrez nos services immobiliers au Sénégal et en Afriique : publication d’annonces, estimation de biens, gestion locative, accompagnement à l’achat et à la vente, conseils juridiques et assistance personnalisée. Notre expertise vous garantit une expérience immobilière simple, rapide et sécurisée." />
+            <link rel="icon" type="image/png" href="../favicon.png" />
+
             { modalState ? ( <VideoModal method={ closeModal } url={ link } /> ) : null}
             {/* ************************************************************************ */}
             <div className="row"> 

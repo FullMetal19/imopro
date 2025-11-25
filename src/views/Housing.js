@@ -65,6 +65,13 @@ export function Housing(){
     return (
 
         <div className="container-fluid bg-light">
+
+          <title> Logements | Diwane-plus </title>
+          <meta name="author" content="Diwaneplus" />
+          <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
+          <meta name="description" content="Parcourez notre sélection de logements à vendre et à louer : appartements, maisons, studios et villas. Chaque annonce contient des informations complètes, des photos de qualité et un accompagnement professionnel pour vous aider à trouver le logement parfait selon votre budget et vos besoins." />
+          <link rel="icon" type="image/png" href="../favicon.png" />
+
           <div className="row"> 
             <TopBar  />
           </div> 
