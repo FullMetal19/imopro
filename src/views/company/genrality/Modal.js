@@ -11,7 +11,7 @@ export function MessageModal({ method, message })
                     <div className="col-lg-9 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="d-flex justify-content-between"> 
                             <span className="text-muted"> La raison de l'invalidité de la propriété </span>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> 
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> 
                         </div>
                         <div className="d-flex border-top scroll-md border p-4 mb-2">
                             {message} 
@@ -52,7 +52,7 @@ export function RemovingModal({ method, message, propertyId, refetch })
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-5 col-md-8 bg-white p-4 d-flex flex-column">
-                        <div className="text-end"> <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> </div>
+                        <div className="text-end"> <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button> </div>
                         <div className="d-flex border-top border-bottom pt-4 pb-2 mb-2">
                             <p className="text-muted"> {message} </p>
                         </div>

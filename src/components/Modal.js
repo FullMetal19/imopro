@@ -15,7 +15,7 @@ export function VideoModal( { method, url })
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-8 col-md-11 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
-                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ export function GeolocalisationModal( { method, latitude, longitude })
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     
                     <div className="col-md-9 bg-white p-4 d-flex flex-column rounded-3">
-                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex p-4 border">
                             <iframe
                                 src={mapUrl}
@@ -65,7 +65,7 @@ export function LoginCheckerModal({ method, message })
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-md-6 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
-                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex border-top border-bottom p-3 bg-three-clr mb-3">
                             <div className="text-secondary"> {message} </div>
                         </div>
@@ -116,7 +116,7 @@ export function PasswordModal({ method })
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-6 col-md-9 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
-                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <span className="text-secondary small mt-4"> Etes vous sure de vouloir changé de mot de passe </span>
                         <div className="d-flex border-top py-4 mb-2">
 
@@ -246,7 +246,7 @@ export function VisitBookingModal({ method, refetch, propertyId })
                             <div className="text-muted border px-4 small py-2 bg-three-clr d-flex align-items-center rounded-2">
                                 Prise de rendez vous de visite
                             </div>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="row mt-4" onSubmit={handleForm}>
                             {isLoading && (
@@ -383,7 +383,7 @@ export function ValidationPaymentModal({ method, propertyId, guaranty, refetch }
                     <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column rounded-3">
                         <div className="d-flex"> 
                             <div className="text-secondary py-2 border px-4 bg-three-clr d-flex align-items-center rounded-2"> Payement de la caution pour la validation </div>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="row mt-4" onSubmit={ handleForm }>
                             {
@@ -521,7 +521,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                     <div className="col-lg-6 col-md-8 bg-white p-4 d-flex flex-column rounded-3">
                         <div className="d-flex justify-content-between gap-4"> 
                             <div className="text-muted border px-4 bg-three-clr d-flex align-items-center rounded-2 p-2"> Payement de la mensualité </div>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="row mt-4" onSubmit={ handleForm }>
                             {

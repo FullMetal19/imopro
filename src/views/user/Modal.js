@@ -13,7 +13,7 @@ export function MessageModal({ method, message })
                     <div className="col-lg-9 col-md-10 bg-three-clr p-4 d-flex flex-column">
                         <div className="d-flex"> 
                             <span className="text-muted"> La raison de l'invalidité de la propriété </span>
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <div className="d-flex border-top scroll-md border p-4 mb-2">
                             {message} 
@@ -34,7 +34,7 @@ export function MonthPayDetailModal({ method, data })
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-6 col-md-8 bg-white rounded-3 p-4 d-flex flex-column">
-                        <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex flex-column border-top border-bottom pt-4 pb-2 mb-2">
                             <div className="rounded-1 bg-blue-light-clr text-secondary p-2 mb-3"> Détail du payment </div>
                             <div className="rounded-1 border bg-light text-secondary p-2 mb-2"> Opérateur : { data?.operator } </div>
@@ -89,7 +89,7 @@ export function PaymentFormModal({ method })
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
                     <div className="col-lg-8 col-md-10 bg-white p-4 d-flex flex-column">
                         <div className="text-end"> 
-                            <button className="btn-close btn-close-white position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                            <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         </div>
                         <form className="border-top pt-4 pb-2 px-3 mb-2" onSubmit={ handleForm }>
                             <div className="row" > 
