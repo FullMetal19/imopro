@@ -86,7 +86,7 @@ export function Contact()
                     <div className="col-md-12 mb-5" > 
                         <div className=" d-flex flex-column border-left-main px-3 ms-1 bg-gray-light py-3" > 
                             <p className="lead fs-4 text-secondary mb-1"> Envoyez-nous un message et commençons votre projet ensemble. </p>
-                            <p className="text-secondary"> Chez Diwane+, chaque projet compte. Que vous cherchiez à louer, acheter ou vendre, notre équipe est là pour vous écouter, vous conseiller et vous accompagner à chaque étape. </p>
+                            <p className="text-secondary"> Chez Diwaneplus, chaque projet compte. Que vous cherchiez à louer, acheter ou vendre, notre équipe est là pour vous écouter, vous conseiller et vous accompagner à chaque étape. </p>
                         </div> 
                     </div> 
                     {
@@ -94,7 +94,7 @@ export function Contact()
                     }
                     {
                         (status === 1) ? ( <div className="col-md-12 mb-4"> <div className="alert alert-success">  Message envoyé avec succés. Notre équipe vous contactera d'ici peu. Merci  </div> </div> ) : 
-                        ( (status === -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoir. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
+                        ( (status === -1) ?  ( <div className="col-md-12 mb-4"> <div className="alert alert-danger"> Oops ! une erreur est survenue durant l'envoie. Veuillez réessayer à nouveau  </div> </div> ) : null ) 
                     }
                     <div className="col-md-12 mb-4" > 
                         <input type="text" name="title" className="border p-3 rounded-2 text-secondary w-100" placeholder="Objet du message" required onChange={handleInputs} />
@@ -103,7 +103,7 @@ export function Contact()
                         <textarea className="border p-3 rounded-2 text-secondary w-100" name="message" rows={10} placeholder="Contenu du message message" onChange={handleInputs} />
                     </div>
                     <div className="col-md-12 mb-4" > 
-                        <button type="submit" className="btn btn-main"> Envoyez maintenant <i className="bi bi-arrow-right"></i>  </button> 
+                        <button type="submit" className="btn btn-lg btn-main rounded-0"> Envoyez maintenant <i className="bi bi-arrow-right"></i>  </button> 
                     </div>
                 </form> 
               </div>

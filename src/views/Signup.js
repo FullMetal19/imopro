@@ -13,6 +13,10 @@ export function Signup(){
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showCPassword, setShowCPassword] = useState(false);
+
     const handleInputs = ( event ) => {
         const { name , value } =  event.target;
         setInputs( { ...inputs, [name] : value   } );
@@ -62,21 +66,21 @@ export function Signup(){
                               <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                             </span>
                           </div>
-                          <h1 className="hide h1 text-secondary"> Diwane+, la plateforme immobilière de référence </h1>
+                          <h1 className="hide h1 text-secondary"> Diwaneplus, la plateforme immobilière de référence </h1>
                           <p className="hide lead text-secondary" > 
                             Inscrivez-vous en quelques clics et découvrez un monde de propriétés à louer, acheter ou vendre, directement depuis votre espace personnel. 
                           </p>
                         </div>
                       </div>
                       {/* ************************************************************************ */}  
-                      <div className="col-md-8 vh-100 d-flex justify-content-center px-4 align-items-center">
+                      <div className="col-md-8 min-vh-100 d-flex justify-content-center px-4 align-items-center">
                         <div className="row d-flex justify-content-center px-2">
                           <div className="col-md-12 pt-4">
                             <div className=" d-flex flex-column gap-2" > 
                               <div className="d-flex mb-1" >
                                 <span className="d-flex align-items-center justify-content-center bg-blue-clr border px-3 py-2 rounded-2 shadow-sm"> <i className="bi bi-house-door-fill fs-4 text-white"></i> </span>
                               </div>
-                              <span className="lead text-muted text-start fs-3"> Diwane+ - inscription </span>
+                              <span className="lead text-muted text-start fs-3"> Diwaneplus - inscription </span>
                             </div>
                           </div>
                           <div className="col-md-12 rounded-2 py-4">
@@ -124,7 +128,7 @@ export function Signup(){
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
                               <div className="d-flex gap-1 mb-2" >
-                                <select className="w-100 border input py-3 px-3 text-secondary rounded-2" name='sex' onChange={ handleInputs }>
+                                <select className="w-100 border input py-3 px-3 text-secondary rounded-2" name='sex' onChange={ handleInputs } required >
                                   <option value="" > Choisir sexe </option>
                                   <option value="masculin" > Masculin </option>
                                   <option value="feminin" > Féminin </option>
@@ -135,7 +139,7 @@ export function Signup(){
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
                               <div className="d-flex gap-1 mb-2">
-                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' onChange={ handleInputs }>
+                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' onChange={ handleInputs } required >
                                   <option value=""> index </option>
                                   {
                                     vector.phoneIndex.map( (item, index) => (
@@ -155,27 +159,33 @@ export function Signup(){
                             </div>
                             {/* --------------------------------- */}
                             <div className="col-lg-6 mb-2"> 
-                              <div className="d-flex gap-1 mb-2" >
-                                <input type="password" name="password" placeholder="Mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                              <div className="d-flex gap-1 mb-2 align-items-center">
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-secondary" style={{ cursor: "pointer" }} onClick={() => setShowPassword(!showPassword)}>
+                                  <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                                </span>
+                                <input type={showPassword ? "text" : "password"} name="password" placeholder="Mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={handleInputs} required />
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span> 
                               </div>
                             </div>
                             {/* -------------------------------- */}
                             <div className="col-lg-6 mb-2"> 
-                              <div className="d-flex gap-1 mb-3" >
-                                <input type="password" name="cpassword" placeholder="Confirmer mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                              <div className="d-flex gap-1 mb-3 align-items-center">
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-secondary" style={{ cursor: "pointer" }} onClick={() => setShowCPassword(!showCPassword)}>
+                                  <i className={`bi ${showCPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                                </span>
+                                <input type={showCPassword ? "text" : "password"} name="cpassword" placeholder="Confirmer mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={handleInputs} required />
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span> 
                               </div>
                             </div>
                             {/* -------------------------------- */}
                             <div className="col-md-12 mb-2"> 
                               <div className="d-flex align-items-center gap-2 mb-2" >
                                 <input type="checkbox" name="checker" checked={checked} className="border text-muted checkbox" onChange={ handleChange } required />
-                                <span className="d-flex align-items-center gap-2 text-secondary"> 
-                                  <span> J'accepte les  </span>  
+                                <div className="d-flex align-items-center gap-2 text-secondary"> 
+                                  J'accepte les 
                                   <a href="/condition-utilisation" target="outlet" className="nav-link text-blue-clr"> conditions d'utilisation <i className="bi bi-arrow-right"></i></a>
-                                  <span> de Diwane+ </span> 
-                                  </span> 
+                                  de Diwaneplus
+                                </div> 
                               </div>
                             </div>
                             {/* -------------------------------- */} 

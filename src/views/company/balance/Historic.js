@@ -12,7 +12,6 @@ export function Historic({ companyId, setRefetch })
     const fetchData = async () => {
         try {
             const res = await payment.findWithdrawsByCompany(companyId);
-            console.log(res.data.data);
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);

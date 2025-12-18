@@ -18,7 +18,7 @@ export function Footer()
                   <h4 className="fs-4 text-secondary"> Diwane plus </h4>
                 </div>
                 <p className="text-secondary">
-                    Diwane+ est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance.
+                    Diwaneplus est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance.
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export function BottomBar()
         {/* Bottom Section */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center text-light py-3">
           <p className="text-light mb-2 mb-md-0">
-            © 2025 Diwane plus. Tout droit réservé.
+            © 2025 Diwaneplus. Tout droit réservé.
           </p>
 
           <div className="d-flex flex-wrap gap-3">
@@ -76,7 +76,7 @@ export function BottomBar()
                condition d'utilisation
             </p>
             <p className="text-light mb-2 mb-md-0">
-               alimenté par Diwane+
+               alimenté par Diwaneplus
             </p>
           </div>
         </div>

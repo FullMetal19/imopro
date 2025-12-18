@@ -36,7 +36,7 @@ export function Password()
     return (
 
         <div className="container-fluid"> 
-              <div className="row vh-100 d-flex align-items-center ">
+              <div className="row min-vh-100 d-flex align-items-center ">
                 <div className="col-lg-12 py-5">
                   <div className="row d-flex flex-column align-items-center justify-content-center py-5 px-2">
                     <div className="col-lg-5 col-md-8 d-flex flex-column rounded-4 border py-5 px-4 mb-5 shadow-sm">
@@ -47,7 +47,7 @@ export function Password()
                                 <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                             </span>
                           </div>
-                          <span className="lead text-secondary text-center"> Imopro </span>
+                          <span className="lead text-secondary text-center"> Diwaneplus </span>
                           <span className="fs-4 text-secondary text-center"> Mise à jour mot de passe  </span>
                           <span className="text-secondary text-center mb-3">
                             Saisir le code reçu par message ainsi que votre nouveau mot de passe.

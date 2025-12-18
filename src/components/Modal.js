@@ -14,7 +14,7 @@ export function VideoModal( { method, url })
         <div className="modal-container">
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
-                    <div className="col-lg-8 col-md-11 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
+                    <div className="col-lg-10 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
                         <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
@@ -127,7 +127,7 @@ export function PasswordModal({ method })
                                     <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                                 </span>
                               </div>
-                              <span className="fs-4 text-muted"> Diwane+ - Mot de passe oublié </span>
+                              <span className="fs-4 text-muted"> Diwaneplus - Mot de passe oublié </span>
                               <span className="text-muted text-center px-4 mb-4">
                                 Saisissez votre numéro de téléphone, et nous vous enverrons un code de validation pour réinitialiser rapidement et en toute sécurité votre mot de passe. 
                               </span>
@@ -595,3 +595,25 @@ export function MonthPaymentModal({ method, refetch, propertyId })
     )
 }
 
+
+
+
+export function AppModal({ method })
+{
+    return (
+
+        <div className="modal-container">
+            <div className="container">
+                <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
+                    <div className="col-lg-5 col-md-8 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
+                        <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
+                        <div className="d-flex flex-column align-items-center p-4">
+                            <p className="text-center text-secondary bg-three-clr px-4 py-2 rounded"> <i className="bi bi-arrow-down-circle"></i>  Note d'information  </p>
+                            <div className="text-secondary text-center lead"> L'application mobile Diwaneplus est en cours de développement et sera bientot disponible sur Appstore, playstore et sur la plateforme web.  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}

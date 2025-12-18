@@ -36,7 +36,7 @@ export function ValidateAccount(){
     return (
   
     <div className="container-fluid"> 
-      <div className="row vh-100 d-flex align-items-center ">
+      <div className="row min-vh-100 d-flex align-items-center ">
         <div className="col-lg-12 py-5">
           <div className="row d-flex flex-column align-items-center justify-content-center py-5 px-2">
             <div className="col-lg-6 col-md-9 rounded-4 border py-5 px-4 mb-5 shadow-sm">
@@ -48,7 +48,7 @@ export function ValidateAccount(){
                       <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                       </span>
                   </div>
-                  <span className="fs-4 text-secondary text-start"> Diwane+ - Validation compte </span>
+                  <span className="fs-4 text-secondary text-start"> Diwaneplus - Validation compte </span>
                   <span className="text-secondary text-start">
                     Merci de votre inscription ! Un code de validation vous a été envoyé par SMS. Saisissez-le ci-dessous pour activer votre compte.
                   </span>
@@ -79,7 +79,7 @@ export function ValidateAccount(){
                 {/* -------------------------------- */}
                 <div>
                   <button type="submit" className="btn btn-lg bg-blue-clr text-white px-4 mt-2"> 
-                    Soumettre <i className="bi bi-arrow-right"></i> 
+                    Activer maintenant <i className="bi bi-arrow-right"></i> 
                   </button> 
                 </div>    
               </form>

@@ -19,7 +19,6 @@ export function WithdrawForm({refetch})
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
-        console.log(inputs);
         try {
             const res = await payment.NewWithdraw(inputs, companyId);
             setIsLoading(false);

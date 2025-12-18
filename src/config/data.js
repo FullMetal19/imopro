@@ -56,16 +56,23 @@ const vector = {
                                 { name : 'Appartement', content: 'Appartement' },
                                 { name : 'Studio', content: 'Studio' },
                                 { name : 'Chambre', content: 'Chambre' },
-                                { name : 'Bureau', content: 'Bureau' },
-                                { name : 'Salle de ceremonie', content: 'Salle de cérémonie' },
-                                { name : 'Autres', content: 'Autres' },
+                                { name : 'Autres-logements', content: 'Autres' },
                             ]
                 },
                 {  type : 'Terrain', 
                    subType : [
                                 { name : 'Deliberation', content: 'Avec délibération' },
                                 { name : 'Bail', content: 'Avec bail' },
-                                { name : 'Autres', content: 'Autres' },
+                                { name : 'Autres-terrains', content: 'Autres' },
+                            ]
+                },
+                {  type : 'Commerciale', 
+                   subType : [
+                                { name : 'Bureau', content: 'Bureau' },
+                                { name : 'Salle-ceremonie', content: 'Salle cérémonie' },
+                                { name : 'Salle-co-working', content: 'Salle co-working' },
+                                { name : 'Boutique', content: 'Boutique' },
+                                { name : 'Autres-locales', content: 'Autres' },
                             ]
                 },
 
@@ -75,18 +82,18 @@ const vector = {
     contact  :  [
                     {
                         'image' : '../img/icons8-nouveau-message-90.png',
-                        'tel1' : '+221 77 000 00 00',
-                        'tel2' : '+221 33 000 00 00 '
+                        'tel1' : 'Contact fix',
+                        'tel2' : '+221 33 888 70 62'
                     },
                     {
                         'image' : '../img/icons8-nouveau-message-90.png',
-                        'tel1' : '+221 77 000 00 00',
-                        'tel2' : '+221 33 000 00 00 '
+                        'tel1' : 'Contact email',
+                        'tel2' : 'contact@diwaneplus.com'
                     },
                     {
                         'image' : '../img/icons8-nouveau-message-90.png',
-                        'tel1' : '+221 77 000 00 00',
-                        'tel2' : '+221 33 000 00 00 '
+                        'tel1' : 'Contact',
+                        'tel2' : '+221 78 534 26 26',
                     },   
                 ],
 

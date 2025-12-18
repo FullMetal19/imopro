@@ -77,50 +77,93 @@ export function Field(){
             <NavigationBar page={3} />
           </div>
           {/* *********************************************************************** */}
-          <div className="row justify-content-center bg-three-clr border-bottom py-5 px-2"> 
-            <div className="col-md-8 col-lg-5 d-flex flex-column"> 
-              <div className="px-5 py-3 w-100 text-center text-secondary border bg-light rounded-5 lead"> Liste des terrains les plus proches de votre position </div>
+          <div className="row justify-content-center"> 
+            <div className="col-md-12 bg-img1"> 
+              <div className="row justify-content-center align-items-center over-bg-img1"> 
+                <div className="col-md-11"> 
+                  <div className="navbar-brand d-flex align-items-center">
+                    <span className="text-light fs-3"> <i className="bi bi-grid me-1"></i> </span>
+                    <span className="text-light fs-3"> Terrains </span>
+                  </div>
+               </div>
+              </div>
+            </div>
+            <div className="col-md-12 p-4 border"> 
+              <div className="row justify-content-center"> 
+                <div className="col-md-11"> 
+                  <span className="text-secondary fs-5"> 
+                    <i className="bi bi-arrow-right-circle me-2"></i>
+                    Terrains proches de votre position 
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           {/* ******************************************** */}
           <div className="row justify-content-center"> 
-            <NearestFieldsComponent lat={'14.12345'} lon={'16.111234'} /> 
+            <NearestFieldsComponent /> 
           </div>
           {/* ******************************************** */}
           <div className="row"> 
             <div className="col-lg-12 py-5"> 
+              <div className="row">
+                  <div className="col-7 bg-white py-1"> </div>
+                  <div className="col-5 bg-main py-1"> </div>
+              </div>
               {/* ------------------------------------------------ */}
               <div className="row justify-content-center p-3 bg-three-clr">
               <div className="col-lg-11"> 
               <div className="row">
 
-                <div className="col-12 d-flex align-items-center mb-3 p-1 rounded-1 px-4"> 
-                   <span className="text-secondary lead"> <i className="bi bi-funnel"></i> Filtrer les terrains </span>
+                <div className="col-md-11 mb-5"> 
+                  <span className="text-secondary fs-5 border border-light bg-main text-light px-4 py-3"> 
+                    <span className="border-end pe-3 me-3 py-3 border-light text-light"> 
+                      <i className="bi bi-house me-2"></i> 
+                    </span>
+                    Catalogue Terrains 
+                  </span>
+                </div>
+
+                <div className="col-lg-12 flex-column mt-4 mb-5"> 
+
+                  <div className="mb-2 ps-4"> 
+                    <span className="text-secondary small bg-white rounded-top-3 py-3 px-4"> 
+                      <i className="bi bi-funnel text-secondary"></i> Filtrer les terrains 
+                    </span>
+                  </div>
+
+                  <div className="bg-white rounded-3 shadow-sm border-0 p-4"> 
+
+                    <div className="row mt-2"> 
+                      <div className="col-sm-4 mb-2"> 
+                        <select className="border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >
+                          <option value=""> Choisir un pays  </option>
+                          {
+                            vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                          }
+                        </select>
+                      </div>
+                      <div className="col-sm-4 mb-2"> 
+                        <select className="border w-100 p-3 text-secondary rounded-2" value={region} name="region" required onChange={ handleInputs } >
+                          <option value=""> Choisir une région  </option>
+                          {
+                            selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
+                          }
+                        </select>
+                      </div>
+                      <div className="col-md-4 mb-3"> 
+                        <select className="border w-100 p-3 text-secondary rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
+                          <option value=""> Choisir un type de propriété  </option>
+                          {
+                            vector.listOfFieldType[1].subType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
+                          }
+                        </select>
+                      </div>  
+                    </div> 
+
+                  </div> 
+
                 </div> 
-                <div className="col-md-4 mb-2"> 
-                  <select className="border w-100 p-3 text-secondary rounded-2" value={country} name="country" required onChange={ handleInputs } >
-                    <option value=""> Choisir un pays  </option>
-                    {
-                        vector.listCountry.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
-                    }
-                  </select>
-                </div>
-                <div className="col-md-4 mb-2"> 
-                  <select className="border w-100 p-3 text-secondary rounded-2" value={region} name="region" required onChange={ handleInputs } >
-                    <option value=""> Choisir une région  </option>
-                    {
-                        selectedRegion?.map((item, index)=> ( <option value={item?.name} key={index}> {item?.content} </option> ))
-                    }
-                  </select>
-                </div>
-                <div className="col-md-4 mb-3"> 
-                  <select className="border w-100 p-3 text-secondary rounded-2" value={houseType} name="houseType" onChange={(e) => setHouseType(e.target.value)} >
-                    <option value=""> Choisir un type de propriété  </option>
-                    {
-                      vector.listOfFieldType[1].subType.map((item, index)=> ( <option value={item.name} key={index}> {item.content} </option> ))
-                    }
-                  </select>
-                </div>  
 
               </div>
               </div>

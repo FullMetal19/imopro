@@ -30,11 +30,8 @@ export function LocationSkeleton({value, design})
         Array(value).fill(0).map( (item, index) => { return (
             <div className={ design } key={index}> 
                 <div className="d-flex flex-column border bg-white mx-2"> 
-                    <div className="mb-3" >
-                        <Skeleton height={200} />
-                    </div>
-                    <div className="d-flex flex-column px-3 pb-4" >
-                        <Skeleton width={'70%'} count={3} height={22} />
+                    <div className="" >
+                        <Skeleton height={270} />
                     </div>
                 </div>
             </div>

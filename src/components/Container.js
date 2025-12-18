@@ -141,8 +141,8 @@ export function ContactContainer({ tel1 , tel2 })
                 <div className="d-flex justify-content-center align-items-center my-3 " > 
                     <span className='circle bg-three-clr' > <i className="bi bi-check-circle text-blue-clr fs-1"></i> </span>
                 </div>
-                <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel1 } </span>
-                <span className="text-center text-secondary lead mb-2 p-2 border rounded-2"> { tel2 } </span>
+                <span className="text-center text-muted lead mb-2 p-2 border rounded-2"> { tel1 } </span>
+                <span className="text-center text-muted lead mb-2 p-2 border rounded-2"> { tel2 } </span>
             </div>
         </div>
     )

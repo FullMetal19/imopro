@@ -11,7 +11,7 @@ import { ServiceSkeleton } from "../components/Skeleton";
 
 export function Service(){
 
-     const service = ServiceApi();
+    const service = ServiceApi();
 
     const [ modalState , setModalState ] = useState(false);
     const [ link , setLink ] = useState();
@@ -62,9 +62,9 @@ export function Service(){
                     <div className="col-md-6"> 
                         <div className="d-flex flex-column">
                             <div className="my-5" > <span className='py-3 px-4 bg-three-clr text-secondary lead rounded-5' > Diwane+ votre partenaire de confiance </span> </div> 
-                            <h1 className='fs-1 lead mb-4 text-secondary' > Pourquoi choisir Diwane+ </h1>
-                            <p className='text-muted mb-5 lead' > 
-                                Chez Diwane+, nous mettons la transparence, la simplicité et la confiance au cœur de chaque démarche immobilière. Notre plateforme vous offre des services fiables, des annonces de qualités, une expérience fluide et des outils modernes pour louer, vendre ou acheter en toute sérénité. Nous vous accompagnons à chaque étape avec professionnalisme, réactivité et un souci constant de qualité.
+                            <p className='fs-2 mb-4 text-dark' > Pourquoi choisir Diwaneplus </p>
+                            <p className='text-dark mb-5 lead' > 
+                                Chez Diwaneplus, nous mettons la transparence, la simplicité et la confiance au cœur de chaque démarche immobilière. Notre plateforme vous offre des services fiables, des annonces de qualités, une expérience fluide et des outils modernes pour louer, vendre ou acheter en toute sérénité. Nous vous accompagnons à chaque étape avec professionnalisme, réactivité et un souci constant de qualité.
                             </p>
                             <div className="row">
                                 <div className="col-lg-6 d-flex align-items-center mb-4">
@@ -84,11 +84,11 @@ export function Service(){
                                    <span className='text-secondary ms-2' > Qualité et professionnalisme </span>
                                 </div>
                             </div> 
-                            <p className='p-4 bg-three-clr my-4 border-left-main text-secondary lead' > Avec Diwane+, vous faites le choix d’un partenaire de confiance, engagé à valoriser votre patrimoine et à protéger vos investissements. </p>     
+                            <p className='p-4 bg-three-clr my-4 border-left-main text-secondary lead' > Avec Diwaneplus, vous faites le choix d’un partenaire de confiance, engagé à valoriser votre patrimoine et à protéger vos investissements. </p>     
                             <div> 
-                                <button className="px-3 mt-2 btn btn-main" onClick={ setModal }>
-                                    <i className="bi bi-play-circle text-white me-2"></i>
-                                    <span className="text-white"> Voir video </span>
+                                <button className="px-3 mt-2 btn btn-lg px-4 btn-main rounded-0" onClick={ setModal }>
+                                    <i className="bi bi-play-circle me-2"></i>
+                                    <span className=""> Explorer la video </span>
                                 </button> 
                             </div> 
                         </div>

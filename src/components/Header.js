@@ -29,28 +29,33 @@ export function NavigationBar({page=1})
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
-            {/* Liens */}
+            {/* Liens 
+            <i className="bi bi-plus"></i>
+            */}
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===1) && 'text-blue-clr'}`} href="/"> <i className="bi bi-plus"></i> Accueil </a>
+                  <a className={`nav-link ${(page===1) && 'text-blue-clr'}`} href="/"> { (page===1) && ( <i className="bi bi-arrow-down-circle"></i> ) }  Accueil </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/logement"> <i className="bi bi-plus"></i> Logement </a>
+                  <a className={`nav-link ${(page===2) && 'text-blue-clr'}`} href="/logement"> { (page===2) && ( <i className="bi bi-arrow-down-circle"></i> ) } Logement </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/terrain"> <i className="bi bi-plus"></i> Terrain </a>
+                  <a className={`nav-link ${(page===3) && 'text-blue-clr'}`} href="/terrain"> { (page===3) && ( <i className="bi bi-arrow-down-circle"></i> ) } Terrain </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/service"> <i className="bi bi-plus"></i> Service </a>
+                  <a className={`nav-link ${(page===4) && 'text-blue-clr'}`} href="/service"> { (page===4) && ( <i className="bi bi-arrow-down-circle"></i> ) } Service </a>
                 </li>
                 <li className="nav-item mx-2">
-                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/contact"> <i className="bi bi-plus"></i> Contact </a>
+                  <a className={`nav-link ${(page===5) && 'text-blue-clr'}`} href="/contact"> { (page===5) && ( <i className="bi bi-arrow-down-circle"></i> ) } Contact </a>
+                </li>
+                <li className="nav-item mx-2">
+                  <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/faq"> { (page===6) && ( <i className="bi bi-arrow-down-circle"></i> ) } FAQ </a>
                 </li>
                 {
                     ( localStorage.getItem('token') ) && ( 
                     <li className="nav-item mx-2">
-                      <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> <i className="bi bi-plus"></i> Mon-compte </a>
+                      <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> Mon-compte </a>
                     </li> )
                 }
               </ul>
@@ -93,11 +98,12 @@ export function TopBar()
         {/* ****************************************************************** */}
         <div className="col-lg-6 d-flex align-items-center justify-content-end"> 
           <div className="d-flex gap-2"> 
-            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-twitter-x text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-facebook text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-linkedin text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-youtube text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-instagram text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://x.com/DiwanePlus1960"> <i className="small bi bi-twitter-x text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.facebook.com/share/1A4SJD2WiU/"> <i className="small bi bi-facebook text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="http://www.linkedin.com/in/diwane-plus-0467123a0"> <i className="small bi bi-linkedin text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="/"> <i className="small bi bi-youtube text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.instagram.com/diwane.plus?igsh=MWlhamQ3dWI1MmV5Yg=="> <i className="small bi bi-instagram text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="http://tiktok.com/@diwane58"> <i className="small bi bi-tiktok text-white"></i> </a>
           </div>
         </div>
         {/* ****************************************************************** */}

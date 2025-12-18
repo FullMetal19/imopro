@@ -30,11 +30,13 @@ export function ServiceComponent()
 
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-8">
-              <div className="d-flex flex-column align-items-center mb-3">
-                <h3 className="text-secondary text-center mb-3" > Des services pensés pour vous </h3>
-                <p className="text-secondary text-center lead" > De la recherche de biens à la gestion locative, en passant par la vente et le conseil, nous proposons des services adaptés à vos besoins pour vous aider à concrétiser vos ambitions immobilières. </p>
-              </div>
+            <div className="col-lg-12 px-4">
+                <h3 className="text-secondary mb-3 display-6" > Des services pensés pour vous </h3>  
+                <div className="row">
+                  <div className="col-md-8">
+                    <p className="text-secondary lead" > De la recherche de biens à la gestion locative, en passant par la vente et le conseil, nous proposons des services adaptés à vos besoins pour vous aider à concrétiser vos ambitions immobilières. </p>
+                  </div>
+                </div>
             </div>
             <div className="col-lg-12">
               <div className="row py-5 d-flex justify-content-center"> 
@@ -75,7 +77,6 @@ export function LocationComponent()
     const fetchLocalities = async () => {
         try {
             const res = await product.findLocalities();
-            console.log(res.data);
             return res.data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
@@ -87,9 +88,9 @@ export function LocationComponent()
 
         <div className="col-lg-10 my-5">
           <div className="row mb-3">
-            <div className="col-lg-6 col-md-9">
+            <div className="col-lg-7 col-md-9">
               <div className="d-flex flex-column">
-                <h2 className="text-secondary" > Des opportunités immobilières partout où vous etes </h2>
+                <h2 className="text-secondary display-6" > Des opportunités immobilières partout où vous etes </h2>
                 <p className="text-secondary lead"> Nous opérons dans plusieurs régions garantissant une couverture étendue et des biens adaptés à toutes les préférences : zones urbaines, rurales, littorales ou intermédiaires.</p>
               </div>
             </div>
@@ -196,9 +197,9 @@ export function HouseComponent() {
 
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-9 mb-4">
+            <div className="col-lg-7 col-md-9 mb-4">
               <div className="d-flex flex-column align-items-center">
-                <h2 className="text-secondary text-center" > Découvrez nos logements </h2>
+                <h2 className="text-secondary text-center display-6 mb-2" > Découvrez nos logements </h2>
                 <p className="text-secondary text-center lead" > Parcourez nos différentes catégories de biens : maisons familiales, appartements modernes, studios pratiques, et bien plus encore. Il y en a pour tous les budgets et toutes les envies. </p>
               </div>
             </div>
@@ -306,9 +307,9 @@ export function FieldComponent() {
 
         <div className="col-lg-10 mt-5">
           <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-9">
+            <div className="col-lg-7 col-md-9">
               <div className="d-flex flex-column align-items-center mb-3">
-                <h3 className="text-secondary text-center" > Découvrez Nos terrains </h3>
+                <h3 className="text-secondary text-center display-6 mb-2" > Découvrez Nos terrains </h3>
                 <p className="text-secondary text-center lead" > Parcourez notre sélection de terrains adaptés à tous vos projets : construction, investissement ou aménagement. Des opportunités situées dans des zones stratégiques et en pleine croissance. </p>
               </div>
             </div>

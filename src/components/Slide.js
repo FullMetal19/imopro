@@ -12,7 +12,7 @@ export function Slide()
                   <img src={'../favicon.png'} alt="Logement extérieur" style={{ width: "80px" }} />
                 </span>
               </div>
-              <h1 className="h1 text-light"> Diwane+, la plateforme immobilière de référence. </h1>
+              <h1 className="h1 text-light"> Diwaneplus, la plateforme immobilière de référence. </h1>
               <p className="lead text-light"> Accédez dès maitenant aux meilleures opportunités immobilières du secteur sans effort. Un catalogue actualisé de biens d'exception, du terrain à la villa, à portée de clic. </p>
             </div>
           </div>      

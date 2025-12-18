@@ -68,7 +68,6 @@ export function PaymentFormModal({ method })
       
     const handleForm = async ( event ) => {
         event.preventDefault();
-        console.log(inputs);
         setStatus(0);
         setIsLoading(true);  
         try {

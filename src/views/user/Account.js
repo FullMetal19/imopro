@@ -96,9 +96,9 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir une entreprise immobilier </a> ) :
-                              ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon entreprise </a> ) :
-                              ( ( data?.companyStatus === 0 &&  data?.status === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" href={ "/admin" } > Dashbaord admin </a> ) : null ) )
+                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir un agence </a> ) :
+                              ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon agence </a> ) :
+                              ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  data?.status === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration </a> ) : null ) )
                             }
                         </div>
                         </div>
@@ -107,17 +107,17 @@ export function Account()
                     <div className="col-lg-12 border rounded-top-2 mb-4 bg-gray-light"> 
                         <div className="d-flex px-4 py-4">
                             {
-                               ( parseInt(data?.companyStatus) === 1) ? (<span className="text-secondary"> Votre demande de creation d'entreprise est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
+                               ( parseInt(data?.companyStatus) === 1) ? (<span className="text-secondary"> Votre demande de creation d'agence immobilier est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
                                ( ( parseInt(data?.companyStatus) === -1) ? (
                                <div className="d-flex justify-content-between gap-4 w-100">
-                                    <span className="text-secondary"> Votre demande d'ajout d'entreprise est invalidée </span>
+                                    <span className="text-secondary"> Votre demande d'ajout d'agence immobilier est invalidée </span>
                                     <div className="d-flex gap-3">
                                         <button className="btn btn-outline-secondary" onClick={ ()=> setForm1( data?.company.message) } > Voir message </button>
                                         <a className="btn btn-secondary" href={`/modification-entreprise/${data?.company.id}`} > Modifier </a> 
                                     </div> 
                                </div> ) :
-                               ( ( parseInt(data?.companyStatus) === -2) ? (<span className="text-secondary"> Votre entreprise est bloqué. Appelez au (77 000 00 00) pour plus d'information </span>) : 
-                               (<span className="text-secondary lead"> Bienvenue chez ImmoPro </span>) ))
+                               ( ( parseInt(data?.companyStatus) === -2) ? (<span className="text-secondary"> Votre agence immobilier est bloqué. Appelez au ( +221 78 534 26 26 ) pour plus d'information </span>) : 
+                               (<span className="text-secondary lead"> Bienvenue chez Diwaneplus </span>) ))
                             }   
                         </div>
                     </div>
