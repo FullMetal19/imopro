@@ -45,6 +45,9 @@ export function VisitSlideComponent({ openLocalisationModal, openValidationModal
                   <span className="text-blue-clr">{item.date}</span> à{" "}
                   <span className="text-blue-clr">{item.time}</span>
                 </div>
+                <div className="py-2 px-3 border-bottom text-secondary">
+                  <span className="text-secondary small"> Contact : 78 534 26 26  </span>
+                </div>
                 <div className="d-flex justify-content-between bg-three-clr px-3 py-3">
                   <button className="btn btn-sm btn-outline-secondary" onClick={() => openLocalisationModal(item.Property.longitude, item.Property.latitude)} >
                     <i className="bi bi-geo-alt-fill me-1"></i> Localisation

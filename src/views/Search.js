@@ -18,19 +18,18 @@ export function Search(){
 
     const fetchHouses = async () => {
         try {
-            const res = await product.findAllHouses();
-            return res.data.data; 
+            const {data} = await product.findBySubtitle( type.charAt(0).toUpperCase() + type.slice(1) );
+            return data.data; 
         } catch (err) { 
             throw new Error('Erreur lors de la récupération des utilisateurs : ' + err.message);
         }
     }
-    const { isLoading, data, error } = useQuery({  queryKey: ["allHouses"], queryFn: fetchHouses });
+    const { isLoading, data, error } = useQuery({  queryKey: ["dataBySubtitle"], queryFn: fetchHouses });
 
    
     // ****************************************************************************
     const [country, setCountry] = useState();
     const [region, setRegion] = useState();
-    const [houseType, setHouseType] = useState();
 
     const [selectedRegion, setSelectedRegion] = useState([]);
 
@@ -44,9 +43,6 @@ export function Search(){
         if( name === 'region' ) {
             setRegion(value);
         }
-        if( name === 'houseType' ) {
-             setHouseType(value);
-        }
     };
 
 
@@ -57,11 +53,10 @@ export function Search(){
 
         if (country) filtered = filtered.filter(item => item.country?.toLowerCase() === country.toLowerCase() );
         if (region) filtered = filtered.filter(item => item.region?.toLowerCase() === region.toLowerCase() );
-        if (houseType) filtered = filtered.filter(item => item.subtitle?.toLowerCase() === houseType.toLowerCase() );
         
        setFilteredClasses(filtered);
 
-    }, [data, country, region, houseType]);
+    }, [data, country, region]);
 
 
     return (

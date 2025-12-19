@@ -10,6 +10,9 @@ export function Password()
     const [ inputs, setInputs ] = useState();
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showCPassword, setShowCPassword] = useState(false);
     
     const handleInputs = ( event ) => {
         const { name , value } =  event.target;
@@ -98,16 +101,22 @@ export function Password()
                         </div>
                         {/* -------------------------------- */}
                         <div className="col-md-12 mb-2"> 
-                          <div className="d-flex gap-2 mb-2" >
-                            <input type="password" name="password" placeholder="Nouveau mot de passe" className="w-100 border input py-3 px-3 text-muted rounded-2" onChange={ handleInputs } required />
-                            <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                          <div className="d-flex gap-1 mb-2 align-items-center">
+                            <span className="d-flex align-items-center border p-3 rounded-2 text-secondary" style={{ cursor: "pointer" }} onClick={() => setShowPassword(!showPassword)}>
+                              <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                            </span>
+                            <input type={showPassword ? "text" : "password"} name="password" placeholder="Mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={handleInputs} required />
+                            <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span> 
                           </div>
                         </div>
                         {/* -------------------------------- */}
                         <div className="col-md-12 mb-2"> 
-                          <div className="d-flex gap-2 mb-2" >
-                            <input type="password" name="cpassword" placeholder="Confirmer le mot de passe" className="w-100 border input py-3 px-3 text-muted rounded-2" onChange={ handleInputs } required />
-                            <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                          <div className="d-flex gap-1 mb-3 align-items-center">
+                            <span className="d-flex align-items-center border p-3 rounded-2 text-secondary" style={{ cursor: "pointer" }} onClick={() => setShowCPassword(!showCPassword)}>
+                              <i className={`bi ${showCPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                            </span>
+                            <input type={showCPassword ? "text" : "password"} name="cpassword" placeholder="Confirmer mot de passe" className="w-100 border input py-3 px-3 text-secondary rounded-2" onChange={handleInputs} required />
+                            <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span> 
                           </div>
                         </div>
                         {/* -------------------------------- */}   

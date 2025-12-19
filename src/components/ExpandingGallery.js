@@ -3,14 +3,38 @@ import { Modal } from "react-bootstrap";
 // import { FaEye } from "react-icons/fa";
 
 export default function ExpandingGallery() {
-  const images = [
-    "./img/Image_fx-117.jpg",
-    "./img/Image_fx-92.png",
-    "./img/Image_fx-133.jpg",
-    "./img/Image_fx-88.png",
-    "./img/Image_fx-93.png",
-    "./img/Image_fx-124.jpg",
-  ];
+  const data = [
+    {
+      img : "./img/Image_fx-117.jpg",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    },
+    {
+      img : "./img/Image_fx-92.png",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    },
+    {
+      img : "./img/Image_fx-133.jpg",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    },
+    {
+      img : "./img/Image_fx-88.png",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    },
+    {
+      img : "./img/Image_fx-93.png",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    },
+    {
+      img : "./img/Image_fx-124.jpg",
+      title : "Titre du text",
+      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+    }
+ ];
 
   const [activeIndex, setActiveIndex] = useState(null);
   const [show, setShow] = useState(false);
@@ -25,19 +49,19 @@ export default function ExpandingGallery() {
 
   return (
     <div className="gallery-container">
-      {images.map((img, i) => (
+      {data.map((item, i) => (
         <div
           key={i}
           className={`gallery-item ${activeIndex === i ? "active" : ""}`}
           onMouseEnter={() => setActiveIndex(i)}
           onMouseLeave={() => setActiveIndex(null)}
-          onClick={() => handleShow(img)}
-          style={{ backgroundImage: `url(${img})` }}
+          onClick={() => handleShow(item.img)}
+          style={{ backgroundImage: `url(${item.img})` }}
         >
           {/* OVERLAY */}
           <div className="gallery-overlay">
-            {/* <FaEye size={24} /> */}
-            <span>Voir l’image</span>
+            <span className="mb-2 text-light text-start p-3"> { item.title } </span>
+            <span className="text-light text-start p-3"> { item.desc } </span>
           </div>
         </div>
       ))}

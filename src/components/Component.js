@@ -437,3 +437,24 @@ export function TextReducer({text, maxsize})
 }
 
 // ****************************************************************************************************************
+
+
+export function TextExpandable ({ text, wordLimit, isExpanded }) 
+{
+
+  const words = text.split(' ');
+  const isTooLong = words.length > wordLimit;
+
+  const displayText = isTooLong && !isExpanded
+    ? words.slice(0, wordLimit).join(' ') + '...'
+    : text;
+
+  return (
+    
+    <p className='text-secondary mb-2'>
+        {displayText}
+    </p>
+
+  );
+
+};

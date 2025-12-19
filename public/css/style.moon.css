@@ -831,14 +831,11 @@
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* clair par défaut */
+  background: rgba(0, 0, 0, 0.5); /* clair par défaut */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 8px;
-  color: #fff;
-  font-weight: 500;
+  gap: 2px;
   transition: background 0.3s ease;
 }
 

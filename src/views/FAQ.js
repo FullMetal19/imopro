@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 // import vector from "../config/data";
 import { NavigationBar, TopBar } from "../components/Header";
 import { Footer } from "../components/Footer";
 import vector from "../config/data";
 import FaqComponent from "../components/FaqComponent";
+import { TextExpandable } from "../components/Component";
 
 export function FAQ()
 {
+
+    const [expandedItems, setExpandedItems] = useState({});
+
+    const toggleExpand = (index) => {
+      setExpandedItems(prev => ({
+        ...prev,
+        [index]: !prev[index]
+      }));
+    };
+
+
 
     const data = [
         {
             img : "./img/Image_fx-75.png",
             title : "Titre du blog",
-            desc : "Diwaneplus est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance.",
+            desc : "Diwaneplus est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance. Diwaneplus est une plateforme immobilière moderne dédiée à la vente, la location et la gestion de propriétés. Nous connectons propriétaires, acheteurs et locataires grâce à des services fiables, transparents et accessibles. Avec Diwane+, trouvez le bien idéal, publiez vos annonces en toute simplicité et gérez vos transactions en toute confiance.",
             date : ""
         },
         {
@@ -108,15 +120,16 @@ export function FAQ()
                                         {/* Contenu */}
                                         <div className="border-top border-bottom p-4">
                                           <h5 className="fs-4 text-secondary mb-3"> { item.title } </h5>
-                                          <p className="text-secondary mb-2"> { item.desc } </p>
+                                          <TextExpandable text={item.desc} wordLimit={60} isExpanded={!!expandedItems[index]} />
                                         </div>
                                         {/* Boutons */}
                                         <div className="d-flex justify-content-between p-4">
                                           <span className="d-flex align-items-center text-secondary" >
-                                            <i className="bi bi-eye me-2"></i> Details
+                                            <i className="bi bi-grid me-2"></i> Details
                                           </span>
-                                          <button className="btn btn-main rounded-0 d-flex align-items-center">
-                                            <i className="bi bi-arrow-bottom-circle me-2"></i> Voir plus
+                                          <button className="btn btn-main rounded-0 d-flex align-items-center" onClick={() => toggleExpand(index)}>     
+                                            { expandedItems[index] ? "Réduire" : "Voir plus" }
+                                            <i className={`bi ${ expandedItems[index] ? 'bi-arrow-left' : 'bi-arrow-right'} ms-1`} ></i>
                                           </button>
                                         </div>
                                     </div>

@@ -45,6 +45,16 @@ export function ProductApi(contentType = "application/json")
    
         getStat : (companyId) => https.get(`/api/property/${companyId}/stats`),  
 
+
+
+
+
+        
+
+        findBySubtitle: (subtitle) => http.get(`/api/property/filter-by-subtitle/${subtitle}`),
+
+        getStatBySubtitle : () => http.get(`/api/property/stats/by-subtitle`), 
+
       };
 }
 
