@@ -74,8 +74,38 @@ export function FAQ()
                     <div className="col-lg-10 py-5">
                         <div className="row d-flex justify-content-between flex-lg-row">
             
+                          {/* Main content: on lg it’s left, on md it goes after */}
+                          <div className="col-lg-8 d-flex flex-column rounded-3">
+
+                            {
+                                data?.map( (item, index) => (
+
+                                    <div className="d-flex flex-column bg-white mb-5 shadow-sm border rounded-2" key={index}>
+                                        {/* Image principale */}
+                                        <img src={ item.img } className="card-img-top img-fluid rounded-top-2" alt={ 'image-'+ index } />
+                                        {/* Contenu */}
+                                        <div className="border-top border-bottom p-4">
+                                          <h5 className="fs-4 text-secondary mb-3"> { item.title } </h5>
+                                          <TextExpandable text={item.desc} wordLimit={60} isExpanded={!!expandedItems[index]} />
+                                        </div>
+                                        {/* Boutons */}
+                                        <div className="d-flex justify-content-between p-4">
+                                          <span className="d-flex align-items-center text-secondary" >
+                                            <i className="bi bi-grid me-2"></i> Details
+                                          </span>
+                                          <button className="btn btn-main rounded-0 d-flex align-items-center" onClick={() => toggleExpand(index)}>     
+                                            { expandedItems[index] ? "Réduire" : "Voir plus" }
+                                            <i className={`bi ${ expandedItems[index] ? 'bi-arrow-left' : 'bi-arrow-right'} ms-1`} ></i>
+                                          </button>
+                                        </div>
+                                    </div>
+
+                                ) )
+                            }
+                          </div>
+
                           {/* Sidebar: on lg it’s right, but on md it goes first */}
-                          <div className="col-lg-4 order-md-1 order-lg-2"> 
+                          <div className="col-lg-4"> 
                             <div className="row mb-4 px-4 sticky-top">
                               <div className="col-lg-12 d-flex flex-column">
 
@@ -108,39 +138,8 @@ export function FAQ()
                             </div>
                           </div>
 
-                          {/* Main content: on lg it’s left, on md it goes after */}
-                          <div className="col-lg-8 d-flex flex-column rounded-3">
-
-                            {
-                                data?.map( (item, index) => (
-
-                                    <div className="d-flex flex-column bg-white mb-5 shadow-sm border rounded-2" key={index}>
-                                        {/* Image principale */}
-                                        <img src={ item.img } className="card-img-top img-fluid rounded-top-2" alt={ 'image-'+ index } />
-                                        {/* Contenu */}
-                                        <div className="border-top border-bottom p-4">
-                                          <h5 className="fs-4 text-secondary mb-3"> { item.title } </h5>
-                                          <TextExpandable text={item.desc} wordLimit={60} isExpanded={!!expandedItems[index]} />
-                                        </div>
-                                        {/* Boutons */}
-                                        <div className="d-flex justify-content-between p-4">
-                                          <span className="d-flex align-items-center text-secondary" >
-                                            <i className="bi bi-grid me-2"></i> Details
-                                          </span>
-                                          <button className="btn btn-main rounded-0 d-flex align-items-center" onClick={() => toggleExpand(index)}>     
-                                            { expandedItems[index] ? "Réduire" : "Voir plus" }
-                                            <i className={`bi ${ expandedItems[index] ? 'bi-arrow-left' : 'bi-arrow-right'} ms-1`} ></i>
-                                          </button>
-                                        </div>
-                                    </div>
-
-                                ) )
-                            }
-  
-                          </div>
-
                         </div>
-                     </div>
+                    </div>
             </div>
 
             <div className="row bg-three-clr py-5 justify-content-center"> 
@@ -148,7 +147,7 @@ export function FAQ()
                             {/* Titre */}
                             <div className="row mb-5">
                               <div className="col-12 col-md-6">
-                                <h1 className="display-6 fw-bold text-dark">Pratiques et techniques du chorégraphe</h1>
+                                <h1 className="display-6 fw-bold text-dark">FAQ Diwaneplus</h1>
                               </div>
                               <div className="col-12 col-md-6 text-secondary d-flex align-items-center lead">
                                 When detailing testimonials it’s important to include key elements that provide context and authenticity

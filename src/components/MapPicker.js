@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import 'react-loading-skeleton/dist/skeleton.css';
+import "react-loading-skeleton/dist/skeleton.css";
 import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -21,16 +21,14 @@ const blueIcon = new L.Icon({
   iconAnchor: [16, 32],
 });
 
-// Component to set map view dynamically
+// Component to dynamically update map view
 function SetView({ position }) {
   const map = useMap();
-
   useEffect(() => {
     if (position) {
-      map.setView(position, 14);
+      map.setView(position, 14); // zoom sur position utilisateur
     }
   }, [position, map]);
-
   return null;
 }
 
@@ -38,7 +36,7 @@ export default function MapPicker({ onSelect }) {
   const [position, setPosition] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Get user location on mount
+  // Get user location
   useEffect(() => {
     if (!navigator.geolocation) {
       setLoading(false);
@@ -47,22 +45,20 @@ export default function MapPicker({ onSelect }) {
 
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const userPos = {
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-        };
+        const userPos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         setPosition(userPos);
         setLoading(false);
         onSelect(userPos);
       },
       (err) => {
         console.error("Geolocation error:", err);
-        setLoading(false); // fallback if denied or error
-      }
+        setLoading(false); // fallback si refus
+      },
+      { enableHighAccuracy: true, timeout: 10000 } // pour meilleure précision
     );
   }, [onSelect]);
 
-  // Marker for clicks
+  // Marker on click
   function LocationMarker() {
     useMapEvents({
       click(e) {
@@ -70,15 +66,14 @@ export default function MapPicker({ onSelect }) {
         onSelect(e.latlng);
       },
     });
-
     return position ? <Marker position={position} icon={blueIcon} /> : null;
   }
 
-  // Show loader while fetching position
+  // Skeleton loader
   if (loading) {
     return (
-      <div className="d-flex" >
-        <Skeleton height={(500)} />
+      <div className="d-flex justify-content-center align-items-center" style={{ height: "500px", width: "100%" }}>
+        <Skeleton height={500} width="100%" />
       </div>
     );
   }
@@ -86,7 +81,7 @@ export default function MapPicker({ onSelect }) {
   // Map display
   return (
     <MapContainer
-      center={ position || [14.7167, -17.4677]} // fallback Dakar
+      center={position || [14.7167, -17.4677]} // fallback Dakar
       zoom={13}
       scrollWheelZoom={true}
       style={{ height: "500px", width: "100%" }}
@@ -95,7 +90,6 @@ export default function MapPicker({ onSelect }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="© OpenStreetMap contributors"
       />
-
       <SetView position={position} />
       <LocationMarker />
     </MapContainer>
