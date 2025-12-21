@@ -2,14 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BottomBar } from "../components/Footer";
 import { UserApi } from '../services/user.api';
-import vector from '../config/data';
+import PhoneInput from "react-phone-input-2";
+import 'react-phone-input-2/lib/style.css';
+import { isValidPhoneNumber } from "libphonenumber-js";
+
 
 
 export function Signup(){
 
     const navigate = useNavigate();
     const user = UserApi();
-    const [ inputs, setInputs ] = useState();
+    const [inputs, setInputs] = useState({
+      phone: "",
+      phoneIndex: "+221",
+      fullPhone: "+221"
+    });
+
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -22,12 +30,38 @@ export function Signup(){
         setInputs( { ...inputs, [name] : value   } );
     }
 
+    const handlePhoneChange = (value, data) => {
+      const dialCode = "+" + data.dialCode;
+
+      // Toujours forcer la présence du dialCode
+      if (!value.startsWith(data.dialCode)) {
+        value = data.dialCode;
+      }
+
+      const phoneNumber = value.slice(data.dialCode.length);
+
+      setInputs(prev => ({
+           ...prev,
+           phoneIndex: dialCode,
+           phone: phoneNumber,
+           fullPhone: dialCode + phoneNumber
+      }));
+    };
+
+
+
     const [checked, setChecked] = useState(false);
     const handleChange = e => setChecked(e.target.checked)
   
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
+          
+        if (!isValidPhoneNumber(inputs.fullPhone)) {
+          setStatus(-3);
+          return;
+        }
+
         if(inputs.password === inputs.cpassword )
         {   
             try {
@@ -111,6 +145,15 @@ export function Signup(){
                                 </div>
                               )
                             }  
+                            {
+                              status === -3 && (
+                                <div className="col-md-12 mb-2">
+                                  <div className="alert alert-danger">
+                                    Numéro de téléphone invalide.
+                                  </div>
+                                </div>
+                              )
+                            }  
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
                               <div className="d-flex gap-1 mb-2" >
@@ -138,19 +181,32 @@ export function Signup(){
                             </div>
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
-                              <div className="d-flex gap-1 mb-2">
-                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' onChange={ handleInputs } required >
-                                  <option value=""> index </option>
-                                  {
-                                    vector.phoneIndex.map( (item, index) => (
-                                       <option key={index} value={item}> {item} </option>
-                                     ) )
-                                  }
-                                </select>
-                                <input type="number" name="phone" placeholder="Numéro de téléphone joignable" className="w-100 border input py-3 px-3 text-muted rounded-2 text-secondary" onChange={ handleInputs } required />
-                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                              <div className="d-flex gap-1 mb-2 align-items-center">
+                                <PhoneInput country="sn" enableSearch value={inputs.fullPhone} onChange={handlePhoneChange}
+                                  inputStyle={{
+                                    width: "100%",
+                                    height: "56px"
+                                  }}
+                                  inputProps={{
+                                    onKeyDown: (e) => {
+                                      const pos = e.target.selectionStart;
+                                      const dialLength = inputs.phoneIndex.length;
+
+                                      // Interdire uniquement l'effacement du dialCode
+                                      if (
+                                        pos <= dialLength &&
+                                        (e.key === "Backspace" || e.key === "Delete")
+                                      ) {
+                                        e.preventDefault();
+                                      }
+                                    }
+                                  }}
+                                />
+
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span>
                               </div>
                             </div>
+
                             {/* --------------------------------- */}
                             <div className="col-lg-8 mb-2">
                               <div className="d-flex gap-1 mb-2" >
@@ -201,12 +257,12 @@ export function Signup(){
                     </div>
                   
                 
-                     </div>
-                    </div>
-                    <div className="row bg-blue-clr">
-                      <BottomBar /> 
-                    </div>
                   </div>
+                </div>
+                <div className="row bg-blue-clr">
+                  <BottomBar /> 
+                </div>
+            </div>
 
     )
 }

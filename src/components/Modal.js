@@ -4,7 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import { UserApi } from "../services/user.api";
 import { PaymentApi } from "../services/payment.api";
 import { ProductApi } from "../services/product.api";
-import vector from "../config/data";
+
+import PhoneInput from "react-phone-input-2";
+import 'react-phone-input-2/lib/style.css';
+import { isValidPhoneNumber } from "libphonenumber-js";
+
 
 
 export function VideoModal( { method, url })
@@ -83,12 +87,29 @@ export function PasswordModal({ method })
     const navigate = useNavigate();
     const user = UserApi();
 
-    const [ inputs, setInputs ] = useState();
-    
-    const handleInputs = ( event ) => {
-        const { name , value } =  event.target;
-        setInputs( { ...inputs, [name] : value   } );
-    }
+    const [inputs, setInputs] = useState({
+        phone: "",
+        phoneIndex: "+221",
+        fullPhone: "+221"
+    });
+
+    const handlePhoneChange = (value, data) => {
+      const dialCode = "+" + data.dialCode;
+
+      // Toujours forcer la présence du dialCode
+      if (!value.startsWith(data.dialCode)) {
+        value = data.dialCode;
+      }
+
+      const phoneNumber = value.slice(data.dialCode.length);
+
+      setInputs(prev => ({
+           ...prev,
+           phoneIndex: dialCode,
+           phone: phoneNumber,
+           fullPhone: dialCode + phoneNumber
+      }));
+    };
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
@@ -96,6 +117,12 @@ export function PasswordModal({ method })
     const handleForm = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+
+        if (!isValidPhoneNumber(inputs.fullPhone)) {
+            setStatus(-3);
+            return;
+        }
+
         try {
             const {data} = await user.genPasswordToken(inputs);
             setIsLoading(false);
@@ -118,7 +145,7 @@ export function PasswordModal({ method })
                     <div className="col-lg-6 col-md-9 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
                         <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <span className="text-secondary small mt-4"> Etes vous sure de vouloir changé de mot de passe </span>
-                        <div className="d-flex border-top py-4 mb-2">
+                        <div className="d-flex border-top py-4 mt-1 mb-2">
 
                           <form onSubmit={ handleForm } className="d-flex flex-column mt-2">
                             <div className="d-flex flex-column align-items-center gap-2 mb-4" > 
@@ -148,19 +175,40 @@ export function PasswordModal({ method })
                                 </div>
                               )
                             }
+                            {
+                              status === -3 && (
+                                <div className="col-md-12 mb-2">
+                                  <div className="alert alert-danger">
+                                    Numéro de téléphone invalide.
+                                  </div>
+                                </div>
+                              )
+                            }  
                             {/* -------------------------------- */}
                             <div className="col-md-12 mb-2"> 
-                              <div className="d-flex gap-2 mb-2">
-                                <select className="border input py-3 px-3 text-secondary rounded-2 " name='phoneIndex' required onChange={ handleInputs }>
-                                  <option value=""> index </option>
-                                  {
-                                    vector.phoneIndex.map( (item, index) => (
-                                       <option key={index} value={item}> {item} </option>
-                                     ) )
-                                  }
-                                </select> 
-                                <input type="number" name="phone" placeholder="Numéro de téléphone" className="w-100 border input py-3 px-3 text-muted rounded-2" required onChange={ handleInputs } />
-                                <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                              <div className="d-flex gap-1 mb-2 align-items-center">
+                                <PhoneInput country="sn" enableSearch value={inputs.fullPhone} onChange={handlePhoneChange}
+                                  inputStyle={{
+                                    width: "100%",
+                                    height: "56px"
+                                  }}
+                                  inputProps={{
+                                    onKeyDown: (e) => {
+                                      const pos = e.target.selectionStart;
+                                      const dialLength = inputs.phoneIndex.length;
+
+                                      // Interdire uniquement l'effacement du dialCode
+                                      if (
+                                        pos <= dialLength &&
+                                        (e.key === "Backspace" || e.key === "Delete")
+                                      ) {
+                                        e.preventDefault();
+                                      }
+                                    }
+                                  }}
+                                />
+
+                                <span className="d-flex align-items-center border p-3 rounded-2 text-danger"> * </span>
                               </div>
                             </div>
                             {/* -------------------------------- */}

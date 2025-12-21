@@ -6,33 +6,33 @@ export default function ExpandingGallery() {
   const data = [
     {
       img : "./img/Image_fx-117.jpg",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Des propriétés soigneusement sélectionnées",
+      desc : ""
     },
     {
       img : "./img/Image_fx-92.png",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Des documents 100 % conformes",
+      desc : ""
     },
     {
       img : "./img/Image_fx-133.jpg",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Des lieux qui font la différence",
+      desc : ""
     },
     {
       img : "./img/Image_fx-88.png",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Une expérience simple et rapide",
+      desc : ""
     },
     {
       img : "./img/Image_fx-93.png",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Des experts à vos côtés",
+      desc : ""
     },
     {
       img : "./img/Image_fx-124.jpg",
-      title : "Titre du text",
-      desc : "description de l'image et de m'entreprise en générale à travers l'image"
+      title : "Des transactions en toute confiance",
+      desc : ""
     }
  ];
 
@@ -60,8 +60,8 @@ export default function ExpandingGallery() {
         >
           {/* OVERLAY */}
           <div className="gallery-overlay">
-            <span className="mb-2 text-light text-start p-3"> { item.title } </span>
-            <span className="text-light text-start p-3"> { item.desc } </span>
+            <span className="mb-2 text-light text-center p-3"> { item.title } </span>
+            <span className="text-light text-center p-3"> { item.desc } </span>
           </div>
         </div>
       ))}

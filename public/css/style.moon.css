@@ -551,35 +551,48 @@
   position: relative;
 }
 
-/* Overlay sombre */
+/* Overlay couvrant le slide entier */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.6);
+}
+.overlay-box {
   display: flex;
-  align-items: center;
-  padding-left: 60px;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  text-align: center;       /* centrer le texte à l'intérieur */
+  padding: 0;               /* supprimer padding */
 }
 
-/* Largeurs */
+/* Si tu veux un overlay-half centré horizontalement */
 .overlay-half {
   width: 50%;
+  margin: 0 auto;           /* centre horizontalement */
 }
 
+/* overlay-full reste 100% */
 .overlay-full {
   width: 100%;
 }
 
-/* Contenu animé */
+/* Contenu de l'overlay centré */
 .overlay-content {
+  display: flex;
+  flex-direction: column;   /* icône + titre + texte empilés verticalement */
+  align-items: center;      /* centrer horizontalement */
+  justify-content: center;  /* centrer verticalement si nécessaire */
+  max-width: 500px;         /* limite la largeur pour le texte */
   color: white;
-  max-width: 500px;
-  opacity: 0;
-  transform: translateX(-30px);
+  opacity: 1;
+  transform: none;
   transition: all 0.8s ease;
 }
+
+
 
 /* Animation quand le slide est actif */
 .swiper-slide-active .overlay-content {

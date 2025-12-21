@@ -2,15 +2,33 @@ import React, { useState } from "react";
 
 const data = [
   {
-    title: "What does it cost to work with you?",
-    description:
-      "If you need to exchange a product, please contact us within 14 days of receiving your order. We will determine the best course of action and guide you through the exchange process.",
+    title: "Comment puis-je acheter un bien immobilier en ligne au Sénégal ?",
+    description: "Vous pouvez consulter nos annonces sur la plateforme, sélectionner le bien qui vous intéresse, faire une demande de visite ou d’achat, puis suivre les étapes de réservation et de paiement sécurisées en ligne avec l’accompagnement de nos agents.",
   },
-  { title: "How do I make a warranty claim?", description: "Lorem ipsum..." },
-  { title: "Where can I change or cancel my order?", description: "Lorem ipsum..." },
-  { title: "What's your return policy?", description: "Lorem ipsum..." },
-  { title: "Do I have to pay customs fees or duty on my package?", description: "Lorem ipsum..." },
-  { title: "How do I track my shipment?", description: "Lorem ipsum..." },
+  { title: "Les biens publiés sur la plateforme sont-ils vérifiés ?", 
+    description: "Oui. Tous les biens (logements, terrains, locaux commerciaux) sont vérifiés juridiquement et physiquement avant publication afin de garantir leur authenticité et éviter toute fraude." 
+  },
+  { title: "Quels documents sont nécessaires pour acheter un terrain ou un logement", 
+    description: "Titre foncier ou délibération, Pièce d’identité, contrat de vente ou de bail, acte notarié (pour les ventes), nous vous accompagnons à chaque étape." 
+  },
+  { title: "Quels moyens de paiement acceptez-vous ?", 
+    description: "Nous acceptons plusieurs moyens de paiement sécurisés : mobile Money (Wave, Orange Money, Free Money), virement bancaire, paiement international selon les cas" 
+  },
+  { title: "Puis-je mettre mon bien en location ou en vente sur votre plateforme ?", 
+    description: "Oui. Les propriétaires peuvent publier leurs biens après validation. Notre équipe s’assure de la conformité du bien avant sa mise en ligne." 
+  },
+  { title: "Quels sont les frais appliqués par la plateforme ?", 
+    description: "Les frais dépendent du service (vente, location, gestion locative). Ils sont clairement indiqués avant toute transaction, sans frais cachés." 
+  },
+  { title: "Proposez-vous un service de gestion locative ?", 
+    description: "Oui. Nous proposons un service complet incluant : recherche de locataires, encaissement des loyers, suivi des paiements, gestion des litiges et maintenance" 
+  },
+  { title: "Les étrangers ou la diaspora peuvent-ils acheter un bien au Sénégal ?", 
+    description: "Oui. Les Sénégalais de la diaspora et les étrangers peuvent acheter ou louer des biens au Sénégal, sous réserve du respect des lois foncières et avec l’assistance de nos partenaires juridiques." 
+  },
+  { title: "Comment contacter le service client ?", 
+    description: "Notre service client est disponible via : Téléphone / WhatsApp, Email, formulaire de contact sur la plateforme. Nous vous accompagnons avant, pendant et après votre transaction." 
+  },
 ];
 
 export default function FaqComponent() {

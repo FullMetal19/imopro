@@ -11,69 +11,32 @@ export default function  PropertySliderSwiper() {
   const slides = [
     {
       image: "./img/Image_fx-117.jpg",
-      title: "Découvrez nos biens",
-      text: "Des maisons modernes et accessibles",
-      icon: "🏠",
-      largeOverlay: true, // 👉 premier slide
+      title: "Trouvez le logement idéal, simplement",
+      text: "Appartements et maisons disponibles à la location ou à l’achat, partout au Sénégal, avec des biens vérifiés et un accompagnement personnalisé.",
     },
     {
       image: "./img/Image_fx-88.png",
-      title: "Achetez en toute sécurité",
-      text: "Transactions rapides et fiables",
-      icon: "🔐",
+      title: "Investissez en toute sécurité",
+      text: "Des terrains légalement vérifiés, prêts à bâtir, pour vos projets résidentiels ou commerciaux, en ville comme en périphérie.",
     },
     {
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-      title: "Locations flexibles",
-      text: "Mensuel ou longue durée",
-      icon: "📅",
+      title: "Donnez vie à votre activité",
+      text: "Boutiques, bureaux et espaces commerciaux stratégiquement situés pour développer votre entreprise en toute sérénité.",
     },
     {
       image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-      title: "Terrains disponibles",
-      text: "En zones urbaines et rurales",
-      icon: "🌍",
+      title: "Nous gérons, vous investissez",
+      text: "De la recherche à la gestion locative, notre équipe s’occupe de tout pour sécuriser et rentabiliser votre patrimoine immobilier.",
     },
     {
       image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-      title: "Support 24/7",
-      text: "Une équipe toujours à l'écoute",
-      icon: "📞",
+      title: "L’immobilier à portée de clic",
+      text: "Achetez, louez ou investissez à distance grâce à notre plateforme en ligne, idéale pour la diaspora et les investisseurs internationaux.",
     },
   ];
 
 
-  //  {
-  //     image: "./img/Image_fx-117.jpg",
-  //     title: "Découvrez nos biens",
-  //     text: "Des maisons modernes et accessibles",
-  //     icon: "🏠",
-  //     largeOverlay: true, // 👉 premier slide
-  //   },
-  //   {
-  //     image: "./img/Image_fx-86.png",
-  //     title: "Achetez en toute sécurité",
-  //     text: "Transactions rapides et fiables",
-  //     icon: "🔐",
-  //   },
-  //   {
-  //     image: "./img/Image_fx-147.jpg",
-  //     title: "Locations flexibles",
-  //     text: "Mensuel ou longue durée",
-  //     icon: "📅",
-  //   },
-  //   {
-  //     image: "./img/Image_fx-88.png",
-  //     title: "Terrains disponibles",
-  //     text: "En zones urbaines et rurales",
-  //     icon: "🌍",
-  //   },
-  //   {
-  //     image: "./img/Image_fx-148.jpg",
-  //     title: "Support 24/7",
-  //     text: "Une équipe toujours à l'écoute",
-  //     icon: "📞",
-  //   },
 
   return (
 
@@ -100,11 +63,15 @@ export default function  PropertySliderSwiper() {
                   <SwiperSlide key={index}>
                     <div className="slide" style={{ backgroundImage: `url(${slide.image})` }} >
                       <div className={`overlay ${ slide.largeOverlay ? "overlay-half" : "overlay-full" }`} >
-                        <div className="overlay-content">
-                          <div className="icon">{slide.icon}</div>
-                          <h2>{slide.title}</h2>
-                          <p>{slide.text}</p>
-                        </div>
+                        <div className="row w-100 h-100 justify-content-center">
+                          <div className="overlay-content col-lg-5 col-md-8">
+                              <div className="icon bg-whit-transp shadow-sm rounded p-4">
+                                 <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "80px" }} />
+                              </div>
+                              <h2 className="text-center">{slide.title}</h2>
+                              <p className="text-center">{slide.text}</p>
+                            </div>
+                          </div>
                       </div>
                     </div>
                   </SwiperSlide>
