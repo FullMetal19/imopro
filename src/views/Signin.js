@@ -12,7 +12,7 @@ export function Signin(){
     const [inputs, setInputs] = useState();
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
-     const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -40,7 +40,7 @@ export function Signin(){
         } catch (err) { 
             setStatus(-1);
             setIsLoading(false);
-             setMessage(err?.response.data.error  || 'Erreur internz du serveur. Veuillez réessayer.' );
+            setMessage(err?.response.data.error  || 'Erreur interne du serveur. Veuillez réessayer.' );
         }
     } 
 

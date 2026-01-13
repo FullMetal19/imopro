@@ -63,7 +63,7 @@ export function MonthPay() {
         <TopBar />
       </div>
       <div className="row sticky-top">
-        <NavigationBar page={6} />
+        <NavigationBar page={7} />
       </div>
 
       {/* ----------------- Main Content ----------------- */}

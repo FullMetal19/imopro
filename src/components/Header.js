@@ -55,7 +55,7 @@ export function NavigationBar({page=1})
                 {
                     ( localStorage.getItem('token') ) && ( 
                     <li className="nav-item mx-2">
-                      <a className={`nav-link ${(page===6) && 'text-blue-clr'}`} href="/mon-compte"> Mon-compte </a>
+                      <a className={`nav-link ${(page===7) && 'text-blue-clr'}`} href="/mon-compte"> { (page===7) && ( <i className="bi bi-arrow-down-circle"></i> ) } Mon-compte </a>
                     </li> )
                 }
               </ul>

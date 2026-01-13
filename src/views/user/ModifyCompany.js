@@ -94,7 +94,7 @@ export function ModifyCompany() {
         <TopBar />
       </div>
       <div className="row sticky-top">
-        <NavigationBar />
+        <NavigationBar page={7} />
       </div>
 
       <div className="row justify-content-center">

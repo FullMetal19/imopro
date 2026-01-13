@@ -72,7 +72,7 @@ export function Account()
             <TopBar />
           </div> 
           <div className="row sticky-top"> 
-            <NavigationBar page={6} />
+            <NavigationBar page={7} />
           </div>
           <div className="row justify-content-center border px-3"> 
               <div className="col-lg-10 py-5"> 
@@ -98,7 +98,7 @@ export function Account()
                             {
                               ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir un agence </a> ) :
                               ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon agence </a> ) :
-                              ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration </a> ) : null ) )
+                              ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" target="blank" href={ "https://cpanel.diwaneplus.com/admin" } > Panel Administration </a> ) : null ) )
                             }
                         </div>
                         </div>
