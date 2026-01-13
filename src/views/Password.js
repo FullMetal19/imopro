@@ -23,6 +23,7 @@ export function Password()
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
+        setStatus(0);
         if(inputs.password ===inputs.cpassword )
         {    
             try {

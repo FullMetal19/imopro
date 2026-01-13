@@ -58,6 +58,7 @@ export function Signup(){
     const handleForm = async ( event ) => {
         event.preventDefault();
         setIsLoading(true);
+        setStatus(0);
           
         if (!isValidPhoneNumber(inputs.fullPhone)) {
           setStatus(-3);

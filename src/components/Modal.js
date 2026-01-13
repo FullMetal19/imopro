@@ -118,6 +118,7 @@ export function PasswordModal({ method })
     const handleForm = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+        setStatus(0);
 
         if (!isValidPhoneNumber(inputs.fullPhone)) {
             setStatus(-3);
