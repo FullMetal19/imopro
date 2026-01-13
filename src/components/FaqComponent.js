@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import './FaqComponentStyle.css';
+
+
 const data = [
   {
     title: "Comment puis-je acheter un bien immobilier en ligne au Sénégal ?",

@@ -6,6 +6,7 @@ import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
 import { isValidPhoneNumber } from "libphonenumber-js";
 
+import './basicStyleCode.css';
 
 
 export function Signup(){
@@ -20,6 +21,7 @@ export function Signup(){
 
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
 
     const [showPassword, setShowPassword] = useState(false);
@@ -71,13 +73,20 @@ export function Signup(){
                     setStatus(1);
                     navigate('/validation-compte');
                 }  
-                else{ setStatus(-1); } 
+                else{ 
+                  setStatus(-1); 
+                  setMessage('Veuillez revoir vos informations puis réessayer');
+                } 
             } catch (err) { 
                 setIsLoading(false);
                 setStatus(-1); 
+                setMessage(err?.response.data.error);
             }
         }
-        else setStatus(-2)
+        else{ 
+            setIsLoading(false);
+            setStatus(-2); 
+        }
     } 
     
 
@@ -89,7 +98,7 @@ export function Signup(){
         <meta name="author" content="Diwaneplus" />
         <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
         <meta name="description" content="Créez votre compte gratuitement et accédez à l’ensemble de nos services immobiliers : publication d’annonces, suivi des demandes, gestion de vos favoris et assistance personnalisée. Rejoignez notre plateforme pour acheter, vendre ou louer en toute simplicité et sécurité." />
-        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="icon" type="image/png" href="https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico" />
 
                     <div className="row">
                       {/* ************************************************************************ */}  
@@ -97,7 +106,7 @@ export function Signup(){
                         <div className="d-flex flex-column p-2" >
                           <div className="d-flex" >
                             <span className="mb-3 hide border border-secondary px-4 py-2 rounded-2"> 
-                              <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                              <img src={'https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                             </span>
                           </div>
                           <h1 className="hide h1 text-secondary"> Diwaneplus, la plateforme immobilière de référence </h1>
@@ -130,9 +139,7 @@ export function Signup(){
                             {
                               status === -1 && (
                                 <div className="col-lg-12 mb-2">
-                                  <div className="alert alert-danger">
-                                     Une erreur est survenue lors de la creation de votre compte, veuillez rééssayer s'il vous plaît.
-                                  </div>
+                                  <div className="alert alert-danger"> { message } </div>
                                 </div>
                               )
                             }

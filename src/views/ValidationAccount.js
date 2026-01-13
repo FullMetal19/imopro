@@ -10,6 +10,7 @@ export function ValidateAccount(){
     const [ code, setCode ] = useState();
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
@@ -25,11 +26,13 @@ export function ValidateAccount(){
             }
             else{
                 setStatus(-1);
+                setMessage('Veuillez vérifier votre code de validtaion puis réessayer');
             }
             setIsLoading(false);
         } catch (err) { 
             setStatus(-1); 
             setIsLoading(false);
+            setMessage(err?.response.data.error || 'Erreur internz du serveur. Veuillez réessayer.' );
         } 
     } 
     
@@ -64,7 +67,7 @@ export function ValidateAccount(){
                   status === -1 && (
                     <div className="col-md-12 mb-2">
                       <div className="alert alert-danger">
-                        Erreur! veillez revérifier le code reçu puis rééssayer.
+                        { message }
                       </div>
                     </div>
                   )

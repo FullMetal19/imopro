@@ -12,6 +12,7 @@ export function Signin(){
     const [inputs, setInputs] = useState();
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+     const [message, setMessage] = useState("");
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -32,9 +33,14 @@ export function Signin(){
                 localStorage.setItem("token", res.data.token);
                 navigate('/');
             }
+            else{
+                setStatus(-1);
+                setMessage('Veuillez revoir vos informations puis réessayer');
+            }
         } catch (err) { 
             setStatus(-1);
             setIsLoading(false);
+             setMessage(err?.response.data.error  || 'Erreur internz du serveur. Veuillez réessayer.' );
         }
     } 
 
@@ -50,7 +56,7 @@ export function Signin(){
         <meta name="author" content="Diwaneplus" />
         <meta name="keywords" content="entreprise immobilier, immobilier au Sénégal, Immobilier en Afrique, vente et location de maisons, vente et location de terrains, vente et location de biens immobiliers" />
         <meta name="description" content="Connectez-vous à votre espace personnel et retrouvez vos annonces, vos recherches enregistrées et votre historique. Accédez rapidement à vos services immobiliers et gérez vos opérations en toute confidentialité grâce à une connexion sécurisée." />
-        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="icon" type="image/png" href="https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico" />
 
             { modalState ? ( <PasswordModal method={ closeModal } /> ) : null }
             {/* ************************************************************************ */}   
@@ -61,7 +67,7 @@ export function Signin(){
                   <div className="col-md-10 d-flex flex-column p-4" >
                     <div className="d-flex mb-3" >
                       <span className="d-flex align-items-center justify-content-center border border-secondary px-4 py-2 rounded-2"> 
-                        <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                        <img src={'https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                       </span>
                     </div>
                     <h1 className="h1 text-secondary"> Diwaneplus, la plateforme immobilière de référence </h1>
@@ -92,9 +98,7 @@ export function Signin(){
                     {
                       status === -1 && (
                         <div className="col-md-12 mb-2">
-                          <div className="alert alert-danger">
-                            Erreur d'authentification, rééssayer.
-                          </div>
+                          <div className="alert alert-danger"> { message } </div>
                         </div>
                       )
                     }

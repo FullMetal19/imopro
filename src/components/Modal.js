@@ -87,6 +87,7 @@ export function PasswordModal({ method })
     const navigate = useNavigate();
     const user = UserApi();
 
+    const [message, setMessage] = useState("");
     const [inputs, setInputs] = useState({
         phone: "",
         phoneIndex: "+221",
@@ -130,10 +131,14 @@ export function PasswordModal({ method })
                 setStatus(1);
                 navigate('/mot-de-passe-oublie');
             }  
-            else{ setStatus(-1); } 
+            else{ 
+                setStatus(-1); 
+                setMessage('Veuillez revoir vos informations puis réessayer');
+            } 
         } catch (err) { 
             setStatus(-1);
             setIsLoading(false);
+            setMessage(err?.response.data.error);
         }
     }
 
@@ -170,7 +175,7 @@ export function PasswordModal({ method })
                               status === -1 && (
                                 <div className="col-md-12 mb-2">
                                   <div className="alert alert-danger text-secondary">
-                                    Une erreur est survenue durant le traitement. Vérifiez votre numéro puis réessayez.
+                                    { message }
                                   </div>
                                 </div>
                               )

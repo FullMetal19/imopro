@@ -174,7 +174,7 @@ export function AddProperty()
                                               </div>
                                               <div className="col-md-6">
                                                 <div className="d-flex flex-column mb-2">  
-                                                    <span className="text-muted fs-xs mb-1"> Status de propriété </span>
+                                                    <span className="text-muted fs-xs mb-1"> Status de la propriété </span>
                                                     <div className="d-flex gap-1 mb-2" >
                                                         <select className="w-100 border input p-3 text-secondary rounded-2" name="title" required onChange={ handleInputs } >
                                                             <option value=""> Choisir un status  </option>
@@ -245,7 +245,7 @@ export function AddProperty()
                                               </div>
                                               <div className="col-lg-6"> 
                                                 <div className="d-flex flex-column">  
-                                                    <span className="text-muted fs-xs mb-1"> Le montant de la guarantie (en Fcfa) </span>
+                                                    <span className="text-muted fs-xs mb-1"> Le montant de la garantie (en Fcfa) </span>
                                                     <div className="d-flex gap-1 mb-2" >
                                                        <input type="number" name="guaranty" className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
                                                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>

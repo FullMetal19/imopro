@@ -1,6 +1,6 @@
 /* ******************** * BASED COLOR * ******************** */
 
-:root{ 
+/* :root{ 
     --main-clr : #3b5998 ;
     --two-clr : #FFE9E5 ;
     --three-clr : #e4e9eb ;
@@ -10,9 +10,25 @@
     --blue-clr : #3b5998;
     --gray-light : #e6e6e6;
     --blue-light : #cfe2ff;
+} */
+
+:root{ 
+    --main-clr : #004274;
+    --two-clr : #FFE9E5 ;
+    --three-clr : #e4e9eb ;
+    --four-clr : #171B2A ;
+    --five-clr : #282B38 ;
+    --six-clr : #707070 ;
+    --blue-clr : #004274;
+    --gray-light : #e6e6e6;
+    --blue-light : #cfe2ff;
 }
+
 .hide-item{
     display: none;
+}
+.bg-whit-transp{
+  background-color: rgba(255, 255, 255, 0.719);
 }
 .bg-main{
     background-color: var(--main-clr)  !important;
@@ -190,7 +206,7 @@
 }
 /* ********************* * SLIDE * ******************* */
 .region-container{
-    background-image: url('../img/home-top-img.jpg') !important;
+    background-image: url('/img/home-top-img.jpg') !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -200,7 +216,7 @@
     background-color: #1c2332ee !important;
     width: 100%;
 }
-.slides , .slide-fixed, .bg-img{
+/* .slides , .slide-fixed, .bg-img, .bg-img1, .bg-img2{
     width: 100% !important;
     height: 60vh !important;
     margin: 0 !important;
@@ -208,26 +224,63 @@
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-}
+} */
 .slides-half-cover{
     position: relative;
     left: 0;
-    width: 50%;
+    width: 100%;
     height: 60vh !important;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #004274e6;
 }
-.slides{
-    background-attachment: fixed !important;
-}
-.slide-fixed{
-    height: 80vh !important;
+
+/* .slide-fixed{
+    height: 60vh !important;
     background-image: url('/img/stylish.jpg') !important;
     background-attachment: fixed !important;
+} */
+/* .bg-img{
+    height: 200px !important;
+    background-image: url('/img/stylish.jpg') !important;
 }
-.bg-img{
-    height: 400px !important;
-    background-image: url('/img/moon-slide-image.png') !important;
+.bg-img1{
+    height: 200px !important;
+    background-image: url('/img/Image_fx-750.png') !important;
 }
+.bg-img2{
+    height: 240px !important;
+    background-image: url('/img/Image_fx-86.png') !important;
+} */
+
+
+
+.slides,
+.slide-fixed{
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ⚠️ CHEMIN ABSOLU DEPUIS public */
+.slides {
+    background-image: url('../img/home-top-img.png');
+}
+
+.slide-fixed {
+    background-image: url('../img/stylish.jpg');
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+
+
+
 .canvas-bg{
     background-image: url('/img/grid.png') !important;
     background-size: cover;
@@ -387,9 +440,9 @@
   overflow-y: scroll !important;
   height : 340px !important;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px;
-}
+} */
 
 .solde{
     width:220px !important;
@@ -485,3 +538,36 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.gradient-bar3 {
+  max-height: 100px;
+  height: 300px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+ #00427496 0%,          
+    #d2ddde 25%,          /* Orange solide */
+    rgba(236, 228, 215, 0) 100% /* Transparent */
+  );
+}
+
+.gradient-bar4 {
+  max-height: 100px;
+  height: 300px;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    #00427496 0%,          
+    #d2ddde 25%,          /* Orange solide */
+    rgba(236, 228, 215, 0) 100% /* Transparent */
+  );
+}
+
+
+
+
+
+

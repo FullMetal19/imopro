@@ -1,0 +1,130 @@
+.hero-swiper {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+.hero-swiper .swiper {
+  width: 100%;
+  height: 100%;
+}
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.overlay-box {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  text-align: center;       /* centrer le texte à l'intérieur */
+  padding: 0;               /* supprimer padding */
+}
+/* Si tu veux un overlay-half centré horizontalement */
+.overlay-half {
+  width: 50%;
+  margin: 0 auto;           /* centre horizontalement */
+}
+/* overlay-full reste 100% */
+.overlay-full {
+  width: 100%;
+}
+/* Contenu de l'overlay centré */
+.overlay-content {
+  display: flex;
+  flex-direction: column;   /* icône + titre + texte empilés verticalement */
+  align-items: center;      /* centrer horizontalement */
+  justify-content: center;  /* centrer verticalement si nécessaire */
+  max-width: 500px;         /* limite la largeur pour le texte */
+  color: white;
+  opacity: 1;
+  transform: none;
+  transition: all 0.8s ease;
+}
+/* Animation quand le slide est actif */
+.swiper-slide-active .overlay-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+.icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.overlay-content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+.overlay-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overlay,
+  .overlay-half,
+  .overlay-full {
+    width: 100%;
+    padding: 40px 25px;
+  }
+  .overlay-content h2 {
+    font-size: 28px;
+  }
+}
+/* Pagination container */
+.hero-swiper .swiper-pagination {
+  bottom: 25px !important;
+}
+/* Boutons (dots) */
+.hero-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 6px !important;
+}
+/* Bouton actif */
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #1e90ff; /* bleu */
+  width: 28px;
+  border-radius: 10px;
+}
+/* Hover (optionnel) */
+.hero-swiper .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.hero-swiper .swiper-pagination-bullet-active {
+  background: linear-gradient(
+    90deg,
+    var(--main-clr) 0%,
+    #00bfff 100%
+  );
+}
+.progress-wrapper {
+  width: 100%;
+  height: 10px;
+  background: rgba(30, 144, 255, 0.15);
+  overflow: hidden;
+}
+.custom-progress {
+  height: 100%;
+  background: var(--main-clr);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+}
+

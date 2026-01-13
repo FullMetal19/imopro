@@ -1,7 +1,8 @@
 
- import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
+import "./PropertySliderSwiperStyle.css";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -10,12 +11,12 @@ import "swiper/css/pagination";
 export default function  PropertySliderSwiper() {
   const slides = [
     {
-      image: "./img/Image_fx-117.jpg",
+      image: "/img/Image_fx-117.jpg",
       title: "Trouvez le logement idéal, simplement",
       text: "Appartements et maisons disponibles à la location ou à l’achat, partout au Sénégal, avec des biens vérifiés et un accompagnement personnalisé.",
     },
     {
-      image: "./img/Image_fx-88.png",
+      image: "/img/Image_fx-88.png",
       title: "Investissez en toute sécurité",
       text: "Des terrains légalement vérifiés, prêts à bâtir, pour vos projets résidentiels ou commerciaux, en ville comme en périphérie.",
     },
@@ -61,19 +62,18 @@ export default function  PropertySliderSwiper() {
             {
                 slides.map((slide, index) => (
                   <SwiperSlide key={index}>
-                    <div className="slide" style={{ backgroundImage: `url(${slide.image})` }} >
-                      <div className={`overlay ${ slide.largeOverlay ? "overlay-half" : "overlay-full" }`} >
-                        <div className="row w-100 h-100 justify-content-center">
-                          <div className="overlay-content col-lg-5 col-md-8">
-                              <div className="icon bg-whit-transp shadow-sm rounded p-4">
-                                 <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "80px" }} />
-                              </div>
-                              <h2 className="text-center">{slide.title}</h2>
-                              <p className="text-center">{slide.text}</p>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
+                    <div className="slide" style={{ backgroundImage: `url(${slide.image})` }}>
+                       <div className="overlay overlay-full d-flex justify-content-center align-items-center">
+                         <div className="overlay-content">
+                           <div className="icon bg-whit-transp shadow-sm rounded p-4">
+                             <img src="https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico" alt="Logo" style={{ width: "80px" }} />
+                           </div>
+                           <h2 className="text-center text-light">{slide.title}</h2>
+                           <p className="text-center text-light">{slide.text}</p>
+                         </div>
+                       </div>
+                     </div>
+
                   </SwiperSlide>
                 ))
             }

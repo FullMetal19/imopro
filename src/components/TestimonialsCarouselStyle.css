@@ -1,0 +1,33 @@
+
+.testimonial-card {
+  border-radius: 12px; 
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.slick-slide {
+  padding: 10px 0;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #aaa !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #444 !important;
+}
+
+.bg-grayLight{
+    background-color: #f5f5f5 !important;
+}

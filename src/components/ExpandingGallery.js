@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-// import { FaEye } from "react-icons/fa";
+
+import './ExpandingGalleryStyle.css';
+
 
 export default function ExpandingGallery() {
   const data = [
@@ -60,7 +62,7 @@ export default function ExpandingGallery() {
         >
           {/* OVERLAY */}
           <div className="gallery-overlay">
-            <span className="mb-2 text-light text-center p-3"> { item.title } </span>
+            <span className="mb-2 text-light text-center lead p-3"> { item.title } </span>
             <span className="text-light text-center p-3"> { item.desc } </span>
           </div>
         </div>

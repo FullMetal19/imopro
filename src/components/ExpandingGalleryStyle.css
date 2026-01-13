@@ -1,0 +1,63 @@
+
+.gallery-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 1;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: flex 0.4s ease;
+  overflow: hidden;
+}
+
+
+.gallery-item {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+
+/* When hovered, the image grows */
+.gallery-item.active, .gallery-item1.active {
+  flex: 4;
+}
+
+/* When not hovered, other images shrink */
+.gallery-container:hover .gallery-item:not(.active) {
+  flex: 0.7;
+  filter: blur(2px);
+  opacity: 0.6;
+}
+.gallery-container1:hover .gallery-item1:not(.active) {
+  flex: 0.7;
+  filter: blur(2px);
+  opacity: 0.6;
+}
+
+/* OVERLAY */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* clair par défaut */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  transition: background 0.3s ease;
+}
+
+/* AU SURVOL */
+.gallery-item:hover .gallery-overlay {
+  background: #004274be; /* plus sombre */
+  color: #fff;
+}

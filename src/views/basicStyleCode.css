@@ -1,0 +1,131 @@
+
+:root{ 
+    --main-clr : #004274;
+    --two-clr : #FFE9E5 ;
+    --three-clr : #e4e9eb ;
+    --four-clr : #171B2A ;
+    --five-clr : #282B38 ;
+    --six-clr : #707070 ;
+    --blue-clr : #004274;
+    --gray-light : #e6e6e6;
+    --blue-light : #cfe2ff;
+}
+.hide-item{
+    display: none;
+}
+.bg-whit-transp{
+  background-color: rgba(255, 255, 255, 0.719);
+}
+.bg-main{
+    background-color: var(--main-clr)  !important;
+}
+.bg-snd-clr{
+    background-color: var(--two-clr)  !important;
+}
+.bg-blue-clr{
+    background-color: var(--blue-clr)  !important;
+}
+.bg-blue-light-clr{
+    background-color: var(--blue-light)  !important;
+}
+.bg-three-clr{
+    background-color: var(--three-clr)  !important;
+}
+.bg-foot1{
+    background-color: var(--four-clr)  !important;
+}
+.bg-foot2{
+    background-color: var(--five-clr)  !important;
+}
+.bg-white-trans{
+    background-color: rgba(0,0,0,0.1)  !important;
+}
+.bg-gray-light{
+    background-color: var(--gray-light)  !important;
+}
+
+
+.text-blue-clr{
+    color: var(--blue-clr)  !important;
+}
+.text-clr {
+    color: var(--four-clr)  !important;
+}
+.btn-main{
+    background-color: var(--main-clr)  !important;
+    color: #e1e3e4   !important;
+}
+.btn-white{
+    border: 1px solid var(--main-clr) !important;
+    background-color:  white  !important;
+    color: var(--main-clr) !important;
+}
+.btn-outline-main{
+    text-decoration: none !important;
+    color: var(--main-clr)  !important;
+    border: 1px solid var(--main-clr) !important;
+    background-color: transparent !important;
+    transition: all 1s;
+}
+.btn-outline-main:hover{
+    background-color: var(--main-clr)  !important;
+    color: white  !important;
+    transition: all 1s;
+}
+.link , .link-outline, .link-sml{
+    cursor: pointer !important;
+    text-decoration: none !important;
+    color: var(--snd-clr) !important;
+}
+.link-sml{
+    font-size: small !important;
+}
+.link-outline:hover{
+    color : var(--main-clr) !important;
+}
+.bg-op-80{
+    background-color: rgba(255, 255, 255, 0.404);
+}
+.main-bg{
+    background-color: var(--main-clr);
+}
+.bg-snd-clr{
+    background-color: var(--snd-clr);
+}
+.bg-transparent{
+    background-color: transparent !important;
+}
+.main-color{
+    color : var(--main-clr) !important;
+}
+.color-gray{
+    color : #e1e3e4 !important;
+}
+.color-white{
+    color : #ffffff !important;
+}
+.color-blue{
+    color : var(--blue-clr) !important;
+}
+.title-xl{
+    font-size: xx-large ;
+    font-weight: bold;
+}
+.fs-xs{
+    font-size: small;
+}
+.fs-sml{
+    font-size: medium;
+}
+.fs-md{
+    font-size: large !important;
+}
+.fs-lg{
+    font-size: x-large !important;
+}
+.fs-xl{
+    font-size: xx-large;
+}
+.bold {
+    font-weight: bolder !important ;
+}

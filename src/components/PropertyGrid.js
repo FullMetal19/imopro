@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import './PropertyGridStyle.css';
 
 
 const PROPERTY_CONFIG = [
@@ -95,9 +96,9 @@ export default function PropertyGrid() {
 
     <div className="property-container">
 
-      <h2 className="display-6 text-secondary mb-2" >Display Different Content Types</h2>
+      <h2 className="display-6 text-secondary mb-2" > Explorez nos catégories de biens </h2>
       <p className="text-secondary mb-5 lead text-muted">
-        Display property types with modern grid style
+        Découvrez nos biens soigneusement sélectionnées pour un cadre de vie et d’investissement privilégié
       </p>
 
       <div className="row pt-4">
@@ -112,7 +113,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-6 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[0].image} alt={mergedData[0].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[0].link}
@@ -138,7 +139,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[1].image} alt={mergedData[1].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[1].link}
@@ -164,7 +165,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[2].image} alt={mergedData[2].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[2].link}
@@ -192,7 +193,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[3].image} alt={mergedData[3].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[3].link}
@@ -218,7 +219,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[4].image} alt={mergedData[4].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[4].link}
@@ -244,7 +245,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-6 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[5].image} alt={mergedData[5].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[5].link}
@@ -277,7 +278,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-6 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[6].image} alt={mergedData[6].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[6].link}
@@ -303,7 +304,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[7].image} alt={mergedData[7].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[7].link}
@@ -331,7 +332,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-6 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[8].image} alt={mergedData[8].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[8].link}
@@ -357,7 +358,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[9].image} alt={mergedData[9].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[9].link}
@@ -383,7 +384,7 @@ export default function PropertyGrid() {
                 <div className="col-lg-3 col-md-6 mb-4">
                   <div className="property-card">
                     <img src={mergedData[10].image} alt={mergedData[10].title} />
-                    <div className="overlay">
+                    <div className="overlay1">
                      <div className="mb-2">
                         <a
                           href={mergedData[10].link}

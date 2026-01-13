@@ -206,7 +206,7 @@
 }
 /* ********************* * SLIDE * ******************* */
 .region-container{
-    background-image: url('../img/home-top-img.jpg') !important;
+    background-image: url('/img/home-top-img.jpg') !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -216,7 +216,7 @@
     background-color: #1c2332ee !important;
     width: 100%;
 }
-.slides , .slide-fixed, .bg-img, .bg-img1, .bg-img2{
+/* .slides , .slide-fixed, .bg-img, .bg-img1, .bg-img2{
     width: 100% !important;
     height: 60vh !important;
     margin: 0 !important;
@@ -224,7 +224,7 @@
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-}
+} */
 .slides-half-cover{
     position: relative;
     left: 0;
@@ -233,12 +233,12 @@
     background-color: #004274e6;
 }
 
-.slide-fixed{
+/* .slide-fixed{
     height: 60vh !important;
     background-image: url('/img/stylish.jpg') !important;
     background-attachment: fixed !important;
-}
-.bg-img{
+} */
+/* .bg-img{
     height: 200px !important;
     background-image: url('/img/stylish.jpg') !important;
 }
@@ -249,28 +249,38 @@
 .bg-img2{
     height: 240px !important;
     background-image: url('/img/Image_fx-86.png') !important;
+} */
+
+
+
+.slides,
+.slide-fixed{
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.over-bg-img{
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    min-height: 200px !important;
-    background-color: rgba(0, 0, 0, 0.475) !important;
+
+/* ⚠️ CHEMIN ABSOLU DEPUIS public */
+.slides {
+    background-image: url('../img/home-top-img.png');
 }
-.over-bg-img1{
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    min-height: 200px !important;
-    background-color: #0042749e !important;
+
+.slide-fixed {
+    background-image: url('../img/stylish.jpg');
+    background-attachment: fixed;
 }
-.over-bg-img2{
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    min-height: 240px !important;
-    background-color: rgba(0, 0, 0, 0.475) !important;
-}
+
+
+
+
+
+
+
+
+
 .canvas-bg{
     background-image: url('/img/grid.png') !important;
     background-size: cover;
@@ -532,374 +542,6 @@
 
 
 
-
-
-
-
-.hero-swiper {
-  width: 100%;
-  height: 70vh;
-  padding: 0;
-  margin: 0;
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-/* Overlay couvrant le slide entier */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-.overlay-box {
-  display: flex;
-  align-items: center;      /* vertical centering */
-  justify-content: center;  /* horizontal centering */
-  text-align: center;       /* centrer le texte à l'intérieur */
-  padding: 0;               /* supprimer padding */
-}
-
-/* Si tu veux un overlay-half centré horizontalement */
-.overlay-half {
-  width: 50%;
-  margin: 0 auto;           /* centre horizontalement */
-}
-
-/* overlay-full reste 100% */
-.overlay-full {
-  width: 100%;
-}
-
-/* Contenu de l'overlay centré */
-.overlay-content {
-  display: flex;
-  flex-direction: column;   /* icône + titre + texte empilés verticalement */
-  align-items: center;      /* centrer horizontalement */
-  justify-content: center;  /* centrer verticalement si nécessaire */
-  max-width: 500px;         /* limite la largeur pour le texte */
-  color: white;
-  opacity: 1;
-  transform: none;
-  transition: all 0.8s ease;
-}
-
-
-
-/* Animation quand le slide est actif */
-.swiper-slide-active .overlay-content {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.icon {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.overlay-content h2 {
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-
-.overlay-content p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .overlay,
-  .overlay-half,
-  .overlay-full {
-    width: 100%;
-    padding: 40px 25px;
-  }
-
-  .overlay-content h2 {
-    font-size: 28px;
-  }
-}
-
-
-
-/* Pagination container */
-.hero-swiper .swiper-pagination {
-  bottom: 25px !important;
-}
-
-/* Boutons (dots) */
-.hero-swiper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.4);
-  opacity: 1;
-  transition: all 0.3s ease;
-  margin: 0 6px !important;
-}
-
-/* Bouton actif */
-.hero-swiper .swiper-pagination-bullet-active {
-  background: #1e90ff; /* bleu */
-  width: 28px;
-  border-radius: 10px;
-}
-
-/* Hover (optionnel) */
-.hero-swiper .swiper-pagination-bullet:hover {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-
-.hero-swiper .swiper-pagination-bullet-active {
-  background: linear-gradient(
-    90deg,
-    var(--main-clr) 0%,
-    #00bfff 100%
-  );
-}
-
-
-
-.progress-wrapper {
-  width: 100%;
-  height: 10px;
-  background: rgba(30, 144, 255, 0.15);
-  overflow: hidden;
-}
-
-.custom-progress {
-  height: 100%;
-  background: var(--main-clr);
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 0.1s linear;
-}
-
-
-
-
-
-
-
-
-
-.property-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.subtitle {
-  color: #777;
-  margin-bottom: 40px;
-}
-
-.property-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.property-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.property-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* Overlay - DEFAULT light */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25); /* light overlay */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px;
-  transition: background 0.3s ease;
-}
-
-.overlay .icon {
-  color: #fff;
-  font-size: 26px;
-  margin-bottom: 8px;
-}
-
-.overlay h3 {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.overlay span {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 13px;
-  margin-top: 4px;
-}
-
-/* Hover state → darker overlay */
-.property-card:hover .overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-/* Optional zoom */
-.property-card:hover img {
-  transform: scale(1.05);
-}
-
-
-
-
-
-
-
-
-.gallery-container {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.gallery-item {
-  position: relative;
-  flex: 1;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: flex 0.4s ease;
-  overflow: hidden;
-}
-
-
-.gallery-item {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-
-
-/* When hovered, the image grows */
-.gallery-item.active, .gallery-item1.active {
-  flex: 4;
-}
-
-/* When not hovered, other images shrink */
-.gallery-container:hover .gallery-item:not(.active) {
-  flex: 0.7;
-  filter: blur(2px);
-  opacity: 0.6;
-}
-.gallery-container1:hover .gallery-item1:not(.active) {
-  flex: 0.7;
-  filter: blur(2px);
-  opacity: 0.6;
-}
-
-
-/* .gallery-container {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.gallery-item {
-  position: relative;
-  flex: 1;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: flex 0.4s ease;
-  overflow: hidden;
-}
-
-.gallery-item.active {
-  flex: 3;
-} */
-
-/* OVERLAY */
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* clair par défaut */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2px;
-  transition: background 0.3s ease;
-}
-
-/* AU SURVOL */
-.gallery-item:hover .gallery-overlay {
-  background: #004274be; /* plus sombre */
-  color: #fff;
-}
-
-
-
-
-
-
-
-.testimonial-card {
-  border-radius: 12px; 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.avatar-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-}
-
-.slick-slide {
-  padding: 10px 0;
-}
-
-.slick-dots li button:before {
-  font-size: 12px;
-  color: #aaa !important;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #444 !important;
-}
-
-.bg-grayLight{
-    background-color: #f5f5f5 !important;
-}
-
-
-
-
 .gradient-bar3 {
   max-height: 100px;
   height: 300px;
@@ -929,37 +571,3 @@
 
 
 
-
-.faq-box {
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  background: white;
-  min-height: 140px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.faq-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Description masquée par défaut */
-.faq-desc {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.35s ease;
-  transform: translateY(-10px);
-}
-
-/* Animation fade-down */
-.faq-desc.open {
-  max-height: 300px;
-  opacity: 1;
-  transform: translateY(0px);
-}

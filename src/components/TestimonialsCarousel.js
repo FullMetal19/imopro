@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 
+import './TestimonialsCarouselStyle.css';
+
 
 export default function TestimonialsCarousel() 
 {
@@ -28,36 +30,43 @@ export default function TestimonialsCarousel()
 
   const testimonials = [
     {
-      name: "Eleanor Pena",
-      role: "Software Engineer at TechCorp",
-      avatar: "https://images.pexels.com/photos/4482961/pexels-photo-4482961.jpeg",
-      text: "Sed rem perspiciatis unde omnis iste natus quae ab illo inventore veritatis et quasi.",
-      company: "Frendoz",
-      date: "Feb 24, 2024"
+      name: "Maboubacar FALL",
+      role: "Client locataire",
+      avatar: "/img/home-top-img.jpg",
+      text: "Grâce à DiwanePlus, j’ai trouvé un appartement moderne et conforme à toutes mes attentes en un temps record. Le suivi administratif et la réactivité de l’équipe m’ont vraiment impressionné. ",
+      date: "Feb 24, 2025"
     },
     {
-      name: "Theresa Webb",
-      role: "UX Specialist at Designify",
-      avatar: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg",
-      text: "Sed rem perspiciatis unde omnis iste natus quae ab illo inventore veritatis et quasi.",
-      company: "Frendoz",
-      date: "Mar 03, 2024"
+      name: "Thérèse GOMIS",
+      role: "Client Acheteur",
+      avatar: "/img/home-top-img.jpg",
+      text: "DiwanePlus nous a accompagnés de A à Z dans l’achat de notre maison. L’équipe a fait preuve d’un grand professionnalisme, de transparence et d’une parfaite connaissance du marché.",
+      company: "Diwaneplus",
+      date: "Mars 03, 2025"
     },
     {
-      name: "Darlene Robertson",
-      role: "Marketing Lead at InnovateHub",
-      avatar: "https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg",
-      text: "Sed rem perspiciatis unde omnis iste natus quae ab illo inventore veritatis et quasi.",
-      company: "Frendoz",
-      date: "Feb 17, 2024"
+      name: "Moustapha KANTE",
+      role: "Propriétaire immobilier",
+      avatar: "/img/home-top-img.jpg",
+      text: "J’ai confié la vente de ma maison à DiwanePlus et tout s’est déroulé avec sérieux et efficacité. La communication était régulière et la transaction s’est faite rapidement et en toute sécurité.",
+      company: "Diwaneplus",
+      date: "Mars 03, 2025"
     },
     {
-      name: "Marvin McKinney",
-      role: "Manager at Lattice",
-      avatar: "https://images.pexels.com/photos/4482961/pexels-photo-4482961.jpeg",
-      text: "Sed rem perspiciatis unde omnis iste natus quae ab illo inventore veritatis et quasi.",
-      company: "Frendoz",
-      date: "Jan 12, 2024"
+      name: "Alioune DIOP",
+      role: "Client locataire",
+      avatar: "/img/home-top-img.jpg",
+      text: "DiwanePlus se distingue par son sens du service et son engagement envers ses clients. On se sent accompagné, écouté et conseillé à chaque étape. Une agence immobilière digne de confiance.",
+      company: "Diwaneplus",
+      date: "Juillet 12, 2025"
+    },
+     {
+      name: "Mamadou DIAO",
+      role: "Investissement immobilier",
+      avatar: "/img/home-top-img.jpg",
+      text: "En tant qu’investisseur, je recherchais une agence fiable et structurée. DiwanePlus m’a proposé des opportunités rentables et sécurisées. Les conseils étaient clairs, précis.",
+      company: "Diwaneplus",
+      date: "Septembre 25, 2025"
     }
   ];
 
@@ -68,11 +77,11 @@ export default function TestimonialsCarousel()
         <Slider {...settings}>
           {testimonials.map((t, index) => (
             <div key={index} className="px-3">
-              <div className="card shadow-sm border-0 testimonial-card p-3">
+              <div className="card shadow-sm border-0 testimonial-card">
 
                 {/* Header */}
                 <div className="card-body">
-                  <div className="d-flex align-items-center mb-3">
+                  <div className="d-flex align-items-center mb-1 border-bottom pb-3">
                     <img
                       src={t.avatar}
                       className="rounded-circle me-3 avatar-img"
@@ -85,10 +94,10 @@ export default function TestimonialsCarousel()
                   </div>
 
                   {/* Text */}
-                  <p className="card-text text-muted mb-4 pt-3 border-top-dashed">{t.text}</p>
+                  <p className="card-text text-secondary mb-4 pt-3 border-top-dashed px-3">{t.text}</p>
 
                   {/* Footer */}
-                  <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-between px-3 py-2">
                     <span className="text-muted small">
                       <i className="bi bi-building me-1"></i> {t.company}
                     </span>

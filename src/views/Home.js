@@ -7,6 +7,9 @@ import PropertySliderSwiper from "../components/PropertySliderSwiper";
 import PropertyGrid from "../components/PropertyGrid";
 import ExpandingGallery from "../components/ExpandingGallery";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import Carousel from "../components/Caroussel";
+
+import './ImageSlideStyle.css';
 
 
 export function Home(){ 
@@ -74,9 +77,9 @@ export function Home(){
                    <i className={`bi bi-airplane display-6 text-light`}></i>
                 </span>
                 <span className="text-secondary text-center lead px-4">
-                  At Rivor Law Firm, we combine decades 
+                  Des biens sélectionnés avec rigueur pour investir, louer ou acheter en toute sérénité.
                 </span>
-                <h1 className="display-6 text-secondary text-center"> Performances chorégraphique </h1>
+                <h1 className="display-6 text-secondary text-center"> L’immobilier en toute confiance </h1>
               </div>
             </div> 
 
@@ -103,6 +106,19 @@ export function Home(){
             <FieldComponent />
           </div>
           {/* ************************************************************************ */}
+          <div className="row">
+              <div className="col-lg-12 bg-grayLight py-4 border-top">
+                  <div className="row justify-content-center">
+                    <div className="col-lg-10 mt-4">
+                      <span className="text-secondary fs-2"> Nos partenaires  </span>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <Carousel />
+                  </div>
+              </div>
+          </div>
+          {/* ************************************************************************ */}
           <div className="row justify-content-center bg-three-clr py-5"> 
             <LocationComponent />
           </div>
@@ -113,7 +129,7 @@ export function Home(){
                 <div className="col-lg-5 text-center mt-4">
                   <span className="lead text-secondary rounded-4 px-4 py-2 bg-blueLight border"> Diwaneplus </span>
                   <p className="display-6 text-secondary mt-4">   
-                     Temoignages de quelques collaborateurs  
+                     Temoignages de quelques clients  
                   </p>
                 </div>
               </div>

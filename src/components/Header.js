@@ -64,8 +64,8 @@ export function NavigationBar({page=1})
                 <a className="btn btn-sm btn-outline-secondary me-2" href="/inscription"> S'inscrire </a>
                 {
                   localStorage.getItem('token') ? 
-                  ( <button className="btn btn-sm btn-secondary" type="button" onClick={logout} > Se-déconnecter </button> ) :
-                  ( <a href="/connexion" className="btn btn-sm btn-secondary" type="button" > Se-connecter </a> ) 
+                  ( <button className="btn btn-sm btn-secondary" type="button" onClick={logout} > Se déconnecter </button> ) :
+                  ( <a href="/connexion" className="btn btn-sm btn-secondary" type="button" > Se connecter </a> ) 
                 }     
               </div>
             </div>
@@ -92,7 +92,7 @@ export function TopBar()
           </div>
           <div className="d-flex align-items-center justify-content-center">
             <i className="bi bi-geo-alt text-white me-1 mt-1 small hide"></i>
-            <span className="color-gray hide"> Dakar, Medina </span>
+            <span className="color-gray hide"> Dakar, Almadi </span>
           </div>
         </div>
         {/* ****************************************************************** */}

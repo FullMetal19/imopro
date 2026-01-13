@@ -10,6 +10,7 @@ export function Password()
     const [ inputs, setInputs ] = useState();
     const [status, setStatus] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
     const [showPassword, setShowPassword] = useState(false);
     const [showCPassword, setShowCPassword] = useState(false);
@@ -26,14 +27,24 @@ export function Password()
         {    
             try {
                 const res = await user.updatePassword(inputs);
-                (res.data.success) ? setStatus(1) : setStatus(-1);
+                if (res.data.success) {
+                  setStatus(1);
+                }  
+                else{
+                  setStatus(-1);
+                  setMessage('Veuillez vérifier votre code et votre mot de passe puis réessayer');
+                } 
                 setIsLoading(false);
             } catch (err) { 
                 setStatus(-1); 
                 setIsLoading(false);
+                setMessage(err?.response.data.error || 'Erreur internz du serveur. Veuillez réessayer.' );
             }   
         }
-        else{ setStatus(2) }
+        else{ 
+           setIsLoading(false);
+            setStatus(-2); 
+         }
     } 
     
     return (
@@ -69,7 +80,7 @@ export function Password()
                           status === 1 && (
                             <div className="col-md-12 mb-2">
                               <div className="alert alert-primary">
-                                Votre mot de passe est modifié avec succès
+                                Mot de passe mis à jour avec succes
                               </div>
                             </div>
                           )
@@ -78,7 +89,7 @@ export function Password()
                           status === -1 && (
                             <div className="col-md-12 mb-2">
                               <div className="alert alert-danger">
-                                Une erreur est survenue durant le traitement. Vérifiez réessayer.
+                                { message }
                               </div>
                             </div>
                           )
