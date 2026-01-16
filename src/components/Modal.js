@@ -20,7 +20,7 @@ export function VideoModal( { method, url })
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-10 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
                         <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
-                        <iframe height="520" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe height="520px" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         {/* <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                     </div>
                 </div>

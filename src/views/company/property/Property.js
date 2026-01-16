@@ -71,7 +71,7 @@ export function Property()
                                                item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
                                            }
                                            {
-                                               item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                               item?.media[2] ? ( <img src={ item?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
                                            } 
                                         </div>
                                         {/* Contenu */}

@@ -39,7 +39,7 @@ export function AccomodationSlideComponent()
                                    item?.Property?.media[1] ? ( <img src={ item?.Property?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
                                }
                                {
-                                   item?.Property?.media[1] ? ( <img src={ item?.Property?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                   item?.Property?.media[2] ? ( <img src={ item?.Property?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
                                } 
                            </div>
                            {/* Contenu */}
