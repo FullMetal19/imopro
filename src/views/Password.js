@@ -59,7 +59,7 @@ export function Password()
                       <div className=" d-flex flex-column align-items-center gap-2 mb-4" > 
                           <div className="d-flex" >
                             <span className="d-flex align-items-center justify-content-center bg-white border px-3 py-2 rounded-2 shadow-sm"> 
-                                <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                                <img src={'https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                             </span>
                           </div>
                           <span className="lead text-secondary text-center"> Diwaneplus </span>

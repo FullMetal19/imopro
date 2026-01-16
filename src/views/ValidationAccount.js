@@ -48,7 +48,7 @@ export function ValidateAccount(){
                 <div className=" d-flex flex-column gap-2 mb-4" > 
                   <div className="d-flex" >
                      <span className="mb-3 hide bg-light border px-4 py-3 rounded-2"> 
-                      <img src={'../favicon.png'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
+                      <img src={'https://res.cloudinary.com/daitesqqd/image/upload/v1767627041/favicon_mrsntv.ico'} className="" alt="Logement extérieur" style={{ width: "60px" }} />
                       </span>
                   </div>
                   <span className="fs-4 text-secondary text-start"> Diwaneplus - Validation compte </span>

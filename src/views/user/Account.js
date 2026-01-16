@@ -96,9 +96,9 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary" href={ "/creation-entreprise" } > Ouvrir un agence </a> ) :
-                              ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white" href={ `/entreprise/${data?.company.id}` } > Mon agence </a> ) :
-                              ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className="mb-3 btn px-3 btn-secondary" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration </a> ) : null ) )
+                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary p-2" href={ "/creation-entreprise" } > Ouvrir un agence </a> ) :
+                              ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white d-flex align-items-center p-2" href={ `/entreprise/${data?.company.id}` } > Mon agence <i className="bi bi-arrow-right ms-2"></i> </a> ) :
+                              ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className=" d-flex align-items-center mb-3 btn px-3 btn-secondary p-2" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration <i className="bi bi-arrow-right ms-2"></i> </a> ) : null ) )
                             }
                         </div>
                         </div>

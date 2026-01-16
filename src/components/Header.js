@@ -92,7 +92,7 @@ export function TopBar()
           </div>
           <div className="d-flex align-items-center justify-content-center">
             <i className="bi bi-geo-alt text-white me-1 mt-1 small hide"></i>
-            <span className="color-gray hide"> Dakar, Almadi </span>
+            <span className="color-gray hide"> Dakar, Almadie </span>
           </div>
         </div>
         {/* ****************************************************************** */}
