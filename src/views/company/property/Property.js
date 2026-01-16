@@ -67,8 +67,12 @@ export function Property()
                                         <img src={ item?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "200px", objectFit: "cover" }} />
                                         {/* Galerie */}
                                         <div className="d-flex gap-3 p-3">
-                                          <img src={ item?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "60px", height: "40px", objectFit: "cover" }} />
-                                          <img src={ item?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "60px", height: "40px", objectFit: "cover" }} />
+                                           {
+                                               item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                           }
+                                           {
+                                               item?.media[1] ? ( <img src={ item?.media[1]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                                           } 
                                         </div>
                                         {/* Contenu */}
                                         <div className="px-3 pb-3 pt-1">
@@ -82,7 +86,12 @@ export function Property()
                                         </div>
                                         {/* Boutons */}
                                         <div className="d-flex p-3">
-                                           <a className="btn btn-sm btn-outline-secondary" href={ `/mensualites/${companyId}/${ item?.id }` } > Mensualités </a>
+                                            {
+                                                ( item?.title === 'à louer' ) && ( <a className="btn btn-sm btn-outline-secondary" href={ `/mensualites/${companyId}/${ item?.id }` } > Mensualités </a> )
+                                            }
+                                            {
+                                               ( item?.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
+                                            }  
                                         </div>
                                       </div> 
                                     </div>    

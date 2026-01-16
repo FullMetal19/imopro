@@ -58,7 +58,7 @@ export function Notification()
                         { 
                             isLoading ? (  <div className="d-flex justify-content-center mt-3"> <div className="spinner-border text-blue-clr" role="status" aria-label="Chargement"></div> </div>  ) : (
                                 filteredData?.map(( item , index ) => { return(
-                                 <div className="col-lg-6 mb-3" key={index}> 
+                                 <div className="col-lg-6 mb-3 px-3" key={index}> 
                                    <div className="d-flex" >
                                     <div className="row border rounded-3 py-2" >
                                         <div className="col-12 d-flex align-items-center gap-2 px-3 mb-1"> 

@@ -35,9 +35,12 @@ export function AccomodationSlideComponent()
                            <img src={ item?.Property?.media[0]?.path } className="card-img-top rounded-top-2" alt="Logement extérieur" style={{ height: "250px", objectFit: "cover" }} />
                            {/* Galerie */}
                            <div className="d-flex gap-3 p-3">
-                             <img src={ item?.Property?.media[1]?.path } className="rounded" alt="Intérieur 1" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
-                             <img src={ item?.Property?.media[2]?.path } className="rounded" alt="Intérieur 2" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
-                             <img src={ item?.Property?.media[3]?.path } className="rounded" alt="Intérieur 3" style={{ width: "80px", height: "60px", objectFit: "cover" }} />
+                               {
+                                   item?.Property?.media[1] ? ( <img src={ item?.Property?.media[1]?.path } className="rounded" alt="image-int-1" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                               }
+                               {
+                                   item?.Property?.media[1] ? ( <img src={ item?.Property?.media[2]?.path } className="rounded" alt="image-int-2" style={{ width: "80px", height: "60px", objectFit: "cover" }} /> ) : ( <span className="border rounded bg-light" style={{ width: "80px", height: "60px", objectFit: "cover" }}></span>  )
+                               } 
                            </div>
                            {/* Contenu */}
                            <div className="px-3 pb-3 pt-1">
