@@ -30,7 +30,7 @@ export function Home(){
         <meta name="description" content="Découvrez notre plateforme immobilière en ligne dédiée à l’achat, à la vente et à la location de logements et de terrains au Sénégal et dans la sous région Africaine. Parcourez des annonces vérifiées, trouvez rapidement le bien idéal et profitez d'un accompagnement professionnel à chaque étape de votre projet immobilier." />
         <link rel="icon" type="image/png" href="../favicon.png" />
 
-        { modalState && ( <VideoModal method={ closeModal } url="https://www.youtube.com/embed/uJPOTqctw1U?si=OtzKueEzARLUd4dg" /> ) }
+        { modalState && ( <VideoModal method={ closeModal } url="https://www.youtube.com/embed/uJPOTqctw1U?si=eS0O81buFPcboTgE" /> ) }
     
         { modalState1 && ( <AppModal method={ closeModal1 } /> )}
 
