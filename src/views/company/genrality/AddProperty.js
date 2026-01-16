@@ -20,7 +20,7 @@ export function AddProperty()
     const [selectedType, setSelectedType] = useState([]);    
     const [inputs, setInputs] = useState();
     const [previewUrls, setPreviewUrls] = useState([]); // Image previews
-    const [showMap, setShowMap] = useState(false);
+    // const [showMap, setShowMap] = useState(false);
 
 
     const [status, setStatus] = useState(0);
