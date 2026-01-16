@@ -76,9 +76,9 @@ export function HouseContainer({ data, onVisit })
           <a href={"/propriete/" + data?.id } className="btn btn-outline-secondary d-flex align-items-center"  >
             <i className="bi bi-eye me-2"></i> Details
           </a>
-          <button className="btn btn-secondary d-flex align-items-center" onClick={onVisit} >
+          {/* <button className="btn btn-secondary d-flex align-items-center" onClick={onVisit} >
             <i className="bi bi-geo-alt-fill me-2"></i> Visit
-          </button>
+          </button> */}
         </div>
       </div>
   

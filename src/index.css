@@ -486,6 +486,10 @@ code {
 
 
 
+.slider-container {
+  margin: 0 -10px; /* must match slide padding */
+}
 
-
-
+.slider-container .slick-slide {
+  padding: 0 10px;
+}

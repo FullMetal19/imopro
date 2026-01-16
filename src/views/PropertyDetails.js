@@ -131,15 +131,15 @@ export function PropertyDetails(){
                                         </div>
                                         {/* ********************************** DESC TECHNIQUE ************************************** */}
                                         <div className="row bg-white px-4 py-5 mb-5 border">
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Pays : { data?.country } </span> ) } </div>
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Region :{ data?.region } </span> ) } </div> 
-                                            <div className="col-md-12 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Adresse : { data?.address } </span> ) } </div> 
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Dimension : { data?.surface } </span> ) } </div>
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de Salon : { data?.livingroom } </span> ) } </div> 
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de chambre : { data?.bedroom } </span> ) } </div> 
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de toilette : { data?.restroom } </span> ) } </div>
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de niveau : { data?.floor } </span> ) } </div>
-                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de cuisine : { data?.kitchen } </span> ) } </div> 
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Pays :  { data?.country } </span> ) } </div>
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Region :  { data?.region } </span> ) } </div> 
+                                            <div className="col-md-12 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Adresse :  { data?.address } </span> ) } </div> 
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Dimension :  { data?.surface } m² </span> ) } </div>
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de Salon :  { data?.livingroom } </span> ) } </div> 
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de chambre :  { data?.bedroom } </span> ) } </div> 
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de toilette :  { data?.restroom } </span> ) } </div>
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de niveau :  { data?.floor } </span> ) } </div>
+                                            <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de cuisine :  { data?.kitchen } </span> ) } </div> 
                                         </div> 
                                         {/* {
                                             payFormState ? ( <span className="text-clr h5 mb-2"> Les informations sur la geolocalisation de la propriété sont payant. </span> ) : null
@@ -160,11 +160,11 @@ export function PropertyDetails(){
                                             <span className="text-center text-secondary lead mb-2"> the location description </span>
                                             <span className="text-center text-secondary mb-4 px-4 pb-3" > this is the location description Lorem Ipsum is simply dummy text of the industrythis this is  </span>
                                             <div className="d-flex justify-content-center p-2 bg-blue-clr"> 
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-twitter-x text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-facebook text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-linkedin text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-youtube text-white"></i> </a>
-                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="/"> <i className="small bi bi-instagram text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="https://x.com/DiwanePlus1960"> <i className="small bi bi-twitter-x text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="https://www.facebook.com/share/1A4SJD2WiU"> <i className="small bi bi-facebook text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="http://www.linkedin.com/in/diwane-plus-0467123a0"> <i className="small bi bi-linkedin text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="https://www.youtube.com/@DiwanePlus"> <i className="small bi bi-youtube text-white"></i> </a>
+                                                <a className="me-2 nav-link border border-light px-1 rounded-2" href="https://www.instagram.com/diwane.plus?igsh=MWlhamQ3dWI1MmV5Yg=="> <i className="small bi bi-instagram text-white"></i> </a>
                                             </div>
                                         </div>
                                         {/* ********************************** FORM 2 ************************************** */}

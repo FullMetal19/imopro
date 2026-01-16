@@ -10,7 +10,7 @@ export function MessageModal({ method, message })
         <div className="modal-container">
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-3">
-                    <div className="col-lg-9 col-md-10 bg-three-clr p-4 d-flex flex-column">
+                    <div className="col-lg-9 col-md-10 bg-white shadow p-4 d-flex flex-column">
                         <div className="d-flex"> 
                             <span className="text-muted"> La raison de l'invalidité de la propriété </span>
                             <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>

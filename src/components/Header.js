@@ -99,9 +99,9 @@ export function TopBar()
         <div className="col-lg-6 d-flex align-items-center justify-content-end"> 
           <div className="d-flex gap-2"> 
             <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://x.com/DiwanePlus1960"> <i className="small bi bi-twitter-x text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.facebook.com/share/1A4SJD2WiU/"> <i className="small bi bi-facebook text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.facebook.com/share/1A4SJD2WiU"> <i className="small bi bi-facebook text-white"></i> </a>
             <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="http://www.linkedin.com/in/diwane-plus-0467123a0"> <i className="small bi bi-linkedin text-white"></i> </a>
-            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="/"> <i className="small bi bi-youtube text-white"></i> </a>
+            <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.youtube.com/@DiwanePlus"> <i className="small bi bi-youtube text-white"></i> </a>
             <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="https://www.instagram.com/diwane.plus?igsh=MWlhamQ3dWI1MmV5Yg=="> <i className="small bi bi-instagram text-white"></i> </a>
             <a className="me-2 nav-link border border-light px-1 rounded-2" target="blank" href="http://tiktok.com/@diwane58"> <i className="small bi bi-tiktok text-white"></i> </a>
           </div>

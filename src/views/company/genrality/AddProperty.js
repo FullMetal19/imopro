@@ -6,8 +6,8 @@ import { LoaderModal } from "./Modal";
 import vector from "../../../config/data";
 
 
-import MapPicker from "../../../components/MapPicker"; 
-import { Modal } from "react-bootstrap";
+// import MapPicker from "../../../components/MapPicker"; 
+// import { Modal } from "react-bootstrap";
 
 
 
@@ -88,6 +88,53 @@ export function AddProperty()
         }
     }; 
 
+
+
+    // TO BE DELETE LATER
+
+    const [errCoord, setErrCoord] = useState(false);
+    const [ errMsg, setErrMsg ] = useState("");
+
+    const getCoorData = () => {
+
+      if (!navigator.geolocation) {
+        setErrCoord(true);
+        return;
+       }
+
+      navigator.geolocation.getCurrentPosition(
+        (item) => {
+          setInputs((prev) => ({
+            ...prev,
+            latitude: item.coords.latitude,
+            longitude: item.coords.longitude,
+          }));
+        },
+        (err) => { 
+          switch (err.code) {
+            case err.PERMISSION_DENIED:
+              setErrMsg("Autorisation de géolocalisation refusée. Veuillez autoriser l’accès à la géolocalisation dans votre navigateur et réessayer");
+              break;
+            case err.POSITION_UNAVAILABLE:
+              setErrMsg("Position indisponible. Assurez-vous que la géolocalisation est activée et autorisée dans les paramètres de votre navigateur.");
+              break;
+            case err.TIMEOUT:
+              setErrMsg("La demande de localisation a expiré. Veuillez autoriser à nouveau l’accès à la géolocalisation.");
+              break;
+            default:
+              setErrMsg("Erreur de géolocalisation. Assurez-vous que la géolocalisation est activée et autorisée dans les paramètres de votre navigateur.");
+          }
+          setErrCoord(true);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        }
+      );
+    };
+
+
     return (
     
     <div>
@@ -97,7 +144,7 @@ export function AddProperty()
         <Layout menu={1} companyId={companyId}> 
 
             {/* Map Modal */}
-            <Modal show={showMap} onHide={() => setShowMap(false)} centered size="xl" >
+            {/* <Modal show={showMap} onHide={() => setShowMap(false)} centered size="xl" >
               <Modal.Header closeButton>
                 <Modal.Title>Choisir la localisation</Modal.Title>
               </Modal.Header>
@@ -109,7 +156,7 @@ export function AddProperty()
                      }}
                    />
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
 
 
             <div className="container-fluid bg-light">
@@ -299,8 +346,8 @@ export function AddProperty()
                                               <div className="col-lg-4"> 
                                                 <div className="d-flex flex-column mb-2">
                                                     <span className="text-muted fs-xs mb-1"> Localisation [ <span className=" px-2 text-danger"> * </span>  ]  </span>
-                                                    <button type="button" className="btn p-3 btn-outline-main mb-1" onClick={() => setShowMap(true)} > Géolocaliser la propriété </button>
-                                                    
+                                                    {/* <button type="button" className="btn p-3 btn-outline-main mb-1" onClick={() => setShowMap(true)} > Géolocaliser la propriété </button> */}
+                                                    <button type="button" className="btn p-3 btn-outline-main mb-1" onClick={ getCoorData } > Géolocaliser la propriété </button>
                                                 </div>
                                               </div>
                                               <div className="col-lg-12"> 
@@ -320,6 +367,11 @@ export function AddProperty()
                                                       </div>
                                                     </div>
                                                  )}
+                                                 {
+                                                  errCoord && (
+                                                    <div className="alert alert-danger p-2"> { errMsg } </div>
+                                                  )
+                                                 }
                                               </div>
 
                                             </div>

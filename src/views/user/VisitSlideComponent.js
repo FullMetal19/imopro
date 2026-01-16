@@ -49,7 +49,7 @@ export function VisitSlideComponent({ openLocalisationModal, openValidationModal
                   <span className="text-secondary small"> Contact : 78 534 26 26  </span>
                 </div>
                 <div className="d-flex justify-content-between bg-three-clr px-3 py-3">
-                  <button className="btn btn-sm btn-outline-secondary" onClick={() => openLocalisationModal(item.Property.longitude, item.Property.latitude)} >
+                  <button className="btn btn-sm btn-outline-secondary" onClick={() => openLocalisationModal( item.Property.latitude, item.Property.longitude)} >
                     <i className="bi bi-geo-alt-fill me-1"></i> Localisation
                   </button>
                   { parseInt( item?.Property.isbooked ) === 1 ? (

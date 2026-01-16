@@ -89,7 +89,7 @@ export default function MapPicker({ onSelect }) {
       center={position || [14.7167, -17.4677]} // fallback Dakar
       zoom={13}
       scrollWheelZoom={true}
-      style={{ height: "400px", width: "100%" }}
+      style={{ height: "500px", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

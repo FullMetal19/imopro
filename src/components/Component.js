@@ -132,7 +132,12 @@ export function NearestHousesComponent() {
     useEffect(() => {
       navigator.geolocation.getCurrentPosition(
         (item) => setCoords({ lat: item.coords.latitude, lon: item.coords.longitude }),
-        (err) => setErrCoord(true)
+        (err) => setErrCoord(true),
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        }
       );
     }, []);
 
@@ -242,7 +247,12 @@ export function NearestFieldsComponent() {
     useEffect(() => {
       navigator.geolocation.getCurrentPosition(
           (item) => setCoords({ lat: item.coords.latitude, lon: item.coords.longitude }),
-          (err) => setErrCoord(true)
+          (err) => setErrCoord(true),
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0,
+          }
       );
     }, []);
 
@@ -252,11 +262,11 @@ export function NearestFieldsComponent() {
       return res.data.data;
     };
 
-  const { isLoading, data, error } = useQuery({
-    queryKey: ['nearestFiedls', coords],
-    queryFn: fetchFields,
-    enabled: !!coords,
-  });
+    const { isLoading, data, error } = useQuery({
+      queryKey: ['nearestFiedls', coords],
+      queryFn: fetchFields,
+      enabled: !!coords,
+    });
 
     return (
 

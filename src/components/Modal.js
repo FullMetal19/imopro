@@ -20,7 +20,8 @@ export function VideoModal( { method, url })
                 <div className="row d-flex justify-content-center align-items-center vh-100 px-2">
                     <div className="col-lg-10 bg-white shadow-sm border p-4 d-flex flex-column rounded-3">
                         <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
-                        <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe height="520" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        {/* <iframe height="315" src={ url } className="img-slide" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                     </div>
                 </div>
             </div>
@@ -31,7 +32,7 @@ export function VideoModal( { method, url })
 
 export function GeolocalisationModal( { method, latitude, longitude })
 {
-    const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&z=15&output=embed`;
+    const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&z=20&output=embed`;
 
     return (
 
@@ -43,9 +44,9 @@ export function GeolocalisationModal( { method, latitude, longitude })
                         <button className="btn-close btn-close-dark position-absolute end-0 me-3" style={{ top: "10px" }} aria-label="Close" onClick={ ()=>{ method ( false ) } } ></button>
                         <div className="d-flex p-4 border">
                             <iframe
-                                src={mapUrl}
+                                src={mapUrl} 
                                 width="100%"
-                                height="300"
+                                height="500"
                                 style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
@@ -622,7 +623,7 @@ export function MonthPaymentModal({ method, refetch, propertyId })
                                 <div className="d-flex flex-column">  
                                     <span className="text-secondary fs-xs mb-1"> Montant à débiter </span>
                                     <div className="input-group">
-                                        <input type="text" name="amount" value={inputs.amount} className="text-secondary p-2 border rounded-2" required onChange={handleInputs} />
+                                        <input type="text" name="amount" value={inputs.amount} className="text-secondary p-2 border rounded-2" required />
                                         <div className="input-group-append">  <span className="input-group-text text-secondary py-2" > Fcfa </span>  </div>
                                     </div> 
                                 </div>
