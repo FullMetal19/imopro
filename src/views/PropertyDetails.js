@@ -41,14 +41,39 @@ export function PropertyDetails(){
     const [ loginChecker , setloginChecker ] = useState(false);
     const closeoginCheckerModal = ( arg ) => {  setloginChecker( arg ) }  
 
+    // const reservation = () => {
+    //     if (localStorage.getItem('token')) {
+    //         setloginChecker(false);
+    //         setModalState(true);
+    //     } 
+    //     else{
+    //         setloginChecker(true); 
+    //     }
+    // }
+
+    const WHATSAPP_NUMBER = "221785342626"; // your business number
+
     const reservation = () => {
-        if (localStorage.getItem('token')) {
-            setloginChecker(false);
-            setModalState(true);
-        } 
-        else{
-            setloginChecker(true); 
-        }
+        const message = `*Bonjour et bienvenue sur DiwanePlus !*
+Je viens de découvrir cette propriété et elle m’intéresse beaucoup, j’aimerais en savoir plus.
+
+*Détails de la propriété*
+👉 https://diwaneplus.com/propriete/${id}
+
+${data?.subtitle} ${data?.title}
+*Pays / Région* : ${data?.country} / ${data?.region}
+*Adresse* : ${data?.address}
+*Prix* : ${data?.price} FCFA${data?.title === "à louer" ? " / mois" : ""}
+*Superficie* : ${data?.surface} m²
+
+Pourriez-vous me confirmer la disponibilité et m’indiquer les prochaines étapes ?
+
+Merci d'avance pour votre aide !`;
+
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent( message )}`;
+
+    window.open(url, "_blank");
     }
 
     // const [ payFormState, setPayForm ] = useState( false )
@@ -112,7 +137,8 @@ export function PropertyDetails(){
                         <span className='text-secondary mb-4 text-justify' > { isLoading ? ( <Skeleton count={10} height={20} /> ) : data?.description } </span>
                         <div className="d-flex gap-3">
                             {/* <button className="my-2 btn  bg-three-clr border-blue rounded-1 color-blue px-4" onClick={ setModal }  > Voir video  </button> */}
-                            <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Reserver maintenant  </button>
+                            {/* <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Reserver maintenant  </button> */}
+                            <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Je suis intéressé(e)  </button>
                         </div>
                       </div>
                     </div>

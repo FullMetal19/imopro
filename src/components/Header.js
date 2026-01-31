@@ -17,7 +17,7 @@ export function NavigationBar({page=1})
 
   return (
     <div className="col-12">
-      <div className={`row bg-white`}> 
+      <div className={`row bg-white border border-dark`}> 
         <nav className="navbar navbar-expand-lg bg-white shadow-sm">
           <div className="container-fluid py-2">
             {/* Logo */}

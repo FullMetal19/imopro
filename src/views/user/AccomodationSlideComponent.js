@@ -58,7 +58,7 @@ export function AccomodationSlideComponent()
                                   ( item?.Property.title === 'à louer' ) && ( <a className="btn btn-outline-secondary" href={`/mensualites/${item?.Property.id}`} > Mensualité </a> )
                               }
                               {
-                                 ( item?.Property.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Bien acheté </span>) 
+                                 ( item?.Property.title === 'à vendre' ) && ( <span className="text-secondary px-2 py-1 border rounded-2 fs-xs"> Propriété achetée </span>) 
                               }  
                            </div>
                         </div>
