@@ -54,21 +54,24 @@ export function PropertyDetails(){
     const WHATSAPP_NUMBER = "221785342626"; // your business number
 
     const reservation = () => {
-        const message = `*Bonjour et bienvenue sur DiwanePlus !*
-Je viens de découvrir cette propriété et elle m’intéresse beaucoup, j’aimerais en savoir plus.
+       const message = [
+            "*Bonjour et bienvenue sur DiwanePlus !*",
+            "Je viens de découvrir cette propriété et elle m’intéresse beaucoup, j’aimerais en savoir plus.",
+            "",
+            "*Détails de la propriété*",
+            `👉 https://diwaneplus.com/propriete/${id}`,
+            "",
+            `${data?.subtitle} ${data?.title}`,
+            `*Pays / Région* : ${data?.country} / ${data?.region}`,
+            `*Adresse* : ${data?.address}`,
+            `*Prix* : ${data?.price} FCFA ${data?.title === "à louer" ? " / mois" : ""}`,
+            `*Superficie* : ${data?.surface} m²`,
+            "",
+            "Pourriez-vous me confirmer la disponibilité et m’indiquer les prochaines étapes ?",
+            "",
+            "Merci d'avance pour votre aide !"
+          ].join("\n");
 
-*Détails de la propriété*
-👉 https://diwaneplus.com/propriete/${id}
-
-${data?.subtitle} ${data?.title}
-*Pays / Région* : ${data?.country} / ${data?.region}
-*Adresse* : ${data?.address}
-*Prix* : ${data?.price} FCFA${data?.title === "à louer" ? " / mois" : ""}
-*Superficie* : ${data?.surface} m²
-
-Pourriez-vous me confirmer la disponibilité et m’indiquer les prochaines étapes ?
-
-Merci d'avance pour votre aide !`;
 
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent( message )}`;
@@ -138,7 +141,7 @@ Merci d'avance pour votre aide !`;
                         <div className="d-flex gap-3">
                             {/* <button className="my-2 btn  bg-three-clr border-blue rounded-1 color-blue px-4" onClick={ setModal }  > Voir video  </button> */}
                             {/* <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Reserver maintenant  </button> */}
-                            <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Je suis intéressé(e)  </button>
+                            <button className="my-2 btn btn-lg btn-outline-secondary px-4" onClick={ reservation }  > Je suis intéressé(e)  <i className="bi bi-chevron-right ms-2"></i> </button>
                         </div>
                       </div>
                     </div>
