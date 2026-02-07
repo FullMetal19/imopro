@@ -182,24 +182,26 @@ export function PropertyDetails()
                                         {
                                             hasBadge && (
 
-                                            <div className="row">
+                                            <div className="row justify-content-center">
+                                              <div className="col-12">
                                                 <div className="row bg-three-clr border rounded-1 mb-3">
                                                     <span className="lead text-secondary p-3"> Informations sur l’agence propriétaire </span>
                                                 </div>
                                                 <div className="row bg-white px-4 py-5 mb-4 border">
-                                                    <div className="col-md-6 border p-1 p-2 mb-2">
-                                                        <span className="lead text-secondary p-3"> Nom de l'Agence : { data?.company?.name } </span>
+                                                    <div className="col-md-6 border p-2 mb-2">
+                                                        <span className="d-flex text-secondary"> Nom de l'Agence : { data?.company?.name } </span>
                                                     </div>
-                                                    <div className="col-md-6 border p-1 p-2 mb-2">
-                                                        <span className="lead text-secondary p-3"> Nom du responsable : { data?.company?.ownerName } </span>
+                                                    <div className="col-md-6 border p-2 mb-2">
+                                                        <span className="d-flex text-secondary"> Nom du responsable : { data?.company?.ownerName } </span>
                                                     </div>
-                                                    <div className="col-md-6 border p-1 p-2 mb-2">
-                                                        <span className="lead text-secondary p-3"> Numéro de Tel : { data?.company?.phone } </span>
+                                                    <div className="col-md-6 border p-2 mb-2">
+                                                        <span className="d-flex text-secondary"> Numéro de Tel : { data?.company?.phone } </span>
                                                     </div>
-                                                    <div className="col-md-6 border p-1 p-2 mb-2">
-                                                        <span className="lead text-secondary p-3"> Email : { data?.company?.email } </span>
+                                                    <div className="col-md-6 border p-2 mb-2">
+                                                        <span className="d-flex text-secondary"> Email : { data?.company?.email } </span>
                                                     </div>
                                                 </div>
+                                              </div>
                                             </div>
 
                                             )
