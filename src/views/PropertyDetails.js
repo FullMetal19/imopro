@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LoginCheckerModal, VisitBookingModal } from "../components/Modal";
 import { NavigationBar, TopBar } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -19,7 +19,15 @@ const settings = {
     slidesToScroll: 1
 };
 
-export function PropertyDetails(){
+export function PropertyDetails()
+{
+
+    const [hasBadge, setHasBadge] = useState(false);
+
+    useEffect(() => {
+      setHasBadge(!!localStorage.getItem('badge'));
+    }, []);
+
 
     const product = ProductApi();
     let { id } = useParams();
@@ -156,10 +164,10 @@ export function PropertyDetails(){
                                     {/* ********************************** LEFT CONTAINER ************************************** */}
                                     <div className="col-lg-7 d-flex flex-column"> 
                                         <div className="row bg-three-clr border rounded-1 mb-3">
-                                            <span className="lead text-secondary p-3"> The location description </span>
+                                            <span className="lead text-secondary p-3"> Informations supplémentaire </span>
                                         </div>
                                         {/* ********************************** DESC TECHNIQUE ************************************** */}
-                                        <div className="row bg-white px-4 py-5 mb-5 border">
+                                        <div className="row bg-white px-4 py-5 mb-4 border">
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Pays :  { data?.country } </span> ) } </div>
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Region :  { data?.region } </span> ) } </div> 
                                             <div className="col-md-12 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Adresse :  { data?.address } </span> ) } </div> 
@@ -177,6 +185,33 @@ export function PropertyDetails(){
                                             payFormState ? ( <PaymentForm amount={1000} /> ) : null
                                         }  */}
                                     </div>
+
+                                    {
+                                        hasBadge && (
+
+                                        <div className="row">
+                                            <div className="row bg-three-clr border rounded-1 mb-3">
+                                                <span className="lead text-secondary p-3"> Informations sur l’agence propriétaire </span>
+                                            </div>
+                                            <div className="row bg-white px-4 py-5 mb-4 border">
+                                                <div className="col-md-6 border p-1 p-2 mb-2">
+                                                    <span className="lead text-secondary p-3"> Nom de l'Agence : { data?.company?.name } </span>
+                                                </div>
+                                                <div className="col-md-6 border p-1 p-2 mb-2">
+                                                    <span className="lead text-secondary p-3"> Nom du responsable : { data?.company?.ownerName } </span>
+                                                </div>
+                                                <div className="col-md-6 border p-1 p-2 mb-2">
+                                                    <span className="lead text-secondary p-3"> Numéro de Tel : { data?.company?.phone } </span>
+                                                </div>
+                                                <div className="col-md-6 border p-1 p-2 mb-2">
+                                                    <span className="lead text-secondary p-3"> Email : { data?.company?.email } </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        )
+                                    }
+
                                     {/* ************************************************************************ */}
                                     <div className="col-lg-1"></div>
                                     {/* ******************************************** RIGHT CONTAINER ***************************************** */}

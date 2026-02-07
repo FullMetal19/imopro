@@ -31,6 +31,9 @@ export function Signin(){
             if( res.data.success ){
                 setIsLoading(false);
                 localStorage.setItem("token", res.data.token);
+                if((parseInt(res.data.status) === 2) ){
+                   localStorage.setItem("badge", true);
+                }
                 navigate('/');
             }
             else{
