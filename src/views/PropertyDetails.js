@@ -178,6 +178,33 @@ export function PropertyDetails()
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de niveau :  { data?.floor } </span> ) } </div>
                                             <div className="col-md-6 border p-1 p-2 mb-2"> { isLoading ? ( <Skeleton height={25} /> ) : ( <span className="d-flex text-secondary" > Nombre de cuisine :  { data?.kitchen } </span> ) } </div> 
                                         </div> 
+
+                                        {
+                                            hasBadge && (
+
+                                            <div className="row">
+                                                <div className="row bg-three-clr border rounded-1 mb-3">
+                                                    <span className="lead text-secondary p-3"> Informations sur l’agence propriétaire </span>
+                                                </div>
+                                                <div className="row bg-white px-4 py-5 mb-4 border">
+                                                    <div className="col-md-6 border p-1 p-2 mb-2">
+                                                        <span className="lead text-secondary p-3"> Nom de l'Agence : { data?.company?.name } </span>
+                                                    </div>
+                                                    <div className="col-md-6 border p-1 p-2 mb-2">
+                                                        <span className="lead text-secondary p-3"> Nom du responsable : { data?.company?.ownerName } </span>
+                                                    </div>
+                                                    <div className="col-md-6 border p-1 p-2 mb-2">
+                                                        <span className="lead text-secondary p-3"> Numéro de Tel : { data?.company?.phone } </span>
+                                                    </div>
+                                                    <div className="col-md-6 border p-1 p-2 mb-2">
+                                                        <span className="lead text-secondary p-3"> Email : { data?.company?.email } </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            )
+                                        }
+
                                         {/* {
                                             payFormState ? ( <span className="text-clr h5 mb-2"> Les informations sur la geolocalisation de la propriété sont payant. </span> ) : null
                                         } 
@@ -185,32 +212,6 @@ export function PropertyDetails()
                                             payFormState ? ( <PaymentForm amount={1000} /> ) : null
                                         }  */}
                                     </div>
-
-                                    {
-                                        hasBadge && (
-
-                                        <div className="row">
-                                            <div className="row bg-three-clr border rounded-1 mb-3">
-                                                <span className="lead text-secondary p-3"> Informations sur l’agence propriétaire </span>
-                                            </div>
-                                            <div className="row bg-white px-4 py-5 mb-4 border">
-                                                <div className="col-md-6 border p-1 p-2 mb-2">
-                                                    <span className="lead text-secondary p-3"> Nom de l'Agence : { data?.company?.name } </span>
-                                                </div>
-                                                <div className="col-md-6 border p-1 p-2 mb-2">
-                                                    <span className="lead text-secondary p-3"> Nom du responsable : { data?.company?.ownerName } </span>
-                                                </div>
-                                                <div className="col-md-6 border p-1 p-2 mb-2">
-                                                    <span className="lead text-secondary p-3"> Numéro de Tel : { data?.company?.phone } </span>
-                                                </div>
-                                                <div className="col-md-6 border p-1 p-2 mb-2">
-                                                    <span className="lead text-secondary p-3"> Email : { data?.company?.email } </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        )
-                                    }
 
                                     {/* ************************************************************************ */}
                                     <div className="col-lg-1"></div>
