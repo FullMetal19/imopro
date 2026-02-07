@@ -149,7 +149,7 @@ export function PropertyDetails()
                         <div className="d-flex gap-3">
                             {/* <button className="my-2 btn  bg-three-clr border-blue rounded-1 color-blue px-4" onClick={ setModal }  > Voir video  </button> */}
                             {/* <button className="my-2 btn btn-outline-secondary px-4" onClick={ reservation }  > Reserver maintenant  </button> */}
-                            <button className="my-2 btn btn-lg btn-outline-secondary px-4" onClick={ reservation }  > Je suis intéressé(e)  <i className="bi bi-chevron-right ms-2"></i> </button>
+                            <button className="my-2 btn btn-lg btn-outline-secondary px-4" onClick={ reservation }  >  Intéressé ? Demander une visite  <i className="bi bi-chevron-right ms-2"></i> </button>
                         </div>
                       </div>
                     </div>
