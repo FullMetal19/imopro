@@ -102,7 +102,7 @@ export function NewCompany(){
                             <div className="row px-4 py-5 mb-4 border bg-white rounded-3">
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Nom de l'entreprise </span>
+                                        <span className="text-secondary fs-xs mb-1"> Nom de l'agence </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <input type="text" name="name"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -111,7 +111,7 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Le pays </span>
+                                        <span className="text-secondary fs-xs mb-1"> Pays </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <select className="border w-100 p-3 text-secondary rounded-2" name="country" required onChange={ handleInputs } >
                                             <option value=""> Choisir le pays  </option>
@@ -125,7 +125,7 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> La région </span>
+                                        <span className="text-secondary fs-xs mb-1"> Région </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <select className="border w-100 p-3 text-secondary rounded-2" name="region" required onChange={ handleInputs } >
                                             <option value=""> Choisir la région  </option>
@@ -139,7 +139,7 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> L'adresse de l'entreprise </span>
+                                        <span className="text-secondary fs-xs mb-1"> Adresse de l'agence </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <input type="text" name="address"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -162,8 +162,8 @@ export function NewCompany(){
                                     <div className="d-flex flex-column mb-2">  
                                         <span className="text-secondary fs-xs mb-1"> Numéro de registre </span>
                                         <div className="d-flex gap-1 mb-3" >
-                                          <input type="text" name="registNumber"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                                          <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                          <input type="text" name="registNumber"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                          {/* <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>  */}
                                         </div>
                                     </div>
                                 </div>
@@ -171,8 +171,8 @@ export function NewCompany(){
                                     <div className="d-flex flex-column mb-2">  
                                         <span className="text-secondary fs-xs mb-1"> Ninea </span>
                                         <div className="d-flex gap-1 mb-3" >
-                                          <input type="text" name="ninea"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                                          <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                                          <input type="text" name="ninea"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                                          {/* <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>  */}
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@ export function NewCompany(){
                             <div className="row px-4 py-5 mb-4 border bg-white rounded-3">
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Nom du garant de l'entreprise </span>
+                                        <span className="text-secondary fs-xs mb-1"> Nom du garant de l'agence </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <input type="text" name="ownerName"  className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -190,7 +190,7 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Le numéro de téléphone du garant de l'entreprise </span>
+                                        <span className="text-secondary fs-xs mb-1"> Numéro de tél du garant de l'agence </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <input type="number" name="phone" className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -199,7 +199,7 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Email du garant de l'entreprise </span>
+                                        <span className="text-secondary fs-xs mb-1"> Email du garant de l'agence </span>
                                         <div className="d-flex gap-1 mb-3" >
                                           <input type="email" name="email" className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -217,18 +217,18 @@ export function NewCompany(){
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Uploader l'image de face et de derière de la carte d'identité [ <span className=" px-2 text-danger"> Format PDF </span>  ] </span>
+                                        <span className="text-secondary fs-xs mb-1"> Uploader la carte d'identité [ <span className=" px-2 text-danger"> Format image ou Pdf </span>  ] </span>
                                         <div className="d-flex gap-1 mb-3" >
-                                          <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" required onChange={ handleInputs } />
+                                          <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*,application/pdf" required onChange={ handleInputs } />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="d-flex flex-column mb-2">  
-                                        <span className="text-secondary fs-xs mb-1"> Icone de l'entrprise [ <span className=" px-2 text-danger"> Format Image </span>  ] </span>
+                                        <span className="text-secondary fs-xs mb-1"> Icone de l'agence [ <span className=" px-2 text-danger"> Format Image </span>  ] </span>
                                         <div className="d-flex gap-1 mb-3" >
-                                          <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" required onChange={ handleInputs } />
+                                          <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" onChange={ handleInputs } required />
                                           <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                                         </div>   
                                     </div>
@@ -236,9 +236,9 @@ export function NewCompany(){
                             </div>
                             {
                                 ( status === 1 ) ? 
-                                (  <div className=""> <div className="alert alert-primary border py-2 px-4 rounded-1 mb-4"> { message } </div> </div> ) :
+                                (  <div className=""> <div className="alert alert-success border w-100 px-4 rounded-1 mb-4"> { message } </div> </div> ) :
                                 ( status === -1 ) ?
-                                (  <div className=""> <div className="alert alert-danger border py-2 px-4 rounded-1 mb-4"> { message } </div> </div>) : null
+                                (  <div className=""> <div className="alert alert-danger border w-100 px-4 rounded-1 mb-4"> { message } </div> </div>) : null
                             }
                             {/* ************************************************************************ */}
                             <div className="row justify-content-end p-4 mb-4 border bg-white rounded-3">

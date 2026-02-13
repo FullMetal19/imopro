@@ -72,40 +72,30 @@ export function MonthPay() {
           <div className="row mt-4">
             <div className="col-lg-12 col-md-12">
               <div className="row d-flex justify-content-between border rounded-2 p-4 mb-4">
+                
                 <div className="col-md-8 d-flex gap-3 mb-2">
-                  <img
-                    src={data?.image}
-                    height={45}
-                    width={45}
-                    alt="Logo"
-                    className="rounded-circle border border-3 p-1 border-secondary"
-                  />
-                  <div className="d-flex flex-column">
-                    <span className="text-secondary">
-                      {data?.fname} {data?.lname}
-                    </span>
-                    <span className="color-gray small">En ligne</span>
-                  </div>
+                    {
+                      data?.image === null ? ( 
+                        <div className="bg-blue-clr text-light border border-secondary rounded-circle rounded-circle border fw-bold d-flex align-items-center justify-content-center" style={{ width:45, height:45 }}>
+                           { data?.fname ? data.fname.charAt(0).toUpperCase() : ""}{data?.lname ? data.lname.charAt(0).toUpperCase() : ""}
+                        </div>
+                       ) :  (  <img src={ data?.image } height={45} width={45} alt="Logo" className="rounded-circle border border-3 p-1 border-secondary" /> )
+                    } 
+                            
+                    <div className="d-flex flex-column"> 
+                        <span className="text-secondary"> { data?.fname + " " + data?.lname } </span>
+                        <span className="color-gray small"> En ligne </span>
+                    </div>
                 </div>
 
                 <div className="col-md-4 d-flex align-items-center">
-                  {data?.companyStatus === 0 && data?.status === 1 ? (
-                    <a className="mb-3 btn px-3 btn-outline-main" href="/creation-entreprise">
-                      Ouvrir une entreprise immobilière
-                    </a>
-                  ) : data?.companyStatus === 2 && data?.status === 1 ? (
-                    <a
-                      className="mb-3 btn px-3 btn-main"
-                      href={`/entreprise/${data?.company?.id}`}
-                    >
-                      Mon entreprise
-                    </a>
-                  ) : data?.companyStatus === 0 && data?.status === 2 ? (
-                    <a className="mb-3 btn px-3 btn-main" href="/admin">
-                      Dashboard admin
-                    </a>
-                  ) : null}
+                  {
+                      ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary p-2" href={ "/creation-entreprise" } > Ouvrir une agence </a> ) :
+                      ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white d-flex align-items-center p-2" href={ `/entreprise/${data?.company.id}` } > Mon agence <i className="bi bi-arrow-right ms-2"></i> </a> ) :
+                      ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className=" d-flex align-items-center mb-3 btn px-3 btn-secondary p-2" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration <i className="bi bi-arrow-right ms-2"></i> </a> ) : null ) )
+                  }
                 </div>
+                
               </div>
             </div>
 

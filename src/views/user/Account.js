@@ -96,7 +96,7 @@ export function Account()
                         </div>
                         <div className="col-md-4 d-flex align-items-center">
                             {
-                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary p-2" href={ "/creation-entreprise" } > Ouvrir un agence </a> ) :
+                              ( data?.companyStatus === 0 &&  data?.status === true ) ? ( <a className="mb-3 btn px-3 btn-outline-secondary p-2" href={ "/creation-entreprise" } > Ouvrir une agence </a> ) :
                               ( ( data?.companyStatus === 2 && data?.status === true ) ? ( <a className="mb-3 btn px-3 bg-blue-clr text-white d-flex align-items-center p-2" href={ `/entreprise/${data?.company.id}` } > Mon agence <i className="bi bi-arrow-right ms-2"></i> </a> ) :
                               ( ( (data?.companyStatus === 0 || data?.companyStatus === 2) &&  parseInt( data?.status ) === 2 ) ? ( <a className=" d-flex align-items-center mb-3 btn px-3 btn-secondary p-2" target="blank" href={ "https://cpanel.diwaneplus.com" } > Panel Administration <i className="bi bi-arrow-right ms-2"></i> </a> ) : null ) )
                             }
@@ -107,16 +107,16 @@ export function Account()
                     <div className="col-lg-12 border rounded-top-2 mb-4 bg-gray-light"> 
                         <div className="d-flex px-4 py-4">
                             {
-                               ( parseInt(data?.companyStatus) === 1) ? (<span className="text-secondary"> Votre demande de creation d'agence immobilier est en cours de traitement. Appelez au (77 000 00 00) pour plus d'information </span>) :
+                               ( parseInt(data?.companyStatus) === 1) ? (<span className="text-secondary"> Votre demande de création d’agence immobilière est actuellement en cours de traitement. Pour toute information complémentaire, veuillez nous contacter au +221 78 534 26 26. </span>) :
                                ( ( parseInt(data?.companyStatus) === -1) ? (
                                <div className="d-flex justify-content-between gap-4 w-100">
-                                    <span className="text-secondary"> Votre demande d'ajout d'agence immobilier est invalidée </span>
+                                    <span className="text-secondary"> Nous sommes au regret de vous informer que votre demande d’ajout d’agence immobilière n’a pas été approuvée. </span>
                                     <div className="d-flex gap-3">
-                                        <button className="btn btn-outline-secondary" onClick={ ()=> setForm1( data?.company.message) } > Voir message </button>
-                                        <a className="btn btn-secondary" href={`/modification-entreprise/${data?.company.id}`} > Modifier </a> 
+                                        <button className="btn btn-outline-secondary" onClick={ ()=> setForm1( data?.company.message) } > Consulter les motifs du rejet </button>
+                                        <a className="btn btn-secondary" href={`/modification-entreprise/${data?.company.id}`} > Modifier les informations </a> 
                                     </div> 
                                </div> ) :
-                               ( ( parseInt(data?.companyStatus) === -2) ? (<span className="text-secondary"> Votre agence immobilier est bloqué. Appelez au ( +221 78 534 26 26 ) pour plus d'information </span>) : 
+                               ( ( parseInt(data?.companyStatus) === -2) ? (<span className="text-secondary"> Votre agence immobilière a été suspendue. Merci de contacter le +221 78 534 26 26 pour plus de détails. </span>) : 
                                (<span className="text-secondary lead"> Bienvenue chez Diwaneplus </span>) ))
                             }   
                         </div>

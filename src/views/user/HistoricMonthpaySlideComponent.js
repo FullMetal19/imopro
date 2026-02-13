@@ -88,7 +88,7 @@ export function HistoricMonthpaySlideComponent({ setPaymentForm, setModal })
                                                 className="btn btn-sm btn-outline-main"
                                                 onClick={() => setModal(item)}
                                             >
-                                                Voir-plus
+                                                Détails
                                             </button>
                                         </td>
                                     </tr>

@@ -112,7 +112,7 @@ export function ModifyCompany() {
                 <div className="row px-4 py-5 mb-4 border bg-white ">
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1">Nom de l'entreprise</label>
+                    <label className="text-secondary fs-xs mb-1">Nom de l'agence </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="text" name="name" value={inputs?.name || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -161,21 +161,21 @@ export function ModifyCompany() {
                   <div className="col-md-6">
                     <label className="text-secondary fs-xs mb-1">Numéro de registre</label>
                     <div className="d-flex gap-1 mb-3" >
-                        <input type="text" name="registNumber" value={inputs?.registNumber || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                        <input type="text" name="registNumber" value={inputs?.registNumber || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                        {/* <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>  */}
                     </div>
                   </div>
 
                   <div className="col-md-6">
                     <label className="text-secondary fs-xs mb-1">Ninea</label>
                     <div className="d-flex gap-1 mb-3" >
-                        <input type="text" name="ninea" value={inputs?.ninea || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
-                        <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
+                        <input type="text" name="ninea" value={inputs?.ninea || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } />
+                        {/* <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span>  */}
                     </div>
                   </div>
 
                   <div className="col-md-8">
-                    <label className="text-secondary fs-xs mb-1">Site web</label>
+                    <label className="text-secondary fs-xs mb-1"> Lien siteweb </label>
                     <input type="url" name="website" value={inputs?.website || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={handleInputs} />
                   </div>
 
@@ -185,7 +185,7 @@ export function ModifyCompany() {
                 <div className="row px-4 py-5 mb-4 border bg-white ">
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1">Nom du garant</label>
+                    <label className="text-secondary fs-xs mb-1"> Nom du garant de l'agence </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="text" name="ownerName" value={inputs?.ownerName || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -193,7 +193,7 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1"> Téléphone du garant </label>
+                    <label className="text-secondary fs-xs mb-1"> Numéro de tél du garant de l'agence </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="number" name="phone" value={inputs?.phone || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -201,7 +201,7 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1">Email du garant</label>
+                    <label className="text-secondary fs-xs mb-1"> Email du garant de l'agence </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="email" name="email" value={inputs?.email || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -209,7 +209,7 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1">CNI du garant</label>
+                    <label className="text-secondary fs-xs mb-1"> Numéro de carte d'identité du garant </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="text" name="ownerCni" value={inputs?.ownerCni || ""} className="w-100 border input p-3 text-secondary rounded-2" onChange={ handleInputs } required />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -217,9 +217,9 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1"> Carte d'identité (PDF)</label>
+                    <label className="text-secondary fs-xs mb-1">  Uploader la carte d'identité [ <span className=" px-2 text-danger"> Format image ou Pdf </span>  ]  </label>
                     <div className="d-flex gap-1 mb-3" >
-                        <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2" accept="application/pdf" onChange={ handleInputs } />
+                        <input type="file" name="cniImage" className="w-100 border input p-3 text-secondary rounded-2"  accept="image/*,application/pdf" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
                     </div>
                     {inputs?.cniImage && typeof inputs.cniImage === "string" && (
@@ -232,7 +232,7 @@ export function ModifyCompany() {
                   </div>
 
                   <div className="col-md-6">
-                    <label className="text-secondary fs-xs mb-1"> Icône de l'entreprise (image)</label>
+                    <label className="text-secondary fs-xs mb-1"> Icone de l'agence [ <span className=" px-2 text-danger"> Format Image </span>  ] </label>
                     <div className="d-flex gap-1 mb-3" >
                         <input type="file" name="icon" className="w-100 border input p-3 text-secondary rounded-2" accept="image/*" onChange={ handleInputs } />
                         <span className="d-flex align-items-center border py-2 px-3 rounded-2 text-danger"> * </span> 
@@ -247,7 +247,7 @@ export function ModifyCompany() {
 
                 {status !== 0 && (
                   <div className="col-md-12 py-2 rounded-1 mb-3">
-                    <div className={`alert ${ status === 1 ? "alert-primary" : "alert-danger" }`}>
+                    <div className={`alert ${ status === 1 ? "alert-secondary" : "alert-danger" }`}>
                       {message}
                     </div>
                   </div>
