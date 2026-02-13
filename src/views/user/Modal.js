@@ -161,7 +161,7 @@ export function LoaderModal()
                 <div className="row d-flex justify-content-center vh-100 px-3">
                     <div className="col-lg-2 bg-white mt-5 p-4 d-flex flex-column">
                         <div className="col-md-12 d-flex justify-content-center p-4"> 
-                            <img src={'../../img/icons8-iphone-spinner.gif'} height={34} width={34} alt="Logo" /> 
+                            <div className="spinner-border text-white" style={{ width: "6rem", height: "6rem" }} role="status" aria-label="Chargement"></div>
                         </div> 
                     </div>
                 </div>

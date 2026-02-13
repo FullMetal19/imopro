@@ -75,6 +75,7 @@ export function AddProperty()
                 setStatus(1);
                 setMessage("Votre propriété a bien été ajoutée");
                 setPreviewUrls([]); 
+                setInputs({});
             }
             else{
                 setStatus(-1);
